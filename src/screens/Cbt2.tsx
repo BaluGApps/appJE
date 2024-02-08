@@ -1,54 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, ActivityIndicator,Alert } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import axios from 'axios';
 
 const Cbt2 = () => {
   const [questionsData, setQuestionsData] = useState([]);
   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     // Fetch data from the API
-//     fetch('https://apije.pythonanywhere.com/exam/api/questions/?page=1&page_size=5')
-//       .then(response => response.json())
-//       .then(data => {
-//         // Check if the question's section is 'cbt1'
-//         const cbt2Questions = data.results
-//         console.log('cbt2 questions',cbt2Questions)
-//           .filter(question => question.section === 'cbt2')
-//           .map(question => ({ ...question, selectedOption: null }));
-  
-//         setQuestionsData(cbt2Questions);
-//         setLoading(false);
-//       })
-//       .catch(error => console.error('Error fetching data:', error));
-//   }, []);
+  const [page, setPage] = useState(1);
+  const [hasMoreQuestions, setHasMoreQuestions] = useState(true);
+  const [loadingHeader, setLoadingHeader] = useState(true);
+  const [error, setError] = useState(null);
+  const [canScroll, setCanScroll] = useState(true)
   
 useEffect(() => {
-    // Fetch data from the API
-    fetch('https://apije.pythonanywhere.com/exam/api/questions/?page=1&page_size=5')
-      .then(response => response.json())
-      .then(data => {
-        console.log('Received data:', data);
-  
-        if (data && data.results && Array.isArray(data.results)) {
-          // Check if the question's section is 'cbt2'
-          const cbt2Questions = data.results
-            .filter(question => question.section === 'cbt2')
-            .map(question => ({ ...question, selectedOption: null }));
-  
-          console.log('Cbt2 questions:', cbt2Questions);
-  
-          setQuestionsData(cbt2Questions);
-          setLoading(false);
-        } else {
-          console.error('Unexpected data structure:', data);
-        }
-      })
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
-  
-  
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`https://apije.pythonanywhere.com/exam/api/cbt2/?page=${page}&page_size=5`);
+      const newData = response.data.results;
+
+      setQuestionsData(prevData => [...prevData, ...newData]);
+      setLoading(false);
+      setHasMoreQuestions(newData.length < response.data.count);
+    } catch (error) {
+      setError(error);
+      setLoading(false);
+    }
+  };
+
+  fetchData();
+}, [page]);
+
 
 const renderQuestion = ({ item }) => (
     <View style={styles.questionContainer}>
@@ -61,7 +43,7 @@ const renderQuestion = ({ item }) => (
         ]}
         onPress={() => handleOptionPress(item, 'A')}
       >
-        <Text>{item.option_a}</Text>
+        <Text style={styles.textcolor}>{item.option_a}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[
@@ -71,7 +53,7 @@ const renderQuestion = ({ item }) => (
         ]}
         onPress={() => handleOptionPress(item, 'B')}
       >
-        <Text>{item.option_b}</Text>
+        <Text style={styles.textcolor}>{item.option_b}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[
@@ -81,7 +63,7 @@ const renderQuestion = ({ item }) => (
         ]}
         onPress={() => handleOptionPress(item, 'C')}
       >
-        <Text>{item.option_c}</Text>
+        <Text style={styles.textcolor}>{item.option_c}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[
@@ -91,14 +73,14 @@ const renderQuestion = ({ item }) => (
         ]}
         onPress={() => handleOptionPress(item, 'D')}
       >
-        <Text>{item.option_d}</Text>
+        <Text style={styles.textcolor}>{item.option_d}</Text>
       </TouchableOpacity>
       {item.selectedOption && (
         <View style={styles.answerDescription}>
           <Text style={item.answeredCorrectly ? styles.correctText : styles.incorrectText}>
             {item.answeredCorrectly ? 'Correct!' : 'Incorrect!'}
           </Text>
-          <Text>{item.answer_description}</Text>
+          <Text style={{fontWeight:'400',color:'black'}}>{item.answer_description}</Text>
         </View>
       )}
     </View>
@@ -120,51 +102,75 @@ const renderQuestion = ({ item }) => (
     setQuestionsData(updatedQuestions);
   };
 
-  const handleEndReached = () => {
-    // Handle logic for reaching the end of questions, e.g., fetch more questions
-    console.log('End reached! Fetch more questions...');
-  };
-
   return (
     <View style={styles.container}>
-      {questionsData.length > 0 && (
-        <FlatList
-          data={questionsData}
-          renderItem={renderQuestion}
-          keyExtractor={item => item.id.toString()}
-        //   horizontal
-        //   pagingEnabled
-          showsHorizontalScrollIndicator={false}
-          onEndReached={handleEndReached}
-          onEndReachedThreshold={0.1}
-        />
-      )}
-      {loading && <ActivityIndicator style={styles.loadingIndicator} size="large" color="#0074E4" />}
-    </View>
+    {questionsData.length > 0 ? (
+      <FlatList
+        data={questionsData}
+        renderItem={renderQuestion}
+        keyExtractor={item => item.id.toString()}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        onEndReached={() => {
+          if (hasMoreQuestions && !loading && canScroll) {
+            setPage(prevPage => prevPage + 1);
+            setLoading(true);
+          }
+        }}
+        onEndReachedThreshold={0.1}
+        ListFooterComponent={()=>(
+          <View>
+            {loading && <ActivityIndicator style={styles.loadingIndicator} size="large" color="#0074E4" />}
+            {!hasMoreQuestions && !loading && (
+            <Text style={styles.noMoreQuestionsText}>No more questions available</Text>
+    )}
+          </View>
+    )}
+        scrollEnabled={canScroll}
+      />
+    ) : (
+      <Text style={styles.noQuestionsText}>loading ..</Text>
+    )}
+  </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#87CEEB'
   },
   questionContainer: {
-    width: wp('100%'),
-    height: hp('50%'),
-    padding: wp('5%'),
+    padding: wp('4%'),
+    margin: wp('2%'),
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
-
+    backgroundColor: 'white',
+    borderRadius: wp('2%')
+  },
+  textcolor:{
+    color:'black',
+    fontWeight:'500'
   },
   questionText: {
     fontSize: wp('4.5%'),
     marginBottom: hp('2%'),
+    color: 'black',
+    fontWeight:'500'
   },
   option: {
     padding: wp('3%'),
     marginVertical: hp('1%'),
-    borderWidth: wp('0.2%'),
-    borderColor: '#ddd',
+    borderWidth: wp('0.3%'),
+    borderColor: '#87CEEB',
+    borderRadius: wp('1%'),
+    backgroundColor: 'white',
+    color:'black'
+  },
+  optionText: {
+    // color: '#0074E4',
+    color: '#FFFFFF', 
+    fontWeight: 'bold'
   },
   correctText: {
     color: 'green',
@@ -178,16 +184,39 @@ const styles = StyleSheet.create({
   },
   answerDescription: {
     marginTop: hp('2%'),
+    color: 'red',
+    fontWeight: 'bold',
   },
+  descriptionText: {
+    fontSize: wp('4%'),
+  },
+
   loadingIndicator: {
     marginVertical: hp('2%'),
   },
   selectedOption: {
-    backgroundColor: '#0074E4',
-    borderColor: '#0074E4',
-    color:'white'
-    // Add any other styles as needed
+    backgroundColor: 'lightcoral', // Darker shade for selected option
+    borderColor: '#004080',
+    color: 'white',
+  },
+  correctOption: {
+    backgroundColor: 'lightgreen',
+  },
+  noQuestionsText: {
+    textAlign: 'center',
+    marginTop: 20,
+    fontSize: 18,
+    color: '#555', // You can adjust the color as needed
+    fontWeight: 'bold',
+  },
+  noMoreQuestionsText: {
+    textAlign: 'center',
+    marginTop: 20,
+    fontSize: 18,
+    color: '#555',
+    fontWeight: 'bold',
   },
 });
+
 
 export default Cbt2;
