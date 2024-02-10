@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet,ActivityIndicator } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 const Syllabus = () => {
   const [syllabusData, setSyllabusData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch data from the API
     fetch('https://apije.pythonanywhere.com/exam/api/syllabus/')
       .then(response => response.json())
-      .then(data => setSyllabusData(data))
-      .catch(error => console.error('Error fetching data:', error));
+      .then(data =>{ 
+        setSyllabusData(data)
+        setLoading(false)
+      })
+      .catch(error =>{ 
+        console.error('Error fetching data:', error);
+        setLoading(false);
+    });
   }, []);
 
   const [expandedTopicId, setExpandedTopicId] = useState(null);
@@ -43,11 +50,16 @@ const Syllabus = () => {
 
   return (
     <View style={styles.container}>
+            {loading ? (
+        // Show the ActivityIndicator while loading
+        <ActivityIndicator size="large" color="#0074E4" style={styles.loadingIndicator} />
+      ) : (
     <FlatList
       data={syllabusData}
       renderItem={renderItem}
       keyExtractor={(item) => item.id.toString()}
     />
+      )}
     </View>
   );
 };
@@ -56,7 +68,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#87CEEB',
-    marginTop:wp('1%')
   },
   topicContainer: {
     flexDirection: 'row',
@@ -82,6 +93,11 @@ const styles = StyleSheet.create({
     color: '#F08080',
     fontFamily: 'Poppins',
     fontWeight: 'bold',
+  },
+  loadingIndicator: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
