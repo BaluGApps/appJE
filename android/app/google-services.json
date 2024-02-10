@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1010565650879",
+    "project_id": "rrbje-24d0b",
+    "storage_bucket": "rrbje-24d0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010565650879:android:7ef282fc322ffef00da90a",
+        "android_client_info": {
+          "package_name": "com.rrbje"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK1geOBXjhdoNip0aaIMvWS6VHhzTYHSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
