@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'royalblue', // Set the background color to royal blue
+        backgroundColor: '#0074E4', // Set the background color to royal blue
     },
     brandText: {
         fontSize: wp('12%'), // Responsive font size

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, ActivityIndicator,Alert } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, ActivityIndicator,Alert,BackHandler } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import axios from 'axios';
 
-const Cbt1 = () => {
+const Cbt1 = ({navigation}) => {
   const [questionsData, setQuestionsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -31,6 +31,35 @@ useEffect(() => {
   fetchData();
 }, [page]);
 
+useEffect(() => {
+  const backHandler = BackHandler.addEventListener('hardwareBackPress', handleBackPress);
+
+  return () => {
+    backHandler.remove();
+  };
+}, []);
+
+const handleBackPress = () => {
+  // Check if the current route is the HomeScreen
+  if (navigation.isFocused()) {
+    Alert.alert(
+      'Exit App',
+      'Are you sure you want to exit?',
+      [
+        { text: 'Cancel', onPress: () => { }, style: 'cancel' },
+        { text: 'Exit', onPress: () => BackHandler.exitApp(), style: 'destructive', },
+      ],
+      {
+        cancelable: false,
+        style: 'default',
+        titleStyle: { fontSize: 24, fontWeight: 'bold' }, 
+        messageStyle: { fontSize: 16 }, 
+      },
+    );
+    return true;
+  }
+  return false;
+};
 
 const renderQuestion = ({ item }) => (
     <View style={styles.questionContainer}>
@@ -86,7 +115,6 @@ const renderQuestion = ({ item }) => (
     </View>
   );
   
-
   const handleOptionPress = (selectedQuestion, selectedOption) => {
     // Handle logic for selected option
     const updatedQuestions = questionsData.map(question =>
