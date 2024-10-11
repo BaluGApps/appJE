@@ -73,10 +73,21 @@ async function subscribeToTopic(topic) {
   return(
     <NavigationContainer>
     <Stack.Navigator
+      // screenOptions={{
+      //   headerShown: false, // Hide header for all screens
+      // }}
+      // initialRouteName={initialRoute}
       screenOptions={{
-        headerShown: false, // Hide header for all screens
+        headerShown: false,
+        cardStyleInterpolator: ({ current: { progress } }) => ({
+          cardStyle: {
+            opacity: progress.interpolate({
+              inputRange: [0, 1],
+              outputRange: [0, 1],
+            }),
+          },
+        }),
       }}
-      initialRouteName={initialRoute}
     >
         <Stack.Screen name="splash" component={Splash} />
         <Stack.Screen name="Navigation" component={Navigation} />
