@@ -85,7 +85,7 @@ const Syllabus = () => {
               width: '80%',
               height: '10%',
             }}>
-            {/* <BannerAd
+            <BannerAd
               unitId="ca-app-pub-2627956667785383/2550120291"
               size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
               requestOptions={{
@@ -98,7 +98,7 @@ const Syllabus = () => {
                 console.error('Ad failed to load: ', error);
               }}
               // style={styles.bannerAd}
-            /> */}
+            />
           </View>
         </>
       )}
