@@ -791,7 +791,7 @@ const Quiz = () => {
 
   const handleLevelPress = level => {
     if (level <= unlockedLevels) {
-      navigation.navigate('QuestionScreen', level);
+      navigation.navigate('QuestionScreen', {level});
     } else {
       Alert.alert(
         'Level Locked',

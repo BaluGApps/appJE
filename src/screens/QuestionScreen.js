@@ -5,6 +5,7 @@ import questions from '../util/Questions.json';
 
 const QuestionScreen = ({route, navigation}) => {
   const {level} = route.params;
+  console.log(level, '###');
   const [selectedOption, setSelectedOption] = useState(null);
   const [showHint, setShowHint] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
