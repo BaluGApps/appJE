@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "level": 1,
+      "question": "What is the capital of India?",
+      "options": [
+        "Mumbai",
+        "New Delhi",
+        "Kolkata",
+        "Chennai"
+      ],
+      "correctAnswer": 1,
+      "hint": "It's located in the northern part of India",
+      "solution": "New Delhi is the capital of India, established as the capital in 1911."
+    }
+  ]
+}

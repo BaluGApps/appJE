@@ -561,13 +561,13 @@ const Cbt2 = ({navigation}) => {
   }, [questionsData]);
 
   // Back handler setup
-  useEffect(() => {
-    const backHandler = BackHandler.addEventListener(
-      'hardwareBackPress',
-      handleBackPress,
-    );
-    return () => backHandler.remove();
-  }, []);
+  // useEffect(() => {
+  //   const backHandler = BackHandler.addEventListener(
+  //     'hardwareBackPress',
+  //     handleBackPress,
+  //   );
+  //   return () => backHandler.remove();
+  // }, []);
 
   // Ad loading setup
   useEffect(() => {
@@ -600,25 +600,25 @@ const Cbt2 = ({navigation}) => {
     };
   }, []);
 
-  const handleBackPress = () => {
-    if (navigation.isFocused()) {
-      Alert.alert(
-        'Exit App',
-        'Are you sure you want to exit?',
-        [
-          {text: 'Cancel', style: 'cancel'},
-          {
-            text: 'Exit',
-            onPress: () => BackHandler.exitApp(),
-            style: 'destructive',
-          },
-        ],
-        {cancelable: false},
-      );
-      return true;
-    }
-    return false;
-  };
+  // const handleBackPress = () => {
+  //   if (navigation.isFocused()) {
+  //     Alert.alert(
+  //       'Exit App',
+  //       'Are you sure you want to exit?',
+  //       [
+  //         {text: 'Cancel', style: 'cancel'},
+  //         {
+  //           text: 'Exit',
+  //           onPress: () => BackHandler.exitApp(),
+  //           style: 'destructive',
+  //         },
+  //       ],
+  //       {cancelable: false},
+  //     );
+  //     return true;
+  //   }
+  //   return false;
+  // };
 
   const showHintWithAd = async hint => {
     if (!hint) {
@@ -781,6 +781,12 @@ const Cbt2 = ({navigation}) => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <MaterialCommunityIcons name="arrow-left" size={24} color="White" />
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>CBT2</Text>
+      </View>
       <HintModal />
       {allQuestions.length > 0 ? (
         <FlatList
@@ -823,6 +829,19 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     padding: wp('2%'),
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: wp('4%'),
+    backgroundColor: '#0074E4',
+  },
+  headerTitle: {
+    fontSize: wp('5%'),
+    fontWeight: '600',
+    color: '#FFFFFF',
+    marginLeft: wp('30%'),
+    justifyContent: 'center',
   },
   questionContainer: {
     backgroundColor: '#FFFFFF',

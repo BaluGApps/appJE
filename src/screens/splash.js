@@ -198,7 +198,7 @@ const Splash = ({navigation}) => {
 
     // Navigate to main screen after 5 seconds
     setTimeout(() => {
-      navigation.replace('Navigation');
+      navigation.replace('Home');
     }, 5000);
   }, []);
 
