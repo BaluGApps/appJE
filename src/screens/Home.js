@@ -10,6 +10,7 @@
 //   Platform,
 // } from 'react-native';
 // import Icon from 'react-native-vector-icons/FontAwesome';
+// import LinearGradient from 'react-native-linear-gradient';
 // import {
 //   widthPercentageToDP as wp,
 //   heightPercentageToDP as hp,
@@ -30,11 +31,22 @@
 // const {width, height} = Dimensions.get('window');
 // const isSmallDevice = height < 700;
 
+// // Enhanced spring configuration for smoother animations
+
 // const SPRING_CONFIG = {
-//   damping: 12,
-//   mass: 1,
-//   stiffness: 100,
+//   damping: 10,
+//   mass: 0.5, // Reduced from 0.8
+//   stiffness: 100, // Reduced from 150
 // };
+
+// // const SPRING_CONFIG = {
+// //   damping: 15,
+// //   mass: 0.8,
+// //   stiffness: 150,
+// //   overshootClamping: false,
+// //   restSpeedThreshold: 0.3,
+// //   restDisplacementThreshold: 0.3,
+// // };
 
 // const FONTS = {
 //   title: isSmallDevice ? wp('7%') : wp('6%'),
@@ -91,7 +103,6 @@
 
 //   const navigateToScreen = React.useCallback(
 //     screenName => {
-//       console.log('Navigating to screen:', screenName);
 //       navigation.navigate(screenName);
 //     },
 //     [navigation],
@@ -99,11 +110,26 @@
 
 //   const handlePress = React.useCallback(
 //     screenName => {
-//       scale.value = withSpring(0.95, SPRING_CONFIG, () => {
-//         scale.value = withSpring(1, SPRING_CONFIG, () => {
-//           runOnJS(navigateToScreen)(screenName);
-//         });
-//       });
+//       // Enhanced press animation
+//       scale.value = withSpring(
+//         0.97,
+//         {
+//           ...SPRING_CONFIG,
+//           duration: 150,
+//         },
+//         () => {
+//           scale.value = withSpring(
+//             1,
+//             {
+//               ...SPRING_CONFIG,
+//               duration: 150,
+//             },
+//             () => {
+//               runOnJS(navigateToScreen)(screenName);
+//             },
+//           );
+//         },
+//       );
 //     },
 //     [navigateToScreen],
 //   );
@@ -124,9 +150,19 @@
 //         Extrapolate.CLAMP,
 //       );
 
+//       const delay = index * 50;
+
 //       return {
 //         opacity,
-//         transform: [{translateY}, {scale: scale.value}],
+//         transform: [
+//           {
+//             translateY: withSpring(translateY, {
+//               ...SPRING_CONFIG,
+//               delay,
+//             }),
+//           },
+//           {scale: scale.value},
+//         ],
 //       };
 //     });
 //   };
@@ -134,38 +170,50 @@
 //   const AnimatedTouchableOpacity =
 //     Animated.createAnimatedComponent(TouchableOpacity);
 
-//   const SPRING_CONFIG = {
-//     damping: 12,
-//     mass: 1,
-//     stiffness: 100,
-//   };
-
 //   const MenuItem = React.memo(({icon, title, onPress, index, description}) => (
 //     <AnimatedTouchableOpacity
 //       style={[styles.item]}
 //       onPress={onPress}
-//       activeOpacity={0.7}>
+//       activeOpacity={0.95}>
 //       <Animated.View style={[styles.itemContent, getMenuItemStyle(index)]}>
-//         <View style={styles.iconContainer}>
-//           <Icon name={icon} size={wp('6%')} color="#1E90FF" />
-//         </View>
-//         <View style={styles.textContainer}>
-//           <Text style={styles.itemTitle}>{title}</Text>
-//           {description && <Text style={styles.description}>{description}</Text>}
-//         </View>
-//         <Icon name="chevron-right" size={wp('4%')} color="#1E90FF" />
+//         <LinearGradient
+//           colors={
+//             index % 2 === 0 ? ['#4A90E2', '#357ABD'] : ['#5C6BC0', '#3F51B5']
+//           }
+//           start={{x: 0, y: 0}}
+//           end={{x: 1, y: 1}}
+//           style={styles.gradientContainer}>
+//           <View style={styles.iconContainer}>
+//             <Icon name={icon} size={wp('6%')} color="#FFF" />
+//           </View>
+//           <View style={styles.textContainer}>
+//             <Text style={styles.itemTitle}>{title}</Text>
+//             {description && (
+//               <Text style={styles.description}>{description}</Text>
+//             )}
+//           </View>
+//           <Icon name="chevron-right" size={wp('4%')} color="#FFF" />
+//         </LinearGradient>
 //       </Animated.View>
 //     </AnimatedTouchableOpacity>
 //   ));
 
 //   return (
-//     <View style={[styles.container, {paddingTop: insets.top || hp('2%')}]}>
+//     <LinearGradient
+//       colors={['#F8F9FF', '#E8EFFF']}
+//       style={[styles.container, {paddingTop: insets.top || hp('2%')}]}>
 //       <View style={styles.header}>
-//         <Animated.Text
-//           entering={FadeInDown.delay(200).springify()}
-//           style={styles.title}>
-//           Welcome Back
-//         </Animated.Text>
+//         <LinearGradient
+//           colors={['#4A90E2', '#357ABD']}
+//           start={{x: 0, y: 0}}
+//           end={{x: 1, y: 0}}
+//           style={styles.headerGradient}>
+//           <Animated.Text
+//             entering={FadeInDown.delay(200).springify()}
+//             style={styles.title}>
+//             Welcome Back
+//           </Animated.Text>
+//         </LinearGradient>
 //       </View>
 
 //       <View style={styles.content}>
@@ -205,26 +253,38 @@
 //           />
 //         </View>
 //       </View>
-//     </View>
+//     </LinearGradient>
 //   );
 // };
 
 // const styles = StyleSheet.create({
 //   container: {
 //     flex: 1,
-//     backgroundColor: '#F8F9FF',
 //   },
 //   header: {
+//     marginBottom: SPACING.containerPadding,
+//   },
+//   headerGradient: {
 //     paddingVertical: SPACING.containerPadding,
 //     paddingHorizontal: SPACING.containerPadding,
-//     backgroundColor: '#FFF',
-//     borderBottomWidth: 1,
-//     borderBottomColor: 'rgba(0,0,0,0.05)',
+//     borderBottomLeftRadius: 20,
+//     borderBottomRightRadius: 20,
+//     ...Platform.select({
+//       ios: {
+//         shadowColor: '#000',
+//         shadowOffset: {width: 0, height: 4},
+//         shadowOpacity: 0.15,
+//         shadowRadius: 8,
+//       },
+//       android: {
+//         elevation: 8,
+//       },
+//     }),
 //   },
 //   title: {
 //     fontSize: FONTS.title,
 //     fontWeight: 'bold',
-//     color: '#1E90FF',
+//     color: '#FFF',
 //     textAlign: 'left',
 //   },
 //   content: {
@@ -238,37 +298,40 @@
 //   sectionTitle: {
 //     fontSize: FONTS.sectionTitle,
 //     fontWeight: '600',
-//     color: '#555',
+//     color: '#357ABD',
 //     marginBottom: SPACING.itemSpacing,
 //     paddingLeft: wp('2%'),
 //   },
 //   item: {
 //     marginBottom: SPACING.itemSpacing,
-//     backgroundColor: '#FFF',
-//     borderRadius: 12,
+//     borderRadius: 16,
+//     overflow: 'hidden',
 //     ...Platform.select({
 //       ios: {
 //         shadowColor: '#000',
-//         shadowOffset: {width: 0, height: 2},
-//         shadowOpacity: 0.1,
-//         shadowRadius: 3,
+//         shadowOffset: {width: 0, height: 4},
+//         shadowOpacity: 0.15,
+//         shadowRadius: 8,
 //       },
 //       android: {
-//         elevation: 3,
+//         elevation: 8,
 //       },
 //     }),
 //   },
-//   itemContent: {
+//   gradientContainer: {
 //     flexDirection: 'row',
 //     alignItems: 'center',
 //     padding: SPACING.itemSpacing,
 //     minHeight: SPACING.iconSize * 1.2,
 //   },
+//   itemContent: {
+//     backgroundColor: 'transparent',
+//   },
 //   iconContainer: {
 //     width: SPACING.iconSize,
 //     height: SPACING.iconSize,
 //     borderRadius: SPACING.iconSize / 2,
-//     backgroundColor: 'rgba(30, 144, 255, 0.1)',
+//     backgroundColor: 'rgba(255, 255, 255, 0.2)',
 //     justifyContent: 'center',
 //     alignItems: 'center',
 //   },
@@ -279,12 +342,12 @@
 //   itemTitle: {
 //     fontSize: FONTS.itemTitle,
 //     fontWeight: '600',
-//     color: '#1E90FF',
+//     color: '#FFF',
 //     marginBottom: 4,
 //   },
 //   description: {
 //     fontSize: FONTS.description,
-//     color: '#666',
+//     color: 'rgba(255, 255, 255, 0.9)',
 //   },
 // });
 
@@ -298,7 +361,6 @@ import {
   StyleSheet,
   BackHandler,
   Alert,
-  Dimensions,
   Platform,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -308,30 +370,9 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {useNavigation} from '@react-navigation/native';
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withSpring,
-  withTiming,
-  interpolate,
-  Extrapolate,
-  FadeInDown,
-  runOnJS,
-} from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-const {width, height} = Dimensions.get('window');
-const isSmallDevice = height < 700;
-
-// Enhanced spring configuration for smoother animations
-const SPRING_CONFIG = {
-  damping: 15,
-  mass: 0.8,
-  stiffness: 150,
-  overshootClamping: false,
-  restSpeedThreshold: 0.3,
-  restDisplacementThreshold: 0.3,
-};
+const isSmallDevice = hp('100%') < 700;
 
 const FONTS = {
   title: isSmallDevice ? wp('7%') : wp('6%'),
@@ -347,16 +388,28 @@ const SPACING = {
   iconSize: isSmallDevice ? wp('12%') : wp('10%'),
 };
 
+const MenuItem = React.memo(({icon, title, onPress, description}) => (
+  <TouchableOpacity style={styles.item} onPress={onPress} activeOpacity={0.7}>
+    <LinearGradient
+      colors={['#4A90E2', '#357ABD']}
+      start={{x: 0, y: 0}}
+      end={{x: 1, y: 1}}
+      style={styles.gradientContainer}>
+      <View style={styles.iconContainer}>
+        <Icon name={icon} size={wp('6%')} color="#FFF" />
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.itemTitle}>{title}</Text>
+        {description && <Text style={styles.description}>{description}</Text>}
+      </View>
+      <Icon name="chevron-right" size={wp('4%')} color="#FFF" />
+    </LinearGradient>
+  </TouchableOpacity>
+));
+
 const Home = () => {
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
-
-  const scale = useSharedValue(1);
-  const menuItemsProgress = useSharedValue(0);
-
-  React.useEffect(() => {
-    menuItemsProgress.value = withTiming(1, {duration: 800});
-  }, []);
 
   React.useEffect(() => {
     const backHandler = BackHandler.addEventListener(
@@ -386,102 +439,54 @@ const Home = () => {
     return false;
   };
 
-  const navigateToScreen = React.useCallback(
+  const handleNavigation = React.useCallback(
     screenName => {
-      navigation.navigate(screenName);
+      requestAnimationFrame(() => {
+        navigation.navigate(screenName);
+      });
     },
     [navigation],
   );
 
-  const handlePress = React.useCallback(
-    screenName => {
-      // Enhanced press animation
-      scale.value = withSpring(
-        0.97,
-        {
-          ...SPRING_CONFIG,
-          duration: 150,
-        },
-        () => {
-          scale.value = withSpring(
-            1,
-            {
-              ...SPRING_CONFIG,
-              duration: 150,
-            },
-            () => {
-              runOnJS(navigateToScreen)(screenName);
-            },
-          );
-        },
-      );
-    },
-    [navigateToScreen],
-  );
-
-  const getMenuItemStyle = index => {
-    return useAnimatedStyle(() => {
-      const translateY = interpolate(
-        menuItemsProgress.value,
-        [0, 1],
-        [50, 0],
-        Extrapolate.CLAMP,
-      );
-
-      const opacity = interpolate(
-        menuItemsProgress.value,
-        [0, 1],
-        [0, 1],
-        Extrapolate.CLAMP,
-      );
-
-      const delay = index * 100;
-
-      return {
-        opacity,
-        transform: [
+  const menuItems = React.useMemo(
+    () => [
+      {
+        section: 'Practice Tests',
+        items: [
           {
-            translateY: withSpring(translateY, {
-              ...SPRING_CONFIG,
-              delay,
-            }),
+            icon: 'book',
+            title: 'CBT Test 1',
+            description: 'Practice questions for your first test',
+            screen: 'cbt1',
           },
-          {scale: scale.value},
+          {
+            icon: 'book',
+            title: 'CBT Test 2',
+            description: 'Additional practice questions',
+            screen: 'cbt2',
+          },
         ],
-      };
-    });
-  };
-
-  const AnimatedTouchableOpacity =
-    Animated.createAnimatedComponent(TouchableOpacity);
-
-  const MenuItem = React.memo(({icon, title, onPress, index, description}) => (
-    <AnimatedTouchableOpacity
-      style={[styles.item]}
-      onPress={onPress}
-      activeOpacity={0.95}>
-      <Animated.View style={[styles.itemContent, getMenuItemStyle(index)]}>
-        <LinearGradient
-          colors={
-            index % 2 === 0 ? ['#4A90E2', '#357ABD'] : ['#5C6BC0', '#3F51B5']
-          }
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 1}}
-          style={styles.gradientContainer}>
-          <View style={styles.iconContainer}>
-            <Icon name={icon} size={wp('6%')} color="#FFF" />
-          </View>
-          <View style={styles.textContainer}>
-            <Text style={styles.itemTitle}>{title}</Text>
-            {description && (
-              <Text style={styles.description}>{description}</Text>
-            )}
-          </View>
-          <Icon name="chevron-right" size={wp('4%')} color="#FFF" />
-        </LinearGradient>
-      </Animated.View>
-    </AnimatedTouchableOpacity>
-  ));
+      },
+      {
+        section: 'Resources',
+        items: [
+          {
+            icon: 'list-alt',
+            title: 'Syllabus',
+            description: 'View complete course content',
+            screen: 'syllabus',
+          },
+          {
+            icon: 'question-circle',
+            title: 'Quiz',
+            description: 'Test your knowledge',
+            screen: 'Quiz',
+          },
+        ],
+      },
+    ],
+    [],
+  );
 
   return (
     <LinearGradient
@@ -493,50 +498,25 @@ const Home = () => {
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
           style={styles.headerGradient}>
-          <Animated.Text
-            entering={FadeInDown.delay(200).springify()}
-            style={styles.title}>
-            Welcome Back
-          </Animated.Text>
+          <Text style={styles.title}>Welcome Back</Text>
         </LinearGradient>
       </View>
 
       <View style={styles.content}>
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Practice Tests</Text>
-          <MenuItem
-            icon="book"
-            title="CBT Test 1"
-            description="Practice questions for your first test"
-            onPress={() => handlePress('cbt1')}
-            index={0}
-          />
-          <MenuItem
-            icon="book"
-            title="CBT Test 2"
-            description="Additional practice questions"
-            onPress={() => handlePress('cbt2')}
-            index={1}
-          />
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Resources</Text>
-          <MenuItem
-            icon="list-alt"
-            title="Syllabus"
-            description="View complete course content"
-            onPress={() => handlePress('syllabus')}
-            index={2}
-          />
-          <MenuItem
-            icon="question-circle"
-            title="Quiz"
-            description="Test your knowledge"
-            onPress={() => handlePress('Quiz')}
-            index={3}
-          />
-        </View>
+        {menuItems.map((section, sectionIndex) => (
+          <View key={section.section} style={styles.section}>
+            <Text style={styles.sectionTitle}>{section.section}</Text>
+            {section.items.map((item, itemIndex) => (
+              <MenuItem
+                key={`${sectionIndex}-${itemIndex}`}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                onPress={() => handleNavigation(item.screen)}
+              />
+            ))}
+          </View>
+        ))}
       </View>
     </LinearGradient>
   );
@@ -557,12 +537,12 @@ const styles = StyleSheet.create({
     ...Platform.select({
       ios: {
         shadowColor: '#000',
-        shadowOffset: {width: 0, height: 4},
-        shadowOpacity: 0.15,
-        shadowRadius: 8,
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
       },
       android: {
-        elevation: 8,
+        elevation: 4,
       },
     }),
   },
@@ -594,12 +574,12 @@ const styles = StyleSheet.create({
     ...Platform.select({
       ios: {
         shadowColor: '#000',
-        shadowOffset: {width: 0, height: 4},
-        shadowOpacity: 0.15,
-        shadowRadius: 8,
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
       },
       android: {
-        elevation: 8,
+        elevation: 3,
       },
     }),
   },
@@ -608,9 +588,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: SPACING.itemSpacing,
     minHeight: SPACING.iconSize * 1.2,
-  },
-  itemContent: {
-    backgroundColor: 'transparent',
   },
   iconContainer: {
     width: SPACING.iconSize,
@@ -636,4 +613,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default React.memo(Home);

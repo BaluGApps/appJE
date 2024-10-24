@@ -12,6 +12,1292 @@
       "correctAnswer": 1,
       "hint": "It's located in the northern part of India",
       "solution": "New Delhi is the capital of India, established as the capital in 1911."
+    },
+    {
+      "level": 2,
+      "question": "What is the chemical symbol for water?",
+      "options": [
+        "H2O",
+        "CO2",
+        "O2",
+        "N2"
+      ],
+      "correctAnswer": 0,
+      "hint": "It consists of two hydrogen atoms and one oxygen atom",
+      "solution": "The chemical symbol for water is H2O."
+    },
+    {
+      "level": 3,
+      "question": "Who wrote 'To Kill a Mockingbird'?",
+      "options": [
+        "Harper Lee",
+        "J.K. Rowling",
+        "George Orwell",
+        "Ernest Hemingway"
+      ],
+      "correctAnswer": 0,
+      "hint": "The author is known for this Pulitzer Prize-winning novel",
+      "solution": "Harper Lee wrote 'To Kill a Mockingbird'."
+    },
+    {
+      "level": 4,
+      "question": "What is the SI unit of electric current?",
+      "options": [
+        "Ampere",
+        "Volt",
+        "Ohm",
+        "Watt"
+      ],
+      "correctAnswer": 0,
+      "hint": "It is named after a French physicist",
+      "solution": "The SI unit of electric current is Ampere."
+    },
+    {
+      "level": 5,
+      "question": "What is the largest planet in our solar system?",
+      "options": [
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn"
+      ],
+      "correctAnswer": 2,
+      "hint": "It is known for its Great Red Spot",
+      "solution": "Jupiter is the largest planet in our solar system."
+    },
+    {
+      "level": 6,
+      "question": "What is the purpose of a firewall in computer security?",
+      "options": [
+        "To encrypt data",
+        "To monitor network traffic",
+        "To block unauthorized access",
+        "To compress data"
+      ],
+      "correctAnswer": 2,
+      "hint": "It acts as a barrier to keep destructive elements out",
+      "solution": "A firewall is used to block unauthorized access to a network or computer system."
+    },
+    {
+      "level": 7,
+      "question": "Which of the following is a strong acid?",
+      "options": [
+        "Acetic Acid",
+        "Sulfuric Acid",
+        "Carbonic Acid",
+        "Formic Acid"
+      ],
+      "correctAnswer": 1,
+      "hint": "It is highly corrosive",
+      "solution": "Sulfuric Acid is a strong acid."
+    },
+    {
+      "level": 8,
+      "question": "What is the SI unit of force?",
+      "options": [
+        "Newton",
+        "Joule",
+        "Watt",
+        "Pascal"
+      ],
+      "correctAnswer": 0,
+      "hint": "It is named after Sir Isaac Newton",
+      "solution": "The SI unit of force is Newton."
+    },
+    {
+      "level": 9,
+      "question": "Which protocol is used for secure email transmission?",
+      "options": [
+        "SMTP",
+        "POP3",
+        "IMAP",
+        "SSL/TLS"
+      ],
+      "correctAnswer": 3,
+      "hint": "It encrypts email communications",
+      "solution": "SSL/TLS is used to encrypt email communications, providing secure transmission of emails between servers and clients."
+    },
+    {
+      "level": 10,
+      "question": "What is the purpose of normalization in database design?",
+      "options": [
+        "To increase data redundancy",
+        "To reduce data integrity",
+        "To eliminate data redundancy",
+        "To increase database size"
+      ],
+      "correctAnswer": 2,
+      "hint": "It organizes data efficiently",
+      "solution": "Normalization is used to organize data in a database efficiently and eliminate data redundancy while maintaining data integrity."
+    },
+    {
+      "level": 11,
+      "question": "Which layer of the OSI model handles routing?",
+      "options": [
+        "Transport Layer",
+        "Network Layer",
+        "Data Link Layer",
+        "Physical Layer"
+      ],
+      "correctAnswer": 1,
+      "hint": "It is responsible for packet forwarding",
+      "solution": "The Network Layer (Layer 3) is responsible for packet forwarding including routing through intermediate routers."
+    },
+    {
+      "level": 12,
+      "question": "What is the primary purpose of virtual memory in operating systems?",
+      "options": [
+        "To increase CPU speed",
+        "To extend physical memory using disk space",
+        "To improve graphics performance",
+        "To reduce power consumption"
+      ],
+      "correctAnswer": 1,
+      "hint": "It uses hard disk space to extend RAM",
+      "solution": "Virtual memory uses hard disk space to extend the available RAM, allowing more programs to run simultaneously."
+    },
+    {
+      "level": 13,
+      "question": "Which HTTP method is idempotent?",
+      "options": [
+        "POST",
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "correctAnswer": 1,
+      "hint": "Multiple identical requests should have the same effect as a single request",
+      "solution": "GET method is idempotent as multiple identical requests should have the same effect as a single request."
+    },
+    {
+      "level": 14,
+      "question": "What is the purpose of a primary key in a database?",
+      "options": [
+        "To encrypt data",
+        "To uniquely identify records",
+        "To compress data",
+        "To sort data"
+      ],
+      "correctAnswer": 1,
+      "hint": "It ensures data integrity and relationships",
+      "solution": "A primary key uniquely identifies each record in a database table, ensuring data integrity and relationships."
+    },
+    {
+      "level": 15,
+      "question": "Which data structure uses LIFO principle?",
+      "options": [
+        "Queue",
+        "Stack",
+        "Tree",
+        "Linked List"
+      ],
+      "correctAnswer": 1,
+      "hint": "Last In First Out",
+      "solution": "Stack follows Last In First Out (LIFO) principle where the last element added is the first one to be removed."
+    },
+    {
+      "level": 16,
+      "question": "What is the purpose of JWT (JSON Web Token)?",
+      "options": [
+        "Data encryption",
+        "User authentication",
+        "Database indexing",
+        "File compression"
+      ],
+      "correctAnswer": 1,
+      "hint": "It is used for securely transmitting information",
+      "solution": "JWT is used for securely transmitting information between parties as a JSON object, typically used for user authentication."
+    },
+    {
+      "level": 17,
+      "question": "What is the chemical symbol for gold?",
+      "options": [
+        "Au",
+        "Ag",
+        "Fe",
+        "Cu"
+      ],
+      "correctAnswer": 0,
+      "hint": "It is derived from the Latin word 'aurum'",
+      "solution": "The chemical symbol for gold is Au."
+    },
+    {
+      "level": 18,
+      "question": "Which gas is responsible for the greenhouse effect?",
+      "options": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon Dioxide",
+        "Hydrogen"
+      ],
+      "correctAnswer": 2,
+      "hint": "It traps heat in the atmosphere",
+      "solution": "Carbon Dioxide is responsible for the greenhouse effect."
+    },
+    {
+      "level": 19,
+      "question": "Who is the author of 'The Great Gatsby'?",
+      "options": [
+        "F. Scott Fitzgerald",
+        "Ernest Hemingway",
+        "Mark Twain",
+        "J.D. Salinger"
+      ],
+      "correctAnswer": 0,
+      "hint": "The author is known for this classic American novel",
+      "solution": "F. Scott Fitzgerald is the author of 'The Great Gatsby'."
+    },
+    {
+      "level": 20,
+      "question": "Which is the largest ocean in the world?",
+      "options": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Pacific Ocean",
+        "Arctic Ocean"
+      ],
+      "correctAnswer": 2,
+      "hint": "It covers more than 30% of the Earth's surface",
+      "solution": "The Pacific Ocean is the largest ocean in the world."
+    },
+    {
+      "level": 21,
+      "question": "What does CPU stand for?",
+      "options": [
+        "Central Processing Unit",
+        "Central Process Unit",
+        "Computer Personal Unit",
+        "Central Processor Unit"
+      ],
+      "correctAnswer": 0,
+      "hint": "It is the electronic circuit that executes instructions",
+      "solution": "CPU stands for Central Processing Unit."
+    },
+    {
+      "level": 22,
+      "question": "Which of the following is a type of computer memory?",
+      "options": [
+        "RAM",
+        "ROM",
+        "Cache",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "It includes different types of storage",
+      "solution": "RAM, ROM, and Cache are all types of computer memory."
+    },
+    {
+      "level": 23,
+      "question": "Which protocol is used for transferring files over a network?",
+      "options": [
+        "HTTP",
+        "FTP",
+        "SMTP",
+        "TCP"
+      ],
+      "correctAnswer": 1,
+      "hint": "It stands for File Transfer Protocol",
+      "solution": "FTP (File Transfer Protocol) is used for transferring files over a network."
+    },
+    {
+      "level": 24,
+      "question": "What is the main cause of water pollution?",
+      "options": [
+        "Industrial waste",
+        "Sewage disposal",
+        "Agricultural runoff",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "It includes various sources of pollution",
+      "solution": "Industrial waste, sewage disposal, and agricultural runoff are all main causes of water pollution."
+    },
+    {
+      "level": 25,
+      "question": "What is the SI unit of power?",
+      "options": [
+        "Watt",
+        "Joule",
+        "Newton",
+        "Pascal"
+      ],
+      "correctAnswer": 0,
+      "hint": "It is named after James Watt",
+      "solution": "The SI unit of power is Watt."
+    },
+    {
+      "level": 26,
+      "question": "Which of the following is a weak acid?",
+      "options": [
+        "Hydrochloric Acid",
+        "Sulfuric Acid",
+        "Acetic Acid",
+        "Nitric Acid"
+      ],
+      "correctAnswer": 2,
+      "hint": "It is found in vinegar",
+      "solution": "Acetic Acid is a weak acid."
+    },
+    {
+      "level": 27,
+      "question": "Who is the current President of India?",
+      "options": [
+        "Narendra Modi",
+        "Ram Nath Kovind",
+        "Droupadi Murmu",
+        "Pranab Mukherjee"
+      ],
+      "correctAnswer": 2,
+      "hint": "The current President is the first tribal President of India",
+      "solution": "Droupadi Murmu is the current President of India."
+    },
+    {
+      "level": 28,
+      "question": "Which is the longest river in India?",
+      "options": [
+        "Ganga",
+        "Yamuna",
+        "Brahmaputra",
+        "Godavari"
+      ],
+      "correctAnswer": 0,
+      "hint": "It is considered the most sacred river by Hindus",
+      "solution": "Ganga is the longest river in India."
+    },
+    {
+      "level": 29,
+      "question": "What is the purpose of annealing in metallurgy?",
+      "options": [
+        "To increase hardness",
+        "To reduce internal stresses",
+        "To increase brittleness",
+        "To decrease ductility"
+      ],
+      "correctAnswer": 1,
+      "hint": "It's a heat treatment process that affects material properties",
+      "solution": "Annealing is a heat treatment process used to reduce internal stresses, soften material, and improve ductility."
+    },
+    {
+      "level": 30,
+      "question": "Which type of bearing is most suitable for thrust loads?",
+      "options": [
+        "Ball bearing",
+        "Roller bearing",
+        "Thrust bearing",
+        "Plain bearing"
+      ],
+      "correctAnswer": 2,
+      "hint": "These bearings are specifically designed for axial loads",
+      "solution": "Thrust bearings are specifically designed to handle axial loads or thrust loads in mechanical applications."
+    },
+    {
+      "level": 31,
+      "question": "What is the function of a surge tank in hydroelectric power plants?",
+      "options": [
+        "To store water",
+        "To control water hammer effect",
+        "To generate additional power",
+        "To filter water"
+      ],
+      "correctAnswer": 1,
+      "hint": "It helps prevent damage from sudden pressure changes",
+      "solution": "A surge tank is used to control water hammer effect by absorbing sudden pressure changes in the penstock."
+    },
+    {
+      "level": 32,
+      "question": "Which law states that the induced EMF is proportional to the rate of change of magnetic flux?",
+      "options": [
+        "Ohm's Law",
+        "Faraday's Law",
+        "Kirchhoff's Law",
+        "Lenz's Law"
+      ],
+      "correctAnswer": 1,
+      "hint": "This fundamental law explains electromagnetic induction",
+      "solution": "Faraday's Law states that the induced EMF is proportional to the rate of change of magnetic flux linkage."
+    },
+    {
+      "level": 33,
+      "question": "What is the purpose of a draft tube in a reaction turbine?",
+      "options": [
+        "To increase pressure head",
+        "To reduce friction losses",
+        "To recover kinetic energy",
+        "To control water flow"
+      ],
+      "correctAnswer": 2,
+      "hint": "It helps improve turbine efficiency",
+      "solution": "A draft tube recovers kinetic energy at turbine exit by converting velocity head into pressure head."
+    },
+    {
+      "level": 34,
+      "question": "In transformers, which type of losses are reduced by using laminated core?",
+      "options": [
+        "Copper losses",
+        "Eddy current losses",
+        "Hysteresis losses",
+        "Friction losses"
+      ],
+      "correctAnswer": 1,
+      "hint": "These losses are caused by induced currents in the core",
+      "solution": "Laminated core reduces eddy current losses by providing high resistance path to induced currents."
+    },
+    {
+      "level": 35,
+      "question": "What is the function of a commutator in DC machines?",
+      "options": [
+        "Speed control",
+        "Power control",
+        "Mechanical to electrical conversion",
+        "AC to DC conversion"
+      ],
+      "correctAnswer": 3,
+      "hint": "It's essential for DC output in generators",
+      "solution": "A commutator converts AC voltage induced in armature to DC voltage at the output terminals."
+    },
+    {
+      "level": 36,
+      "question": "Which type of stress is maximum at the neutral axis of a beam?",
+      "options": [
+        "Tensile stress",
+        "Compressive stress",
+        "Shear stress",
+        "No stress"
+      ],
+      "correctAnswer": 2,
+      "hint": "Consider the stress distribution across beam section",
+      "solution": "Shear stress is maximum at the neutral axis while bending stress is zero at this location."
+    },
+    {
+      "level": 37,
+      "question": "What is the purpose of capacitor banks in power systems?",
+      "options": [
+        "Voltage regulation",
+        "Power factor improvement",
+        "Frequency control",
+        "Speed control"
+      ],
+      "correctAnswer": 1,
+      "hint": "They help reduce reactive power demand",
+      "solution": "Capacitor banks are used for power factor improvement by supplying reactive power locally."
+    },
+    {
+      "level": 38,
+      "question": "Which semiconductor device is used for voltage regulation?",
+      "options": [
+        "Diode",
+        "Transistor",
+        "Zener diode",
+        "TRIAC"
+      ],
+      "correctAnswer": 2,
+      "hint": "It operates in reverse breakdown region",
+      "solution": "Zener diode is used for voltage regulation as it maintains constant voltage in reverse breakdown region."
+    },
+    {
+      "level": 39,
+      "question": "What is the purpose of slip rings in electrical machines?",
+      "options": [
+        "Speed control",
+        "Power transfer to rotor",
+        "Direction control",
+        "Torque control"
+      ],
+      "correctAnswer": 1,
+      "hint": "They provide electrical connection to rotating parts",
+      "solution": "Slip rings are used to transfer power to or from the rotor circuit in electrical machines."
+    },
+    {
+      "level": 40,
+      "question": "Which welding process uses non-consumable electrode?",
+      "options": [
+        "MIG welding",
+        "TIG welding",
+        "Stick welding",
+        "Submerged arc welding"
+      ],
+      "correctAnswer": 1,
+      "hint": "It uses tungsten electrode",
+      "solution": "TIG (Tungsten Inert Gas) welding uses non-consumable tungsten electrode."
+    },
+    {
+      "level": 41,
+      "question": "What is the function of a governor in steam turbines?",
+      "options": [
+        "Speed control",
+        "Pressure control",
+        "Temperature control",
+        "Flow control"
+      ],
+      "correctAnswer": 0,
+      "hint": "It maintains constant speed under varying loads",
+      "solution": "Governor maintains constant speed by controlling steam flow according to load variations."
+    },
+    {
+      "level": 42,
+      "question": "Which law is used to analyze unbalanced forces in trusses?",
+      "options": [
+        "Newton's Law",
+        "Hooke's Law",
+        "Lami's Theorem",
+        "Pascal's Law"
+      ],
+      "correctAnswer": 2,
+      "hint": "It deals with three forces in equilibrium",
+      "solution": "Lami's Theorem is used to analyze three forces in equilibrium in trusses and other structures."
+    },
+    {
+      "level": 43,
+      "question": "What is the purpose of thermostatic expansion valve in refrigeration systems?",
+      "options": [
+        "Compress refrigerant",
+        "Control refrigerant flow",
+        "Cool refrigerant",
+        "Filter refrigerant"
+      ],
+      "correctAnswer": 1,
+      "hint": "It regulates flow based on temperature",
+      "solution": "Thermostatic expansion valve controls refrigerant flow based on evaporator outlet temperature."
+    },
+    {
+      "level": 44,
+      "question": "What is the principle behind NPSH (Net Positive Suction Head) in centrifugal pumps?",
+      "options": [
+        "Pressure differential",
+        "Cavitation prevention",
+        "Flow control",
+        "Speed regulation"
+      ],
+      "correctAnswer": 1,
+      "hint": "It's related to vapor pressure and cavitation",
+      "solution": "NPSH is the minimum pressure required at pump suction to prevent cavitation, ensuring proper pump operation."
+    },
+    {
+      "level": 45,
+      "question": "In power transmission lines, what is the primary purpose of Bundle conductors?",
+      "options": [
+        "Reduce line cost",
+        "Decrease corona loss",
+        "Increase current capacity",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "They serve multiple purposes in high voltage transmission",
+      "solution": "Bundle conductors reduce corona loss, increase current carrying capacity, and can be more economical in high voltage transmission."
+    },
+    {
+      "level": 46,
+      "question": "What is the significance of Schmidt number in fluid mechanics?",
+      "options": [
+        "Ratio of momentum to mass diffusivity",
+        "Ratio of heat to mass transfer",
+        "Ratio of inertial to viscous forces",
+        "Ratio of buoyancy to viscous forces"
+      ],
+      "correctAnswer": 0,
+      "hint": "It relates to diffusion processes",
+      "solution": "Schmidt number is the ratio of momentum diffusivity to mass diffusivity, important in mass transfer calculations."
+    },
+    {
+      "level": 47,
+      "question": "Which type of gear is used when shafts are non-parallel and non-intersecting?",
+      "options": [
+        "Spur gear",
+        "Helical gear",
+        "Worm gear",
+        "Bevel gear"
+      ],
+      "correctAnswer": 2,
+      "hint": "These gears provide high reduction ratios",
+      "solution": "Worm gears are used for non-parallel, non-intersecting shafts and provide high reduction ratios."
+    },
+    {
+      "level": 48,
+      "question": "What is the function of a Buchholz relay in transformers?",
+      "options": [
+        "Voltage regulation",
+        "Temperature control",
+        "Fault detection",
+        "Current control"
+      ],
+      "correctAnswer": 2,
+      "hint": "It protects against internal faults",
+      "solution": "Buchholz relay detects faults in oil-immersed transformers by monitoring gas accumulation and oil flow."
+    },
+    {
+      "level": 49,
+      "question": "Which modulation technique is used in GSM mobile communications?",
+      "options": [
+        "QPSK",
+        "GMSK",
+        "QAM",
+        "FSK"
+      ],
+      "correctAnswer": 1,
+      "hint": "It's a modified form of MSK",
+      "solution": "GMSK (Gaussian Minimum Shift Keying) is used in GSM for its spectral efficiency and constant envelope."
+    },
+    {
+      "level": 50,
+      "question": "What is the purpose of Reheating in steam power plants?",
+      "options": [
+        "Increase thermal efficiency",
+        "Reduce steam wetness",
+        "Decrease turbine blade erosion",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "It serves multiple purposes in the cycle",
+      "solution": "Reheating increases thermal efficiency, reduces steam wetness, and prevents turbine blade erosion."
+    },
+    {
+      "level": 51,
+      "question": "In HVDC transmission, what is the purpose of harmonic filters?",
+      "options": [
+        "Voltage control",
+        "Current control",
+        "Remove AC components",
+        "Remove harmonic components"
+      ],
+      "correctAnswer": 3,
+      "hint": "They deal with converter-generated harmonics",
+      "solution": "Harmonic filters in HVDC systems remove harmonic components generated by converters to improve power quality."
+    },
+    {
+      "level": 52,
+      "question": "What is the principle of Electromagnetic Flow Meter?",
+      "options": [
+        "Faraday's law",
+        "Ampere's law",
+        "Lenz's law",
+        "Coulomb's law"
+      ],
+      "correctAnswer": 0,
+      "hint": "It uses induced voltage principle",
+      "solution": "Electromagnetic Flow Meters work on Faraday's law of electromagnetic induction to measure flow rate."
+    },
+    {
+      "level": 53,
+      "question": "Which semiconductor device is used for four-quadrant operation in power electronics?",
+      "options": [
+        "SCR",
+        "TRIAC",
+        "MOSFET",
+        "GTO"
+      ],
+      "correctAnswer": 1,
+      "hint": "It can conduct in both directions",
+      "solution": "TRIAC (Triode for Alternating Current) allows current flow in both directions and is used for four-quadrant operation."
+    },
+    {
+      "level": 54,
+      "question": "What is the significance of Critical Path Method (CPM) in project management?",
+      "options": [
+        "Resource allocation",
+        "Time management",
+        "Cost control",
+        "Quality control"
+      ],
+      "correctAnswer": 1,
+      "hint": "It identifies the longest duration path",
+      "solution": "CPM identifies the sequence of activities that determines the minimum project completion time."
+    },
+    {
+      "level": 55,
+      "question": "In induction motors, what causes crawling?",
+      "options": [
+        "Voltage fluctuations",
+        "Harmonic windings",
+        "Rotor resistance",
+        "Static friction"
+      ],
+      "correctAnswer": 1,
+      "hint": "It's related to harmonic magnetic fields",
+      "solution": "Crawling in induction motors is caused by harmonic magnetic fields due to non-uniform air gap or winding distribution."
+    },
+    {
+      "level": 56,
+      "question": "What is the purpose of Surge Impedance Loading (SIL) in transmission lines?",
+      "options": [
+        "Maximum power transfer",
+        "Voltage regulation",
+        "Stability limit",
+        "Current control"
+      ],
+      "correctAnswer": 2,
+      "hint": "It's related to natural loading",
+      "solution": "SIL represents the natural loading of a transmission line where reactive power requirements are balanced."
+    },
+    {
+      "level": 57,
+      "question": "Which principle is used in Strain Gauge pressure sensors?",
+      "options": [
+        "Piezoelectric effect",
+        "Piezoresistive effect",
+        "Hall effect",
+        "Seebeck effect"
+      ],
+      "correctAnswer": 1,
+      "hint": "It involves resistance change with deformation",
+      "solution": "Strain Gauges use the piezoresistive effect where electrical resistance changes with mechanical deformation."
+    },
+    {
+      "level": 58,
+      "question": "What is the function of a Synchro in control systems?",
+      "options": [
+        "Speed measurement",
+        "Position transmission",
+        "Torque control",
+        "Voltage regulation"
+      ],
+      "correctAnswer": 1,
+      "hint": "It's used for angular position data",
+      "solution": "Synchros are used for precise transmission of angular position information between remote locations."
+    },
+    {
+      "level": 59,
+      "question": "Which type of maintenance strategy uses condition monitoring?",
+      "options": [
+        "Breakdown maintenance",
+        "Preventive maintenance",
+        "Predictive maintenance",
+        "Corrective maintenance"
+      ],
+      "correctAnswer": 2,
+      "hint": "It involves monitoring equipment condition",
+      "solution": "Predictive maintenance uses condition monitoring to predict equipment failure and schedule maintenance accordingly."
+    },
+    {
+      "level": 60,
+      "question": "What is the purpose of Economic Load Dispatch in power systems?",
+      "options": [
+        "Minimize transmission losses",
+        "Optimize generation costs",
+        "Control frequency",
+        "Regulate voltage"
+      ],
+      "correctAnswer": 1,
+      "hint": "It deals with cost optimization",
+      "solution": "Economic Load Dispatch optimizes the distribution of power among generating units to minimize total generation cost."
+    },
+    {
+      "level": 61,
+      "question": "What is the function of a Cycloconverter?",
+      "options": [
+        "DC to AC conversion",
+        "AC to DC conversion",
+        "AC to AC frequency conversion",
+        "DC to DC conversion"
+      ],
+      "correctAnswer": 2,
+      "hint": "It's used for variable frequency output",
+      "solution": "Cycloconverter performs direct AC to AC frequency conversion, typically from higher to lower frequency."
+    },
+    {
+      "level": 62,
+      "question": "In railway signaling, what is the purpose of Track Circuit?",
+      "options": [
+        "Train detection",
+        "Speed control",
+        "Direction control",
+        "Signal control"
+      ],
+      "correctAnswer": 0,
+      "hint": "It ensures track occupancy detection",
+      "solution": "Track Circuit is used for automatic train detection and track occupancy verification in railway signaling systems."
+    },
+    {
+      "level": 63,
+      "question": "What causes hunting in synchronous machines?",
+      "options": [
+        "Voltage fluctuations",
+        "Load changes",
+        "Mechanical oscillations",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "Multiple factors contribute to this phenomenon",
+      "solution": "Hunting in synchronous machines is caused by sudden load changes, voltage fluctuations, and mechanical oscillations affecting rotor position."
+    },
+    {
+      "level": 64,
+      "question": "Which type of braking system is used in modern electric locomotives?",
+      "options": [
+        "Regenerative braking",
+        "Dynamic braking",
+        "Both A and B",
+        "Mechanical braking only"
+      ],
+      "correctAnswer": 2,
+      "hint": "Multiple braking methods are used",
+      "solution": "Modern electric locomotives use both regenerative and dynamic braking systems for efficient speed control and energy recovery."
+    },
+    {
+      "level": 65,
+      "question": "What is the purpose of a Pantograph in electric trains?",
+      "options": [
+        "Current collection",
+        "Speed measurement",
+        "Voltage regulation",
+        "Power conversion"
+      ],
+      "correctAnswer": 0,
+      "hint": "It interfaces with overhead lines",
+      "solution": "Pantograph collects electrical current from overhead catenary lines to power electric trains."
+    },
+    {
+      "level": 66,
+      "question": "Which insulation class has the highest temperature rating?",
+      "options": [
+        "Class A",
+        "Class F",
+        "Class H",
+        "Class B"
+      ],
+      "correctAnswer": 2,
+      "hint": "Temperature ratings increase alphabetically",
+      "solution": "Class H insulation has the highest temperature rating of 180°C among these classes."
+    },
+    {
+      "level": 67,
+      "question": "What is the function of a Traction Motor Control System?",
+      "options": [
+        "Speed control",
+        "Torque control",
+        "Power optimization",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "It manages multiple aspects of motor operation",
+      "solution": "Traction Motor Control System manages speed, torque, and power optimization for efficient train operation."
+    },
+    {
+      "level": 68,
+      "question": "In railway electrification, what voltage is used in AC traction systems in India?",
+      "options": [
+        "25 kV",
+        "15 kV",
+        "1500 V",
+        "3000 V"
+      ],
+      "correctAnswer": 0,
+      "hint": "It's a standard voltage for AC traction",
+      "solution": "Indian Railways uses 25 kV AC single-phase system for mainline electrification."
+    },
+    {
+      "level": 69,
+      "question": "Which type of motor is preferred for railway air conditioning systems?",
+      "options": [
+        "DC Series Motor",
+        "Three Phase Induction Motor",
+        "Universal Motor",
+        "Synchronous Motor"
+      ],
+      "correctAnswer": 1,
+      "hint": "Consider reliability and maintenance requirements",
+      "solution": "Three Phase Induction Motors are preferred for railway AC systems due to their reliability and low maintenance."
+    },
+    {
+      "level": 70,
+      "question": "What is the purpose of Linear Variable Differential Transformer (LVDT)?",
+      "options": [
+        "Current measurement",
+        "Displacement measurement",
+        "Temperature measurement",
+        "Pressure measurement"
+      ],
+      "correctAnswer": 1,
+      "hint": "It converts mechanical movement to electrical signal",
+      "solution": "LVDT is used for accurate measurement of linear displacement by converting mechanical movement to electrical signal."
+    },
+    {
+      "level": 71,
+      "question": "In railway signaling, what is the purpose of Block Instruments?",
+      "options": [
+        "Train detection",
+        "Train spacing control",
+        "Speed control",
+        "Signal control"
+      ],
+      "correctAnswer": 1,
+      "hint": "They maintain safe distance between trains",
+      "solution": "Block Instruments control train spacing by maintaining safe distance between consecutive trains in a block section."
+    },
+    {
+      "level": 72,
+      "question": "What causes wheel slip in electric locomotives?",
+      "options": [
+        "Excessive torque",
+        "Poor rail conditions",
+        "Heavy loads",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "Multiple factors contribute to wheel slip",
+      "solution": "Wheel slip occurs due to combination of excessive torque, poor rail conditions, and heavy loads affecting adhesion."
+    },
+    {
+      "level": 73,
+      "question": "Which protection system is used for overhead equipment in railways?",
+      "options": [
+        "Distance protection",
+        "Differential protection",
+        "Both A and B",
+        "Neither A nor B"
+      ],
+      "correctAnswer": 2,
+      "hint": "Multiple protection schemes are used",
+      "solution": "Both distance and differential protection systems are used for overhead equipment protection in railways."
+    },
+    {
+      "level": 74,
+      "question": "What is the purpose of a Neutral Section in railway electrification?",
+      "options": [
+        "Phase separation",
+        "Voltage control",
+        "Current limitation",
+        "Power factor correction"
+      ],
+      "correctAnswer": 0,
+      "hint": "It separates different power supply sections",
+      "solution": "Neutral Section separates different phases of power supply in AC traction systems to prevent phase mixing."
+    },
+    {
+      "level": 75,
+      "question": "Which type of bearing is used in traction motor suspensions?",
+      "options": [
+        "Ball bearing",
+        "Roller bearing",
+        "Journal bearing",
+        "Needle bearing"
+      ],
+      "correctAnswer": 1,
+      "hint": "Consider load handling capacity",
+      "solution": "Roller bearings are used in traction motor suspensions due to their high load capacity and reliability."
+    },
+    {
+      "level": 76,
+      "question": "What is the function of a Static Var Compensator (SVC) in railways?",
+      "options": [
+        "Voltage regulation",
+        "Power factor correction",
+        "Harmonic suppression",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "It serves multiple power quality functions",
+      "solution": "SVC provides voltage regulation, power factor correction, and harmonic suppression in railway power systems."
+    },
+    {
+      "level": 77,
+      "question": "Which type of foundation is commonly used for overhead equipment masts?",
+      "options": [
+        "Side bearing",
+        "Direct embedding",
+        "Concrete block",
+        "All of the above"
+      ],
+      "correctAnswer": 2,
+      "hint": "Consider stability requirements",
+      "solution": "Concrete block foundations are commonly used for overhead equipment masts due to stability and durability."
+    },
+    {
+      "level": 78,
+      "question": "What is the purpose of a Phase Break in AC traction systems?",
+      "options": [
+        "Circuit isolation",
+        "Phase separation",
+        "Voltage control",
+        "Current limitation"
+      ],
+      "correctAnswer": 1,
+      "hint": "It manages power supply sections",
+      "solution": "Phase Break provides separation between different phases of power supply in AC traction systems."
+    },
+    {
+      "level": 79,
+      "question": "Which type of motor is used in railway point machines?",
+      "options": [
+        "Series DC Motor",
+        "Shunt DC Motor",
+        "Universal Motor",
+        "Three Phase Motor"
+      ],
+      "correctAnswer": 0,
+      "hint": "Consider torque requirements",
+      "solution": "Series DC Motors are used in point machines due to their high starting torque characteristics."
+    },
+    {
+      "level": 80,
+      "question": "What is the purpose of Earth Fault Relay in traction substations?",
+      "options": [
+        "Overcurrent protection",
+        "Ground fault protection",
+        "Differential protection",
+        "Distance protection"
+      ],
+      "correctAnswer": 1,
+      "hint": "It protects against specific fault type",
+      "solution": "Earth Fault Relay protects against ground faults in traction substation equipment."
+    },
+    {
+      "level": 81,
+      "question": "Which factor affects the adhesion coefficient in rail traction?",
+      "options": [
+        "Weather conditions",
+        "Rail surface condition",
+        "Speed",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "Multiple factors influence adhesion",
+      "solution": "Adhesion coefficient is affected by weather conditions, rail surface condition, and speed of the train."
+    },
+    {
+      "level": 82,
+      "question": "What is the purpose of Bogie-mounted brake systems?",
+      "options": [
+        "Better braking efficiency",
+        "Reduced maintenance",
+        "Space optimization",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "Consider multiple advantages",
+      "solution": "Bogie-mounted brake systems provide better braking efficiency, reduced maintenance, and optimal space utilization."
+    },
+    {
+      "level": 83,
+      "question": "Which type of transformer is used in AC electric locomotives?",
+      "options": [
+        "Step-up transformer",
+        "Step-down transformer",
+        "Auto transformer",
+        "None of the above"
+      ],
+      "correctAnswer": 1,
+      "hint": "Consider voltage requirements",
+      "solution": "Step-down transformers are used in AC electric locomotives to reduce catenary voltage to suitable levels."
+    },
+    {
+      "level": 84,
+      "question": "What is the purpose of Current Transformers in traction systems?",
+      "options": [
+        "Current measurement",
+        "Protection",
+        "Both A and B",
+        "Neither A nor B"
+      ],
+      "correctAnswer": 2,
+      "hint": "They serve multiple purposes",
+      "solution": "Current Transformers are used for both current measurement and protection purposes in traction systems."
+    },
+    {
+      "level": 85,
+      "question": "Which type of cooling system is used in traction transformers?",
+      "options": [
+        "ONAN",
+        "ONAF",
+        "OFAF",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "Multiple cooling methods may be used",
+      "solution": "Traction transformers may use ONAN, ONAF, or OFAF cooling systems depending on requirements."
+    },
+    {
+      "level": 86,
+      "question": "What is the purpose of Return Conductors in DC traction systems?",
+      "options": [
+        "Current return path",
+        "Voltage regulation",
+        "Rail potential control",
+        "All of the above"
+      ],
+      "correctAnswer": 2,
+      "hint": "They manage electrical aspects",
+      "solution": "Return Conductors control rail potential and provide current return path in DC traction systems."
+    },
+    {
+      "level": 87,
+      "question": "Which device is used for speed measurement in modern locomotives?",
+      "options": [
+        "Tachometer",
+        "Encoder",
+        "Hall sensor",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "Multiple devices may be used",
+      "solution": "Modern locomotives use combinations of tachometers, encoders, and Hall sensors for speed measurement."
+    },
+    {
+      "level": 88,
+      "question": "What causes flash-over in traction motors?",
+      "options": [
+        "Voltage surges",
+        "Brush wear",
+        "Commutator conditions",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "Multiple factors contribute",
+      "solution": "Flash-over occurs due to voltage surges, brush wear, and poor commutator conditions in traction motors."
+    },
+    {
+      "level": 89,
+      "question": "Which protection system is used for traction motors?",
+      "options": [
+        "Overcurrent protection",
+        "Earth fault protection",
+        "Temperature protection",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "Multiple protections are necessary",
+      "solution": "Traction motors use multiple protection systems including overcurrent, earth fault, and temperature protection."
+    },
+    {
+      "level": 90,
+      "question": "What is the purpose of Negative Return Feeder in AC traction?",
+      "options": [
+        "Current return path",
+        "Rail potential control",
+        "EMI reduction",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "It serves multiple purposes",
+      "solution": "Negative Return Feeder provides current return path, controls rail potential, and reduces electromagnetic interference."
+    },
+    {
+      "level": 91,
+      "question": "Which type of insulator is used in overhead equipment?",
+      "options": [
+        "Pin type",
+        "Suspension type",
+        "Stay type",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "Different types serve different purposes",
+      "solution": "Different types of insulators (pin, suspension, stay) are used in overhead equipment based on requirements."
+    },
+    {
+      "level": 92,
+      "question": "What causes neutral section failures?",
+      "options": [
+        "Mechanical stress",
+        "Electrical stress",
+        "Environmental factors",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "Multiple factors contribute",
+      "solution": "Neutral section failures occur due to combination of mechanical, electrical, and environmental stresses."
+    },
+    {
+      "level": 93,
+      "question": "Which factor affects pantograph performance?",
+      "options": [
+        "Contact force",
+        "Speed",
+        "Weather conditions",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "hint": "Multiple factors influence operation",
+      "solution": "Pantograph performance is affected by contact force, speed, and weather conditions."
+    },
+    {
+      "level": 94,
+      "question": "Which protocol is used for secure email transmission?",
+      "options": [
+        "SMTP",
+        "POP3",
+        "IMAP",
+        "SSL/TLS"
+      ],
+      "correctAnswer": 3,
+      "hint": "Think about the protocol used to encrypt email communications.",
+      "solution": "SSL/TLS is used to encrypt email communications, providing secure transmission of emails between servers and clients."
+    },
+    {
+      "level": 95,
+      "question": "What is the purpose of a deadlock in operating systems?",
+      "options": [
+        "To prevent system crashes",
+        "To manage memory allocation",
+        "A situation where processes wait indefinitely",
+        "To improve system performance"
+      ],
+      "correctAnswer": 2,
+      "hint": "Understand the concept of deadlock in operating systems.",
+      "solution": "Deadlock is a situation where two or more processes are unable to proceed because each is waiting for resources held by another."
+    },
+    {
+      "level": 96,
+      "question": "Which sorting algorithm has the best average-case time complexity?",
+      "options": [
+        "Bubble Sort",
+        "Quick Sort",
+        "Selection Sort",
+        "Insertion Sort"
+      ],
+      "correctAnswer": 1,
+      "hint": "Consider the average time complexity of different sorting algorithms.",
+      "solution": "Quick Sort has an average time complexity of O(n log n) and is generally considered the fastest sorting algorithm in practice."
+    },
+    {
+      "level": 97,
+      "question": "Which layer of the OSI model handles routing?",
+      "options": [
+        "Transport Layer",
+        "Network Layer",
+        "Data Link Layer",
+        "Physical Layer"
+      ],
+      "correctAnswer": 1,
+      "hint": "Identify the layer responsible for routing in the OSI model.",
+      "solution": "The Network Layer (Layer 3) is responsible for packet forwarding including routing through intermediate routers."
+    },
+    {
+      "level": 98,
+      "question": "Which HTTP method is idempotent?",
+      "options": [
+        "POST",
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "correctAnswer": 1,
+      "hint": "Understand the concept of idempotency in HTTP methods.",
+      "solution": "GET method is idempotent as multiple identical requests should have the same effect as a single request."
+    },
+    {
+      "level": 99,
+      "question": "Which data structure uses LIFO principle?",
+      "options": [
+        "Queue",
+        "Stack",
+        "Tree",
+        "Linked List"
+      ],
+      "correctAnswer": 1,
+      "hint": "Identify the data structure that follows the LIFO principle.",
+      "solution": "Stack follows Last In First Out (LIFO) principle where the last element added is the first one to be removed."
+    },
+    {
+      "level": 100,
+      "question": "What is the purpose of JWT (JSON Web Token)?",
+      "options": [
+        "Data encryption",
+        "User authentication",
+        "Database indexing",
+        "File compression"
+      ],
+      "correctAnswer": 1,
+      "hint": "Understand the role of JWT in authentication.",
+      "solution": "JWT is used for securely transmitting information between parties as a JSON object, typically used for user authentication."
     }
-  ]
-}
+  ]}

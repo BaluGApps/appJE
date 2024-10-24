@@ -210,7 +210,7 @@ const App = () => {
             component={QuestionScreen}
             options={{
               headerShown: true,
-              title: 'Question',
+              title: 'Quiz Challenge',
               headerStyle: {
                 backgroundColor: '#0074E4',
               },
