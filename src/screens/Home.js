@@ -353,7 +353,7 @@
 
 // export default Home;
 
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -362,6 +362,7 @@ import {
   BackHandler,
   Alert,
   Platform,
+  Modal,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
@@ -371,6 +372,7 @@ import {
 } from 'react-native-responsive-screen';
 import {useNavigation} from '@react-navigation/native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {BannerAd, BannerAdSize} from 'react-native-google-mobile-ads';
 
 const isSmallDevice = hp('100%') < 700;
 
@@ -410,6 +412,7 @@ const MenuItem = React.memo(({icon, title, onPress, description}) => (
 const Home = () => {
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
+  const [exitModalVisible, setExitModalVisible] = useState(false);
 
   React.useEffect(() => {
     const backHandler = BackHandler.addEventListener(
@@ -419,24 +422,36 @@ const Home = () => {
     return () => backHandler.remove();
   }, []);
 
+  // const handleBackPress = () => {
+  //   if (navigation.isFocused()) {
+  //     Alert.alert(
+  //       'Exit App',
+  //       'Are you sure you want to exit?',
+  //       [
+  //         {text: 'Cancel', style: 'cancel'},
+  //         {
+  //           text: 'Exit',
+  //           onPress: () => BackHandler.exitApp(),
+  //           style: 'destructive',
+  //         },
+  //       ],
+  //       {cancelable: false},
+  //     );
+  //     return true;
+  //   }
+  //   return false;
+  // };
+
   const handleBackPress = () => {
     if (navigation.isFocused()) {
-      Alert.alert(
-        'Exit App',
-        'Are you sure you want to exit?',
-        [
-          {text: 'Cancel', style: 'cancel'},
-          {
-            text: 'Exit',
-            onPress: () => BackHandler.exitApp(),
-            style: 'destructive',
-          },
-        ],
-        {cancelable: false},
-      );
+      setExitModalVisible(true);
       return true;
     }
     return false;
+  };
+
+  const handleExit = () => {
+    BackHandler.exitApp();
   };
 
   const handleNavigation = React.useCallback(
@@ -518,6 +533,83 @@ const Home = () => {
           </View>
         ))}
       </View>
+      <View style={styles.bannerContainer}>
+        <BannerAd
+          unitId="ca-app-pub-2627956667785383/2550120291"
+          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+          requestOptions={{
+            requestNonPersonalizedAdsOnly: true,
+          }}
+        />
+      </View>
+      {/* <Modal
+        visible={exitModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setExitModalVisible(false)}>
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>Exit App</Text>
+            <Text style={styles.modalMessage}>
+              Are you sure you want to exit?
+            </Text>
+
+            <BannerAd
+              unitId="ca-app-pub-2627956667785383/7596247624"
+              size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+              requestOptions={{
+                requestNonPersonalizedAdsOnly: true,
+              }}
+            />
+
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={styles.cancelButton}
+                onPress={() => setExitModalVisible(false)}>
+                <Text style={styles.buttonText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.exitButton} onPress={handleExit}>
+                <Text style={styles.buttonText}>Exit</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal> */}
+      <Modal
+        visible={exitModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setExitModalVisible(false)}>
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>Exit App</Text>
+            <Text style={styles.modalMessage}>
+              Are you sure you want to exit?
+            </Text>
+
+            <View style={styles.bannerContainer1}>
+              <BannerAd
+                unitId="ca-app-pub-2627956667785383/7596247624"
+                size={BannerAdSize.MEDIUM_RECTANGLE}
+                requestOptions={{
+                  requestNonPersonalizedAdsOnly: true,
+                }}
+              />
+            </View>
+
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={styles.cancelButton}
+                onPress={() => setExitModalVisible(false)}>
+                <Text style={styles.buttonText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.exitButton} onPress={handleExit}>
+                <Text style={styles.buttonText}>Exit</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </LinearGradient>
   );
 };
@@ -610,6 +702,68 @@ const styles = StyleSheet.create({
   description: {
     fontSize: FONTS.description,
     color: 'rgba(255, 255, 255, 0.9)',
+  },
+  bannerContainer: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    width: wp('80%'),
+    backgroundColor: '#FFF',
+    padding: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  modalTitle: {
+    fontSize: wp('5%'),
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: 'black',
+  },
+  modalMessage: {
+    fontSize: wp('4%'),
+    marginBottom: 20,
+    textAlign: 'center',
+    color: 'black',
+  },
+  modalButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+  },
+  cancelButton: {
+    flex: 1,
+    padding: 10,
+    alignItems: 'center',
+    backgroundColor: '#357ABD',
+    borderRadius: 5,
+    marginRight: 5,
+  },
+  exitButton: {
+    flex: 1,
+    padding: 10,
+    alignItems: 'center',
+    backgroundColor: '#FF3B30',
+    borderRadius: 5,
+    marginLeft: 5,
+  },
+  buttonText: {
+    color: '#FFF',
+    fontWeight: 'bold',
+  },
+  bannerContainer1: {
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 20, // Adds space between the ad and the buttons
   },
 });
 
