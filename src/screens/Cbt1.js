@@ -212,7 +212,7 @@ const Cbt1 = ({navigation}) => {
           <View>
             <Text
               style={{color: 'green', fontSize: wp('4%'), fontWeight: '600'}}>
-              Answer
+              Hint
             </Text>
             <Text style={styles.descriptionText}>{item.hint}</Text>
           </View>

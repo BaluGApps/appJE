@@ -1,496 +1,3 @@
-// import React, {useState, useEffect} from 'react';
-// import {
-//   View,
-//   Text,
-//   FlatList,
-//   StyleSheet,
-//   TouchableOpacity,
-//   ActivityIndicator,
-//   Alert,
-//   BackHandler,
-//   Modal,
-//   Animated,
-// } from 'react-native';
-// import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-// import {
-//   widthPercentageToDP as wp,
-//   heightPercentageToDP as hp,
-// } from 'react-native-responsive-screen';
-// import axios from 'axios';
-// import {
-//   RewardedAd,
-//   RewardedAdEventType,
-//   TestIds,
-// } from 'react-native-google-mobile-ads';
-// import LottieView from 'lottie-react-native';
-
-// // Use test ID in development, real ID in production
-// const adUnitId = __DEV__
-//   ? TestIds.REWARDED
-//   : 'ca-app-pub-2627956667785383/9398599673';
-
-// const rewarded = RewardedAd.createForAdRequest(adUnitId, {
-//   keywords: ['education', 'exam', 'learning'],
-// });
-
-// const Cbt2 = ({navigation}) => {
-//   // State management
-//   const [questionsData, setQuestionsData] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [page, setPage] = useState(1);
-//   const [hasMoreQuestions, setHasMoreQuestions] = useState(true);
-//   const [error, setError] = useState(null);
-//   const [modalVisible, setModalVisible] = useState(false);
-//   const [currentHint, setCurrentHint] = useState('');
-//   const [fadeAnim] = useState(new Animated.Value(0));
-//   // const [rewarded, setRewarded] = useState(null);
-//   const [isAdLoaded, setIsAdLoaded] = useState(false);
-
-//   const handleBackPress = () => {
-//     // Check if the current route is the HomeScreen
-//     if (navigation.isFocused()) {
-//       Alert.alert(
-//         'Exit App',
-//         'Are you sure you want to exit?',
-//         [
-//           {text: 'Cancel', onPress: () => {}, style: 'cancel'},
-//           {
-//             text: 'Exit',
-//             onPress: () => BackHandler.exitApp(),
-//             style: 'destructive',
-//           },
-//         ],
-//         {
-//           cancelable: false,
-//           style: 'default', // Customize the Alert dialog style
-//           titleStyle: {fontSize: 24, fontWeight: 'bold'}, // Customize the title style
-//           messageStyle: {fontSize: 16}, // Customize the message style
-//         },
-//       );
-
-//       // Return true to prevent default behavior (exit the app) only on the HomeScreen
-//       return true;
-//     }
-
-//     // Return false to allow the default back behavior on other screens
-//     return false;
-//   };
-
-//   useEffect(() => {
-//     const backHandler = BackHandler.addEventListener(
-//       'hardwareBackPress',
-//       handleBackPress,
-//     );
-
-//     return () => {
-//       backHandler.remove();
-//     };
-//   }, []);
-
-//   useEffect(() => {
-//     const adLoadTimeout = setTimeout(() => {
-//       if (!isAdLoaded) {
-//         // Handle the scenario where the ad did not load within the specified time
-//         console.log('Ad load timeout');
-//         // Alert.alert("Ad Load Error", "Failed to load the rewarded ad. Please try again later.");
-//         setIsAdLoaded(true); // Set isAdLoaded to true to prevent further attempts
-//       }
-//     }, 4000); // Set a timeout of 5 seconds (you can adjust the time as needed)
-
-//     const unsubscribeLoaded = rewarded.addAdEventListener(
-//       RewardedAdEventType.LOADED,
-//       () => {
-//         // setLoaded(true);
-//         setIsAdLoaded(true);
-//       },
-//     );
-//     const unsubscribeEarned = rewarded.addAdEventListener(
-//       RewardedAdEventType.EARNED_REWARD,
-//       reward => {
-//         console.log('User earned reward of ', reward);
-//       },
-//     );
-
-//     // Start loading the rewarded ad straight away
-//     rewarded.load();
-
-//     // Unsubscribe from events on unmount
-//     return () => {
-//       clearTimeout(adLoadTimeout);
-//       unsubscribeLoaded();
-//       unsubscribeEarned();
-//     };
-//   }, []);
-
-//   useEffect(() => {
-//     const fetchQuestions = async () => {
-//       try {
-//         setLoading(true);
-//         const response = await axios.get(
-//           `https://apije.pythonanywhere.com/exam/api/cbt2/?page=${page}&page_size=5`,
-//         );
-
-//         const newData = response.data.results;
-//         setQuestionsData(prevData => [...prevData, ...newData]);
-//         setHasMoreQuestions(newData.length > 0);
-//         setLoading(false);
-//       } catch (err) {
-//         setError(err);
-//         setLoading(false);
-//         // Alert.alert('Error', 'Failed to load questions. Please try again.');
-//       }
-//     };
-
-//     fetchQuestions();
-//   }, [page]);
-
-//   // Handle showing hint with ad
-//   const showHintWithAd = async hint => {
-//     if (!hint) {
-//       Alert.alert('No Hint', 'No hint available for this question.');
-//       return;
-//     }
-
-//     setCurrentHint(hint);
-
-//     try {
-//       if (isAdLoaded) {
-//         await rewarded.show();
-//       } else {
-//         await rewarded.load();
-//         Alert.alert(
-//           'Advertisement Unavailable',
-//           'We are currently unable to display an advertisement. Please try again shortly, or check back later for  hint.',
-//           [{text: 'OK'}],
-//         );
-//       }
-//       setModalVisible(true);
-//     } catch (error) {
-//       Alert.alert(
-//         'Error Occurred',
-//         'There was an issue displaying the advertisement. Please try again later.',
-//         [{text: 'OK'}],
-//       );
-//     }
-//   };
-
-//   // Handle option selection
-//   const handleOptionPress = (selectedQuestion, selectedOption) => {
-//     const updatedQuestions = questionsData.map(question =>
-//       question.id === selectedQuestion.id
-//         ? {
-//             ...question,
-//             selectedOption,
-//             answered: true,
-//             answeredCorrectly: selectedOption === question.correct_option,
-//           }
-//         : question,
-//     );
-//     setQuestionsData(updatedQuestions);
-//   };
-
-//   // Render individual question
-//   const renderQuestion = ({item}) => (
-//     <View style={styles.questionContainer}>
-//       <View style={styles.questionHeader}>
-//         <Text style={styles.questionText}>• {item.question_text}</Text>
-//         {item.hint && (
-//           <TouchableOpacity
-//             style={styles.hintButton}
-//             onPress={() => showHintWithAd(item.hint)}>
-//             <MaterialCommunityIcons
-//               name="lightbulb-outline"
-//               size={24}
-//               // color="#FFD700"
-//               color="black"
-//             />
-//           </TouchableOpacity>
-//         )}
-//       </View>
-
-//       {['A', 'B', 'C', 'D'].map(option => (
-//         <TouchableOpacity
-//           key={option}
-//           style={[
-//             styles.option,
-//             item.selectedOption === option && styles.selectedOption,
-//             item.selectedOption === option &&
-//               item.correct_option === option &&
-//               styles.correctOption,
-//           ]}
-//           onPress={() => handleOptionPress(item, option)}>
-//           <View style={styles.optionContent}>
-//             <View style={styles.optionBadge}>
-//               <Text style={styles.optionBadgeText}>{option}</Text>
-//             </View>
-//             <Text style={styles.optionText}>
-//               {item[`option_${option.toLowerCase()}`]}
-//             </Text>
-//           </View>
-//         </TouchableOpacity>
-//       ))}
-
-//       {item.selectedOption && (
-//         <View style={styles.answerDescription}>
-//           {/* <MaterialCommunityIcons
-//             name={item.answeredCorrectly ? 'check-circle' : 'close-circle'}
-//             size={24}
-//             color={item.answeredCorrectly ? '#4CAF50' : '#F44336'}
-//           /> */}
-//           <View style={{display: 'flex', flexDirection: 'row'}}>
-//             {item.answeredCorrectly ? (
-//               <LottieView
-//                 source={require('../util/right.json')}
-//                 autoPlay
-//                 loop={false}
-//                 style={{width: 24, height: 24}}
-//               />
-//             ) : (
-//               <LottieView
-//                 source={require('../util/wrong.json')}
-//                 autoPlay
-//                 loop={false}
-//                 style={{width: 24, height: 24}}
-//               />
-//             )}
-//             <Text
-//               style={[
-//                 styles.resultText,
-//                 item.answeredCorrectly
-//                   ? styles.correctText
-//                   : styles.incorrectText,
-//               ]}>
-//               {item.answeredCorrectly ? 'Correct!' : 'Incorrect!'}
-//             </Text>
-//           </View>
-
-//           <View>
-//             <Text
-//               style={{color: 'green', fontSize: wp('4%'), fontWeight: '600'}}>
-//               Answer
-//             </Text>
-//             <Text style={styles.descriptionText}>
-//               {item.answer_description}
-//             </Text>
-//           </View>
-//         </View>
-//       )}
-//     </View>
-//   );
-
-//   // Hint modal
-//   const HintModal = () => (
-//     <Modal
-//       animationType="slide"
-//       transparent={true}
-//       visible={modalVisible}
-//       onRequestClose={() => setModalVisible(false)}>
-//       <View style={styles.modalOverlay}>
-//         <View style={styles.modalContent}>
-//           <View style={styles.modalHeader}>
-//             <Text style={styles.modalTitle}>Hint</Text>
-//             <TouchableOpacity
-//               style={styles.closeButton}
-//               onPress={() => setModalVisible(false)}>
-//               <MaterialCommunityIcons name="close" size={24} color="#000" />
-//             </TouchableOpacity>
-//           </View>
-//           <Text style={styles.hintText}>{currentHint}</Text>
-//         </View>
-//       </View>
-//     </Modal>
-//   );
-
-//   return (
-//     <View style={styles.container}>
-//       <HintModal />
-//       {questionsData.length > 0 ? (
-//         <FlatList
-//           data={questionsData}
-//           renderItem={renderQuestion}
-//           // keyExtractor={item => item.id.toString()}
-//           keyExtractor={(item, index) => `${item.id}-${index}`}
-//           showsVerticalScrollIndicator={false}
-//           contentContainerStyle={styles.listContainer}
-//           onEndReached={() => {
-//             if (hasMoreQuestions && !loading) {
-//               setPage(prev => prev + 1);
-//             }
-//           }}
-//           onEndReachedThreshold={0.5}
-//           ListFooterComponent={() => (
-//             <View style={styles.footer}>
-//               {loading && <ActivityIndicator size="large" color="#0074E4" />}
-//               {!hasMoreQuestions && !loading && (
-//                 <Text style={styles.noMoreQuestionsText}>
-//                   You've reached the end!
-//                 </Text>
-//               )}
-//             </View>
-//           )}
-//         />
-//       ) : (
-//         <View style={styles.loadingContainer}>
-//           <ActivityIndicator size="large" color="#0074E4" />
-//           <Text style={styles.loadingText}>Loading questions...</Text>
-//         </View>
-//       )}
-//     </View>
-//   );
-// };
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#F5F7FA',
-//   },
-//   listContainer: {
-//     padding: wp('2%'),
-//   },
-//   questionContainer: {
-//     backgroundColor: '#FFFFFF',
-//     borderRadius: wp('4%'),
-//     padding: wp('4%'),
-//     marginBottom: hp('2%'),
-//     elevation: 3,
-//     shadowColor: '#000',
-//     shadowOffset: {width: 0, height: 2},
-//     shadowOpacity: 0.1,
-//     shadowRadius: 4,
-//   },
-//   questionHeader: {
-//     flexDirection: 'row',
-//     justifyContent: 'space-between',
-//     alignItems: 'center',
-//     marginBottom: hp('2%'),
-//   },
-//   questionText: {
-//     fontSize: wp('4.5%'),
-//     color: '#2C3E50',
-//     fontWeight: '600',
-//     flex: 1,
-//   },
-//   hintButton: {
-//     padding: wp('2%'),
-//     borderRadius: wp('50%'),
-//     backgroundColor: '#FFF9C4',
-//   },
-//   option: {
-//     backgroundColor: '#F8F9FA',
-//     borderRadius: wp('2%'),
-//     marginVertical: hp('1%'),
-//     borderWidth: 1,
-//     borderColor: '#E9ECEF',
-//     overflow: 'hidden',
-//   },
-//   optionContent: {
-//     flexDirection: 'row',
-//     alignItems: 'center',
-//     padding: wp('3%'),
-//   },
-//   optionBadge: {
-//     backgroundColor: '#E9ECEF',
-//     borderRadius: wp('50%'),
-//     width: wp('8%'),
-//     height: wp('8%'),
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     marginRight: wp('3%'),
-//   },
-//   optionBadgeText: {
-//     color: '#495057',
-//     fontWeight: '600',
-//   },
-//   optionText: {
-//     color: '#495057',
-//     fontSize: wp('4%'),
-//     flex: 1,
-//   },
-//   selectedOption: {
-//     backgroundColor: '#E3F2FD',
-//     borderColor: '#2196F3',
-//   },
-//   correctOption: {
-//     backgroundColor: '#E8F5E9',
-//     borderColor: '#4CAF50',
-//   },
-//   answerDescription: {
-//     marginTop: hp('2%'),
-//     padding: wp('3%'),
-//     backgroundColor: '#F8F9FA',
-//     borderRadius: wp('2%'),
-//   },
-//   resultText: {
-//     fontSize: wp('4%'),
-//     fontWeight: '600',
-//     marginBottom: hp('1%'),
-//     marginLeft: 8,
-//   },
-//   correctText: {
-//     color: '#4CAF50',
-//   },
-//   incorrectText: {
-//     color: '#F44336',
-//   },
-//   descriptionText: {
-//     color: '#6C757D',
-//     fontSize: wp('3.8%'),
-//     lineHeight: wp('5.5%'),
-//   },
-//   modalOverlay: {
-//     flex: 1,
-//     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   modalContent: {
-//     backgroundColor: '#FFFFFF',
-//     borderRadius: wp('4%'),
-//     padding: wp('5%'),
-//     width: wp('90%'),
-//     maxHeight: hp('60%'),
-//   },
-//   modalHeader: {
-//     flexDirection: 'row',
-//     justifyContent: 'space-between',
-//     alignItems: 'center',
-//     marginBottom: hp('2%'),
-//   },
-//   modalTitle: {
-//     fontSize: wp('5%'),
-//     fontWeight: '600',
-//     color: '#2C3E50',
-//   },
-//   closeButton: {
-//     padding: wp('2%'),
-//   },
-//   hintText: {
-//     fontSize: wp('4%'),
-//     color: '#495057',
-//     lineHeight: wp('6%'),
-//   },
-//   loadingContainer: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   loadingText: {
-//     marginTop: hp('2%'),
-//     color: '#6C757D',
-//     fontSize: wp('4%'),
-//   },
-//   footer: {
-//     padding: wp('4%'),
-//     alignItems: 'center',
-//   },
-//   noMoreQuestionsText: {
-//     color: 'black',
-//     fontSize: wp('4%'),
-//     fontWeight: '500',
-//   },
-// });
-
-// export default Cbt2;
-
 import React, {useState, useEffect} from 'react';
 import {
   View,
@@ -560,15 +67,6 @@ const Cbt2 = ({navigation}) => {
     }
   }, [questionsData]);
 
-  // Back handler setup
-  // useEffect(() => {
-  //   const backHandler = BackHandler.addEventListener(
-  //     'hardwareBackPress',
-  //     handleBackPress,
-  //   );
-  //   return () => backHandler.remove();
-  // }, []);
-
   // Ad loading setup
   useEffect(() => {
     const adLoadTimeout = setTimeout(() => {
@@ -600,33 +98,36 @@ const Cbt2 = ({navigation}) => {
     };
   }, []);
 
-  // const handleBackPress = () => {
-  //   if (navigation.isFocused()) {
-  //     Alert.alert(
-  //       'Exit App',
-  //       'Are you sure you want to exit?',
-  //       [
-  //         {text: 'Cancel', style: 'cancel'},
-  //         {
-  //           text: 'Exit',
-  //           onPress: () => BackHandler.exitApp(),
-  //           style: 'destructive',
-  //         },
-  //       ],
-  //       {cancelable: false},
-  //     );
-  //     return true;
+  // const showHintWithAd = async hint => {
+  //   if (!hint) {
+  //     Alert.alert('No Hint', 'No hint available for this question.');
+  //     return;
   //   }
-  //   return false;
+
+  //   setCurrentHint(hint);
+
+  //   try {
+  //     if (isAdLoaded) {
+  //       await rewarded.show();
+  //     } else {
+  //       await rewarded.load();
+  //       Alert.alert(
+  //         'Advertisement Unavailable',
+  //         'We are currently unable to display an advertisement. Please try again shortly, or check back later for hint.',
+  //         [{text: 'OK'}],
+  //       );
+  //     }
+  //   } catch (error) {
+  //     Alert.alert(
+  //       'Error Occurred',
+  //       'There was an issue displaying the advertisement. Please try again later.',
+  //       [{text: 'OK'}],
+  //     );
+  //   }
   // };
 
-  const showHintWithAd = async hint => {
-    if (!hint) {
-      Alert.alert('No Hint', 'No hint available for this question.');
-      return;
-    }
-
-    setCurrentHint(hint);
+  const showHintWithAd = async answer_description => {
+    setCurrentHint(answer_description);
 
     try {
       if (isAdLoaded) {
@@ -634,16 +135,26 @@ const Cbt2 = ({navigation}) => {
       } else {
         await rewarded.load();
         Alert.alert(
-          'Advertisement Unavailable',
-          'We are currently unable to display an advertisement. Please try again shortly, or check back later for hint.',
-          [{text: 'OK'}],
+          'Just a Moment',
+          'The ad is taking a bit longer to load. We will show you the solution right away instead!',
+          [
+            {
+              text: 'Show Solution',
+              onPress: () => setModalVisible(true),
+            },
+          ],
         );
       }
     } catch (error) {
       Alert.alert(
-        'Error Occurred',
-        'There was an issue displaying the advertisement. Please try again later.',
-        [{text: 'OK'}],
+        'Quick Update',
+        'We encountered a small hiccup with the ad, but no worries - you can still view the solution!',
+        [
+          {
+            text: 'Show Solution',
+            onPress: () => setModalVisible(true),
+          },
+        ],
       );
     }
   };
@@ -667,10 +178,10 @@ const Cbt2 = ({navigation}) => {
     <View style={styles.questionContainer}>
       <View style={styles.questionHeader}>
         <Text style={styles.questionText}>• {item.question_text}</Text>
-        {item.hint && (
+        {item.answer_description && (
           <TouchableOpacity
             style={styles.hintButton}
-            onPress={() => showHintWithAd(item.hint)}>
+            onPress={() => showHintWithAd(item.answer_description)}>
             <MaterialCommunityIcons
               name="lightbulb-outline"
               size={24}
@@ -733,11 +244,9 @@ const Cbt2 = ({navigation}) => {
           <View>
             <Text
               style={{color: 'green', fontSize: wp('4%'), fontWeight: '600'}}>
-              Answer
+              Hint
             </Text>
-            <Text style={styles.descriptionText}>
-              {item.answer_description}
-            </Text>
+            <Text style={styles.descriptionText}>{item.hint}</Text>
           </View>
         </View>
       )}
@@ -753,7 +262,7 @@ const Cbt2 = ({navigation}) => {
       <View style={styles.modalOverlay}>
         <View style={styles.modalContent}>
           <View style={styles.modalHeader}>
-            <Text style={styles.modalTitle}>Hint</Text>
+            <Text style={styles.modalTitle}>Solution</Text>
             <TouchableOpacity
               style={styles.closeButton}
               onPress={() => setModalVisible(false)}>
