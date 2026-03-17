@@ -508,7 +508,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import * as Progress from 'react-native-progress';
 import LottieView from 'lottie-react-native';
 import questions from '../util/Questions.json';
-import {FadeInDown} from 'react-native-reanimated';
+
 import ResultModal from '../util/ResultModal';
 import {
   widthPercentageToDP as wp,
@@ -782,7 +782,7 @@ const QuestionScreen = ({route, navigation}) => {
             </View>
 
             {showHint && (
-              <Animated.View entering={FadeInDown} style={styles.hintContainer}>
+              <Animated.View style={styles.hintContainer}>
                 <Icon name="lightbulb-on" size={24} color="#f39c12" />
                 <Text style={styles.hintText}>{currentQuestion.hint}</Text>
               </Animated.View>
@@ -790,7 +790,6 @@ const QuestionScreen = ({route, navigation}) => {
 
             {showSolution && (
               <Animated.View
-                entering={FadeInDown}
                 style={styles.solutionContainer}>
                 <Icon name="book-open-variant" size={24} color="#27ae60" />
                 <Text style={styles.solutionText}>
