@@ -1,5 +1,6 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {useTranslation} from 'react-i18next';
 import mockTestsData from '../data/mockTestsData';
 import {useAppTheme} from '../util/theme';

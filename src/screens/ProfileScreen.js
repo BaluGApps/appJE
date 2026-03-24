@@ -6,11 +6,11 @@ import {
   TouchableOpacity, 
   Image, 
   ActivityIndicator, 
-  SafeAreaView, 
   ScrollView, 
   Switch,
   Platform
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import { useTranslation } from 'react-i18next';
