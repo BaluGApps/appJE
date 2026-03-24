@@ -153,14 +153,27 @@ const MockTestScreen = ({route, navigation}) => {
           )}
         </View>
         ) : (
-          <View style={[styles.card, {backgroundColor: colors.card}]}>
-            <Text style={[styles.title, {color: colors.text}]}>Test Completed</Text>
-            <Text style={[styles.resultText, {color: colors.text}]}>
-              Result: {score} / {questions.length}
-            </Text>
-            <Text style={[styles.pointsText, {color: colors.primary}]}>
-              Credits Earned: {Math.floor((score / questions.length) * (1 + remaining / TEST_DURATION_SECONDS) * 100)}
-            </Text>
+          <View style={[styles.card, {backgroundColor: colors.card, borderLeftWidth: 5, borderLeftColor: colors.primary}]}>
+            <View style={styles.resultsHeader}>
+              <Icon name="checkmark-circle" size={48} color="#22C55E" />
+              <View>
+                <Text style={[styles.title, {color: colors.text}]}>Test Completed</Text>
+                <Text style={[styles.subtitle, {color: colors.subtext}]}>Great effort on your RRB {category} prep!</Text>
+              </View>
+            </View>
+
+            <View style={styles.scoreBanner}>
+              <View style={styles.scoreBox}>
+                <Text style={[styles.scoreVal, {color: colors.text}]}>{score}/{questions.length}</Text>
+                <Text style={[styles.scoreLab, {color: colors.subtext}]}>Score</Text>
+              </View>
+              <View style={styles.scoreBox}>
+                <Text style={[styles.scoreVal, {color: colors.primary}]}>+{Math.floor((score / questions.length) * (1 + remaining / TEST_DURATION_SECONDS) * 100)}</Text>
+                <Text style={[styles.scoreLab, {color: colors.subtext}]}>Credits</Text>
+              </View>
+            </View>
+
+            <Text style={[styles.reviewTitle, {color: colors.text}]}>Review Solutions</Text>
             {questions.map((q, i) => {
               const selectedIdx = answers[q.id];
               const isCorrect = selectedIdx === q.ans;
@@ -170,17 +183,32 @@ const MockTestScreen = ({route, navigation}) => {
                   style={[
                     styles.solutionItem,
                     {backgroundColor: colors.background, borderColor: colors.border},
+                    isCorrect ? {borderLeftColor: '#22C55E', borderLeftWidth: 4} : {borderLeftColor: '#EF4444', borderLeftWidth: 4}
                   ]}>
                   <Text style={[styles.solutionQ, {color: colors.text}]}>
-                    Q{i + 1}. {q.q}
+                    {i + 1}. {q.q}
                   </Text>
-                  <Text style={{color: isCorrect ? '#22C55E' : '#EF4444', fontWeight: '700'}}>
-                    Your Answer: {selectedIdx !== undefined ? q.options[selectedIdx] : 'Not answered'}
-                  </Text>
-                  <Text style={{color: '#22C55E', fontWeight: '700'}}>
-                    Correct: {q.options[q.ans]}
-                  </Text>
-                  <Text style={{color: colors.text, marginTop: 4}}>Explanation: {q.explanation}</Text>
+                  
+                  <View style={styles.solRow}>
+                    <Icon name={isCorrect ? "checkmark-circle" : "close-circle"} size={16} color={isCorrect ? '#22C55E' : '#EF4444'} />
+                    <Text style={{color: isCorrect ? '#22C55E' : '#EF4444', fontWeight: '700', marginLeft: 6}}>
+                      Your: {selectedIdx !== undefined ? q.options[selectedIdx] : 'Skipped'}
+                    </Text>
+                  </View>
+
+                  {!isCorrect && (
+                    <View style={styles.solRow}>
+                      <Icon name="star" size={16} color="#22C55E" />
+                      <Text style={{color: '#22C55E', fontWeight: '700', marginLeft: 6}}>
+                        Correct: {q.options[q.ans]}
+                      </Text>
+                    </View>
+                  )}
+
+                  <View style={styles.explWrap}>
+                    <Text style={[styles.explTitle, {color: colors.primary}]}>Why? (Explanation)</Text>
+                    <Text style={{color: colors.text, fontSize: 13}}>{q.explanation || q.solution}</Text>
+                  </View>
                 </View>
               );
             })}
@@ -249,8 +277,18 @@ const styles = StyleSheet.create({
   btnText: {color: '#fff', fontWeight: '700'},
   resultText: {fontSize: 18, fontWeight: '800'},
   pointsText: {marginTop: 6, fontWeight: '700'},
-  solutionItem: {borderWidth: 1, borderRadius: 12, padding: 10, marginTop: 10},
-  solutionQ: {fontWeight: '700', marginBottom: 4},
+  solutionItem: {borderWidth: 1, borderRadius: 12, padding: 12, marginTop: 10},
+  solutionQ: {fontWeight: '700', marginBottom: 8, fontSize: 15},
+  resultsHeader: {flexDirection: 'row', alignItems: 'center', gap: 12, marginBottom: 20},
+  subtitle: {fontSize: 14, marginTop: 2},
+  scoreBanner: {flexDirection: 'row', gap: 12, marginBottom: 20},
+  scoreBox: {flex: 1, padding: 12, borderRadius: 12, borderWidth: 1, borderColor: '#ccc', borderStyle: 'dashed', alignItems: 'center'},
+  scoreVal: {fontSize: 20, fontWeight: '900'},
+  scoreLab: {fontSize: 10, fontWeight: '700', textTransform: 'uppercase', marginTop: 2},
+  reviewTitle: {fontSize: 18, fontWeight: '800', marginBottom: 10, marginTop: 10},
+  solRow: {flexDirection: 'row', alignItems: 'center', marginBottom: 4},
+  explWrap: {marginTop: 10, padding: 10, backgroundColor: 'rgba(0,0,0,0.03)', borderRadius: 8},
+  explTitle: {fontSize: 12, fontWeight: '800', marginBottom: 4},
 });
 
 export default MockTestScreen;
