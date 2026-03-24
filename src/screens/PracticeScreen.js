@@ -43,6 +43,7 @@ const PracticeScreen = ({route, navigation}) => {
   const [isInterstitialLoaded, setIsInterstitialLoaded] = useState(false);
   const [progressState, setProgressState] = useState({unlockedLevel: 1, completed: []});
   const [levelCompleteVisible, setLevelCompleteVisible] = useState(false);
+  const [wrongAnswerVisible, setWrongAnswerVisible] = useState(false);
 
   const questions = useMemo(() => {
     const langData = allQuestions[i18n.language] || allQuestions.en;
@@ -125,6 +126,7 @@ const PracticeScreen = ({route, navigation}) => {
       setLevelCompleteVisible(true);
     } else {
       playSound('wrong');
+      setWrongAnswerVisible(true);
     }
     await maybeShowAdAfter5();
   };
@@ -274,8 +276,14 @@ const PracticeScreen = ({route, navigation}) => {
                 style={[
                   styles.option,
                   {backgroundColor: colors.card, borderColor: colors.border},
-                  isCorrect && {backgroundColor: '#1F5131', borderColor: '#22C55E'},
-                  isWrong && {backgroundColor: '#5A2633', borderColor: '#EF4444'},
+                  isCorrect && {
+                    backgroundColor: isDark ? '#1F5131' : '#DCFCE7',
+                    borderColor: '#22C55E',
+                  },
+                  isWrong && {
+                    backgroundColor: isDark ? '#5A2633' : '#FEE2E2',
+                    borderColor: '#EF4444',
+                  },
                 ]}
                 onPress={() => handleOptionSelect(idx)}
                 disabled={showResult}>
@@ -344,6 +352,32 @@ const PracticeScreen = ({route, navigation}) => {
           </View>
         </View>
       </Modal>
+
+      <Modal
+        transparent
+        animationType="fade"
+        visible={wrongAnswerVisible}
+        onRequestClose={() => setWrongAnswerVisible(false)}>
+        <View style={styles.modalOverlay}>
+          <View style={[styles.wrongModalCard, {backgroundColor: colors.card}]}>
+            <Icon name="alert-circle-outline" size={36} color="#EF4444" />
+            <Text style={[styles.modalTitle, {color: colors.text}]}>Try Again</Text>
+            <Text style={[styles.modalText, {color: colors.subtext}]}>
+              Wrong answer. Read the hint and attempt this level once more.
+            </Text>
+            <TouchableOpacity
+              style={[styles.modalBtn, {backgroundColor: '#EF4444'}]}
+              onPress={() => {
+                setWrongAnswerVisible(false);
+                setSelectedOption(null);
+                setShowResult(false);
+                setShowSolution(false);
+              }}>
+              <Text style={styles.modalBtnText}>Retry Level</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 };
@@ -364,7 +398,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFF',
   },
-  content: {padding: 16, paddingBottom: 100},
+  content: {padding: 16, paddingBottom: 100, flexGrow: 1, justifyContent: 'center'},
   quizCenterWrap: {maxWidth: 760, width: '100%', alignSelf: 'center'},
   levelMeta: {paddingHorizontal: 16, paddingTop: 12, flexDirection: 'row', justifyContent: 'space-between'},
   metaText: {fontWeight: '700'},
@@ -448,6 +482,13 @@ const styles = StyleSheet.create({
   modalBtnText: {
     color: '#fff',
     fontWeight: '700',
+  },
+  wrongModalCard: {
+    width: '100%',
+    maxWidth: 320,
+    borderRadius: 16,
+    padding: 18,
+    alignItems: 'center',
   },
 });
 

@@ -45,6 +45,7 @@ const PYQ_PDF_LINKS = {
 const TestsScreen = ({route, navigation}) => {
   const { t, i18n } = useTranslation();
   const {colors, isDark} = useAppTheme();
+  const currentUserId = auth().currentUser?.uid;
   const [activeTab, setActiveTab] = useState(route?.params?.pyq ? 'pyq' : 'tests'); // 'tests' | 'leaderboard' | 'pyq'
   const [leaderboard, setLeaderboard] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -76,11 +77,32 @@ const TestsScreen = ({route, navigation}) => {
       const snapshot = await firestore()
         .collection('leaderboards')
         .orderBy('points', 'desc')
-        .limit(10)
+        .limit(100)
         .get();
-        
-      const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setLeaderboard(data);
+
+      const attempts = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+
+      // Keep only the best attempt per user for fair ranking.
+      const bestByUser = new Map();
+      for (const row of attempts) {
+        if (!row.userId || row.userId === 'system') continue;
+        const prev = bestByUser.get(row.userId);
+        if (!prev) {
+          bestByUser.set(row.userId, row);
+          continue;
+        }
+        const prevPoints = Number(prev.points || 0);
+        const nextPoints = Number(row.points || 0);
+        if (nextPoints > prevPoints) {
+          bestByUser.set(row.userId, row);
+        }
+      }
+
+      const ranking = Array.from(bestByUser.values())
+        .sort((a, b) => Number(b.points || 0) - Number(a.points || 0))
+        .slice(0, 10);
+
+      setLeaderboard(ranking);
     } catch (error) {
       console.error('Error fetching leaderboard:', error);
     } finally {
@@ -152,9 +174,14 @@ const TestsScreen = ({route, navigation}) => {
       ) : (
         <FlatList
           data={leaderboard}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.userId || item.id}
           renderItem={({ item, index }) => (
-            <View style={[styles.leaderboardRow, index === 0 && styles.topRank]}>
+            <View
+              style={[
+                styles.leaderboardRow,
+                index === 0 && styles.topRank,
+                item.userId === currentUserId && styles.myRow,
+              ]}>
               <Text style={styles.rankText}>{index + 1}</Text>
               <View style={styles.aspirantInfo}>
                 <Text style={styles.aspirantName} numberOfLines={1}>{item.userName}</Text>
@@ -378,6 +405,10 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 5,
+  },
+  myRow: {
+    borderWidth: 1,
+    borderColor: '#3B82F6',
   },
   topRank: {
     backgroundColor: '#FFF9C4',
