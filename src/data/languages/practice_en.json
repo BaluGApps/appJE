@@ -139,6 +139,104 @@
             "ans": 2,
             "hint": "Signed in Japan, 1997.",
             "solution": "The Kyoto Protocol introduced the carbon credit system."
+        },
+        {
+            "id": 11,
+            "level": 2,
+            "q": "The 'Panchayati Raj' system was first inaugurated in which Indian state?",
+            "options": [
+                "Andhra Pradesh",
+                "Rajasthan",
+                "Bihar",
+                "Punjab"
+            ],
+            "ans": 2,
+            "hint": "In Nagaur district, 1959.",
+            "solution": "Rajasthan was the first state to adopt the system on October 2, 1959."
+        },
+        {
+            "id": 12,
+            "level": 2,
+            "q": "Which of the following passes connects Srinagar to Leh?",
+            "options": [
+                "Zoji La Pass",
+                "Bara-lacha Pass",
+                "Nathu La Pass",
+                "Rohtang Pass"
+            ],
+            "ans": 1,
+            "hint": "Crucial link on National Highway 1.",
+            "solution": "Zoji La Pass is the vital link between the Kashmir Valley and Ladakh."
+        },
+        {
+            "id": 13,
+            "level": 2,
+            "q": "The 'Fundamental Duties' were added to the Constitution on the recommendation of:",
+            "options": [
+                "Verma Committee",
+                "Sarkaria Commission",
+                "Swaran Singh Committee",
+                "Mandal Commission"
+            ],
+            "ans": 3,
+            "hint": "Added by the 42nd Amendment in 1976.",
+            "solution": "The Swaran Singh Committee recommended their inclusion."
+        },
+        {
+            "id": 14,
+            "level": 3,
+            "q": "Which Five Year Plan is also known as the 'Mahalanobis Plan'?",
+            "options": [
+                "First",
+                "Second",
+                "Third",
+                "Fourth"
+            ],
+            "ans": 2,
+            "hint": "Focused on heavy industrialization.",
+            "solution": "The Second Five Year Plan (1956-61) was based on this model."
+        },
+        {
+            "id": 15,
+            "level": 3,
+            "q": "Who was the first Governor-General of Free India?",
+            "options": [
+                "C. Rajagopalachari",
+                "Lord Mountbatten",
+                "Dr. Rajendra Prasad",
+                "Lord Canning"
+            ],
+            "ans": 2,
+            "hint": "He served until June 1948.",
+            "solution": "Lord Mountbatten was the first; C. Rajagopalachari was the first Indian G-G."
+        },
+        {
+            "id": 16,
+            "level": 3,
+            "q": "The 'Dual Government' system in Bengal was abolished by:",
+            "options": [
+                "Robert Clive",
+                "Warren Hastings",
+                "Lord Cornwallis",
+                "Lord Wellesley"
+            ],
+            "ans": 2,
+            "hint": "He was the first Governor-General of Bengal.",
+            "solution": "Warren Hastings abolished the Dual system in 1772."
+        },
+        {
+            "id": 17,
+            "level": 3,
+            "q": "Which Indian state has the longest coastline?",
+            "options": [
+                "Andhra Pradesh",
+                "Maharashtra",
+                "Gujarat",
+                "Tamil Nadu"
+            ],
+            "ans": 3,
+            "hint": "Approximately 1600 km.",
+            "solution": "Gujarat has the longest coastline in India."
         }
     ],
     "ALP": [
@@ -281,6 +379,76 @@
             "ans": 2,
             "hint": "Critical for space launches.",
             "solution": "It is roughly 11.2 km per second."
+        },
+        {
+            "id": 11,
+            "level": 2,
+            "q": "The working principle of an optical fiber is:",
+            "options": [
+                "Refraction",
+                "Scattering",
+                "Total Internal Reflection",
+                "Interference"
+            ],
+            "ans": 3,
+            "hint": "Light bounces inside the core.",
+            "solution": "Total Internal Reflection (TIR) allows light to travel with minimal loss."
+        },
+        {
+            "id": 12,
+            "level": 2,
+            "q": "Which of the following is a primary color of light?",
+            "options": [
+                "Yellow",
+                "Green",
+                "Magenta",
+                "Cyan"
+            ],
+            "ans": 2,
+            "hint": "Think of the RGB model.",
+            "solution": "The primary colors of light are Red, Green, and Blue."
+        },
+        {
+            "id": 13,
+            "level": 2,
+            "q": "A fuse wire is characterized by:",
+            "options": [
+                "High resistance, High melting point",
+                "Low resistance, Low melting point",
+                "High resistance, Low melting point",
+                "Low resistance, High melting point"
+            ],
+            "ans": 3,
+            "hint": "It must melt easily during an overload.",
+            "solution": "A fuse wire needs high resistance to heat up and a low melting point to break the circuit."
+        },
+        {
+            "id": 14,
+            "level": 3,
+            "q": "What is the commercial unit of electrical energy?",
+            "options": [
+                "Watt",
+                "Joule",
+                "Kilowatt-hour",
+                "Ampere"
+            ],
+            "ans": 3,
+            "hint": "1 unit on your bill = ?",
+            "solution": "1 kWh (Kilowatt-hour) is the standard commercial unit of energy."
+        },
+        {
+            "id": 15,
+            "level": 3,
+            "q": "In an electric motor, the direction of rotation is determined by:",
+            "options": [
+                "Fleming's Left Hand Rule",
+                "Fleming's Right Hand Rule",
+                "Lenz's Law",
+                "Faraday's Law"
+            ],
+            "ans": 1,
+            "hint": "Relates Force, Field, and Current.",
+            "solution": "Fleming's Left Hand Rule is used for motors; Right Hand for Generators."
         }
     ],
     "JE": [
@@ -423,6 +591,76 @@
             "ans": 2,
             "hint": "Roughness or smoothness matters.",
             "solution": "It depends solely on the material and nature of the contacting surfaces."
+        },
+        {
+            "id": 11,
+            "level": 2,
+            "q": "Pascal is the SI unit for:",
+            "options": [
+                "Energy",
+                "Pressure",
+                "Frequency",
+                "Conductivity"
+            ],
+            "ans": 2,
+            "hint": "Newton per square meter.",
+            "solution": "Pascal (Pa) is the unit used to measure pressure."
+        },
+        {
+            "id": 12,
+            "level": 2,
+            "q": "Which law states that pressure in a fluid is transmitted undiminished?",
+            "options": [
+                "Boyle's Law",
+                "Pascal's Law",
+                "Archimedes' Principle",
+                "Hooke's Law"
+            ],
+            "ans": 2,
+            "hint": "Basis for hydraulic lifts.",
+            "solution": "Pascal's Law is the foundation of fluid mechanics."
+        },
+        {
+            "id": 13,
+            "level": 3,
+            "q": "A Zener diode is primarily used for:",
+            "options": [
+                "Rectification",
+                "Amplification",
+                "Voltage Regulation",
+                "Oscillation"
+            ],
+            "ans": 3,
+            "hint": "Operates in reverse breakdown.",
+            "solution": "Zener diodes maintain constant voltage across terminals."
+        },
+        {
+            "id": 14,
+            "level": 3,
+            "q": "In a p-type semiconductor, majority charge carriers are:",
+            "options": [
+                "Electrons",
+                "Holes",
+                "Neutrons",
+                "Protons"
+            ],
+            "ans": 2,
+            "hint": "Positive charge carriers.",
+            "solution": "Holes are majority in p-type; electrons in n-type."
+        },
+        {
+            "id": 15,
+            "level": 3,
+            "q": "The ratio of stress to strain within elastic limit is:",
+            "options": [
+                "Poisson's Ratio",
+                "Young's Modulus",
+                "Bulk Modulus",
+                "Rigidity Modulus"
+            ],
+            "ans": 2,
+            "hint": "Measures tensile stiffness.",
+            "solution": "Young's Modulus is the ratio of longitudinal stress to strain."
         }
     ],
     "GroupD": [
@@ -565,6 +803,76 @@
             "ans": 2,
             "hint": "It displaces oxygen to put out the fire.",
             "solution": "CO2 is effective because it is non-combustible and heavier than air."
+        },
+        {
+            "id": 11,
+            "level": 2,
+            "q": "Which blood group is the 'Universal Donor'?",
+            "options": [
+                "AB+",
+                "AB-",
+                "O+",
+                "O-"
+            ],
+            "ans": 4,
+            "hint": "Lacks A, B, and Rh antigens.",
+            "solution": "O-negative can be given to any blood type safely."
+        },
+        {
+            "id": 12,
+            "level": 2,
+            "q": "The gas usually filled in electric bulbs is:",
+            "options": [
+                "Nitrogen",
+                "Hydrogen",
+                "Carbon Dioxide",
+                "Oxygen"
+            ],
+            "ans": 1,
+            "hint": "Prevents filament oxidation.",
+            "solution": "Nitrogen or Argon is used to prolong filament life."
+        },
+        {
+            "id": 13,
+            "level": 2,
+            "q": "Who was the first Indian individual Olympic Gold medalist?",
+            "options": [
+                "Leander Paes",
+                "Abhinav Bindra",
+                "Neeraj Chopra",
+                "K. Malleswari"
+            ],
+            "ans": 2,
+            "hint": "Won in Beijing 2008.",
+            "solution": "Abhinav Bindra won gold in 10m Air Rifle."
+        },
+        {
+            "id": 14,
+            "level": 3,
+            "q": "What is the chemical name of 'Baking Soda'?",
+            "options": [
+                "Sodium Carbonate",
+                "Sodium Bicarbonate",
+                "Calcium Carbonate",
+                "Sodium Chloride"
+            ],
+            "ans": 2,
+            "hint": "Formula: NaHCO3.",
+            "solution": "Sodium Bicarbonate is common baking soda."
+        },
+        {
+            "id": 15,
+            "level": 3,
+            "q": "The 'Battle of Plassey' was fought in:",
+            "options": [
+                "1757",
+                "1764",
+                "1857",
+                "1526"
+            ],
+            "ans": 1,
+            "hint": "Established British rule in Bengal.",
+            "solution": "Fought in 1757 between Siraj-ud-Daulah and the East India Company."
         }
     ]
 }

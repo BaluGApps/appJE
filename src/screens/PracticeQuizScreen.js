@@ -102,7 +102,7 @@ const PracticeQuizScreen = ({route, navigation}) => {
     if (!currentQuestion || showResult) return;
     setSelectedOption(optionIndex);
     setShowResult(true);
-    const isCorrect = optionIndex === currentQuestion.ans;
+    const isCorrect = optionIndex === (currentQuestion.ans - 1);
     if (isCorrect) {
       playSound('correct');
       const level = currentQuestionIndex + 1;
@@ -213,9 +213,9 @@ const PracticeQuizScreen = ({route, navigation}) => {
           )}
 
           {currentQuestion.options.map((opt, idx) => {
-            const isCorrect = showResult && idx === currentQuestion.ans;
+            const isCorrect = showResult && idx === (currentQuestion.ans - 1);
             const isWrong =
-              showResult && idx === selectedOption && idx !== currentQuestion.ans;
+              showResult && idx === selectedOption && idx !== (currentQuestion.ans - 1);
             return (
               <TouchableOpacity
                 key={`${currentQuestion.id}-${idx}`}
