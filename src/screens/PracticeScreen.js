@@ -222,7 +222,7 @@ const PracticeScreen = ({route, navigation}) => {
         <TouchableOpacity onPress={goToGrid}>
           <Icon name="arrow-back" size={22} color="#FFF" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Practice Quiz</Text>
+        <Text style={styles.headerTitle}>{selectedCategory} Practice</Text>
         <View style={{width: 22}} />
       </View>
 
