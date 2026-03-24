@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "1010565650879",
     "project_id": "rrbje-24d0b",
-    "storage_bucket": "rrbje-24d0b.appspot.com"
+    "storage_bucket": "rrbje-24d0b.firebasestorage.app"
   },
   "client": [
     {
@@ -12,7 +12,20 @@
           "package_name": "com.rrbje"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1010565650879-a9smartsoa4e7bd46jtk7fppp5secjms.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rrbje",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1010565650879-ena7o86jt2858lrms66r5rpeat13lpnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBK1geOBXjhdoNip0aaIMvWS6VHhzTYHSw"
@@ -20,9 +33,15 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010565650879-ena7o86jt2858lrms66r5rpeat13lpnj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-2627956667785383~1861485465"
     }
   ],
   "configuration_version": "1"
