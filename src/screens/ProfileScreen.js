@@ -72,7 +72,25 @@ const ProfileScreen = ({ navigation }) => {
       await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
       const { data } = await GoogleSignin.signIn();
       const googleCredential = auth.GoogleAuthProvider.credential(data.idToken);
-      await auth().signInWithCredential(googleCredential);
+      const userCredential = await auth().signInWithCredential(googleCredential);
+      
+      // Initialize/Update User Document in Firestore
+      const user = userCredential.user;
+      if (user) {
+        await firestore()
+          .collection('users')
+          .doc(user.uid)
+          .set(
+            {
+              name: user.displayName || 'Railway Aspirant',
+              email: user.email || '',
+              // Only set totalCredits if it doesn't exist yet
+              totalCredits: firestore.FieldValue.increment(0), 
+              lastSeenAt: firestore.FieldValue.serverTimestamp(),
+            },
+            {merge: true},
+          );
+      }
     } catch (error) {
       console.error(error);
     } finally {

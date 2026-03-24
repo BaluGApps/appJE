@@ -42,8 +42,11 @@ const MockTestScreen = ({route, navigation}) => {
     const user = auth().currentUser;
     if (!user) return;
     try {
-      const timeBonus = Math.floor(remaining / 10);
-      const points = finalScore * 10 + timeBonus;
+      // New Points Formula: Accuracy * (1 + RemainingTime/TotalTime) * 100
+      const accuracy = finalScore / questions.length;
+      const speedFactor = 1 + (remaining / TEST_DURATION_SECONDS);
+      const points = Math.floor(accuracy * speedFactor * 100);
+
       await firestore().collection('leaderboards').add({
         userId: user.uid,
         userName: user.displayName || 'Anonymous Aspirant',
@@ -52,11 +55,12 @@ const MockTestScreen = ({route, navigation}) => {
         testTitle: `RRB ${category} (${i18n.language})`,
         score: finalScore,
         totalMarks: questions.length,
-        points,
+        points: points,
         language: i18n.language,
         remainingTime: remaining,
         timestamp: firestore.FieldValue.serverTimestamp(),
       });
+
       await firestore()
         .collection('users')
         .doc(user.uid)
@@ -71,7 +75,7 @@ const MockTestScreen = ({route, navigation}) => {
         );
       setSaved(true);
     } catch (e) {
-      // no-op for now
+      console.error('Error saving score:', e);
     }
   };
 
@@ -172,7 +176,7 @@ const MockTestScreen = ({route, navigation}) => {
               Result: {score} / {questions.length}
             </Text>
             <Text style={[styles.pointsText, {color: colors.primary}]}>
-              Credits Earned: {score * 10 + Math.floor(remaining / 10)}
+              Credits Earned: {Math.floor((score / questions.length) * (1 + remaining / TEST_DURATION_SECONDS) * 100)}
             </Text>
             <TouchableOpacity
               style={[styles.btn, {backgroundColor: colors.primary, marginTop: 10}]}
