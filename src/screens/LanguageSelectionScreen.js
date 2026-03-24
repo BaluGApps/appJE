@@ -79,8 +79,8 @@ const LanguageSelectionScreen = ({ navigation }) => {
         <View style={styles.iconContainer}>
             <Icon name="language" size={32} color="#0074E4" />
         </View>
-        <Text style={styles.title}>Choose Language</Text>
-        <Text style={styles.subtitle}>Select your preferred language for railway exam preparation</Text>
+        <Text style={styles.title}>{t('chooseLanguage')}</Text>
+        <Text style={styles.subtitle}>{t('selectPreferredLang')}</Text>
       </View>
       
       <FlatList
@@ -93,7 +93,7 @@ const LanguageSelectionScreen = ({ navigation }) => {
       />
 
       <View style={styles.footer}>
-          <Text style={styles.footerText}>You can change this anytime in Profile Settings</Text>
+          <Text style={styles.footerText}>{t('changeAnytime')}</Text>
       </View>
     </SafeAreaView>
   );

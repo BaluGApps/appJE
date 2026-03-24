@@ -114,7 +114,7 @@ const Home = () => {
           />
         </View>
 
-        <Text style={styles.sectionTitle}>Extra Resources</Text>
+        <Text style={styles.sectionTitle}>{t('extraResources')}</Text>
 
         <TouchableOpacity 
           style={styles.resourceItem} 

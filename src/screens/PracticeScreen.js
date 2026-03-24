@@ -83,7 +83,7 @@ const PracticeScreen = ({ route, navigation }) => {
         </View>
         <View style={styles.emptyContainer}>
           <Icon name="document-text-outline" size={60} color="#ccc" />
-          <Text style={styles.emptyText}>No questions available yet.</Text>
+          <Text style={styles.emptyText}>{t('noQuestions')}</Text>
         </View>
       </SafeAreaView>
     );
@@ -109,14 +109,14 @@ const PracticeScreen = ({ route, navigation }) => {
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.questionCard}>
           <View style={styles.levelBadge}>
-            <Text style={styles.levelText}>Level {currentQuestion.level}</Text>
+            <Text style={styles.levelText}>{t('level')} {currentQuestion.level}</Text>
           </View>
           <Text style={styles.questionText}>{currentQuestion.q}</Text>
         </View>
 
         {showHint && (
           <View style={styles.hintBox}>
-            <Text style={styles.hintTitle}>💡 Hint:</Text>
+            <Text style={styles.hintTitle}>💡 {t('hint')}:</Text>
             <Text style={styles.hintText}>{currentQuestion.hint}</Text>
           </View>
         )}
@@ -159,7 +159,7 @@ const PracticeScreen = ({ route, navigation }) => {
 
         {showResult && (
           <View style={styles.solutionBox}>
-            <Text style={styles.solutionTitle}>Explanation:</Text>
+            <Text style={styles.solutionTitle}>{t('explanation')}</Text>
             <Text style={styles.solutionText}>{currentQuestion.solution}</Text>
           </View>
         )}
@@ -172,7 +172,7 @@ const PracticeScreen = ({ route, navigation }) => {
           disabled={currentQuestionIndex === 0}
         >
           <Icon name="chevron-back" size={24} color={currentQuestionIndex === 0 ? "#ccc" : "#0074E4"} />
-          <Text style={[styles.navButtonText, currentQuestionIndex === 0 && styles.disabledText]}>Prev</Text>
+          <Text style={[styles.navButtonText, currentQuestionIndex === 0 && styles.disabledText]}>{t('prev')}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
@@ -180,7 +180,7 @@ const PracticeScreen = ({ route, navigation }) => {
           onPress={nextQuestion}
           disabled={currentQuestionIndex === questions.length - 1}
         >
-          <Text style={[styles.navButtonText, currentQuestionIndex === questions.length - 1 && styles.disabledText]}>Next</Text>
+          <Text style={[styles.navButtonText, currentQuestionIndex === questions.length - 1 && styles.disabledText]}>{t('next')}</Text>
           <Icon name="chevron-forward" size={24} color={currentQuestionIndex === questions.length - 1 ? "#ccc" : "#0074E4"} />
         </TouchableOpacity>
       </View>

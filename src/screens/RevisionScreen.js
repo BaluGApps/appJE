@@ -16,13 +16,13 @@ const RevisionScreen = () => {
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.emptyContainer}>
           <Icon name="bookmarks-outline" size={80} color="#D0D0D0" />
-          <Text style={styles.emptyTitle}>Nothing to revise yet!</Text>
+          <Text style={styles.emptyTitle}>{t('nothingToRevise')}</Text>
           <Text style={styles.emptySubtitle}>
-            Bookmark difficult questions during Practice or Tests, and they will appear here for quick revision.
+            {t('bookmarkPrompt')}
           </Text>
           
-          <TouchableOpacity style={styles.actionButton}>
-            <Text style={styles.actionButtonText}>Go to Practice</Text>
+          <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate('Practice')}>
+            <Text style={styles.actionButtonText}>{t('goToPractice')}</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

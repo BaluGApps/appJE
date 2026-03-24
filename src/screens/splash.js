@@ -1,248 +1,108 @@
-// import React, {useEffect} from 'react';
-// import {
-//   View,
-//   StyleSheet,
-//   Image,
-//   Dimensions,
-//   Animated,
-//   Text,
-// } from 'react-native';
-// import LinearGradient from 'react-native-linear-gradient';
-
-// const {width, height} = Dimensions.get('window');
-
-// const Splash = ({navigation}) => {
-//   const fadeAnim = new Animated.Value(0);
-//   const slideAnim = new Animated.Value(-width);
-
-//   useEffect(() => {
-//     // Animate the train and fade in the content
-//     Animated.parallel([
-//       Animated.timing(fadeAnim, {
-//         toValue: 1,
-//         duration: 2000,
-//         useNativeDriver: true,
-//       }),
-//       Animated.timing(slideAnim, {
-//         toValue: width,
-//         duration: 4000,
-//         useNativeDriver: true,
-//       }),
-//     ]).start();
-
-//     // Navigate to main screen after 5 seconds
-//     setTimeout(() => {
-//       navigation.replace('Navigation');
-//     }, 5000);
-//   }, []);
-
-//   return (
-//     <View style={styles.container}>
-//       <LinearGradient
-//         colors={['#1a2a6c', '#b21f1f', '#fdbb2d']}
-//         style={styles.background}>
-//         {/* Train tracks */}
-//         <View style={styles.tracks}>
-//           <View style={styles.track} />
-//           <View style={styles.track} />
-//         </View>
-
-//         {/* Animated train */}
-//         <Animated.View
-//           style={[
-//             styles.trainContainer,
-//             {
-//               transform: [{translateX: slideAnim}],
-//             },
-//           ]}>
-//           {/* Simple train shape using Views */}
-//           <View style={styles.train}>
-//             <View style={styles.engine}>
-//               <View style={styles.cabin} />
-//               <View style={styles.chimney} />
-//             </View>
-//             <View style={styles.wagon} />
-//             <View style={styles.wagon} />
-//           </View>
-//         </Animated.View>
-
-//         {/* App title */}
-//         <Animated.View
-//           style={[
-//             styles.titleContainer,
-//             {
-//               opacity: fadeAnim,
-//             },
-//           ]}>
-//           <Text style={styles.title}>TrainApp</Text>
-//           <Text style={styles.subtitle}>Your Journey Begins Here</Text>
-//         </Animated.View>
-//       </LinearGradient>
-//     </View>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//   },
-//   background: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   tracks: {
-//     position: 'absolute',
-//     bottom: height * 0.2,
-//     flexDirection: 'row',
-//     width: width,
-//     justifyContent: 'center',
-//     paddingHorizontal: 20,
-//   },
-//   track: {
-//     height: 8,
-//     backgroundColor: '#463E3F',
-//     width: width,
-//     marginHorizontal: 20,
-//   },
-//   trainContainer: {
-//     position: 'absolute',
-//     bottom: height * 0.25,
-//     flexDirection: 'row',
-//   },
-//   train: {
-//     flexDirection: 'row',
-//     alignItems: 'flex-end',
-//   },
-//   engine: {
-//     width: 100,
-//     height: 60,
-//     backgroundColor: '#2C3E50',
-//     borderRadius: 10,
-//     marginRight: 5,
-//   },
-//   cabin: {
-//     width: 40,
-//     height: 30,
-//     backgroundColor: '#34495E',
-//     position: 'absolute',
-//     top: -20,
-//     right: 10,
-//     borderRadius: 5,
-//   },
-//   chimney: {
-//     width: 15,
-//     height: 25,
-//     backgroundColor: '#7F8C8D',
-//     position: 'absolute',
-//     top: -35,
-//     left: 20,
-//     borderRadius: 3,
-//   },
-//   wagon: {
-//     width: 80,
-//     height: 50,
-//     backgroundColor: '#E74C3C',
-//     borderRadius: 8,
-//     marginRight: 5,
-//   },
-//   titleContainer: {
-//     position: 'absolute',
-//     top: height * 0.3,
-//     alignItems: 'center',
-//   },
-//   title: {
-//     fontSize: 48,
-//     fontWeight: 'bold',
-//     color: '#FFFFFF',
-//     textShadowColor: 'rgba(0, 0, 0, 0.75)',
-//     textShadowOffset: {width: 2, height: 2},
-//     textShadowRadius: 5,
-//   },
-//   subtitle: {
-//     fontSize: 18,
-//     color: '#FFFFFF',
-//     marginTop: 10,
-//     textShadowColor: 'rgba(0, 0, 0, 0.75)',
-//     textShadowOffset: {width: 1, height: 1},
-//     textShadowRadius: 3,
-//   },
-// });
-
-// export default Splash;
-
-import React, {useEffect} from 'react';
-import {View, StyleSheet, Dimensions, Animated, Text} from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { 
+  View, 
+  StyleSheet, 
+  Dimensions, 
+  Animated, 
+  Text, 
+  StatusBar,
+  Easing
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/Ionicons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
-const Splash = ({navigation}) => {
-  const fadeAnim = new Animated.Value(0);
-  const slideAnim = new Animated.Value(-width);
+const Splash = ({ navigation }) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const scaleAnim = useRef(new Animated.Value(0.8)).current;
+  const slideAnim = useRef(new Animated.Value(20)).current;
 
   useEffect(() => {
-    // Animate the train and fade in the content
+    // Start animations
     Animated.parallel([
       Animated.timing(fadeAnim, {
         toValue: 1,
-        duration: 2000,
+        duration: 1200,
+        useNativeDriver: true,
+      }),
+      Animated.spring(scaleAnim, {
+        toValue: 1,
+        friction: 4,
         useNativeDriver: true,
       }),
       Animated.timing(slideAnim, {
-        toValue: width,
-        duration: 4000,
+        toValue: 0,
+        duration: 1000,
+        easing: Easing.out(Easing.back(1.5)),
         useNativeDriver: true,
-      }),
+      })
     ]).start();
 
-    // Navigate to Language Selection screen after 5 seconds
-    setTimeout(() => {
-      navigation.replace('LanguageSelection');
-    }, 5000);
+    // Check for existing language preference and navigate
+    const checkUserStatus = async () => {
+      try {
+        const lang = await AsyncStorage.getItem('settings.lang');
+        
+        // Wait for 2.5 seconds total for splash experience
+        setTimeout(() => {
+          if (lang) {
+            navigation.replace('MainTabs');
+          } else {
+            navigation.replace('LanguageSelection');
+          }
+        }, 2500);
+      } catch (error) {
+        console.error('Splash error:', error);
+        navigation.replace('LanguageSelection');
+      }
+    };
+
+    checkUserStatus();
   }, []);
 
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
       <LinearGradient
-        colors={['#1a2a6c', '#2575fc', '#6a11cb']}
+        colors={['#0F172A', '#1E293B', '#0F172A']}
         style={styles.background}>
-        {/* Train tracks */}
-        <View style={styles.tracks}>
-          <View style={styles.track} />
-          <View style={styles.track} />
-        </View>
+        
+        {/* Decorative elements */}
+        <View style={styles.blurCircle1} />
+        <View style={styles.blurCircle2} />
 
-        {/* Animated train */}
         <Animated.View
           style={[
-            styles.trainContainer,
+            styles.content,
             {
-              transform: [{translateX: slideAnim}],
-            },
+              opacity: fadeAnim,
+              transform: [
+                { scale: scaleAnim },
+                { translateY: slideAnim }
+              ]
+            }
           ]}>
-          {/* Simple train shape using Views */}
-          <View style={styles.train}>
-            <View style={styles.engine}>
-              <View style={styles.cabin} />
-              <View style={styles.chimney} />
-            </View>
-            <View style={styles.wagon} />
-            <View style={styles.wagon} />
+          
+          <View style={styles.logoContainer}>
+              <Icon name="train" size={80} color="#38BDF8" />
+              <View style={styles.logoOverlay} />
+          </View>
+
+          <Text style={styles.title}>RailAspirant</Text>
+          <View style={styles.divider} />
+          <Text style={styles.subtitle}>Empowering Indian Students 🇮🇳</Text>
+          
+          <View style={styles.loaderContainer}>
+              <Animated.View style={[styles.loaderBar, { width: fadeAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: ['0%', '100%']
+              }) }]} />
           </View>
         </Animated.View>
 
-        {/* App title */}
-        <Animated.View
-          style={[
-            styles.titleContainer,
-            {
-              opacity: fadeAnim,
-            },
-          ]}>
-          <Text style={styles.title}>RRB JE </Text>
-          <Text style={styles.subtitle}>Your Path to Success Starts Here</Text>
-        </Animated.View>
+        <Text style={styles.footerText}>Version 2.0 • Phase 3</Text>
       </LinearGradient>
     </View>
   );
@@ -257,82 +117,89 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  tracks: {
-    position: 'absolute',
-    bottom: height * 0.2,
-    flexDirection: 'row',
-    width: width,
-    justifyContent: 'center',
-    paddingHorizontal: 20,
+  blurCircle1: {
+      position: 'absolute',
+      width: width * 0.8,
+      height: width * 0.8,
+      borderRadius: width * 0.4,
+      backgroundColor: 'rgba(56, 189, 248, 0.05)',
+      top: -100,
+      left: -100,
   },
-  track: {
-    height: 8,
-    backgroundColor: '#463E3F',
-    width: width,
-    marginHorizontal: 20,
+  blurCircle2: {
+      position: 'absolute',
+      width: width * 0.6,
+      height: width * 0.6,
+      borderRadius: width * 0.3,
+      backgroundColor: 'rgba(56, 189, 248, 0.03)',
+      bottom: -50,
+      right: -50,
   },
-  trainContainer: {
-    position: 'absolute',
-    bottom: height * 0.25,
-    flexDirection: 'row',
-  },
-  train: {
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-  },
-  engine: {
-    width: 100,
-    height: 60,
-    backgroundColor: '#2C3E50',
-    borderRadius: 10,
-    marginRight: 5,
-  },
-  cabin: {
-    width: 40,
-    height: 30,
-    backgroundColor: '#34495E',
-    position: 'absolute',
-    top: -20,
-    right: 10,
-    borderRadius: 5,
-  },
-  chimney: {
-    width: 15,
-    height: 25,
-    backgroundColor: '#7F8C8D',
-    position: 'absolute',
-    top: -35,
-    left: 20,
-    borderRadius: 3,
-  },
-  wagon: {
-    width: 80,
-    height: 50,
-    backgroundColor: '#E74C3C',
-    borderRadius: 8,
-    marginRight: 5,
-  },
-  titleContainer: {
-    position: 'absolute',
-    top: height * 0.3,
+  content: {
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logoContainer: {
+    width: 140,
+    height: 140,
+    borderRadius: 40,
+    backgroundColor: 'rgba(255,255,255,0.03)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 30,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.08)',
+    elevation: 20,
+    shadowColor: '#38BDF8',
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.2,
+    shadowRadius: 20,
+  },
+  logoOverlay: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: 'rgba(56, 189, 248, 0.02)',
+      borderRadius: 40,
   },
   title: {
-    fontSize: 48,
-    fontWeight: 'bold',
+    fontSize: 42,
+    fontWeight: '900',
     color: '#FFFFFF',
-    textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: {width: 2, height: 2},
-    textShadowRadius: 5,
+    letterSpacing: -1,
+  },
+  divider: {
+      width: 40,
+      height: 4,
+      backgroundColor: '#38BDF8',
+      borderRadius: 2,
+      marginVertical: 15,
   },
   subtitle: {
-    fontSize: 18,
-    color: '#FFFFFF',
-    marginTop: 10,
-    textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: {width: 1, height: 1},
-    textShadowRadius: 3,
+    fontSize: 16,
+    color: '#94A3B8',
+    fontWeight: '500',
+    letterSpacing: 2,
+    textTransform: 'uppercase',
   },
+  loaderContainer: {
+      width: 150,
+      height: 2,
+      backgroundColor: 'rgba(255,255,255,0.1)',
+      marginTop: 40,
+      borderRadius: 1,
+      overflow: 'hidden',
+  },
+  loaderBar: {
+      height: '100%',
+      backgroundColor: '#38BDF8',
+  },
+  footerText: {
+      position: 'absolute',
+      bottom: 40,
+      color: '#475569',
+      fontSize: 12,
+      fontWeight: '600',
+      letterSpacing: 1,
+  }
 });
 
 export default Splash;
