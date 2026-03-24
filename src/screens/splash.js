@@ -196,9 +196,9 @@ const Splash = ({navigation}) => {
       }),
     ]).start();
 
-    // Navigate to main screen after 5 seconds
+    // Navigate to Language Selection screen after 5 seconds
     setTimeout(() => {
-      navigation.replace('Home');
+      navigation.replace('LanguageSelection');
     }, 5000);
   }, []);
 

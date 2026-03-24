@@ -1,770 +1,309 @@
-// import React from 'react';
-// import {
-//   View,
-//   Text,
-//   TouchableOpacity,
-//   StyleSheet,
-//   BackHandler,
-//   Alert,
-//   Dimensions,
-//   Platform,
-// } from 'react-native';
-// import Icon from 'react-native-vector-icons/FontAwesome';
-// import LinearGradient from 'react-native-linear-gradient';
-// import {
-//   widthPercentageToDP as wp,
-//   heightPercentageToDP as hp,
-// } from 'react-native-responsive-screen';
-// import {useNavigation} from '@react-navigation/native';
-// import Animated, {
-//   useAnimatedStyle,
-//   useSharedValue,
-//   withSpring,
-//   withTiming,
-//   interpolate,
-//   Extrapolate,
-//   FadeInDown,
-//   runOnJS,
-// } from 'react-native-reanimated';
-// import {useSafeAreaInsets} from 'react-native-safe-area-context';
-
-// const {width, height} = Dimensions.get('window');
-// const isSmallDevice = height < 700;
-
-// // Enhanced spring configuration for smoother animations
-
-// const SPRING_CONFIG = {
-//   damping: 10,
-//   mass: 0.5, // Reduced from 0.8
-//   stiffness: 100, // Reduced from 150
-// };
-
-// // const SPRING_CONFIG = {
-// //   damping: 15,
-// //   mass: 0.8,
-// //   stiffness: 150,
-// //   overshootClamping: false,
-// //   restSpeedThreshold: 0.3,
-// //   restDisplacementThreshold: 0.3,
-// // };
-
-// const FONTS = {
-//   title: isSmallDevice ? wp('7%') : wp('6%'),
-//   sectionTitle: isSmallDevice ? wp('4.5%') : wp('4%'),
-//   itemTitle: isSmallDevice ? wp('4%') : wp('3.5%'),
-//   description: isSmallDevice ? wp('3.5%') : wp('3%'),
-// };
-
-// const SPACING = {
-//   containerPadding: wp('5%'),
-//   itemSpacing: isSmallDevice ? hp('1.5%') : hp('2%'),
-//   sectionSpacing: isSmallDevice ? hp('2%') : hp('3%'),
-//   iconSize: isSmallDevice ? wp('12%') : wp('10%'),
-// };
-
-// const Home = () => {
-//   const navigation = useNavigation();
-//   const insets = useSafeAreaInsets();
-
-//   const scale = useSharedValue(1);
-//   const menuItemsProgress = useSharedValue(0);
-
-//   React.useEffect(() => {
-//     menuItemsProgress.value = withTiming(1, {duration: 800});
-//   }, []);
-
-//   React.useEffect(() => {
-//     const backHandler = BackHandler.addEventListener(
-//       'hardwareBackPress',
-//       handleBackPress,
-//     );
-//     return () => backHandler.remove();
-//   }, []);
-
-//   const handleBackPress = () => {
-//     if (navigation.isFocused()) {
-//       Alert.alert(
-//         'Exit App',
-//         'Are you sure you want to exit?',
-//         [
-//           {text: 'Cancel', style: 'cancel'},
-//           {
-//             text: 'Exit',
-//             onPress: () => BackHandler.exitApp(),
-//             style: 'destructive',
-//           },
-//         ],
-//         {cancelable: false},
-//       );
-//       return true;
-//     }
-//     return false;
-//   };
-
-//   const navigateToScreen = React.useCallback(
-//     screenName => {
-//       navigation.navigate(screenName);
-//     },
-//     [navigation],
-//   );
-
-//   const handlePress = React.useCallback(
-//     screenName => {
-//       // Enhanced press animation
-//       scale.value = withSpring(
-//         0.97,
-//         {
-//           ...SPRING_CONFIG,
-//           duration: 150,
-//         },
-//         () => {
-//           scale.value = withSpring(
-//             1,
-//             {
-//               ...SPRING_CONFIG,
-//               duration: 150,
-//             },
-//             () => {
-//               runOnJS(navigateToScreen)(screenName);
-//             },
-//           );
-//         },
-//       );
-//     },
-//     [navigateToScreen],
-//   );
-
-//   const getMenuItemStyle = index => {
-//     return useAnimatedStyle(() => {
-//       const translateY = interpolate(
-//         menuItemsProgress.value,
-//         [0, 1],
-//         [50, 0],
-//         Extrapolate.CLAMP,
-//       );
-
-//       const opacity = interpolate(
-//         menuItemsProgress.value,
-//         [0, 1],
-//         [0, 1],
-//         Extrapolate.CLAMP,
-//       );
-
-//       const delay = index * 50;
-
-//       return {
-//         opacity,
-//         transform: [
-//           {
-//             translateY: withSpring(translateY, {
-//               ...SPRING_CONFIG,
-//               delay,
-//             }),
-//           },
-//           {scale: scale.value},
-//         ],
-//       };
-//     });
-//   };
-
-//   const AnimatedTouchableOpacity =
-//     Animated.createAnimatedComponent(TouchableOpacity);
-
-//   const MenuItem = React.memo(({icon, title, onPress, index, description}) => (
-//     <AnimatedTouchableOpacity
-//       style={[styles.item]}
-//       onPress={onPress}
-//       activeOpacity={0.95}>
-//       <Animated.View style={[styles.itemContent, getMenuItemStyle(index)]}>
-//         <LinearGradient
-//           colors={
-//             index % 2 === 0 ? ['#4A90E2', '#357ABD'] : ['#5C6BC0', '#3F51B5']
-//           }
-//           start={{x: 0, y: 0}}
-//           end={{x: 1, y: 1}}
-//           style={styles.gradientContainer}>
-//           <View style={styles.iconContainer}>
-//             <Icon name={icon} size={wp('6%')} color="#FFF" />
-//           </View>
-//           <View style={styles.textContainer}>
-//             <Text style={styles.itemTitle}>{title}</Text>
-//             {description && (
-//               <Text style={styles.description}>{description}</Text>
-//             )}
-//           </View>
-//           <Icon name="chevron-right" size={wp('4%')} color="#FFF" />
-//         </LinearGradient>
-//       </Animated.View>
-//     </AnimatedTouchableOpacity>
-//   ));
-
-//   return (
-//     <LinearGradient
-//       colors={['#F8F9FF', '#E8EFFF']}
-//       style={[styles.container, {paddingTop: insets.top || hp('2%')}]}>
-//       <View style={styles.header}>
-//         <LinearGradient
-//           colors={['#4A90E2', '#357ABD']}
-//           start={{x: 0, y: 0}}
-//           end={{x: 1, y: 0}}
-//           style={styles.headerGradient}>
-//           <Animated.Text
-//             entering={FadeInDown.delay(200).springify()}
-//             style={styles.title}>
-//             Welcome Back
-//           </Animated.Text>
-//         </LinearGradient>
-//       </View>
-
-//       <View style={styles.content}>
-//         <View style={styles.section}>
-//           <Text style={styles.sectionTitle}>Practice Tests</Text>
-//           <MenuItem
-//             icon="book"
-//             title="CBT Test 1"
-//             description="Practice questions for your first test"
-//             onPress={() => handlePress('cbt1')}
-//             index={0}
-//           />
-//           <MenuItem
-//             icon="book"
-//             title="CBT Test 2"
-//             description="Additional practice questions"
-//             onPress={() => handlePress('cbt2')}
-//             index={1}
-//           />
-//         </View>
-
-//         <View style={styles.section}>
-//           <Text style={styles.sectionTitle}>Resources</Text>
-//           <MenuItem
-//             icon="list-alt"
-//             title="Syllabus"
-//             description="View complete course content"
-//             onPress={() => handlePress('syllabus')}
-//             index={2}
-//           />
-//           <MenuItem
-//             icon="question-circle"
-//             title="Quiz"
-//             description="Test your knowledge"
-//             onPress={() => handlePress('Quiz')}
-//             index={3}
-//           />
-//         </View>
-//       </View>
-//     </LinearGradient>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//   },
-//   header: {
-//     marginBottom: SPACING.containerPadding,
-//   },
-//   headerGradient: {
-//     paddingVertical: SPACING.containerPadding,
-//     paddingHorizontal: SPACING.containerPadding,
-//     borderBottomLeftRadius: 20,
-//     borderBottomRightRadius: 20,
-//     ...Platform.select({
-//       ios: {
-//         shadowColor: '#000',
-//         shadowOffset: {width: 0, height: 4},
-//         shadowOpacity: 0.15,
-//         shadowRadius: 8,
-//       },
-//       android: {
-//         elevation: 8,
-//       },
-//     }),
-//   },
-//   title: {
-//     fontSize: FONTS.title,
-//     fontWeight: 'bold',
-//     color: '#FFF',
-//     textAlign: 'left',
-//   },
-//   content: {
-//     flex: 1,
-//     paddingHorizontal: SPACING.containerPadding,
-//     paddingTop: SPACING.sectionSpacing,
-//   },
-//   section: {
-//     marginBottom: SPACING.sectionSpacing * 1.5,
-//   },
-//   sectionTitle: {
-//     fontSize: FONTS.sectionTitle,
-//     fontWeight: '600',
-//     color: '#357ABD',
-//     marginBottom: SPACING.itemSpacing,
-//     paddingLeft: wp('2%'),
-//   },
-//   item: {
-//     marginBottom: SPACING.itemSpacing,
-//     borderRadius: 16,
-//     overflow: 'hidden',
-//     ...Platform.select({
-//       ios: {
-//         shadowColor: '#000',
-//         shadowOffset: {width: 0, height: 4},
-//         shadowOpacity: 0.15,
-//         shadowRadius: 8,
-//       },
-//       android: {
-//         elevation: 8,
-//       },
-//     }),
-//   },
-//   gradientContainer: {
-//     flexDirection: 'row',
-//     alignItems: 'center',
-//     padding: SPACING.itemSpacing,
-//     minHeight: SPACING.iconSize * 1.2,
-//   },
-//   itemContent: {
-//     backgroundColor: 'transparent',
-//   },
-//   iconContainer: {
-//     width: SPACING.iconSize,
-//     height: SPACING.iconSize,
-//     borderRadius: SPACING.iconSize / 2,
-//     backgroundColor: 'rgba(255, 255, 255, 0.2)',
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   textContainer: {
-//     flex: 1,
-//     marginHorizontal: wp('3%'),
-//   },
-//   itemTitle: {
-//     fontSize: FONTS.itemTitle,
-//     fontWeight: '600',
-//     color: '#FFF',
-//     marginBottom: 4,
-//   },
-//   description: {
-//     fontSize: FONTS.description,
-//     color: 'rgba(255, 255, 255, 0.9)',
-//   },
-// });
-
-// export default Home;
-
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
   TouchableOpacity,
   StyleSheet,
-  BackHandler,
-  Alert,
   Platform,
-  Modal,
+  ScrollView,
+  StatusBar,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {useNavigation} from '@react-navigation/native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {BannerAd, BannerAdSize} from 'react-native-google-mobile-ads';
+import { useNavigation } from '@react-navigation/native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 
-const isSmallDevice = hp('100%') < 700;
-
-const FONTS = {
-  title: isSmallDevice ? wp('7%') : wp('6%'),
-  sectionTitle: isSmallDevice ? wp('4.5%') : wp('4%'),
-  itemTitle: isSmallDevice ? wp('4%') : wp('3.5%'),
-  description: isSmallDevice ? wp('3.5%') : wp('3%'),
-};
-
-const SPACING = {
-  containerPadding: wp('5%'),
-  itemSpacing: isSmallDevice ? hp('1.5%') : hp('2%'),
-  sectionSpacing: isSmallDevice ? hp('2%') : hp('3%'),
-  iconSize: isSmallDevice ? wp('12%') : wp('10%'),
-};
-
-const MenuItem = React.memo(({icon, title, onPress, description}) => (
-  <TouchableOpacity style={styles.item} onPress={onPress} activeOpacity={0.7}>
+const ExamCard = ({ title, subtitle, icon, colors, onPress }) => (
+  <TouchableOpacity style={styles.cardContainer} onPress={onPress} activeOpacity={0.8}>
     <LinearGradient
-      colors={['#4A90E2', '#357ABD']}
-      start={{x: 0, y: 0}}
-      end={{x: 1, y: 1}}
-      style={styles.gradientContainer}>
-      <View style={styles.iconContainer}>
-        <Icon name={icon} size={wp('6%')} color="#FFF" />
+      colors={colors}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={styles.cardGradient}
+    >
+      <View style={styles.cardOverlay} />
+      <View style={styles.cardContent}>
+        <View style={styles.cardText}>
+          <Text style={styles.cardTitle}>{title}</Text>
+          <Text style={styles.cardSubtitle}>{subtitle}</Text>
+        </View>
+        <View style={styles.cardIconContainer}>
+          <Icon name={icon} size={36} color="#FFF" />
+        </View>
       </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.itemTitle}>{title}</Text>
-        {description && <Text style={styles.description}>{description}</Text>}
-      </View>
-      <Icon name="chevron-right" size={wp('4%')} color="#FFF" />
     </LinearGradient>
   </TouchableOpacity>
-));
+);
 
 const Home = () => {
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
-  const [exitModalVisible, setExitModalVisible] = useState(false);
+  const { t } = useTranslation();
 
-  React.useEffect(() => {
-    const backHandler = BackHandler.addEventListener(
-      'hardwareBackPress',
-      handleBackPress,
-    );
-    return () => backHandler.remove();
-  }, []);
-
-  // const handleBackPress = () => {
-  //   if (navigation.isFocused()) {
-  //     Alert.alert(
-  //       'Exit App',
-  //       'Are you sure you want to exit?',
-  //       [
-  //         {text: 'Cancel', style: 'cancel'},
-  //         {
-  //           text: 'Exit',
-  //           onPress: () => BackHandler.exitApp(),
-  //           style: 'destructive',
-  //         },
-  //       ],
-  //       {cancelable: false},
-  //     );
-  //     return true;
-  //   }
-  //   return false;
-  // };
-
-  const handleBackPress = () => {
-    if (navigation.isFocused()) {
-      setExitModalVisible(true);
-      return true;
-    }
-    return false;
+  const handleNavigation = (category) => {
+    navigation.navigate('Practice', { category });
   };
-
-  const handleExit = () => {
-    BackHandler.exitApp();
-  };
-
-  const handleNavigation = React.useCallback(
-    screenName => {
-      requestAnimationFrame(() => {
-        navigation.navigate(screenName);
-      });
-    },
-    [navigation],
-  );
-
-  const menuItems = React.useMemo(
-    () => [
-      {
-        section: 'Practice Tests',
-        items: [
-          {
-            icon: 'book',
-            title: 'CBT Test 1',
-            description: 'Practice questions for your first test',
-            screen: 'cbt1',
-          },
-          {
-            icon: 'book',
-            title: 'CBT Test 2',
-            description: 'Additional practice questions',
-            screen: 'cbt2',
-          },
-        ],
-      },
-      {
-        section: 'Resources',
-        items: [
-          {
-            icon: 'list-alt',
-            title: 'Syllabus',
-            description: 'View complete course content',
-            screen: 'syllabus',
-          },
-          {
-            icon: 'question-circle',
-            title: 'Quiz',
-            description: 'Test your knowledge',
-            screen: 'Quiz',
-          },
-        ],
-      },
-    ],
-    [],
-  );
 
   return (
-    <LinearGradient
-      colors={['#F8F9FF', '#E8EFFF']}
-      style={[styles.container, {paddingTop: insets.top || hp('2%')}]}>
-      <View style={styles.header}>
+    <View style={styles.container}>
+      <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
+      <LinearGradient colors={['#004E92', '#000428']} style={styles.topBackground} />
+      
+      <ScrollView contentContainerStyle={[styles.scrollContent, { paddingTop: insets.top + 20 }]} showsVerticalScrollIndicator={false}>
+        
+        {/* Modern Header Section */}
+        <View style={styles.header}>
+            <View>
+                <Text style={styles.greeting}>RailAspirant</Text>
+                <Text style={styles.subGreeting}>{t('brandSubtitle')}</Text>
+            </View>
+            <TouchableOpacity style={styles.profileIcon} onPress={() => navigation.navigate('Profile')}>
+                <Icon name="person" size={24} color="#FFF" />
+            </TouchableOpacity>
+        </View>
+
+        {/* Motivation Card */}
         <LinearGradient
-          colors={['#4A90E2', '#357ABD']}
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 0}}
-          style={styles.headerGradient}>
-          <Text style={styles.title}>Welcome Back</Text>
+          colors={['rgba(255,255,255,0.1)', 'rgba(255,255,255,0.05)']}
+          style={styles.motivationCard}
+        >
+          <Text style={styles.motivationTitle}>{t('motivationTitle')}</Text>
+          <Text style={styles.motivationText}>{t('motivationText')}</Text>
         </LinearGradient>
-      </View>
 
-      <View style={styles.content}>
-        {menuItems.map((section, sectionIndex) => (
-          <View key={section.section} style={styles.section}>
-            <Text style={styles.sectionTitle}>{section.section}</Text>
-            {section.items.map((item, itemIndex) => (
-              <MenuItem
-                key={`${sectionIndex}-${itemIndex}`}
-                icon={item.icon}
-                title={item.title}
-                description={item.description}
-                onPress={() => handleNavigation(item.screen)}
-              />
-            ))}
-          </View>
-        ))}
-      </View>
-      <View style={styles.bannerContainer}>
-        <BannerAd
-          unitId="ca-app-pub-2627956667785383/2550120291"
-          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-          requestOptions={{
-            requestNonPersonalizedAdsOnly: true,
-          }}
-        />
-      </View>
-      {/* <Modal
-        visible={exitModalVisible}
-        transparent={true}
-        animationType="slide"
-        onRequestClose={() => setExitModalVisible(false)}>
-        <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>Exit App</Text>
-            <Text style={styles.modalMessage}>
-              Are you sure you want to exit?
-            </Text>
-
-            <BannerAd
-              unitId="ca-app-pub-2627956667785383/7596247624"
-              size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-              requestOptions={{
-                requestNonPersonalizedAdsOnly: true,
-              }}
-            />
-
-            <View style={styles.modalButtons}>
-              <TouchableOpacity
-                style={styles.cancelButton}
-                onPress={() => setExitModalVisible(false)}>
-                <Text style={styles.buttonText}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.exitButton} onPress={handleExit}>
-                <Text style={styles.buttonText}>Exit</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
+        <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>{t('targetExams')}</Text>
+            <TouchableOpacity>
+                <Text style={styles.seeAll}>{t('seeAll')}</Text>
+            </TouchableOpacity>
         </View>
-      </Modal> */}
-      <Modal
-        visible={exitModalVisible}
-        transparent={true}
-        animationType="slide"
-        onRequestClose={() => setExitModalVisible(false)}>
-        <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>Exit App</Text>
-            <Text style={styles.modalMessage}>
-              Are you sure you want to exit?
-            </Text>
 
-            <View style={styles.bannerContainer1}>
-              <BannerAd
-                unitId="ca-app-pub-2627956667785383/7596247624"
-                size={BannerAdSize.MEDIUM_RECTANGLE}
-                requestOptions={{
-                  requestNonPersonalizedAdsOnly: true,
-                }}
-              />
-            </View>
-
-            <View style={styles.modalButtons}>
-              <TouchableOpacity
-                style={styles.cancelButton}
-                onPress={() => setExitModalVisible(false)}>
-                <Text style={styles.buttonText}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.exitButton} onPress={handleExit}>
-                <Text style={styles.buttonText}>Exit</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
+        <View style={styles.gridContainer}>
+          <ExamCard
+            title="RRB NTPC"
+            subtitle={t('ntpcSubtitle')}
+            icon="people-circle"
+            colors={['#FF5F6D', '#FFC371']}
+            onPress={() => handleNavigation('NTPC')}
+          />
+          <ExamCard
+            title="RRB ALP"
+            subtitle={t('alpSubtitle')}
+            icon="speedometer"
+            colors={['#2193b0', '#6dd5ed']}
+            onPress={() => handleNavigation('ALP')}
+          />
+          <ExamCard
+            title="RRB JE"
+            subtitle={t('jeSubtitle')}
+            icon="settings"
+            colors={['#1D976C', '#93F9B9']}
+            onPress={() => handleNavigation('JE')}
+          />
+          <ExamCard
+            title="RRB Group D"
+            subtitle={t('groupDSubtitle')}
+            icon="build"
+            colors={['#614385', '#516395']}
+            onPress={() => handleNavigation('GroupD')}
+          />
         </View>
-      </Modal>
-    </LinearGradient>
+
+        <Text style={styles.sectionTitle}>Extra Resources</Text>
+
+        <TouchableOpacity 
+          style={styles.resourceItem} 
+          onPress={() => navigation.navigate('Tests', { pyq: true })}
+        >
+            <View style={[styles.resourceIcon, { backgroundColor: '#E3F2FD' }]}>
+                <Icon name="newspaper" size={24} color="#0074E4" />
+            </View>
+            <View style={styles.resourceText}>
+                <Text style={styles.resourceTitle}>{t('pyqTitle')}</Text>
+                <Text style={styles.resourceSubtitle}>{t('pyqSubtitle')}</Text>
+            </View>
+            <Icon name="chevron-forward" size={18} color="#A0AEC0" />
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          style={styles.resourceItem} 
+          onPress={() => navigation.navigate('Revision')}
+        >
+            <View style={[styles.resourceIcon, { backgroundColor: '#FFF3E0' }]}>
+                <Icon name="bookmark" size={24} color="#F57C00" />
+            </View>
+            <View style={styles.resourceText}>
+                <Text style={styles.resourceTitle}>{t('revisionVault')}</Text>
+                <Text style={styles.resourceSubtitle}>{t('revisionSubtitle')}</Text>
+            </View>
+            <Icon name="chevron-forward" size={18} color="#A0AEC0" />
+        </TouchableOpacity>
+
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#0F172A',
+  },
+  topBackground: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: hp('40%'),
+  },
+  scrollContent: {
+    paddingHorizontal: 24,
+    paddingBottom: 120,
   },
   header: {
-    marginBottom: SPACING.containerPadding,
-  },
-  headerGradient: {
-    paddingVertical: SPACING.containerPadding,
-    paddingHorizontal: SPACING.containerPadding,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-    ...Platform.select({
-      ios: {
-        shadowColor: '#000',
-        shadowOffset: {width: 0, height: 2},
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
-      },
-      android: {
-        elevation: 4,
-      },
-    }),
-  },
-  title: {
-    fontSize: FONTS.title,
-    fontWeight: 'bold',
-    color: '#FFF',
-    textAlign: 'left',
-  },
-  content: {
-    flex: 1,
-    paddingHorizontal: SPACING.containerPadding,
-    paddingTop: SPACING.sectionSpacing,
-  },
-  section: {
-    marginBottom: SPACING.sectionSpacing * 1.5,
-  },
-  sectionTitle: {
-    fontSize: FONTS.sectionTitle,
-    fontWeight: '600',
-    color: '#357ABD',
-    marginBottom: SPACING.itemSpacing,
-    paddingLeft: wp('2%'),
-  },
-  item: {
-    marginBottom: SPACING.itemSpacing,
-    borderRadius: 16,
-    overflow: 'hidden',
-    ...Platform.select({
-      ios: {
-        shadowColor: '#000',
-        shadowOffset: {width: 0, height: 2},
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
-      },
-      android: {
-        elevation: 3,
-      },
-    }),
-  },
-  gradientContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: SPACING.itemSpacing,
-    minHeight: SPACING.iconSize * 1.2,
-  },
-  iconContainer: {
-    width: SPACING.iconSize,
-    height: SPACING.iconSize,
-    borderRadius: SPACING.iconSize / 2,
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  textContainer: {
-    flex: 1,
-    marginHorizontal: wp('3%'),
-  },
-  itemTitle: {
-    fontSize: FONTS.itemTitle,
-    fontWeight: '600',
-    color: '#FFF',
-    marginBottom: 4,
-  },
-  description: {
-    fontSize: FONTS.description,
-    color: 'rgba(255, 255, 255, 0.9)',
-  },
-  bannerContainer: {
-    position: 'absolute',
-    bottom: 0,
-    width: '100%',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  modalContent: {
-    width: wp('80%'),
-    backgroundColor: '#FFF',
-    padding: 20,
-    borderRadius: 10,
-    alignItems: 'center',
-  },
-  modalTitle: {
-    fontSize: wp('5%'),
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: 'black',
-  },
-  modalMessage: {
-    fontSize: wp('4%'),
-    marginBottom: 20,
-    textAlign: 'center',
-    color: 'black',
-  },
-  modalButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '100%',
-  },
-  cancelButton: {
-    flex: 1,
-    padding: 10,
     alignItems: 'center',
-    backgroundColor: '#357ABD',
-    borderRadius: 5,
-    marginRight: 5,
+    marginBottom: 30,
   },
-  exitButton: {
-    flex: 1,
-    padding: 10,
-    alignItems: 'center',
-    backgroundColor: '#FF3B30',
-    borderRadius: 5,
-    marginLeft: 5,
-  },
-  buttonText: {
+  greeting: {
+    fontSize: 28,
+    fontWeight: '900',
     color: '#FFF',
+    letterSpacing: -0.5,
+  },
+  subGreeting: {
+    fontSize: 14,
+    color: 'rgba(255,255,255,0.7)',
+    marginTop: 4,
+  },
+  profileIcon: {
+      width: 48,
+      height: 48,
+      borderRadius: 24,
+      backgroundColor: 'rgba(255,255,255,0.1)',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderWidth: 1,
+      borderColor: 'rgba(255,255,255,0.2)',
+  },
+  motivationCard: {
+      padding: 24,
+      borderRadius: 24,
+      marginBottom: 32,
+      borderWidth: 1,
+      borderColor: 'rgba(255,255,255,0.1)',
+  },
+  motivationTitle: {
+      color: '#4ADE80',
+      fontSize: 18,
+      fontWeight: 'bold',
+      marginBottom: 8,
+  },
+  motivationText: {
+      color: '#E2E8F0',
+      fontSize: 15,
+      lineHeight: 22,
+  },
+  sectionHeader: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 20,
+  },
+  sectionTitle: {
+    fontSize: 20,
     fontWeight: 'bold',
+    color: '#FFF',
   },
-  bannerContainer1: {
-    width: '100%',
+  seeAll: {
+      color: '#0074E4',
+      fontWeight: '600',
+  },
+  gridContainer: {
+    marginBottom: 32,
+  },
+  cardContainer: {
+    marginBottom: 16,
+    borderRadius: 24,
+    overflow: 'hidden',
+    elevation: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.3,
+    shadowRadius: 12,
+  },
+  cardGradient: {
+    padding: 26,
+    flexDirection: 'row',
+  },
+  cardOverlay: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: 'rgba(0,0,0,0.05)',
+  },
+  cardContent: {
+    flex: 1,
+    flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20, // Adds space between the ad and the buttons
+    justifyContent: 'space-between',
   },
+  cardText: {
+    flex: 1,
+    marginRight: 10,
+  },
+  cardTitle: {
+    fontSize: 24,
+    fontWeight: '800',
+    color: '#FFF',
+    marginBottom: 6,
+  },
+  cardSubtitle: {
+    fontSize: 13,
+    color: 'rgba(255, 255, 255, 0.85)',
+    fontWeight: '600',
+  },
+  cardIconContainer: {
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    backgroundColor: 'rgba(255,255,255,0.25)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  resourceItem: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#1E293B',
+      padding: 16,
+      borderRadius: 20,
+      marginBottom: 12,
+  },
+  resourceIcon: {
+      width: 44,
+      height: 44,
+      borderRadius: 14,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginRight: 16,
+  },
+  resourceText: {
+      flex: 1,
+  },
+  resourceTitle: {
+      color: '#FFF',
+      fontSize: 16,
+      fontWeight: '700',
+  },
+  resourceSubtitle: {
+      color: '#94A3B8',
+      fontSize: 12,
+      marginTop: 2,
+  }
 });
 
-export default React.memo(Home);
+export default Home;
