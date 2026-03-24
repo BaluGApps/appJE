@@ -102,16 +102,18 @@ const PracticeQuizScreen = ({route, navigation}) => {
     if (!currentQuestion || showResult) return;
     setSelectedOption(optionIndex);
     setShowResult(true);
-    const isCorrect = optionIndex === (currentQuestion.ans - 1);
+    const isCorrect = optionIndex === (Number(currentQuestion.ans) - 1);
     if (isCorrect) {
       playSound('correct');
+      // Show modal immediately for better UX
+      setLevelCompleteVisible(true);
+      
       const level = currentQuestionIndex + 1;
       const completed = Array.from(new Set([...progressState.completed, level])).sort(
         (a, b) => a - b,
       );
       const unlockedLevel = Math.max(progressState.unlockedLevel, level + 1);
       await persistProgress({unlockedLevel, completed});
-      setLevelCompleteVisible(true);
     } else {
       playSound('wrong');
       setWrongAnswerVisible(true);
@@ -213,9 +215,9 @@ const PracticeQuizScreen = ({route, navigation}) => {
           )}
 
           {currentQuestion.options.map((opt, idx) => {
-            const isCorrect = showResult && idx === (currentQuestion.ans - 1);
+            const isCorrect = showResult && idx === (Number(currentQuestion.ans) - 1);
             const isWrong =
-              showResult && idx === selectedOption && idx !== (currentQuestion.ans - 1);
+              showResult && idx === selectedOption && idx !== (Number(currentQuestion.ans) - 1);
             return (
               <TouchableOpacity
                 key={`${currentQuestion.id}-${idx}`}
