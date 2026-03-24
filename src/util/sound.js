@@ -6,33 +6,43 @@ import {Vibration} from 'react-native';
 Sound.setCategory('Playback', true);
 
 const SOUND_FILES = {
-  // Android raw resources should be referenced without extension.
-  correct: 'correct',
-  wrong: 'wrong',
-  levelup: 'levelup',
+  correct: ['correct', 'correct.mp3'],
+  wrong: ['wrong', 'wrong.mp3'],
+  levelup: ['levelup', 'levelup.mp3'],
+};
+
+const tryPlayCandidates = (candidates, type) => {
+  const tryAt = index => {
+    if (index >= candidates.length) {
+      Vibration.vibrate(type === 'wrong' ? 120 : 60);
+      return;
+    }
+    const candidate = candidates[index];
+    const sound = new Sound(candidate, Sound.MAIN_BUNDLE, error => {
+      if (error) {
+        // Try next candidate format to handle Android/iOS differences.
+        tryAt(index + 1);
+        return;
+      }
+      sound.play(success => {
+        if (!success) {
+          Vibration.vibrate(type === 'wrong' ? 120 : 60);
+        }
+        sound.release();
+      });
+    });
+  };
+
+  tryAt(0);
 };
 
 export const playSound = async type => {
   try {
     const soundEnabled = await AsyncStorage.getItem('settings.sounds');
     if (soundEnabled === 'false') return;
-    const soundFile = SOUND_FILES[type];
-    if (!soundFile) return;
-
-    const sound = new Sound(soundFile, Sound.MAIN_BUNDLE, error => {
-      if (error) {
-        console.log('failed to load the sound', error);
-        Vibration.vibrate(type === 'wrong' ? 120 : 60);
-        return;
-      }
-      sound.play(success => {
-        if (!success) {
-          console.log('playback failed due to audio decoding errors');
-          Vibration.vibrate(type === 'wrong' ? 120 : 60);
-        }
-        sound.release();
-      });
-    });
+    const candidates = SOUND_FILES[type];
+    if (!candidates) return;
+    tryPlayCandidates(candidates, type);
   } catch (e) {
     console.error('Error playing sound', e);
     Vibration.vibrate(type === 'wrong' ? 120 : 60);

@@ -93,6 +93,12 @@ const MockTestScreen = ({route, navigation}) => {
     setAnswers(prev => ({...prev, [current.id]: optionIndex}));
   };
 
+  useEffect(() => {
+    if (submitted && !saved) {
+      saveScore(score);
+    }
+  }, [submitted, saved, score]);
+
   return (
     <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]}>
       <ScrollView
@@ -100,6 +106,7 @@ const MockTestScreen = ({route, navigation}) => {
           styles.content,
           !submitted && {flexGrow: 1, justifyContent: 'center'},
         ]}>
+        {!submitted ? (
         <View style={[styles.card, {backgroundColor: colors.card}]}>
           <View style={styles.headerRow}>
             <Text style={[styles.title, {color: colors.text}]}>RRB {category} Mock</Text>
@@ -145,6 +152,40 @@ const MockTestScreen = ({route, navigation}) => {
             </View>
           )}
         </View>
+        ) : (
+          <View style={[styles.card, {backgroundColor: colors.card}]}>
+            <Text style={[styles.title, {color: colors.text}]}>Test Completed</Text>
+            <Text style={[styles.resultText, {color: colors.text}]}>
+              Result: {score} / {questions.length}
+            </Text>
+            <Text style={[styles.pointsText, {color: colors.primary}]}>
+              Credits Earned: {Math.floor((score / questions.length) * (1 + remaining / TEST_DURATION_SECONDS) * 100)}
+            </Text>
+            {questions.map((q, i) => {
+              const selectedIdx = answers[q.id];
+              const isCorrect = selectedIdx === q.ans;
+              return (
+                <View
+                  key={q.id}
+                  style={[
+                    styles.solutionItem,
+                    {backgroundColor: colors.background, borderColor: colors.border},
+                  ]}>
+                  <Text style={[styles.solutionQ, {color: colors.text}]}>
+                    Q{i + 1}. {q.q}
+                  </Text>
+                  <Text style={{color: isCorrect ? '#22C55E' : '#EF4444', fontWeight: '700'}}>
+                    Your Answer: {selectedIdx !== undefined ? q.options[selectedIdx] : 'Not answered'}
+                  </Text>
+                  <Text style={{color: '#22C55E', fontWeight: '700'}}>
+                    Correct: {q.options[q.ans]}
+                  </Text>
+                  <Text style={{color: colors.text, marginTop: 4}}>Explanation: {q.explanation}</Text>
+                </View>
+              );
+            })}
+          </View>
+        )}
 
         {!submitted ? (
           <View style={styles.row}>
@@ -171,19 +212,11 @@ const MockTestScreen = ({route, navigation}) => {
             )}
           </View>
         ) : (
-          <View style={[styles.resultCard, {backgroundColor: colors.card}]}>
-            <Text style={[styles.resultText, {color: colors.text}]}>
-              Result: {score} / {questions.length}
-            </Text>
-            <Text style={[styles.pointsText, {color: colors.primary}]}>
-              Credits Earned: {Math.floor((score / questions.length) * (1 + remaining / TEST_DURATION_SECONDS) * 100)}
-            </Text>
-            <TouchableOpacity
-              style={[styles.btn, {backgroundColor: colors.primary, marginTop: 10}]}
-              onPress={() => navigation.goBack()}>
-              <Text style={styles.btnText}>Back to Leaderboard</Text>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity
+            style={[styles.btn, {backgroundColor: colors.primary, marginTop: 10, alignSelf: 'center'}]}
+            onPress={() => navigation.goBack()}>
+            <Text style={styles.btnText}>Back to Leaderboard</Text>
+          </TouchableOpacity>
         )}
       </ScrollView>
     </SafeAreaView>
@@ -214,9 +247,10 @@ const styles = StyleSheet.create({
   row: {flexDirection: 'row', justifyContent: 'space-between', marginTop: 14},
   btn: {paddingVertical: 12, paddingHorizontal: 22, borderRadius: 12},
   btnText: {color: '#fff', fontWeight: '700'},
-  resultCard: {padding: 14, borderRadius: 12, marginTop: 16},
   resultText: {fontSize: 18, fontWeight: '800'},
   pointsText: {marginTop: 6, fontWeight: '700'},
+  solutionItem: {borderWidth: 1, borderRadius: 12, padding: 10, marginTop: 10},
+  solutionQ: {fontWeight: '700', marginBottom: 4},
 });
 
 export default MockTestScreen;

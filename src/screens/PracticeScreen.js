@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {
   View,
   Text,
@@ -6,13 +6,11 @@ import {
   TouchableOpacity,
   ScrollView,
   SafeAreaView,
-  Platform,
-  Dimensions,
-  Animated,
+  FlatList,
 } from 'react-native';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {useAppTheme} from '../util/theme';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
@@ -22,55 +20,56 @@ import {
   AdEventType,
   TestIds,
 } from 'react-native-google-mobile-ads';
-
-// Data imports
 import allQuestions from '../data/questions';
-import { playSound } from '../util/sound';
+import {playSound} from '../util/sound';
 
-const { width } = Dimensions.get('window');
-const interstitialId = __DEV__
-  ? TestIds.INTERSTITIAL
-  : 'ca-app-pub-2627956667785383/2550120291';
-const interstitial = InterstitialAd.createForAdRequest(interstitialId);
+const GRID_COLUMNS = 5;
+const interstitial = InterstitialAd.createForAdRequest(
+  __DEV__ ? TestIds.INTERSTITIAL : 'ca-app-pub-2627956667785383/2550120291',
+);
 
-const PracticeScreen = ({ route, navigation }) => {
-  const { t, i18n } = useTranslation();
+const PracticeScreen = ({route, navigation}) => {
+  const {t, i18n} = useTranslation();
   const {colors, isDark} = useAppTheme();
-  
   const initialCategory = route.params?.category || 'NTPC';
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  const [selectedCategory] = useState(initialCategory);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [showSolution, setShowSolution] = useState(false);
   const [isInterstitialLoaded, setIsInterstitialLoaded] = useState(false);
+  const [progressState, setProgressState] = useState({unlockedLevel: 1, completed: []});
 
-  const categories = ['NTPC', 'ALP', 'JE', 'GroupD'];
+  const questions = useMemo(() => {
+    const langData = allQuestions[i18n.language] || allQuestions.en;
+    return langData[selectedCategory] || [];
+  }, [i18n.language, selectedCategory]);
 
-  const getLanguageData = () => {
-    return allQuestions[i18n.language] || allQuestions.en;
-  };
+  const currentQuestion =
+    currentQuestionIndex !== null ? questions[currentQuestionIndex] : null;
 
-  const questions = getLanguageData()[selectedCategory] || [];
-  const currentQuestion = questions[currentQuestionIndex];
-
-  const handleOptionSelect = (index) => {
-    if (showResult) return;
-    setSelectedOption(index);
-    setShowResult(true);
-    
-    if (index === currentQuestion.ans) {
-      playSound('correct');
-    } else {
-      playSound('wrong');
-    }
-    maybeShowAdAfter15();
-  };
+  const progressKey = `practice.progress.${i18n.language}.${selectedCategory}`;
 
   useEffect(() => {
-    const adListener = interstitial.addAdEventListener(AdEventType.LOADED, () => {
-      setIsInterstitialLoaded(true);
-    });
+    const setup = async () => {
+      const saved = await AsyncStorage.getItem(progressKey);
+      if (saved) {
+        try {
+          setProgressState(JSON.parse(saved));
+        } catch (_e) {
+          setProgressState({unlockedLevel: 1, completed: []});
+        }
+      }
+    };
+    setup();
+  }, [progressKey]);
+
+  useEffect(() => {
+    const adListener = interstitial.addAdEventListener(AdEventType.LOADED, () =>
+      setIsInterstitialLoaded(true),
+    );
     const closeListener = interstitial.addAdEventListener(AdEventType.CLOSED, () => {
       setIsInterstitialLoaded(false);
       interstitial.load();
@@ -82,52 +81,114 @@ const PracticeScreen = ({ route, navigation }) => {
     };
   }, []);
 
-  const maybeShowAdAfter15 = async () => {
-    try {
-      const key = 'ads.practiceAnsweredCount';
-      const current = Number((await AsyncStorage.getItem(key)) || '0') + 1;
-      await AsyncStorage.setItem(key, String(current));
-      if (current % 15 === 0 && isInterstitialLoaded) {
-        interstitial.show();
-      }
-    } catch (e) {
-      // no-op
+  const maybeShowAdAfter5 = async () => {
+    const key = 'ads.practiceAnsweredCount';
+    const current = Number((await AsyncStorage.getItem(key)) || '0') + 1;
+    await AsyncStorage.setItem(key, String(current));
+    if (current % 5 === 0 && isInterstitialLoaded) {
+      interstitial.show();
     }
   };
 
-  const nextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      resetState();
-    }
+  const persistProgress = async nextState => {
+    setProgressState(nextState);
+    await AsyncStorage.setItem(progressKey, JSON.stringify(nextState));
   };
 
-  const prevQuestion = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
-      resetState();
+  const onLevelPress = levelIndex => {
+    const level = levelIndex + 1;
+    if (level > progressState.unlockedLevel) {
+      return;
     }
-  };
-
-  const resetState = () => {
+    setCurrentQuestionIndex(levelIndex);
     setSelectedOption(null);
     setShowResult(false);
     setShowHint(false);
+    setShowSolution(false);
   };
 
-  if (!currentQuestion) {
+  const handleOptionSelect = async optionIndex => {
+    if (!currentQuestion || showResult) return;
+    setSelectedOption(optionIndex);
+    setShowResult(true);
+    const isCorrect = optionIndex === currentQuestion.ans;
+    if (isCorrect) {
+      playSound('correct');
+      const level = currentQuestionIndex + 1;
+      const completed = Array.from(new Set([...progressState.completed, level])).sort(
+        (a, b) => a - b,
+      );
+      const unlockedLevel = Math.max(progressState.unlockedLevel, level + 1);
+      await persistProgress({unlockedLevel, completed});
+    } else {
+      playSound('wrong');
+    }
+    await maybeShowAdAfter5();
+  };
+
+  const goToGrid = () => {
+    setCurrentQuestionIndex(null);
+    setSelectedOption(null);
+    setShowResult(false);
+    setShowHint(false);
+    setShowSolution(false);
+  };
+
+  if (currentQuestionIndex === null) {
     return (
       <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]}>
         <View style={[styles.header, {backgroundColor: colors.primary}]}>
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Icon name="arrow-back" size={24} color="#FFF" />
-            </TouchableOpacity>
-          <Text style={styles.headerTitle}>{selectedCategory}</Text>
-          <View style={{ width: 24 }} />
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Icon name="arrow-back" size={22} color="#FFF" />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>RRB {selectedCategory} Levels</Text>
+          <View style={{width: 22}} />
         </View>
-        <View style={styles.emptyContainer}>
-          <Icon name="document-text-outline" size={60} color="#ccc" />
-          <Text style={styles.emptyText}>{t('noQuestions')}</Text>
+        <View style={styles.levelMeta}>
+          <Text style={[styles.metaText, {color: colors.text}]}>
+            Unlocked: {Math.min(progressState.unlockedLevel, questions.length)} / {questions.length}
+          </Text>
+          <Text style={[styles.metaText, {color: colors.subtext}]}>
+            Completed: {progressState.completed.length}
+          </Text>
+        </View>
+        <FlatList
+          data={questions}
+          keyExtractor={(item, idx) => `${item.id || idx}`}
+          numColumns={GRID_COLUMNS}
+          contentContainerStyle={styles.grid}
+          renderItem={({index}) => {
+            const level = index + 1;
+            const locked = level > progressState.unlockedLevel;
+            const completed = progressState.completed.includes(level);
+            return (
+              <TouchableOpacity
+                style={[
+                  styles.levelCell,
+                  {
+                    backgroundColor: completed ? '#1F5131' : colors.card,
+                    borderColor: locked ? '#64748B' : colors.border,
+                  },
+                ]}
+                onPress={() => onLevelPress(index)}
+                disabled={locked}>
+                <Text style={[styles.levelNumber, {color: completed ? '#D1FAE5' : colors.text}]}>
+                  {level}
+                </Text>
+                <Icon
+                  name={locked ? 'lock-closed' : completed ? 'checkmark-circle' : 'lock-open'}
+                  size={16}
+                  color={locked ? '#94A3B8' : completed ? '#22C55E' : colors.primary}
+                />
+              </TouchableOpacity>
+            );
+          }}
+        />
+        <View style={styles.bannerWrap}>
+          <BannerAd
+            unitId={__DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-2627956667785383/2550120291'}
+            size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+          />
         </View>
       </SafeAreaView>
     );
@@ -136,91 +197,57 @@ const PracticeScreen = ({ route, navigation }) => {
   return (
     <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]}>
       <View style={[styles.header, {backgroundColor: colors.primary}]}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Icon name="arrow-back" size={24} color="#FFF" />
+        <TouchableOpacity onPress={goToGrid}>
+          <Icon name="grid-outline" size={22} color="#FFF" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>RRB {selectedCategory}</Text>
-        <TouchableOpacity onPress={() => setShowHint(!showHint)}>
-          <Icon name="bulb-outline" size={24} color={showHint ? "#FFD700" : "#FFF"} />
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.progressContainer}>
-        <View style={[styles.progressBar, { width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }]} />
-        <Text style={styles.progressText}>{currentQuestionIndex + 1} / {questions.length}</Text>
+        <Text style={styles.headerTitle}>Level {currentQuestionIndex + 1}</Text>
+        <View style={styles.headerActions}>
+          <TouchableOpacity onPress={() => setShowHint(v => !v)}>
+            <Icon name="bulb-outline" size={21} color={showHint ? '#FDE047' : '#FFF'} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setShowSolution(v => !v)} style={{marginLeft: 10}}>
+            <Icon name="book-outline" size={21} color={showSolution ? '#C7D2FE' : '#FFF'} />
+          </TouchableOpacity>
+        </View>
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
-        <View style={[styles.questionCard, {backgroundColor: colors.card}]}>
-          <View style={styles.levelBadge}>
-            <Text style={styles.levelText}>{t('level')} {currentQuestion.level}</Text>
-          </View>
+        <View style={[styles.questionCard, {backgroundColor: colors.card, borderColor: colors.border}]}>
           <Text style={[styles.questionText, {color: colors.text}]}>{currentQuestion.q}</Text>
         </View>
 
         {showHint && (
-          <View style={styles.hintBox}>
-            <Text style={styles.hintTitle}>💡 {t('hint')}:</Text>
-            <Text style={styles.hintText}>{currentQuestion.hint}</Text>
+          <View style={[styles.infoCard, {backgroundColor: isDark ? '#3D341F' : '#FFF9C4'}]}>
+            <Text style={styles.infoTitle}>Hint</Text>
+            <Text style={[styles.infoBody, {color: isDark ? '#FDE68A' : '#7F6000'}]}>
+              {currentQuestion.hint}
+            </Text>
           </View>
         )}
 
-        <View style={styles.optionsContainer}>
-          {currentQuestion.options.map((opt, idx) => {
-            let buttonStyle = styles.optionButton;
-            let textStyle = styles.optionText;
-            const isUnselectedAfterResult = showResult && idx !== selectedOption && idx !== currentQuestion.ans;
+        {currentQuestion.options.map((opt, idx) => {
+          const isCorrect = showResult && idx === currentQuestion.ans;
+          const isWrong = showResult && idx === selectedOption && idx !== currentQuestion.ans;
+          return (
+            <TouchableOpacity
+              key={`${currentQuestion.id}-${idx}`}
+              style={[
+                styles.option,
+                {backgroundColor: colors.card, borderColor: colors.border},
+                isCorrect && {backgroundColor: '#1F5131', borderColor: '#22C55E'},
+                isWrong && {backgroundColor: '#5A2633', borderColor: '#EF4444'},
+              ]}
+              onPress={() => handleOptionSelect(idx)}
+              disabled={showResult}>
+              <Text style={[styles.optionText, {color: colors.text}]}>{opt}</Text>
+            </TouchableOpacity>
+          );
+        })}
 
-            if (showResult) {
-              if (idx === currentQuestion.ans) {
-                buttonStyle = [styles.optionButton, styles.correctOption];
-                textStyle = [styles.optionText, styles.correctText];
-              } else if (idx === selectedOption) {
-                buttonStyle = [styles.optionButton, styles.wrongOption];
-                textStyle = [styles.optionText, styles.wrongText];
-              }
-            } else if (idx === selectedOption) {
-                buttonStyle = [styles.optionButton, styles.selectedOption];
-            }
-
-            return (
-              <TouchableOpacity
-                key={idx}
-                style={[
-                  buttonStyle,
-                  styles.optionBaseTheme,
-                  (isUnselectedAfterResult || !showResult) && {
-                    backgroundColor: isDark ? '#253149' : '#FFFFFF',
-                    borderColor: isDark ? '#34425D' : '#E5E7EB',
-                  },
-                ]}
-                onPress={() => handleOptionSelect(idx)}
-                disabled={showResult}
-              >
-                <Text
-                  style={[
-                    textStyle,
-                    (isUnselectedAfterResult || !showResult) && {
-                      color: isDark ? '#F3F6FB' : '#334155',
-                    },
-                  ]}>
-                  {opt}
-                </Text>
-                {showResult && idx === currentQuestion.ans && (
-                  <Icon name="checkmark-circle" size={20} color="#FFF" />
-                )}
-                {showResult && idx === selectedOption && idx !== currentQuestion.ans && (
-                  <Icon name="close-circle" size={20} color="#FFF" />
-                )}
-              </TouchableOpacity>
-            );
-          })}
-        </View>
-
-        {showResult && (
-          <View style={styles.solutionBox}>
-            <Text style={styles.solutionTitle}>{t('explanation')}</Text>
-            <Text style={styles.solutionText}>
+        {(showResult || showSolution) && (
+          <View style={[styles.infoCard, {backgroundColor: isDark ? '#1E3A30' : '#E8F5E9'}]}>
+            <Text style={[styles.infoTitle, {color: '#2E7D32'}]}>{t('explanation')}</Text>
+            <Text style={[styles.infoBody, {color: isDark ? '#D1FAE5' : '#1B5E20'}]}>
               {currentQuestion.explanation || currentQuestion.solution}
             </Text>
           </View>
@@ -233,35 +260,12 @@ const PracticeScreen = ({ route, navigation }) => {
           size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
         />
       </View>
-
-      <View style={[styles.footer, {backgroundColor: colors.card, borderTopColor: colors.border}]}>
-        <TouchableOpacity 
-          style={[styles.navButton, currentQuestionIndex === 0 && styles.disabledButton]} 
-          onPress={prevQuestion}
-          disabled={currentQuestionIndex === 0}
-        >
-          <Icon name="chevron-back" size={24} color={currentQuestionIndex === 0 ? "#ccc" : "#0074E4"} />
-          <Text style={[styles.navButtonText, currentQuestionIndex === 0 && styles.disabledText]}>{t('prev')}</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity 
-          style={[styles.navButton, currentQuestionIndex === questions.length - 1 && styles.disabledButton]} 
-          onPress={nextQuestion}
-          disabled={currentQuestionIndex === questions.length - 1}
-        >
-          <Text style={[styles.navButtonText, currentQuestionIndex === questions.length - 1 && styles.disabledText]}>{t('next')}</Text>
-          <Icon name="chevron-forward" size={24} color={currentQuestionIndex === questions.length - 1 ? "#ccc" : "#0074E4"} />
-        </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5F7FA',
-  },
+  container: {flex: 1},
   header: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -276,181 +280,44 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFF',
   },
-  progressContainer: {
-    height: 4,
-    backgroundColor: '#E0E0E0',
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  progressBar: {
-    height: '100%',
-    backgroundColor: '#43e97b',
-  },
-  progressText: {
-      position: 'absolute',
-      right: 10,
-      top: 10,
-      fontSize: 12,
-      color: '#666',
-      fontWeight: 'bold'
-  },
-  content: {
-    padding: 20,
-    paddingBottom: 100,
-  },
-  questionCard: {
-    backgroundColor: '#FFF',
-    borderRadius: 20,
-    padding: 24,
-    marginBottom: 20,
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 10,
-  },
-  levelBadge: {
-    alignSelf: 'flex-start',
-    backgroundColor: '#E3F2FD',
-    paddingHorizontal: 12,
-    paddingVertical: 4,
-    borderRadius: 8,
-    marginBottom: 12,
-  },
-  levelText: {
-    color: '#0074E4',
-    fontWeight: 'bold',
-    fontSize: 12,
-  },
-  questionText: {
-    fontSize: wp('4.8%'),
-    color: '#333',
-    lineHeight: 28,
-    fontWeight: '600',
-  },
-  hintBox: {
-    backgroundColor: '#FFF9C4',
-    padding: 16,
-    borderRadius: 12,
-    marginBottom: 20,
-    borderLeftWidth: 4,
-    borderLeftColor: '#FBC02D',
-  },
-  hintTitle: {
-    fontWeight: 'bold',
-    color: '#F9A825',
-    marginBottom: 4,
-  },
-  hintText: {
-    color: '#7F6000',
-    fontSize: 14,
-  },
-  optionsContainer: {
-    gap: 12,
-  },
-  optionButton: {
-    backgroundColor: '#FFF',
-    padding: 18,
-    borderRadius: 16,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 5,
-  },
-  optionBaseTheme: {
+  content: {padding: 16, paddingBottom: 100},
+  levelMeta: {paddingHorizontal: 16, paddingTop: 12, flexDirection: 'row', justifyContent: 'space-between'},
+  metaText: {fontWeight: '700'},
+  grid: {padding: 12, paddingBottom: 100},
+  levelCell: {
+    width: '18%',
+    margin: '1%',
+    height: 68,
     borderWidth: 1,
-  },
-  selectedOption: {
-      borderColor: '#0074E4',
-      borderWidth: 2,
-  },
-  correctOption: {
-    backgroundColor: '#43e97b',
-  },
-  wrongOption: {
-    backgroundColor: '#FF5252',
-  },
-  optionText: {
-    fontSize: 16,
-    color: '#444',
-    fontWeight: '500',
-    flex: 1,
-  },
-  correctText: {
-    color: '#FFF',
-    fontWeight: 'bold',
-  },
-  wrongText: {
-    color: '#FFF',
-    fontWeight: 'bold',
-  },
-  solutionBox: {
-    marginTop: 24,
-    padding: 20,
-    backgroundColor: '#E8F5E9',
-    borderRadius: 16,
-    borderLeftWidth: 4,
-    borderLeftColor: '#43A047',
-  },
-  solutionTitle: {
-    fontWeight: 'bold',
-    color: '#2E7D32',
-    marginBottom: 8,
-    fontSize: 16,
-  },
-  solutionText: {
-    color: '#388E3C',
-    lineHeight: 22,
-    fontSize: 14,
-  },
-  footer: {
-    position: 'absolute',
-    bottom: 60,
-    left: 0,
-    right: 0,
-    height: 80,
-    backgroundColor: '#FFF',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 30,
-    borderTopWidth: 1,
-    borderTopColor: '#EEE',
-  },
-  navButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  navButtonText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#0074E4',
-  },
-  disabledText: {
-    color: '#ccc',
-  },
-  emptyContainer: {
-    flex: 1,
+    borderRadius: 14,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  emptyText: {
-    color: '#888',
-    marginTop: 16,
+  levelNumber: {fontSize: 16, fontWeight: '800', marginBottom: 4},
+  headerActions: {flexDirection: 'row', alignItems: 'center'},
+  questionCard: {
+    borderRadius: 18,
+    padding: 18,
+    borderWidth: 1,
+    marginBottom: 12,
   },
+  questionText: {
+    fontSize: wp('4.7%'),
+    lineHeight: 26,
+    fontWeight: '600',
+  },
+  option: {borderWidth: 1, borderRadius: 14, padding: 14, marginBottom: 10},
+  optionText: {fontWeight: '600', fontSize: 15},
+  infoCard: {padding: 14, borderRadius: 12, marginBottom: 10},
+  infoTitle: {fontWeight: '800', marginBottom: 5},
+  infoBody: {fontSize: 14, lineHeight: 20},
   bannerWrap: {
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: 'transparent',
   },
 });
 
