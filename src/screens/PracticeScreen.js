@@ -13,15 +13,29 @@ import {
 import { useTranslation } from 'react-i18next';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import {useAppTheme} from '../util/theme';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {
+  BannerAd,
+  BannerAdSize,
+  InterstitialAd,
+  AdEventType,
+  TestIds,
+} from 'react-native-google-mobile-ads';
 
 // Data imports
 import allQuestions from '../data/questions';
 import { playSound } from '../util/sound';
 
 const { width } = Dimensions.get('window');
+const interstitialId = __DEV__
+  ? TestIds.INTERSTITIAL
+  : 'ca-app-pub-2627956667785383/2550120291';
+const interstitial = InterstitialAd.createForAdRequest(interstitialId);
 
 const PracticeScreen = ({ route, navigation }) => {
   const { t, i18n } = useTranslation();
+  const {colors, isDark} = useAppTheme();
   
   const initialCategory = route.params?.category || 'NTPC';
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
@@ -29,6 +43,7 @@ const PracticeScreen = ({ route, navigation }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [isInterstitialLoaded, setIsInterstitialLoaded] = useState(false);
 
   const categories = ['NTPC', 'ALP', 'JE', 'GroupD'];
 
@@ -48,6 +63,35 @@ const PracticeScreen = ({ route, navigation }) => {
       playSound('correct');
     } else {
       playSound('wrong');
+    }
+    maybeShowAdAfter15();
+  };
+
+  useEffect(() => {
+    const adListener = interstitial.addAdEventListener(AdEventType.LOADED, () => {
+      setIsInterstitialLoaded(true);
+    });
+    const closeListener = interstitial.addAdEventListener(AdEventType.CLOSED, () => {
+      setIsInterstitialLoaded(false);
+      interstitial.load();
+    });
+    interstitial.load();
+    return () => {
+      adListener();
+      closeListener();
+    };
+  }, []);
+
+  const maybeShowAdAfter15 = async () => {
+    try {
+      const key = 'ads.practiceAnsweredCount';
+      const current = Number((await AsyncStorage.getItem(key)) || '0') + 1;
+      await AsyncStorage.setItem(key, String(current));
+      if (current % 15 === 0 && isInterstitialLoaded) {
+        interstitial.show();
+      }
+    } catch (e) {
+      // no-op
     }
   };
 
@@ -73,8 +117,8 @@ const PracticeScreen = ({ route, navigation }) => {
 
   if (!currentQuestion) {
     return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.header}>
+      <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]}>
+        <View style={[styles.header, {backgroundColor: colors.primary}]}>
             <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Icon name="arrow-back" size={24} color="#FFF" />
             </TouchableOpacity>
@@ -90,8 +134,8 @@ const PracticeScreen = ({ route, navigation }) => {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
+    <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]}>
+      <View style={[styles.header, {backgroundColor: colors.primary}]}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Icon name="arrow-back" size={24} color="#FFF" />
         </TouchableOpacity>
@@ -107,11 +151,11 @@ const PracticeScreen = ({ route, navigation }) => {
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
-        <View style={styles.questionCard}>
+        <View style={[styles.questionCard, {backgroundColor: colors.card}]}>
           <View style={styles.levelBadge}>
             <Text style={styles.levelText}>{t('level')} {currentQuestion.level}</Text>
           </View>
-          <Text style={styles.questionText}>{currentQuestion.q}</Text>
+          <Text style={[styles.questionText, {color: colors.text}]}>{currentQuestion.q}</Text>
         </View>
 
         {showHint && (
@@ -125,6 +169,7 @@ const PracticeScreen = ({ route, navigation }) => {
           {currentQuestion.options.map((opt, idx) => {
             let buttonStyle = styles.optionButton;
             let textStyle = styles.optionText;
+            const isUnselectedAfterResult = showResult && idx !== selectedOption && idx !== currentQuestion.ans;
 
             if (showResult) {
               if (idx === currentQuestion.ans) {
@@ -141,11 +186,26 @@ const PracticeScreen = ({ route, navigation }) => {
             return (
               <TouchableOpacity
                 key={idx}
-                style={buttonStyle}
+                style={[
+                  buttonStyle,
+                  styles.optionBaseTheme,
+                  (isUnselectedAfterResult || !showResult) && {
+                    backgroundColor: isDark ? '#253149' : '#FFFFFF',
+                    borderColor: isDark ? '#34425D' : '#E5E7EB',
+                  },
+                ]}
                 onPress={() => handleOptionSelect(idx)}
                 disabled={showResult}
               >
-                <Text style={textStyle}>{opt}</Text>
+                <Text
+                  style={[
+                    textStyle,
+                    (isUnselectedAfterResult || !showResult) && {
+                      color: isDark ? '#F3F6FB' : '#334155',
+                    },
+                  ]}>
+                  {opt}
+                </Text>
                 {showResult && idx === currentQuestion.ans && (
                   <Icon name="checkmark-circle" size={20} color="#FFF" />
                 )}
@@ -160,12 +220,21 @@ const PracticeScreen = ({ route, navigation }) => {
         {showResult && (
           <View style={styles.solutionBox}>
             <Text style={styles.solutionTitle}>{t('explanation')}</Text>
-            <Text style={styles.solutionText}>{currentQuestion.solution}</Text>
+            <Text style={styles.solutionText}>
+              {currentQuestion.explanation || currentQuestion.solution}
+            </Text>
           </View>
         )}
       </ScrollView>
 
-      <View style={styles.footer}>
+      <View style={styles.bannerWrap}>
+        <BannerAd
+          unitId={__DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-2627956667785383/2550120291'}
+          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+        />
+      </View>
+
+      <View style={[styles.footer, {backgroundColor: colors.card, borderTopColor: colors.border}]}>
         <TouchableOpacity 
           style={[styles.navButton, currentQuestionIndex === 0 && styles.disabledButton]} 
           onPress={prevQuestion}
@@ -191,7 +260,7 @@ const PracticeScreen = ({ route, navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F2F5',
+    backgroundColor: '#F5F7FA',
   },
   header: {
     flexDirection: 'row',
@@ -293,6 +362,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 5,
   },
+  optionBaseTheme: {
+    borderWidth: 1,
+  },
   selectedOption: {
       borderColor: '#0074E4',
       borderWidth: 2,
@@ -338,7 +410,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 60,
     left: 0,
     right: 0,
     height: 80,
@@ -371,7 +443,15 @@ const styles = StyleSheet.create({
   emptyText: {
     color: '#888',
     marginTop: 16,
-  }
+  },
+  bannerWrap: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    backgroundColor: '#fff',
+  },
 });
 
 export default PracticeScreen;

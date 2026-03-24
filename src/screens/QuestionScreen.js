@@ -517,8 +517,11 @@ import {
 import {
   RewardedAd,
   RewardedAdEventType,
+  InterstitialAd,
+  AdEventType,
   TestIds,
 } from 'react-native-google-mobile-ads';
+import {playSound} from '../util/sound';
 
 const {width} = Dimensions.get('window');
 
@@ -529,6 +532,9 @@ const adUnitId = __DEV__
 const rewarded = RewardedAd.createForAdRequest(adUnitId, {
   keywords: ['fashion', 'clothing'],
 });
+const interstitial = InterstitialAd.createForAdRequest(
+  __DEV__ ? TestIds.INTERSTITIAL : 'ca-app-pub-2627956667785383/2550120291',
+);
 
 const QuestionScreen = ({route, navigation}) => {
   const {level} = route.params;
@@ -542,6 +548,7 @@ const QuestionScreen = ({route, navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isAdLoaded, setIsAdLoaded] = useState(false);
+  const [isInterstitialLoaded, setIsInterstitialLoaded] = useState(false);
 
   const currentQuestion = questions.questions.find(q => q.level === level);
   const totalQuestions = questions.questions.length;
@@ -564,6 +571,21 @@ const QuestionScreen = ({route, navigation}) => {
 
     // Set progress
     setProgress(level / totalQuestions);
+  }, []);
+
+  useEffect(() => {
+    const loaded = interstitial.addAdEventListener(AdEventType.LOADED, () =>
+      setIsInterstitialLoaded(true),
+    );
+    const closed = interstitial.addAdEventListener(AdEventType.CLOSED, () => {
+      setIsInterstitialLoaded(false);
+      interstitial.load();
+    });
+    interstitial.load();
+    return () => {
+      loaded();
+      closed();
+    };
   }, []);
 
   useEffect(() => {
@@ -627,8 +649,17 @@ const QuestionScreen = ({route, navigation}) => {
 
   const handleOptionSelect = async index => {
     setSelectedOption(index);
+    try {
+      const key = 'ads.quizAnsweredCount';
+      const current = Number((await AsyncStorage.getItem(key)) || '0') + 1;
+      await AsyncStorage.setItem(key, String(current));
+      if (current % 15 === 0 && isInterstitialLoaded) {
+        interstitial.show();
+      }
+    } catch (e) {}
 
     if (index === currentQuestion.correctAnswer) {
+      playSound('correct');
       setIsSuccess(true);
       try {
         const nextLevel = level + 1;
@@ -638,6 +669,7 @@ const QuestionScreen = ({route, navigation}) => {
         console.error('Error saving level:', error);
       }
     } else {
+      playSound('wrong');
       setIsSuccess(false);
       if (Platform.OS === 'ios' || Platform.OS === 'android') {
         Vibration.vibrate(500);

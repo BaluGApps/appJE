@@ -8,11 +8,15 @@ import Home from '../screens/Home';
 import PracticeScreen from '../screens/PracticeScreen';
 import TestsScreen from '../screens/TestsScreen';
 import RevisionScreen from '../screens/RevisionScreen';
+import {useAppTheme} from '../util/theme';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   const { t } = useTranslation();
+  const {isDark, colors} = useAppTheme();
+  const insets = useSafeAreaInsets();
 
   return (
     <Tab.Navigator
@@ -36,7 +40,13 @@ const TabNavigator = () => {
           return <Icon name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: '#0074E4',
-        tabBarInactiveTintColor: 'gray',
+        tabBarInactiveTintColor: isDark ? '#94A3B8' : 'gray',
+        tabBarStyle: {
+          backgroundColor: colors.tab,
+          borderTopColor: colors.border,
+          paddingBottom: Math.max(insets.bottom, 8),
+          height: 58 + Math.max(insets.bottom, 8),
+        },
       })}
     >
       <Tab.Screen name="Home" component={Home} options={{ tabBarLabel: t('home') }} />

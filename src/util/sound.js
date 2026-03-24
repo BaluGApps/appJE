@@ -1,39 +1,44 @@
 import Sound from 'react-native-sound';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {Vibration} from 'react-native';
 
 // Enable playback in silence mode
-Sound.setCategory('Playback');
+Sound.setCategory('Playback', true);
 
-const loadSound = (fileName) => {
-  return new Sound(fileName, Sound.MAIN_BUNDLE, (error) => {
-    if (error) {
-      console.log('failed to load the sound', error);
-      return;
-    }
-  });
+const SOUND_FILES = {
+  // Android raw resources should be referenced without extension.
+  correct: 'correct',
+  wrong: 'wrong',
+  levelup: 'levelup',
 };
 
-// These would need actual files in android/app/src/main/res/raw or ios/Resources
-const sounds = {
-  correct: loadSound('correct.mp3'),
-  wrong: loadSound('wrong.mp3'),
-  levelup: loadSound('levelup.mp3'),
-};
-
-export const playSound = async (type) => {
+export const playSound = async type => {
   try {
     const soundEnabled = await AsyncStorage.getItem('settings.sounds');
     if (soundEnabled === 'false') return;
+    const soundFile = SOUND_FILES[type];
+    if (!soundFile) return;
 
-    const sound = sounds[type];
-    if (sound) {
-      sound.play((success) => {
+    const sound = new Sound(soundFile, Sound.MAIN_BUNDLE, error => {
+      if (error) {
+        console.log('failed to load the sound', error);
+        Vibration.vibrate(type === 'wrong' ? 120 : 60);
+        return;
+      }
+      sound.play(success => {
         if (!success) {
           console.log('playback failed due to audio decoding errors');
+          Vibration.vibrate(type === 'wrong' ? 120 : 60);
         }
+        sound.release();
       });
-    }
+    });
   } catch (e) {
     console.error('Error playing sound', e);
+    Vibration.vibrate(type === 'wrong' ? 120 : 60);
   }
+};
+
+export default {
+  playSound,
 };

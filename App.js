@@ -105,14 +105,14 @@
 
 // export default App;
 
-import {View} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
 import {store} from './src/util/store';
 import messaging from '@react-native-firebase/messaging';
 import subscribeToTopics from './src/util/notification';
 import MainNavigator from './src/navigation/MainNavigator';
+import {ThemeProvider} from './src/util/theme';
 
 const App = () => {
   useEffect(() => {
@@ -139,9 +139,11 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <MainNavigator />
-      </NavigationContainer>
+      <ThemeProvider>
+        <NavigationContainer>
+          <MainNavigator />
+        </NavigationContainer>
+      </ThemeProvider>
     </Provider>
   );
 };

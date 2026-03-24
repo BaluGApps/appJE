@@ -3,6 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Splash from '../screens/splash';
 import LanguageSelectionScreen from '../screens/LanguageSelectionScreen';
 import TabNavigator from './TabNavigator';
+import MockTestScreen from '../screens/MockTestScreen';
+import PdfViewerScreen from '../screens/PdfViewerScreen';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +27,8 @@ const MainNavigator = () => {
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="LanguageSelection" component={LanguageSelectionScreen} />
       <Stack.Screen name="MainTabs" component={TabNavigator} />
+      <Stack.Screen name="MockTestScreen" component={MockTestScreen} />
+      <Stack.Screen name="PdfViewerScreen" component={PdfViewerScreen} />
     </Stack.Navigator>
   );
 };

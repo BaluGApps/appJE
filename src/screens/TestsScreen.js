@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  TouchableOpacity, 
-  ScrollView, 
-  SafeAreaView, 
-  ActivityIndicator, 
-  Alert, 
-  Platform,
-  Dimensions
+import React, {useState, useEffect} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+  SafeAreaView,
+  ActivityIndicator,
+  FlatList,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import {useAppTheme} from '../util/theme';
+import auth from '@react-native-firebase/auth';
+import {BannerAd, BannerAdSize, TestIds} from 'react-native-google-mobile-ads';
 
 const MOCK_TESTS = [
   { id: 'ntpc_1', tKey: 'ntpc_mock_1', category: 'NTPC', totalMarks: 100 },
@@ -23,24 +23,59 @@ const MOCK_TESTS = [
   { id: 'je_1', tKey: 'je_mock_1', category: 'JE', totalMarks: 150 },
 ];
 
-const TestsScreen = () => {
+const PYQ_PDF_LINKS = {
+  NTPC: [
+    {id: 'ntpc-2023', year: '2023', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
+    {id: 'ntpc-2022', year: '2022', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
+  ],
+  ALP: [
+    {id: 'alp-2023', year: '2023', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
+    {id: 'alp-2022', year: '2022', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
+  ],
+  JE: [
+    {id: 'je-2023', year: '2023', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
+    {id: 'je-2022', year: '2022', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
+  ],
+  GroupD: [
+    {id: 'groupd-2023', year: '2023', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
+    {id: 'groupd-2022', year: '2022', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
+  ],
+};
+
+const TestsScreen = ({route, navigation}) => {
   const { t, i18n } = useTranslation();
-  const [activeTab, setActiveTab] = useState('tests'); // 'tests' or 'leaderboard'
+  const {colors, isDark} = useAppTheme();
+  const [activeTab, setActiveTab] = useState(route?.params?.pyq ? 'pyq' : 'tests'); // 'tests' | 'leaderboard' | 'pyq'
   const [leaderboard, setLeaderboard] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [myCredits, setMyCredits] = useState(0);
 
   useEffect(() => {
     if (activeTab === 'leaderboard') {
       fetchLeaderboard();
+      fetchMyCredits();
     }
   }, [activeTab]);
+
+  const fetchMyCredits = async () => {
+    try {
+      const uid = auth().currentUser?.uid;
+      if (!uid) return;
+      const snap = await firestore().collection('users').doc(uid).get();
+      if (snap.exists) {
+        setMyCredits(snap.data()?.totalCredits || 0);
+      }
+    } catch (e) {
+      // no-op
+    }
+  };
 
   const fetchLeaderboard = async () => {
     setLoading(true);
     try {
       const snapshot = await firestore()
         .collection('leaderboards')
-        .orderBy('score', 'desc')
+        .orderBy('points', 'desc')
         .limit(10)
         .get();
         
@@ -53,56 +88,33 @@ const TestsScreen = () => {
     }
   };
 
-  const simulateTestSubmit = async (test) => {
-    const user = auth().currentUser;
-    if (!user) {
-      Alert.alert(t('signInRequired'), t('signInPrompt'));
-      return;
-    }
+  const openPdfLink = (url, category, year) => {
+    navigation.navigate('PdfViewerScreen', {
+      url,
+      title: `RRB ${category} ${year} PDF`,
+    });
+  };
 
-    const randomScore = Math.floor(Math.random() * test.totalMarks) + 1;
-    
-    try {
-      setLoading(true);
-      await firestore().collection('leaderboards').add({
-        userId: user.uid,
-        userName: user.displayName || t('anonymousAspirant'),
-        testId: test.id,
-        testTitle: t(test.tKey),
-        score: randomScore,
-        totalMarks: test.totalMarks,
-        timestamp: firestore.FieldValue.serverTimestamp(),
-      });
-      
-      Alert.alert(t('testCompleted'), `${t('score')}: ${randomScore}/${test.totalMarks}. ${t('rank')} ${t('updatesShortly')}`);
-      
-      if (activeTab === 'leaderboard') {
-        fetchLeaderboard();
-      }
-    } catch (error) {
-      console.error('Error saving score:', error);
-      Alert.alert(t('error'), t('leaderboardSaveError'));
-    } finally {
-      setLoading(false);
-    }
+  const simulateTestSubmit = test => {
+    navigation.navigate('MockTestScreen', {category: test.category});
   };
 
   const renderTests = () => (
     <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-      <Text style={styles.sectionTitle}>{t('availableExams')}</Text>
+      <Text style={[styles.sectionTitle, {color: colors.text}]}>{t('availableExams')}</Text>
       {MOCK_TESTS.map((test) => (
-        <View key={test.id} style={styles.card}>
+        <View key={test.id} style={[styles.card, {backgroundColor: colors.card}]}>
           <View style={styles.cardInfo}>
              <View style={styles.iconCircle}>
                 <Icon name="medal" size={24} color="#0074E4" />
              </View>
              <View style={styles.textContainer}>
-                <Text style={styles.testTitle}>{t(test.tKey)}</Text>
+                <Text style={[styles.testTitle, {color: colors.text}]}>{t(test.tKey)}</Text>
                 <View style={styles.metaRow}>
                    <View style={styles.labelBadge}>
                       <Text style={styles.labelText}>{test.category}</Text>
                    </View>
-                   <Text style={styles.marksText}>{test.totalMarks} {t('marks')}</Text>
+                   <Text style={[styles.marksText, {color: colors.subtext}]}>{test.totalMarks} {t('marks')}</Text>
                 </View>
              </View>
           </View>
@@ -121,6 +133,10 @@ const TestsScreen = () => {
 
   const renderLeaderboard = () => (
     <View style={styles.leaderboardContainer}>
+      <View style={[styles.creditsCard, {backgroundColor: colors.card}]}>
+        <Text style={[styles.creditsLabel, {color: colors.subtext}]}>Your Credits</Text>
+        <Text style={[styles.creditsValue, {color: colors.primary}]}>{myCredits}</Text>
+      </View>
       <View style={styles.leaderboardHeader}>
         <Text style={styles.rankTitle}>{t('rank')}</Text>
         <Text style={styles.nameTitle}>{t('aspirant')}</Text>
@@ -142,7 +158,9 @@ const TestsScreen = () => {
               <Text style={styles.rankText}>{index + 1}</Text>
               <View style={styles.aspirantInfo}>
                 <Text style={styles.aspirantName} numberOfLines={1}>{item.userName}</Text>
-                <Text style={styles.testTag} numberOfLines={1}>{item.testTitle}</Text>
+                <Text style={styles.testTag} numberOfLines={1}>
+                  {item.testTitle} • {item.points || 0} pts
+                </Text>
               </View>
               <Text style={styles.scoreText}>{item.score}</Text>
             </View>
@@ -152,35 +170,63 @@ const TestsScreen = () => {
     </View>
   );
 
+  const renderPyq = () => (
+    <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+      <Text style={[styles.sectionTitle, {color: colors.text}]}>Previous Year Papers (PDF)</Text>
+      {Object.keys(PYQ_PDF_LINKS).map(category => (
+        <View key={category} style={[styles.card, {backgroundColor: colors.card}]}>
+          <Text style={[styles.testTitle, {color: colors.text}]}>RRB {category}</Text>
+          {PYQ_PDF_LINKS[category].map(paper => (
+            <TouchableOpacity
+              key={paper.id}
+              style={[styles.pyqItem, {borderColor: colors.border}]}
+              onPress={() => openPdfLink(paper.url, category, paper.year)}>
+              <View style={styles.pyqLeft}>
+                <Icon name="document-text-outline" size={20} color={colors.primary} />
+                <Text style={[styles.pyqLabel, {color: colors.text}]}>{paper.year} Paper PDF</Text>
+              </View>
+              <Icon name="open-outline" size={18} color={colors.subtext} />
+            </TouchableOpacity>
+          ))}
+        </View>
+      ))}
+    </ScrollView>
+  );
+
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
+    <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]}>
+      <View style={[styles.header, {backgroundColor: colors.primary}]}>
         <Text style={styles.headerTitle}>{t('tests')}</Text>
       </View>
 
-      <View style={styles.tabContainer}>
+      <View style={[styles.tabContainer, {backgroundColor: colors.card}]}>
         <TouchableOpacity 
           style={[styles.tab, activeTab === 'tests' && styles.activeTab]} 
           onPress={() => setActiveTab('tests')}
         >
-          <Text style={[styles.tabText, activeTab === 'tests' && styles.activeTabText]}>{t('mockTests')}</Text>
+          <Text style={[styles.tabText, {color: colors.subtext}, activeTab === 'tests' && styles.activeTabText]}>{t('mockTests')}</Text>
         </TouchableOpacity>
         <TouchableOpacity 
           style={[styles.tab, activeTab === 'leaderboard' && styles.activeTab]} 
           onPress={() => setActiveTab('leaderboard')}
         >
-          <Text style={[styles.tabText, activeTab === 'leaderboard' && styles.activeTabText]}>{t('leaderboard')}</Text>
+          <Text style={[styles.tabText, {color: colors.subtext}, activeTab === 'leaderboard' && styles.activeTabText]}>{t('leaderboard')}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.tab, activeTab === 'pyq' && styles.activeTab]}
+          onPress={() => setActiveTab('pyq')}>
+          <Text style={[styles.tabText, {color: colors.subtext}, activeTab === 'pyq' && styles.activeTabText]}>PYQ PDFs</Text>
         </TouchableOpacity>
       </View>
 
-      {activeTab === 'tests' ? renderTests() : renderLeaderboard()}
+      {activeTab === 'tests' ? renderTests() : activeTab === 'leaderboard' ? renderLeaderboard() : renderPyq()}
+      <BannerAd
+        unitId={__DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-2627956667785383/2550120291'}
+        size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+      />
     </SafeAreaView>
   );
 };
-
-// ... Styles remains same as previous ...
-// Re-importing FlatList as I used it in leaderboard
-import { FlatList } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -212,7 +258,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
   },
   tab: {
-    flex: 1,
+    flex: 1 / 3,
     paddingVertical: 12,
     alignItems: 'center',
     borderRadius: 12,
@@ -371,7 +417,39 @@ const styles = StyleSheet.create({
     marginTop: 16,
     color: '#888',
     fontSize: 16,
-  }
+  },
+  creditsCard: {
+    borderRadius: 14,
+    padding: 14,
+    marginBottom: 12,
+  },
+  creditsLabel: {
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  creditsValue: {
+    fontSize: 24,
+    fontWeight: '900',
+    marginTop: 4,
+  },
+  pyqItem: {
+    borderWidth: 1,
+    borderRadius: 12,
+    padding: 12,
+    marginTop: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  pyqLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  pyqLabel: {
+    fontSize: 14,
+    fontWeight: '600',
+  },
 });
 
 export default TestsScreen;

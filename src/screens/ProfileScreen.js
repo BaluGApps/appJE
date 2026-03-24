@@ -16,6 +16,7 @@ import auth from '@react-native-firebase/auth';
 import { useTranslation } from 'react-i18next';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useAppTheme} from '../util/theme';
 
 const ProfileScreen = ({ navigation }) => {
   const { t, i18n } = useTranslation();
@@ -27,6 +28,7 @@ const ProfileScreen = ({ navigation }) => {
   const [darkMode, setDarkMode] = useState(false);
   const [notifications, setNotifications] = useState(true);
   const [sounds, setSounds] = useState(true);
+  const {setThemeMode} = useAppTheme();
 
   useEffect(() => {
     GoogleSignin.configure({
@@ -59,6 +61,9 @@ const ProfileScreen = ({ navigation }) => {
   const toggleSetting = async (key, value, setter) => {
     setter(value);
     await AsyncStorage.setItem(`settings.${key}`, JSON.stringify(value));
+    if (key === 'darkMode') {
+      await setThemeMode(value ? 'dark' : 'light');
+    }
   };
 
   const onGoogleButtonPress = async () => {
