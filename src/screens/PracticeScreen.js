@@ -7,6 +7,7 @@ import {
   ScrollView,
   SafeAreaView,
   FlatList,
+  Modal,
 } from 'react-native';
 import {useTranslation} from 'react-i18next';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -41,6 +42,7 @@ const PracticeScreen = ({route, navigation}) => {
   const [showSolution, setShowSolution] = useState(false);
   const [isInterstitialLoaded, setIsInterstitialLoaded] = useState(false);
   const [progressState, setProgressState] = useState({unlockedLevel: 1, completed: []});
+  const [levelCompleteVisible, setLevelCompleteVisible] = useState(false);
 
   const questions = useMemo(() => {
     const langData = allQuestions[i18n.language] || allQuestions.en;
@@ -120,6 +122,7 @@ const PracticeScreen = ({route, navigation}) => {
       );
       const unlockedLevel = Math.max(progressState.unlockedLevel, level + 1);
       await persistProgress({unlockedLevel, completed});
+      setLevelCompleteVisible(true);
     } else {
       playSound('wrong');
     }
@@ -198,60 +201,104 @@ const PracticeScreen = ({route, navigation}) => {
     <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]}>
       <View style={[styles.header, {backgroundColor: colors.primary}]}>
         <TouchableOpacity onPress={goToGrid}>
-          <Icon name="grid-outline" size={22} color="#FFF" />
+          <Icon name="arrow-back" size={22} color="#FFF" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Level {currentQuestionIndex + 1}</Text>
-        <View style={styles.headerActions}>
-          <TouchableOpacity onPress={() => setShowHint(v => !v)}>
-            <Icon name="bulb-outline" size={21} color={showHint ? '#FDE047' : '#FFF'} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => setShowSolution(v => !v)} style={{marginLeft: 10}}>
-            <Icon name="book-outline" size={21} color={showSolution ? '#C7D2FE' : '#FFF'} />
-          </TouchableOpacity>
-        </View>
+        <Text style={styles.headerTitle}>Practice Quiz</Text>
+        <View style={{width: 22}} />
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
-        <View style={[styles.questionCard, {backgroundColor: colors.card, borderColor: colors.border}]}>
-          <Text style={[styles.questionText, {color: colors.text}]}>{currentQuestion.q}</Text>
-        </View>
-
-        {showHint && (
-          <View style={[styles.infoCard, {backgroundColor: isDark ? '#3D341F' : '#FFF9C4'}]}>
-            <Text style={styles.infoTitle}>Hint</Text>
-            <Text style={[styles.infoBody, {color: isDark ? '#FDE68A' : '#7F6000'}]}>
-              {currentQuestion.hint}
+        <View style={styles.quizCenterWrap}>
+          <View
+            style={[
+              styles.questionCard,
+              {backgroundColor: colors.card, borderColor: colors.border},
+            ]}>
+            <Text style={[styles.levelPill, {color: colors.primary}]}>
+              Level {currentQuestionIndex + 1}
+            </Text>
+            <Text style={[styles.questionText, {color: colors.text}]}>
+              {currentQuestion.q}
             </Text>
           </View>
-        )}
 
-        {currentQuestion.options.map((opt, idx) => {
-          const isCorrect = showResult && idx === currentQuestion.ans;
-          const isWrong = showResult && idx === selectedOption && idx !== currentQuestion.ans;
-          return (
+          <View style={styles.iconRow}>
             <TouchableOpacity
-              key={`${currentQuestion.id}-${idx}`}
+              onPress={() => setShowHint(v => !v)}
               style={[
-                styles.option,
+                styles.iconChip,
                 {backgroundColor: colors.card, borderColor: colors.border},
-                isCorrect && {backgroundColor: '#1F5131', borderColor: '#22C55E'},
-                isWrong && {backgroundColor: '#5A2633', borderColor: '#EF4444'},
-              ]}
-              onPress={() => handleOptionSelect(idx)}
-              disabled={showResult}>
-              <Text style={[styles.optionText, {color: colors.text}]}>{opt}</Text>
+              ]}>
+              <Icon
+                name="bulb-outline"
+                size={18}
+                color={showHint ? '#F59E0B' : colors.primary}
+              />
+              <Text style={[styles.iconChipText, {color: colors.text}]}>Hint</Text>
             </TouchableOpacity>
-          );
-        })}
-
-        {(showResult || showSolution) && (
-          <View style={[styles.infoCard, {backgroundColor: isDark ? '#1E3A30' : '#E8F5E9'}]}>
-            <Text style={[styles.infoTitle, {color: '#2E7D32'}]}>{t('explanation')}</Text>
-            <Text style={[styles.infoBody, {color: isDark ? '#D1FAE5' : '#1B5E20'}]}>
-              {currentQuestion.explanation || currentQuestion.solution}
-            </Text>
+            <TouchableOpacity
+              onPress={() => setShowSolution(v => !v)}
+              style={[
+                styles.iconChip,
+                {backgroundColor: colors.card, borderColor: colors.border},
+              ]}>
+              <Icon
+                name="book-outline"
+                size={18}
+                color={showSolution ? '#6366F1' : colors.primary}
+              />
+              <Text style={[styles.iconChipText, {color: colors.text}]}>Solution</Text>
+            </TouchableOpacity>
           </View>
-        )}
+
+          {showHint && (
+            <View
+              style={[
+                styles.infoCard,
+                {backgroundColor: isDark ? '#3D341F' : '#FFF9C4'},
+              ]}>
+              <Text style={styles.infoTitle}>Hint</Text>
+              <Text style={[styles.infoBody, {color: isDark ? '#FDE68A' : '#7F6000'}]}>
+                {currentQuestion.hint}
+              </Text>
+            </View>
+          )}
+
+          {currentQuestion.options.map((opt, idx) => {
+            const isCorrect = showResult && idx === currentQuestion.ans;
+            const isWrong =
+              showResult && idx === selectedOption && idx !== currentQuestion.ans;
+            return (
+              <TouchableOpacity
+                key={`${currentQuestion.id}-${idx}`}
+                style={[
+                  styles.option,
+                  {backgroundColor: colors.card, borderColor: colors.border},
+                  isCorrect && {backgroundColor: '#1F5131', borderColor: '#22C55E'},
+                  isWrong && {backgroundColor: '#5A2633', borderColor: '#EF4444'},
+                ]}
+                onPress={() => handleOptionSelect(idx)}
+                disabled={showResult}>
+                <Text style={[styles.optionText, {color: colors.text}]}>{opt}</Text>
+              </TouchableOpacity>
+            );
+          })}
+
+          {(showResult || showSolution) && (
+            <View
+              style={[
+                styles.infoCard,
+                {backgroundColor: isDark ? '#1E3A30' : '#E8F5E9'},
+              ]}>
+              <Text style={[styles.infoTitle, {color: '#2E7D32'}]}>
+                {t('explanation')}
+              </Text>
+              <Text style={[styles.infoBody, {color: isDark ? '#D1FAE5' : '#1B5E20'}]}>
+                {currentQuestion.explanation || currentQuestion.solution}
+              </Text>
+            </View>
+          )}
+        </View>
       </ScrollView>
 
       <View style={styles.bannerWrap}>
@@ -260,6 +307,43 @@ const PracticeScreen = ({route, navigation}) => {
           size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
         />
       </View>
+
+      <Modal
+        transparent
+        animationType="fade"
+        visible={levelCompleteVisible}
+        onRequestClose={() => setLevelCompleteVisible(false)}>
+        <View style={styles.modalOverlay}>
+          <View style={[styles.modalCard, {backgroundColor: colors.card}]}>
+            <Icon name="trophy-outline" size={36} color="#F59E0B" />
+            <Text style={[styles.modalTitle, {color: colors.text}]}>Great Job!</Text>
+            <Text style={[styles.modalText, {color: colors.subtext}]}>
+              Keep going, you are doing amazing.
+            </Text>
+            <TouchableOpacity
+              style={[styles.modalBtn, {backgroundColor: colors.primary}]}
+              onPress={() => {
+                setLevelCompleteVisible(false);
+                const nextLevelIndex = currentQuestionIndex + 1;
+                if (nextLevelIndex < questions.length) {
+                  setCurrentQuestionIndex(nextLevelIndex);
+                } else {
+                  goToGrid();
+                }
+                setSelectedOption(null);
+                setShowResult(false);
+                setShowHint(false);
+                setShowSolution(false);
+              }}>
+              <Text style={styles.modalBtnText}>
+                {currentQuestionIndex + 1 < questions.length
+                  ? `${t('next')} Level`
+                  : 'Back to Levels'}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 };
@@ -281,6 +365,7 @@ const styles = StyleSheet.create({
     color: '#FFF',
   },
   content: {padding: 16, paddingBottom: 100},
+  quizCenterWrap: {maxWidth: 760, width: '100%', alignSelf: 'center'},
   levelMeta: {paddingHorizontal: 16, paddingTop: 12, flexDirection: 'row', justifyContent: 'space-between'},
   metaText: {fontWeight: '700'},
   grid: {padding: 12, paddingBottom: 100},
@@ -294,7 +379,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   levelNumber: {fontSize: 16, fontWeight: '800', marginBottom: 4},
-  headerActions: {flexDirection: 'row', alignItems: 'center'},
   questionCard: {
     borderRadius: 18,
     padding: 18,
@@ -306,6 +390,18 @@ const styles = StyleSheet.create({
     lineHeight: 26,
     fontWeight: '600',
   },
+  levelPill: {fontWeight: '800', marginBottom: 8},
+  iconRow: {flexDirection: 'row', gap: 10, marginBottom: 10},
+  iconChip: {
+    borderWidth: 1,
+    borderRadius: 999,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  iconChipText: {fontWeight: '600'},
   option: {borderWidth: 1, borderRadius: 14, padding: 14, marginBottom: 10},
   optionText: {fontWeight: '600', fontSize: 15},
   infoCard: {padding: 14, borderRadius: 12, marginBottom: 10},
@@ -318,6 +414,40 @@ const styles = StyleSheet.create({
     right: 0,
     alignItems: 'center',
     backgroundColor: 'transparent',
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  modalCard: {
+    width: '100%',
+    maxWidth: 340,
+    borderRadius: 16,
+    padding: 20,
+    alignItems: 'center',
+  },
+  modalTitle: {
+    fontSize: 22,
+    fontWeight: '800',
+    marginTop: 8,
+  },
+  modalText: {
+    marginTop: 6,
+    lineHeight: 20,
+    textAlign: 'center',
+  },
+  modalBtn: {
+    marginTop: 14,
+    paddingVertical: 12,
+    paddingHorizontal: 18,
+    borderRadius: 12,
+  },
+  modalBtnText: {
+    color: '#fff',
+    fontWeight: '700',
   },
 });
 
