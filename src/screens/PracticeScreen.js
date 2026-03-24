@@ -34,7 +34,7 @@ const PracticeScreen = ({route, navigation}) => {
   const {colors, isDark} = useAppTheme();
   const initialCategory = route.params?.category || 'NTPC';
 
-  const [selectedCategory] = useState(initialCategory);
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
   const [showResult, setShowResult] = useState(false);
@@ -44,6 +44,19 @@ const PracticeScreen = ({route, navigation}) => {
   const [progressState, setProgressState] = useState({unlockedLevel: 1, completed: []});
   const [levelCompleteVisible, setLevelCompleteVisible] = useState(false);
   const [wrongAnswerVisible, setWrongAnswerVisible] = useState(false);
+
+  // Sync category with params if they change
+  useEffect(() => {
+    if (route.params?.category && route.params.category !== selectedCategory) {
+      setSelectedCategory(route.params.category);
+      // Reset quiz state when category changes
+      setCurrentQuestionIndex(null);
+      setSelectedOption(null);
+      setShowResult(false);
+      setShowHint(false);
+      setShowSolution(false);
+    }
+  }, [route.params?.category]);
 
   const questions = useMemo(() => {
     const langData = allQuestions[i18n.language] || allQuestions.en;
@@ -224,6 +237,11 @@ const PracticeScreen = ({route, navigation}) => {
         </TouchableOpacity>
         <Text style={styles.headerTitle}>{selectedCategory} Practice</Text>
         <View style={{width: 22}} />
+      </View>
+
+      <View style={styles.subHeader}>
+         <Icon name="school-outline" size={16} color={colors.subtext} />
+         <Text style={[styles.subHeaderText, {color: colors.subtext}]}>Currently Playing: {selectedCategory} Mode</Text>
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
@@ -458,6 +476,18 @@ const styles = StyleSheet.create({
   infoCard: {padding: 14, borderRadius: 12, marginBottom: 10},
   infoTitle: {fontWeight: '800', marginBottom: 5},
   infoBody: {fontSize: 14, lineHeight: 20},
+  subHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    gap: 8,
+  },
+  subHeaderText: {
+    fontSize: 13,
+    fontWeight: '700',
+    opacity: 0.8,
+  },
   bannerWrap: {
     position: 'absolute',
     bottom: 0,
