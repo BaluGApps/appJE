@@ -17,7 +17,7 @@ import {
   TestIds,
 } from 'react-native-google-mobile-ads';
 import allQuestions from '../data/questions';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useFocusEffect } from '@react-navigation/native';
 
 const GRID_COLUMNS = 5;
@@ -25,6 +25,7 @@ const TOTAL_LEVELS = 1000;
 const levelData = Array.from({length: TOTAL_LEVELS}, (_, i) => ({id: i + 1}));
 
 const PracticeScreen = ({route, navigation}) => {
+  const insets = useSafeAreaInsets();
   const {i18n} = useTranslation();
   const {colors} = useAppTheme();
   const initialCategory = route.params?.category || 'NTPC';
@@ -36,6 +37,8 @@ const PracticeScreen = ({route, navigation}) => {
   useEffect(() => {
     if (route.params?.category && route.params.category !== selectedCategory) {
       setSelectedCategory(route.params.category);
+      // Reset progress state locally while loading new data
+      setProgressState({unlockedLevel: 1, completed: []});
     }
   }, [route.params?.category]);
 
@@ -54,6 +57,9 @@ const PracticeScreen = ({route, navigation}) => {
       } catch (_e) {
         setProgressState({unlockedLevel: 1, completed: []});
       }
+    } else {
+      // CLEAR OLD STATE if no progress exists for this new category
+      setProgressState({unlockedLevel: 1, completed: []});
     }
   };
 
@@ -86,8 +92,8 @@ const PracticeScreen = ({route, navigation}) => {
   };
 
   return (
-    <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]}>
-      <View style={[styles.header, {backgroundColor: colors.primary}]}>
+    <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]} edges={['left', 'right', 'bottom']}>
+      <View style={[styles.header, {backgroundColor: colors.primary, paddingTop: insets.top + 10}]}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Icon name="arrow-back" size={22} color="#FFF" />
         </TouchableOpacity>
@@ -103,6 +109,7 @@ const PracticeScreen = ({route, navigation}) => {
         </Text>
       </View>
       <FlatList
+        key={selectedCategory} // SMART SOLUTION: Force re-render on category change
         data={levelData}
         keyExtractor={(item) => `level-${item.id}`}
         numColumns={GRID_COLUMNS}

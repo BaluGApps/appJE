@@ -4,8 +4,13 @@
             "id": 1,
             "level": 1,
             "q": "Which city is known as the Silicon Valley of India?",
-            "options": ["Mumbai", "Bengaluru", "Delhi", "Chennai"],
-            "ans": 1,
+            "options": [
+                "Mumbai",
+                "Bengaluru",
+                "Delhi",
+                "Chennai"
+            ],
+            "ans": 2,
             "hint": "It is the capital of Karnataka.",
             "solution": "Bengaluru is known as the Silicon Valley of India."
         },
@@ -13,70 +18,553 @@
             "id": 2,
             "level": 1,
             "q": "Who was the first woman PM of India?",
-            "options": ["Pratibha Patil", "Indira Gandhi", "Sarojini Naidu", "Sushma Swaraj"],
-            "ans": 1,
+            "options": [
+                "Pratibha Patil",
+                "Indira Gandhi",
+                "Sarojini Naidu",
+                "Sushma Swaraj"
+            ],
+            "ans": 2,
             "hint": "Daughter of Nehru.",
             "solution": "Indira Gandhi was the first woman PM."
+        },
+        {
+            "id": 3,
+            "level": 1,
+            "q": "Which city is known as the 'Heritage City' of Karnataka?",
+            "options": [
+                "Hubli",
+                "Mangaluru",
+                "Mysore",
+                "Belgaum"
+            ],
+            "ans": 3,
+            "hint": "Famous for the Dasara festival.",
+            "solution": "Mysore is known as the Heritage City of Karnataka."
+        },
+        {
+            "id": 4,
+            "level": 1,
+            "q": "The first session of the Indian National Congress (1885) was held in:",
+            "options": [
+                "Bombay",
+                "Calcutta",
+                "Madras",
+                "Surat"
+            ],
+            "ans": 1,
+            "hint": "Now known as Mumbai.",
+            "solution": "The first session was held at Gokuldas Tejpal Sanskrit College, Bombay."
+        },
+        {
+            "id": 5,
+            "level": 1,
+            "q": "Who is known as the 'Nightingale of India'?",
+            "options": [
+                "Annie Besant",
+                "Indira Gandhi",
+                "Sarojini Naidu",
+                "Lata Mangeshkar"
+            ],
+            "ans": 3,
+            "hint": "A prominent freedom fighter and poet.",
+            "solution": "Sarojini Naidu earned this title for her lyrical poetry."
+        },
+        {
+            "id": 6,
+            "level": 2,
+            "q": "Which article of the Indian Constitution deals with the 'Right to Education'?",
+            "options": [
+                "Article 21A",
+                "Article 44",
+                "Article 32",
+                "Article 19"
+            ],
+            "ans": 1,
+            "hint": "Added by the 86th Amendment Act.",
+            "solution": "Article 21A makes education a fundamental right for children aged 6-14."
+        },
+        {
+            "id": 7,
+            "level": 2,
+            "q": "The 'Quit India Movement' was launched in response to the failure of:",
+            "options": [
+                "Cabinet Mission",
+                "Cripps Mission",
+                "Simon Commission",
+                "Wavell Plan"
+            ],
+            "ans": 2,
+            "hint": "Proposed in 1942.",
+            "solution": "The movement began after the failure of the Cripps Mission."
+        },
+        {
+            "id": 8,
+            "level": 2,
+            "q": "Which planet is known as the 'Earth's Twin'?",
+            "options": [
+                "Mars",
+                "Venus",
+                "Jupiter",
+                "Saturn"
+            ],
+            "ans": 2,
+            "hint": "Similar size and density to Earth.",
+            "solution": "Venus is called the twin due to its similar structure."
+        },
+        {
+            "id": 9,
+            "level": 2,
+            "q": "The headquarters of ISRO is located in:",
+            "options": [
+                "Sriharikota",
+                "Bengaluru",
+                "Thiruvananthapuram",
+                "New Delhi"
+            ],
+            "ans": 2,
+            "hint": "The tech hub of India.",
+            "solution": "ISRO headquarters is in Bengaluru (Antariksh Bhavan)."
+        },
+        {
+            "id": 10,
+            "level": 3,
+            "q": "The concept of 'Carbon Credit' originated from which of the following?",
+            "options": [
+                "Earth Summit",
+                "Kyoto Protocol",
+                "Montreal Protocol",
+                "Paris Agreement"
+            ],
+            "ans": 2,
+            "hint": "Signed in Japan, 1997.",
+            "solution": "The Kyoto Protocol introduced the carbon credit system."
         }
     ],
     "ALP": [
         {
             "id": 1,
             "level": 1,
-            "q": "What is SI unit of Resistance?",
-            "options": ["Ampere", "Ohm", "Volt", "Watt"],
-            "ans": 1,
-            "hint": "Represented by Omega symbol.",
-            "solution": "Ohm is the SI unit of resistance."
+            "q": "What is the SI unit of Resistance?",
+            "options": [
+                "Ampere",
+                "Ohm",
+                "Volt",
+                "Watt"
+            ],
+            "ans": 2,
+            "hint": "Represented by the Greek symbol Omega.",
+            "solution": "Ohm is the standard unit of electrical resistance."
         },
         {
             "id": 2,
             "level": 1,
-            "q": "Human body temperature?",
-            "options": ["35C", "37C", "40C", "98C"],
-            "ans": 1,
-            "hint": "Average normal.",
-            "solution": "37C is the average."
+            "q": "What is the average normal human body temperature?",
+            "options": [
+                "35°C",
+                "37°C",
+                "40°C",
+                "98°C"
+            ],
+            "ans": 2,
+            "hint": "Roughly 98.6°F.",
+            "solution": "37°C is the standard average temperature."
+        },
+        {
+            "id": 3,
+            "level": 1,
+            "q": "Which instrument is used to measure electric current?",
+            "options": [
+                "Voltmeter",
+                "Ammeter",
+                "Galvanometer",
+                "Multimeter"
+            ],
+            "ans": 2,
+            "hint": "Connected in series.",
+            "solution": "An Ammeter measures the flow of current in Amperes."
+        },
+        {
+            "id": 4,
+            "level": 1,
+            "q": "The process of converting solid directly into gas is called:",
+            "options": [
+                "Evaporation",
+                "Sublimation",
+                "Condensation",
+                "Deposition"
+            ],
+            "ans": 2,
+            "hint": "Think of dry ice or camphor.",
+            "solution": "Sublimation is the transition without passing through the liquid phase."
+        },
+        {
+            "id": 5,
+            "level": 2,
+            "q": "If the length of a wire is doubled, its resistance will:",
+            "options": [
+                "Halve",
+                "Remain same",
+                "Double",
+                "Quadruple"
+            ],
+            "ans": 3,
+            "hint": "Resistance is directly proportional to length.",
+            "solution": "R = ρ(L/A); doubling length doubles resistance."
+        },
+        {
+            "id": 6,
+            "level": 2,
+            "q": "Which part of the brain controls voluntary actions and balance?",
+            "options": [
+                "Cerebrum",
+                "Cerebellum",
+                "Medulla",
+                "Pons"
+            ],
+            "ans": 2,
+            "hint": "Often called the 'little brain'.",
+            "solution": "The cerebellum coordinates muscle movements and balance."
+        },
+        {
+            "id": 7,
+            "level": 2,
+            "q": "What is the frequency of AC supply in India?",
+            "options": [
+                "40 Hz",
+                "50 Hz",
+                "60 Hz",
+                "100 Hz"
+            ],
+            "ans": 2,
+            "hint": "Standard for most domestic grids.",
+            "solution": "India uses a 50 Hz frequency for its power grid."
+        },
+        {
+            "id": 8,
+            "level": 3,
+            "q": "Which mirror is used as a rear-view mirror in vehicles?",
+            "options": [
+                "Plane Mirror",
+                "Concave Mirror",
+                "Convex Mirror",
+                "Cylindrical Mirror"
+            ],
+            "ans": 3,
+            "hint": "It provides a wider field of view.",
+            "solution": "Convex mirrors form diminished, upright images over a large area."
+        },
+        {
+            "id": 9,
+            "level": 3,
+            "q": "Sound waves in air are always:",
+            "options": [
+                "Transverse",
+                "Longitudinal",
+                "Electromagnetic",
+                "Static"
+            ],
+            "ans": 2,
+            "hint": "Particles move parallel to the wave.",
+            "solution": "Sound waves are longitudinal mechanical waves."
+        },
+        {
+            "id": 10,
+            "level": 3,
+            "q": "The escape velocity from Earth's surface is approximately:",
+            "options": [
+                "9.8 km/s",
+                "11.2 km/s",
+                "1.6 km/s",
+                "42 km/s"
+            ],
+            "ans": 2,
+            "hint": "Critical for space launches.",
+            "solution": "It is roughly 11.2 km per second."
         }
     ],
     "JE": [
         {
             "id": 1,
             "level": 1,
-            "q": "Which material has highest electrical conductivity?",
-            "options": ["Gold", "Silver", "Copper", "Aluminum"],
-            "ans": 1,
-            "hint": "Better than Copper.",
-            "solution": "Silver has the highest electrical conductivity."
+            "q": "Which material has the highest electrical conductivity?",
+            "options": [
+                "Gold",
+                "Silver",
+                "Copper",
+                "Aluminum"
+            ],
+            "ans": 2,
+            "hint": "It's a noble metal, more conductive than copper.",
+            "solution": "Silver has the highest conductivity among all metals."
         },
         {
             "id": 2,
             "level": 1,
-            "q": "Ohm Law formula?",
-            "options": ["V=IR", "P=VI", "V=P/I", "I=VR"],
-            "ans": 0,
-            "hint": "Voltage = Current x Resistance.",
-            "solution": "V=IR is the standard Ohm Law."
+            "q": "What is the standard formula for Ohm's Law?",
+            "options": [
+                "V=IR",
+                "P=VI",
+                "V=P/I",
+                "I=VR"
+            ],
+            "ans": 1,
+            "hint": "Voltage equals Current times Resistance.",
+            "solution": "V=IR is the fundamental law of electricity."
+        },
+        {
+            "id": 3,
+            "level": 1,
+            "q": "Pascal is the SI unit for:",
+            "options": [
+                "Energy",
+                "Pressure",
+                "Frequency",
+                "Conductivity"
+            ],
+            "ans": 2,
+            "hint": "Newtons per square meter.",
+            "solution": "Pascal (Pa) is the unit used to measure pressure."
+        },
+        {
+            "id": 4,
+            "level": 2,
+            "q": "An ideal voltmeter should have:",
+            "options": [
+                "Zero resistance",
+                "Low resistance",
+                "Infinite resistance",
+                "Variable resistance"
+            ],
+            "ans": 3,
+            "hint": "To ensure no current is drawn from the circuit.",
+            "solution": "Infinite resistance prevents interference with the measured circuit."
+        },
+        {
+            "id": 5,
+            "level": 2,
+            "q": "Which alloy is used in the heating element of an electric iron?",
+            "options": [
+                "Brass",
+                "Bronze",
+                "Nichrome",
+                "Steel"
+            ],
+            "ans": 3,
+            "hint": "Nickel and Chromium.",
+            "solution": "Nichrome is used due to its high resistivity and melting point."
+        },
+        {
+            "id": 6,
+            "level": 2,
+            "q": "The modulus of elasticity for a perfectly rigid body is:",
+            "options": [
+                "Zero",
+                "One",
+                "Infinite",
+                "Minus One"
+            ],
+            "ans": 3,
+            "hint": "It cannot be deformed.",
+            "solution": "Since deformation is zero, the modulus (Stress/Strain) is infinite."
+        },
+        {
+            "id": 7,
+            "level": 3,
+            "q": "Bernoulli’s principle is based on the law of conservation of:",
+            "options": [
+                "Mass",
+                "Momentum",
+                "Energy",
+                "Charge"
+            ],
+            "ans": 3,
+            "hint": "Relates pressure, speed, and height.",
+            "solution": "It is a statement of the conservation of energy for flowing fluids."
+        },
+        {
+            "id": 8,
+            "level": 3,
+            "q": "In a 4-stroke engine, the strokes occur in which order?",
+            "options": [
+                "Intake, Compression, Power, Exhaust",
+                "Compression, Intake, Power, Exhaust",
+                "Intake, Power, Compression, Exhaust",
+                "Power, Intake, Compression, Exhaust"
+            ],
+            "ans": 1,
+            "hint": "Suck, Squeeze, Bang, Blow.",
+            "solution": "The standard cycle is Intake → Compression → Power → Exhaust."
+        },
+        {
+            "id": 9,
+            "level": 3,
+            "q": "Which logic gate is known as the 'Universal Gate'?",
+            "options": [
+                "AND",
+                "OR",
+                "NAND",
+                "XOR"
+            ],
+            "ans": 3,
+            "hint": "Can realize any other logic gate.",
+            "solution": "NAND and NOR are universal gates."
+        },
+        {
+            "id": 10,
+            "level": 3,
+            "q": "The coefficient of friction depends on:",
+            "options": [
+                "Area of contact",
+                "Nature of surfaces",
+                "Speed of motion",
+                "Shape of body"
+            ],
+            "ans": 2,
+            "hint": "Roughness or smoothness matters.",
+            "solution": "It depends solely on the material and nature of the contacting surfaces."
         }
     ],
     "GroupD": [
         {
             "id": 1,
             "level": 1,
-            "q": "Chemical symbol for Iron?",
-            "options": ["Ir", "Fe", "In", "F"],
-            "ans": 1,
-            "hint": "Ferrum.",
+            "q": "What is the chemical symbol for Iron?",
+            "options": [
+                "Ir",
+                "Fe",
+                "In",
+                "F"
+            ],
+            "ans": 2,
+            "hint": "Derived from the Latin 'Ferrum'.",
             "solution": "Fe is the symbol for Iron."
         },
         {
             "id": 2,
             "level": 1,
-            "q": "Power house of cell?",
-            "options": ["Nucleus", "Mitochondria", "Ribosome", "Golgi"],
-            "ans": 1,
-            "hint": "Produces ATP.",
-            "solution": "Mitochondria is the power house."
+            "q": "Which organelle is the 'Power House' of the cell?",
+            "options": [
+                "Nucleus",
+                "Mitochondria",
+                "Ribosome",
+                "Lysosome"
+            ],
+            "ans": 2,
+            "hint": "Site of ATP production.",
+            "solution": "Mitochondria generate most of the cell's supply of ATP."
+        },
+        {
+            "id": 3,
+            "level": 1,
+            "q": "Which vitamin is synthesized in our body in the presence of sunlight?",
+            "options": [
+                "Vitamin A",
+                "Vitamin B",
+                "Vitamin C",
+                "Vitamin D"
+            ],
+            "ans": 4,
+            "hint": "Crucial for bone health.",
+            "solution": "Ultraviolet rays trigger the synthesis of Vitamin D in the skin."
+        },
+        {
+            "id": 4,
+            "level": 1,
+            "q": "Who is known as the 'Father of the Indian Constitution'?",
+            "options": [
+                "Gandhiji",
+                "Nehru",
+                "Dr. B.R. Ambedkar",
+                "Sardar Patel"
+            ],
+            "ans": 3,
+            "hint": "Chairman of the Drafting Committee.",
+            "solution": "Dr. Ambedkar played the lead role in drafting the Constitution."
+        },
+        {
+            "id": 5,
+            "level": 2,
+            "q": "Which river is often called the 'Sorrow of Bihar' due to frequent floods?",
+            "options": [
+                "Ganga",
+                "Kosi",
+                "Narmada",
+                "Yamuna"
+            ],
+            "ans": 2,
+            "hint": "Known for changing its course.",
+            "solution": "The Kosi river causes massive annual floods in Bihar."
+        },
+        {
+            "id": 6,
+            "level": 2,
+            "q": "The Planning Commission was replaced by which body in 2015?",
+            "options": [
+                "Finance Commission",
+                "NITI Aayog",
+                "Zonal Council",
+                "GST Council"
+            ],
+            "ans": 2,
+            "hint": "Chaired by the Prime Minister.",
+            "solution": "NITI Aayog acts as the premier policy 'Think Tank' of India."
+        },
+        {
+            "id": 7,
+            "level": 2,
+            "q": "Which of these is a Kharif crop?",
+            "options": [
+                "Wheat",
+                "Mustard",
+                "Rice",
+                "Gram"
+            ],
+            "ans": 3,
+            "hint": "Sown in the rainy season.",
+            "solution": "Rice is a major Kharif crop, unlike Wheat which is Rabi."
+        },
+        {
+            "id": 8,
+            "level": 3,
+            "q": "What is the pH value of pure water?",
+            "options": [
+                "0",
+                "7",
+                "14",
+                "1"
+            ],
+            "ans": 2,
+            "hint": "It is neutral.",
+            "solution": "Pure water has a neutral pH of 7."
+        },
+        {
+            "id": 9,
+            "level": 3,
+            "q": "Who won the first Nobel Prize for India?",
+            "options": [
+                "C.V. Raman",
+                "Mother Teresa",
+                "Rabindranath Tagore",
+                "Hargobind Khorana"
+            ],
+            "ans": 3,
+            "hint": "Awarded for Literature in 1913.",
+            "solution": "Tagore won for his collection 'Gitanjali'."
+        },
+        {
+            "id": 10,
+            "level": 3,
+            "q": "Which gas is used in fire extinguishers?",
+            "options": [
+                "Oxygen",
+                "Carbon Dioxide",
+                "Hydrogen",
+                "Nitrogen"
+            ],
+            "ans": 2,
+            "hint": "It displaces oxygen to put out the fire.",
+            "solution": "CO2 is effective because it is non-combustible and heavier than air."
         }
     ]
 }

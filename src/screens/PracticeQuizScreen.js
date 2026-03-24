@@ -21,13 +21,14 @@ import {
 } from 'react-native-google-mobile-ads';
 import allQuestions from '../data/questions';
 import {playSound} from '../util/sound';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const interstitial = InterstitialAd.createForAdRequest(
   __DEV__ ? TestIds.INTERSTITIAL : 'ca-app-pub-2627956667785383/2550120291',
 );
 
 const PracticeQuizScreen = ({route, navigation}) => {
+  const insets = useSafeAreaInsets();
   const {t, i18n} = useTranslation();
   const {colors, isDark} = useAppTheme();
   const {category, levelIndex} = route.params;
@@ -60,6 +61,9 @@ const PracticeQuizScreen = ({route, navigation}) => {
         } catch (_e) {
           setProgressState({unlockedLevel: 1, completed: []});
         }
+      } else {
+        // Reset to default for new category/level
+        setProgressState({unlockedLevel: 1, completed: []});
       }
     };
     setup();
@@ -137,8 +141,8 @@ const PracticeQuizScreen = ({route, navigation}) => {
   }
 
   return (
-    <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]}>
-      <View style={[styles.header, {backgroundColor: colors.primary}]}>
+    <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]} edges={['left', 'right', 'bottom']}>
+      <View style={[styles.header, {backgroundColor: colors.primary, paddingTop: insets.top + 10}]}>
         <TouchableOpacity onPress={goToGrid}>
           <Icon name="arrow-back" size={22} color="#FFF" />
         </TouchableOpacity>

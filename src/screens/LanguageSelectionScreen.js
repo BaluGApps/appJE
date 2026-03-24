@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  FlatList, 
-  TouchableOpacity, 
-  TouchableOpacity, 
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
   StatusBar,
   Dimensions
 } from 'react-native';
@@ -47,7 +46,7 @@ const LanguageSelectionScreen = ({ navigation }) => {
     i18n.changeLanguage(langCode);
     // Short delay for visual feedback
     setTimeout(() => {
-        navigation.replace('MainTabs');
+      navigation.replace('MainTabs');
     }, 300);
   };
 
@@ -60,14 +59,14 @@ const LanguageSelectionScreen = ({ navigation }) => {
         activeOpacity={0.8}
       >
         <LinearGradient
-            colors={isSelected ? ['#4facfe', '#00f2fe'] : ['#FFFFFF', '#F8FAFC']}
-            style={styles.cardGradient}
+          colors={isSelected ? ['#4facfe', '#00f2fe'] : ['#FFFFFF', '#F8FAFC']}
+          style={styles.cardGradient}
         >
-            <View style={[styles.scriptCircle, isSelected && styles.selectedScriptCircle]}>
-                <Text style={[styles.scriptText, isSelected && styles.selectedScriptText]}>{item.script}</Text>
-            </View>
-            <Text style={[styles.nativeText, isSelected && styles.selectedNativeText]}>{item.native}</Text>
-            <Text style={[styles.englishText, isSelected && styles.selectedEnglishText]}>{item.name}</Text>
+          <View style={[styles.scriptCircle, isSelected && styles.selectedScriptCircle]}>
+            <Text style={[styles.scriptText, isSelected && styles.selectedScriptText]}>{item.script}</Text>
+          </View>
+          <Text style={[styles.nativeText, isSelected && styles.selectedNativeText]}>{item.native}</Text>
+          <Text style={[styles.englishText, isSelected && styles.selectedEnglishText]}>{item.name}</Text>
         </LinearGradient>
       </TouchableOpacity>
     );
@@ -78,12 +77,12 @@ const LanguageSelectionScreen = ({ navigation }) => {
       <StatusBar barStyle="dark-content" backgroundColor="#F1F5F9" />
       <View style={styles.header}>
         <View style={styles.iconContainer}>
-            <Icon name="language" size={32} color="#0074E4" />
+          <Icon name="language" size={32} color="#0074E4" />
         </View>
         <Text style={styles.title}>{t('chooseLanguage')}</Text>
         <Text style={styles.subtitle}>{t('selectPreferredLang')}</Text>
       </View>
-      
+
       <FlatList
         data={languages}
         keyExtractor={(item) => item.code}
@@ -94,7 +93,7 @@ const LanguageSelectionScreen = ({ navigation }) => {
       />
 
       <View style={styles.footer}>
-          <Text style={styles.footerText}>{t('changeAnytime')}</Text>
+        <Text style={styles.footerText}>{t('changeAnytime')}</Text>
       </View>
     </SafeAreaView>
   );
@@ -110,18 +109,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   iconContainer: {
-      width: 70,
-      height: 70,
-      borderRadius: 24,
-      backgroundColor: '#E0F2FE',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: 20,
-      elevation: 4,
-      shadowColor: '#0074E4',
-      shadowOffset: { width: 0, height: 4 },
-      shadowOpacity: 0.1,
-      shadowRadius: 10,
+    width: 70,
+    height: 70,
+    borderRadius: 24,
+    backgroundColor: '#E0F2FE',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+    elevation: 4,
+    shadowColor: '#0074E4',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
   },
   title: {
     fontSize: 28,
@@ -152,36 +151,36 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
   },
   selectedItem: {
-      elevation: 12,
-      shadowOpacity: 0.3,
-      shadowColor: '#4facfe',
+    elevation: 12,
+    shadowOpacity: 0.3,
+    shadowColor: '#4facfe',
   },
   cardGradient: {
-      flex: 1,
-      borderRadius: 24,
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: 10,
+    flex: 1,
+    borderRadius: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 10,
   },
   scriptCircle: {
-      width: 50,
-      height: 50,
-      borderRadius: 25,
-      backgroundColor: '#F1F5F9',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: 12,
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: '#F1F5F9',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 12,
   },
   selectedScriptCircle: {
-      backgroundColor: 'rgba(255,255,255,0.3)',
+    backgroundColor: 'rgba(255,255,255,0.3)',
   },
   scriptText: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      color: '#0074E4',
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#0074E4',
   },
   selectedScriptText: {
-      color: '#FFF',
+    color: '#FFF',
   },
   nativeText: {
     fontSize: 15,
@@ -202,13 +201,13 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.8)',
   },
   footer: {
-      padding: 20,
-      alignItems: 'center',
+    padding: 20,
+    alignItems: 'center',
   },
   footerText: {
-      fontSize: 13,
-      color: '#94A3B8',
-      fontWeight: '500',
+    fontSize: 13,
+    color: '#94A3B8',
+    fontWeight: '500',
   }
 });
 
