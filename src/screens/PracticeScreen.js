@@ -103,6 +103,17 @@ const PracticeScreen = ({route, navigation}) => {
     if (level > progressState.unlockedLevel) {
       return;
     }
+    
+    // Check if question exists for this level
+    if (!questions[levelIndex]) {
+      require('react-native').Alert.alert(
+        'Practice',
+        'Questions are coming soon we are working on it',
+        [{text: 'OK'}]
+      );
+      return;
+    }
+
     setCurrentQuestionIndex(levelIndex);
     setSelectedOption(null);
     setShowResult(false);
@@ -139,6 +150,9 @@ const PracticeScreen = ({route, navigation}) => {
     setShowSolution(false);
   };
 
+  const TOTAL_LEVELS = 1000;
+  const levelData = Array.from({length: TOTAL_LEVELS}, (_, i) => ({id: i + 1}));
+
   if (currentQuestionIndex === null) {
     return (
       <SafeAreaView style={[styles.container, {backgroundColor: colors.background}]}>
@@ -146,20 +160,20 @@ const PracticeScreen = ({route, navigation}) => {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Icon name="arrow-back" size={22} color="#FFF" />
           </TouchableOpacity>
-          <Text style={styles.headerTitle}>RRB {selectedCategory} Levels</Text>
+          <Text style={styles.headerTitle}>RailAspirant {selectedCategory}</Text>
           <View style={{width: 22}} />
         </View>
         <View style={styles.levelMeta}>
           <Text style={[styles.metaText, {color: colors.text}]}>
-            Unlocked: {Math.min(progressState.unlockedLevel, questions.length)} / {questions.length}
+            Unlocked: {progressState.unlockedLevel} / {TOTAL_LEVELS}
           </Text>
           <Text style={[styles.metaText, {color: colors.subtext}]}>
             Completed: {progressState.completed.length}
           </Text>
         </View>
         <FlatList
-          data={questions}
-          keyExtractor={(item, idx) => `${item.id || idx}`}
+          data={levelData}
+          keyExtractor={(item) => `level-${item.id}`}
           numColumns={GRID_COLUMNS}
           contentContainerStyle={styles.grid}
           renderItem={({index}) => {
@@ -176,18 +190,21 @@ const PracticeScreen = ({route, navigation}) => {
                   },
                 ]}
                 onPress={() => onLevelPress(index)}
-                disabled={locked}>
-                <Text style={[styles.levelNumber, {color: completed ? '#D1FAE5' : colors.text}]}>
+                activeOpacity={0.7}>
+                <Text style={[styles.levelNumber, {color: completed ? '#D1FAE5' : (locked ? '#94A3B8' : colors.text)}]}>
                   {level}
                 </Text>
                 <Icon
                   name={locked ? 'lock-closed' : completed ? 'checkmark-circle' : 'lock-open'}
-                  size={16}
+                  size={14}
                   color={locked ? '#94A3B8' : completed ? '#22C55E' : colors.primary}
                 />
               </TouchableOpacity>
             );
           }}
+          initialNumToRender={20}
+          maxToRenderPerBatch={20}
+          windowSize={10}
         />
         <View style={styles.bannerWrap}>
           <BannerAd
