@@ -5205,7 +5205,7 @@
     "a": "Central and Western Railways"
   },
   {
-    "id": "id1042",
+    "id": "r1042",
     "q": "What is the HCF of 12 and 18?",
     "a": "6"
   },
@@ -9855,7 +9855,7 @@
     "a": "Har Gobind Khorana"
   },
   {
-    "id": "r1772",
+    "id": "r1972",
     "q": "Which gas is known as 'Laughing Gas'?",
     "a": "Nitrous Oxide"
   },
@@ -14045,7 +14045,7 @@
     "a": "Northeast Frontier Railway"
   },
   {
-    "id": "r2710",
+    "id": "r2810",
     "q": "If $4x - 8 = 32$, what is the value of $x$?",
     "a": "10"
   },
@@ -23768,5 +23768,1340 @@
     "id": "r4754",
     "q": "What is the motto of the Indian Army?",
     "a": "Seva Paramo Dharma (Service Before Self)"
+  },
+  {
+    "id": "r4755",
+    "q": "Who is the father of Indian Constitution?",
+    "a": "Dr. B.R. Ambedkar"
+  },
+  {
+    "id": "r4756",
+    "q": "How many schedules were there in the original Constitution?",
+    "a": "8"
+  },
+  {
+    "id": "r4757",
+    "q": "How many schedules are there currently in the Constitution?",
+    "a": "12"
+  },
+  {
+    "id": "r4758",
+    "q": "The concept of 'Concurrent List' was borrowed from?",
+    "a": "Australia"
+  },
+  {
+    "id": "r4759",
+    "q": "The concept of 'Fundamental Rights' was borrowed from?",
+    "a": "USA"
+  },
+  {
+    "id": "r4760",
+    "q": "The concept of 'Single Citizenship' was borrowed from?",
+    "a": "UK"
+  },
+  {
+    "id": "r4761",
+    "q": "Which article is known as the 'Soul of the Constitution'?",
+    "a": "Article 32"
+  },
+  {
+    "id": "r4762",
+    "q": "Who said Article 32 is the heart and soul of the Constitution?",
+    "a": "Dr. B.R. Ambedkar"
+  },
+  {
+    "id": "r4763",
+    "q": "Which article deals with the impeachment of the President?",
+    "a": "Article 61"
+  },
+  {
+    "id": "r4764",
+    "q": "Which article deals with the appointment of the Prime Minister?",
+    "a": "Article 75"
+  },
+  {
+    "id": "r4765",
+    "q": "Which article deals with the Attorney General of India?",
+    "a": "Article 76"
+  },
+  {
+    "id": "r4766",
+    "q": "Which article deals with the Financial Emergency?",
+    "a": "Article 360"
+  },
+  {
+    "id": "r4767",
+    "q": "Which article deals with the National Emergency?",
+    "a": "Article 352"
+  },
+  {
+    "id": "r4768",
+    "q": "Which article deals with the State Emergency (President's Rule)?",
+    "a": "Article 356"
+  },
+  {
+    "id": "r4769",
+    "q": "Which article deals with the Village Panchayats?",
+    "a": "Article 40"
+  },
+  {
+    "id": "r4770",
+    "q": "Which article deals with the Uniform Civil Code?",
+    "a": "Article 44"
+  },
+  {
+    "id": "r4771",
+    "q": "Which article deals with the Fundamental Duties?",
+    "a": "Article 51A"
+  },
+  {
+    "id": "r4772",
+    "q": "Which part of the Constitution deals with the Municipalities?",
+    "a": "Part IXA"
+  },
+  {
+    "id": "r4773",
+    "q": "Which schedule deals with the allocation of seats in Rajya Sabha?",
+    "a": "4th Schedule"
+  },
+  {
+    "id": "r4774",
+    "q": "Which schedule deals with the languages?",
+    "a": "8th Schedule"
+  },
+  {
+    "id": "r4775",
+    "q": "Which schedule deals with the Anti-Defection Law?",
+    "a": "10th Schedule"
+  },
+  {
+    "id": "r4776",
+    "q": "Which amendment added the 10th Schedule?",
+    "a": "52.nd Amendment"
+  },
+  {
+    "id": "r4777",
+    "q": "Which amendment added the 'Secular' and 'Socialist' words to the Preamble?",
+    "a": "42nd Amendment"
+  },
+  {
+    "id": "r4778",
+    "q": "Which amendment is called 'Mini Constitution'?",
+    "a": "42nd Amendment"
+  },
+  {
+    "id": "r4779",
+    "q": "Which amendment provided for the GST?",
+    "a": "101st Amendment"
+  },
+  {
+    "id": "r4780",
+    "q": "Who is the Chairman of the Rajya Sabha?",
+    "a": "Vice-President"
+  },
+  {
+    "id": "r4781",
+    "q": "Who was the first Vice President of India?",
+    "a": "Dr. S. Radhakrishnan"
+  },
+  {
+    "id": "r4782",
+    "q": "What is the term of office for the Comptroller and Auditor General (CAG)?",
+    "a": "6 years or up to age 65"
+  },
+  {
+    "id": "r4783",
+    "q": "Who appoints the Governor of a state?",
+    "a": "President of India"
+  },
+  {
+    "id": "r4784",
+    "q": "What is the minimum age to be the Governor?",
+    "a": "35 years"
+  },
+  {
+    "id": "r4785",
+    "q": "Who administers the oath to the Governor?",
+    "a": "Chief Justice of the High Court"
+  },
+  {
+    "id": "r4786",
+    "q": "Who administers the oath to the President?",
+    "a": "Chief Justice of India"
+  },
+  {
+    "id": "r4787",
+    "q": "Which article gives power to the President to grant pardon?",
+    "a": "Article 72"
+  },
+  {
+    "id": "r4788",
+    "q": "Which article deals with the GST Council?",
+    "a": "Article 279A"
+  },
+  {
+    "id": "r4789",
+    "q": "How many members are there in the Finance Commission?",
+    "a": "Chairman and 4 other members"
+  },
+  {
+    "id": "r4790",
+    "q": "Which article deals with the Finance Commission?",
+    "a": "Article 280"
+  },
+  {
+    "id": "r4791",
+    "q": "Which body is the highest decision making body for planning in India?",
+    "a": "NITI Aayog (replacing Planning Commission)"
+  },
+  {
+    "id": "r4792",
+    "q": "Who was the first Chairman of the Planning Commission?",
+    "a": "Jawaharlal Nehru"
+  },
+  {
+    "id": "r4793",
+    "q": "Who is the first female to receive Ashok Chakra?",
+    "a": "Neerja Bhanot"
+  },
+  {
+    "id": "r4794",
+    "q": "Who is the first Indian to receive the Ramon Magsaysay Award?",
+    "a": "Vinoba Bhave"
+  },
+  {
+    "id": "r4795",
+    "q": "Who is the first Indian to receive the Jnanpith Award?",
+    "a": "G. Sankara Kurup"
+  },
+  {
+    "id": "r4796",
+    "q": "Who is the first woman to receive the Jnanpith Award?",
+    "a": "Ashapurna Devi"
+  },
+  {
+    "id": "r4797",
+    "q": "Who is the first Indian to receive the Dada Saheb Phalke Award?",
+    "a": "Devika Rani"
+  },
+  {
+    "id": "r4798",
+    "q": "Who is the first Indian to receive the Bharat Ratna?",
+    "a": "Dr. S. Radhakrishnan / C. Rajagopalachari"
+  },
+  {
+    "id": "r4799",
+    "q": "Who was the first Indian to receive the Stalin Peace Prize?",
+    "a": "Saifuddin Kitchlew"
+  },
+  {
+    "id": "r4800",
+    "q": "Who was the first Indian to be a Judge in the International Court of Justice?",
+    "a": "Dr. Nagendra Singh"
+  },
+  {
+    "id": "r4801",
+    "q": "Who is the first Indian to join the ICS?",
+    "a": "Satyendranath Tagore"
+  },
+  {
+    "id": "r4802",
+    "q": "Who was the first woman to cross Seven Seas by swimming?",
+    "a": "Bula Choudhury"
+  },
+  {
+    "id": "r4803",
+    "q": "Who was the first Indian to sail around the world solo?",
+    "a": "Dilip Donde"
+  },
+  {
+    "id": "r4804",
+    "q": "Who is the current Chief Justice of India?",
+    "a": "D.Y. Chandrachud (as of 2024)"
+  },
+  {
+    "id": "r4805",
+    "q": "Who is the first woman to be the Director General of Police?",
+    "a": "Kanchan Chaudhary Bhattacharya"
+  },
+  {
+    "id": "r4806",
+    "q": "Who is the first Indian to win a gold in Olympics?",
+    "a": "Abhinav Bindra"
+  },
+  {
+    "id": "r4807",
+    "q": "Who is the current Chief of the Army Staff?",
+    "a": "General Upendra Dwivedi (as of 2024)"
+  },
+  {
+    "id": "r4808",
+    "q": "Who is the current Chief of the Naval Staff?",
+    "a": "Admiral Dinesh K. Tripathi (as of 2024)"
+  },
+  {
+    "id": "r4809",
+    "q": "Who is the current Chief of the Air Staff?",
+    "a": "Air Chief Marshal V.R. Chaudhari (as of 2024)"
+  },
+  {
+    "id": "r4810",
+    "q": "What is the tenure of the Rajya Sabha as a house?",
+    "a": "Permanent Body (does not dissolve)"
+  },
+  {
+    "id": "r4811",
+    "q": "What is the quorum for Lok Sabha sessions?",
+    "a": "1/10th of total members"
+  },
+  {
+    "id": "r4812",
+    "q": "Who was the first woman Prime Minister of UK?",
+    "a": "Margaret Thatcher"
+  },
+  {
+    "id": "r4813",
+    "q": "Who wrote the book 'War and Peace'?",
+    "a": "Leo Tolstoy"
+  },
+  {
+    "id": "r4814",
+    "q": "Who wrote 'The Argumentative Indian'?",
+    "a": "Amartya Sen"
+  },
+  {
+    "id": "r4815",
+    "q": "Who is the author of 'Satyarth Prakash'?",
+    "a": "Swami Dayananda Saraswati"
+  },
+  {
+    "id": "r4816",
+    "q": "Who is the author of 'Laws'?",
+    "a": "Plato"
+  },
+  {
+    "id": "r4817",
+    "q": "Who is the author of 'Wealth of Nations'?",
+    "a": "Adam Smith"
+  },
+  {
+    "id": "r4818",
+    "q": "Who invented the aeroplane?",
+    "a": "Wright Brothers"
+  },
+  {
+    "id": "r4819",
+    "q": "Who invented the radio?",
+    "a": "Guglielmo Marconi"
+  },
+  {
+    "id": "r4820",
+    "q": "Who discovered the circulation of blood?",
+    "a": "William Harvey"
+  },
+  {
+    "id": "r4821",
+    "q": "Who discovered the cell?",
+    "a": "Robert Hooke"
+  },
+  {
+    "id": "r4822",
+    "q": "Who discovered the nucleus of an atom?",
+    "a": "Ernest Rutherford"
+  },
+  {
+    "id": "r4823",
+    "q": "Who gave the law of universal gravitation?",
+    "a": "Isaac Newton"
+  },
+  {
+    "id": "r4824",
+    "q": "Who gave the theory of relativity?",
+    "a": "Albert Einstein"
+  },
+  {
+    "id": "r4825",
+    "q": "Who is the father of vaccines?",
+    "a": "Edward Jenner"
+  },
+  {
+    "id": "r4826",
+    "q": "Who is known as the father of modern medicine?",
+    "a": "Hippocrates"
+  },
+  {
+    "id": "r4827",
+    "q": "Which instrument is used to measure height?",
+    "a": "Altimeter"
+  },
+  {
+    "id": "r4828",
+    "q": "Which instrument is used to measure pressure?",
+    "a": "Barometer"
+  },
+  {
+    "id": "r4829",
+    "q": "Which instrument is used to measure electric current?",
+    "a": "Ammeter"
+  },
+  {
+    "id": "r4830",
+    "q": "Which instrument is used to measure depth of the ocean?",
+    "a": "Fathometer"
+  },
+  {
+    "id": "r4831",
+    "q": "Which instrument is used to measure solar radiation?",
+    "a": "Pyranometer"
+  },
+  {
+    "id": "r4832",
+    "q": "Which instrument is used to measure the intensity of earthquakes?",
+    "a": "Seismograph"
+  },
+  {
+    "id": "r4833",
+    "q": "What is the unit of energy?",
+    "a": "Joule"
+  },
+  {
+    "id": "r4834",
+    "q": "What is the unit of pressure?",
+    "a": "Pascal"
+  },
+  {
+    "id": "r4835",
+    "q": "How many bits make one byte?",
+    "a": "8 bits"
+  },
+  {
+    "id": "r4836",
+    "q": "How many bytes in one KB?",
+    "a": "1024 bytes"
+  },
+  {
+    "id": "r4837",
+    "q": "How many KB in one MB?",
+    "a": "1024 KB"
+  },
+  {
+    "id": "r4838",
+    "q": "How many MB in one GB?",
+    "a": "1024 MB"
+  },
+  {
+    "id": "r4839",
+    "q": "Which gas is known as Tear Gas?",
+    "a": "Chlorobenzalmalononitrile (CS gas)"
+  },
+  {
+    "id": "r4840",
+    "q": "Which acid is found in lemon?",
+    "a": "Citric Acid"
+  },
+  {
+    "id": "r4841",
+    "q": "Which acid is found in ant sting?",
+    "a": "Formic Acid"
+  },
+  {
+    "id": "r4842",
+    "q": "Which acid is found in curd?",
+    "a": "Lactic Acid"
+  },
+  {
+    "id": "r4843",
+    "q": "Which acid is found in tomato?",
+    "a": "Oxalic Acid"
+  },
+  {
+    "id": "r4844",
+    "q": "Which acid is found in grapes/tamarind?",
+    "a": "Tartaric Acid"
+  },
+  {
+    "id": "r4845",
+    "q": "Which was the first metal to be used?",
+    "a": "Copper"
+  },
+  {
+    "id": "r4846",
+    "q": "Which element is used in the filament of an electric bulb?",
+    "a": "Tungsten"
+  },
+  {
+    "id": "r4847",
+    "q": "Which element is used in lead pencils?",
+    "a": "Graphite"
+  },
+  {
+    "id": "r4848",
+    "q": "Which gas is present in the atmosphere in the largest amount?",
+    "a": "Nitrogen"
+  },
+  {
+    "id": "r4849",
+    "q": "Which gas is used for ripening of fruits?",
+    "a": "Acetylene"
+  },
+  {
+    "id": "r4850",
+    "q": "Which is the heaviest liquid metal?",
+    "a": "Mercury"
+  },
+  {
+    "id": "r4851",
+    "q": "Who is the father of genetics?",
+    "a": "Gregor Mendel"
+  },
+  {
+    "id": "r4852",
+    "q": "Which vitamin is good for eyesight?",
+    "a": "Vitamin A"
+  },
+  {
+    "id": "r4853",
+    "q": "Which pigment gives green color to plants?",
+    "a": "Chlorophyll"
+  },
+  {
+    "id": "r4854",
+    "q": "How many teeth does an adult have?",
+    "a": "32"
+  },
+  {
+    "id": "r4855",
+    "q": "Which is the largest gland in the body?",
+    "a": "Liver"
+  },
+  {
+    "id": "r4856",
+    "q": "What is the life span of RBCs?",
+    "a": "120 days"
+  },
+  {
+    "id": "r4857",
+    "q": "What is the main function of WBcs?",
+    "a": "Defending against infections"
+  },
+  {
+    "id": "r4858",
+    "q": "Which is the largest freshwater lake in the world?",
+    "a": "Lake Superior"
+  },
+  {
+    "id": "r4859",
+    "q": "Which is the highest peak in Asia?",
+    "a": "Mount Everest"
+  },
+  {
+    "id": "r4860",
+    "q": "Which is the highest peak in Africa?",
+    "a": "Kilimanjaro"
+  },
+  {
+    "id": "r4861",
+    "q": "Which is the highest peak in North America?",
+    "a": "Denali (Mount McKinley)"
+  },
+  {
+    "id": "r4862",
+    "q": "Which is the highest peak in Europe?",
+    "a": "Mount Elbrus"
+  },
+  {
+    "id": "r4863",
+    "q": "Which is the highest peak in South America?",
+    "a": "Aconcagua"
+  },
+  {
+    "id": "r4864",
+    "q": "Which is the highest peak in Oceania?",
+    "a": "Puncak Jaya"
+  },
+  {
+    "id": "r4865",
+    "q": "Which is the highest peak in Antarctica?",
+    "a": "Vinson Massif"
+  },
+  {
+    "id": "r4866",
+    "q": "Where is the leaning tower of Pisa?",
+    "a": "Italy"
+  },
+  {
+    "id": "r4867",
+    "q": "Where is Eiffel Tower?",
+    "a": "France"
+  },
+  {
+    "id": "r4868",
+    "q": "Where is Empire State Building?",
+    "a": "USA"
+  },
+  {
+    "id": "r4869",
+    "q": "Where is Burj Khalifa?",
+    "a": "UAE"
+  },
+  {
+    "id": "r4870",
+    "q": "Where is the Statue of Liberty?",
+    "a": "USA"
+  },
+  {
+    "id": "r4871",
+    "q": "What is the currency of France?",
+    "a": "Euro"
+  },
+  {
+    "id": "r4872",
+    "q": "Who is the current President of World Bank?",
+    "a": "Ajay Banga (as of 2024)"
+  },
+  {
+    "id": "r4873",
+    "q": "Who is the current MD of IMF?",
+    "a": "Kristalina Georgieva"
+  },
+  {
+    "id": "r4874",
+    "q": "Who is the current Director General of WTO?",
+    "a": "Ngozi Okonjo-Iweala"
+  },
+  {
+    "id": "r4875",
+    "q": "Who is the current Secretary General of UNO?",
+    "a": "António Guterres"
+  },
+  {
+    "id": "r4876",
+    "q": "Who is the current Secretary General of SAARC?",
+    "a": "Golam Sarwar"
+  },
+  {
+    "id": "r4877",
+    "q": "Who is the current Director General of WHO?",
+    "a": "Tedros Adhanom Ghebreyesus"
+  },
+  {
+    "id": "r4878",
+    "q": "Where is the head office of WHO?",
+    "a": "Geneva, Switzerland"
+  },
+  {
+    "id": "r4879",
+    "q": "Where is the head office of UNESCO?",
+    "a": "Paris, France"
+  },
+  {
+    "id": "r4880",
+    "q": "Where is the head office of UNICEF?",
+    "a": "New York, USA"
+  },
+  {
+    "id": "r4881",
+    "q": "Where is the head office of Interpol?",
+    "a": "Lyon, France"
+  },
+  {
+    "id": "r4882",
+    "q": "Where is the head office of FAO?",
+    "a": "Rome, Italy"
+  },
+  {
+    "id": "r4883",
+    "q": "Where is the head office of IAEA?",
+    "a": "Vienna, Austria"
+  },
+  {
+    "id": "r4884",
+    "q": "Where is the head office of OPEC?",
+    "a": "Vienna, Austria"
+  },
+  {
+    "id": "r4885",
+    "q": "Where is the head office of ICJ?",
+    "a": "The Hague, Netherlands"
+  },
+  {
+    "id": "r4886",
+    "q": "Who was the first Indian to receive Bharat Ratna?",
+    "a": "Dr. Sarvepalli Radhakrishnan"
+  },
+  {
+    "id": "r4887",
+    "q": "Who was the first Prime Minister to receive Bharat Ratna?",
+    "a": "Jawaharlal Nehru"
+  },
+  {
+    "id": "r4888",
+    "q": "Who was the first woman to receive Bharat Ratna?",
+    "a": "Indira Gandhi"
+  },
+  {
+    "id": "r4889",
+    "q": "Who was the first foreigner to receive Bharat Ratna?",
+    "a": "Khan Abdul Ghaffar Khan"
+  },
+  {
+    "id": "r4890",
+    "q": "Who was the second foreigner to receive Bharat Ratna?",
+    "a": "Nelson Mandela"
+  },
+  {
+    "id": "r4891",
+    "q": "Who received Bharat Ratna posthumously for the first time?",
+    "a": "Lal Bahadur Shastri"
+  },
+  {
+    "id": "r4892",
+    "q": "Who was the youngest to receive Bharat Ratna?",
+    "a": "Sachin Tendulkar"
+  },
+  {
+    "id": "r4893",
+    "q": "Who is the author of 'The Inside Passage'?",
+    "a": "various (not a common trivia)"
+  },
+  {
+    "id": "r4894",
+    "q": "Who was the first Indian to go to space?",
+    "a": "Rakesh Sharma"
+  },
+  {
+    "id": "r4895",
+    "q": "Who is known as the Flying Sikh?",
+    "a": "Milkha Singh"
+  },
+  {
+    "id": "r4896",
+    "q": "Who is known as the Payyoli Express?",
+    "a": "P.T. Usha"
+  },
+  {
+    "id": "r4897",
+    "q": "Who is known as Dhing Express?",
+    "a": "Hima Das"
+  },
+  {
+    "id": "r4898",
+    "q": "Which city is known as the City of Mirrors?",
+    "a": "Tehran / various (not standard)"
+  },
+  {
+    "id": "r4899",
+    "q": "Which city is known as the City of Eternal Spring?",
+    "a": "Quito"
+  },
+  {
+    "id": "r4900",
+    "q": "Which city is known as the City of Canals?",
+    "a": "Venice"
+  },
+  {
+    "id": "r4901",
+    "q": "Which city is known as the Forbidden City?",
+    "a": "Lhasa"
+  },
+  {
+    "id": "r4902",
+    "q": "Which is the largest library in the world?",
+    "a": "Library of Congress, USA"
+  },
+  {
+    "id": "r4903",
+    "q": "Which is the world's longest bridge over water?",
+    "a": "Lake Pontchartrain Causeway (USA) / various"
+  },
+  {
+    "id": "r4904",
+    "q": "What is the currency of Italy?",
+    "a": "Euro"
+  },
+  {
+    "id": "r4905",
+    "q": "What is the currency of Germany?",
+    "a": "Euro"
+  },
+  {
+    "id": "r4906",
+    "q": "What was the target growth rate of the first Five Year Plan?",
+    "a": "2.1 % (Growth achieved was 3.6%)"
+  },
+  {
+    "id": "r4907",
+    "q": "What is the full form of NITI in NITI Aayog?",
+    "a": "National Institution for Transforming India"
+  },
+  {
+    "id": "r4908",
+    "q": "Who is the current CEO of Microsoft?",
+    "a": "Satya Nadella"
+  },
+  {
+    "id": "r4909",
+    "q": "Who is the current CEO of Alphabet?",
+    "a": "Sundar Pichai"
+  },
+  {
+    "id": "r4910",
+    "q": "Who is the current CEO of Adobe?",
+    "a": "Shantanu Narayen"
+  },
+  {
+    "id": "r4911",
+    "q": "What is the capital of Chhattisgarh?",
+    "a": "Raipur"
+  },
+  {
+    "id": "r4912",
+    "q": "What is the capital of Jharkhand?",
+    "a": "Ranchi"
+  },
+  {
+    "id": "r4913",
+    "q": "What is the capital of Uttarakhand?",
+    "a": "Dehradun (Winter) / Gairsain (Summer)"
+  },
+  {
+    "id": "r4914",
+    "q": "What is the capital of Goa?",
+    "a": "Panaji"
+  },
+  {
+    "id": "r4915",
+    "q": "What is the capital of Gujarat?",
+    "a": "Gandhinagar"
+  },
+  {
+    "id": "r4916",
+    "q": "What is the capital of Haryana?",
+    "a": "Chandigarh"
+  },
+  {
+    "id": "r4917",
+    "q": "What is the capital of Himachal Pradesh?",
+    "a": "Shimla"
+  },
+  {
+    "id": "r4918",
+    "q": "What is the capital of Kerala?",
+    "a": "Thiruvananthapuram"
+  },
+  {
+    "id": "r4919",
+    "q": "What is the capital of Madhya Pradesh?",
+    "a": "Bhopal"
+  },
+  {
+    "id": "r4920",
+    "q": "What is the capital of Meghalaya?",
+    "a": "Shillong"
+  },
+  {
+    "id": "r4921",
+    "q": "What is the capital of Mizoram?",
+    "a": "Aizawl"
+  },
+  {
+    "id": "r4922",
+    "q": "What is the capital of Nagaland?",
+    "a": "Kohima"
+  },
+  {
+    "id": "r4923",
+    "q": "What is the capital of Rajasthan?",
+    "a": "Jaipur"
+  },
+  {
+    "id": "r4924",
+    "q": "What is the capital of Sikkim?",
+    "a": "Gangtok"
+  },
+  {
+    "id": "r4925",
+    "q": "What is the capital of Tripura?",
+    "a": "Agartala"
+  },
+  {
+    "id": "r4926",
+    "q": "What is the capital of Assam?",
+    "a": "Dispur"
+  },
+  {
+    "id": "r4927",
+    "q": "What is the capital of Andhra Pradesh?",
+    "a": "Amaravati"
+  },
+  {
+    "id": "r4928",
+    "q": "What is the capital of Bihar?",
+    "a": "Patna"
+  },
+  {
+    "id": "r4929",
+    "q": "Who was the first woman judge of the Supreme Court?",
+    "a": "Justice Fathima Beevi"
+  },
+  {
+    "id": "r4930",
+    "q": "Who is known as the father of Indian archaeology?",
+    "a": "Alexander Cunningham"
+  },
+  {
+    "id": "r4931",
+    "q": "Which state is known as the Molasses Basin of India?",
+    "a": "Mizoram"
+  },
+  {
+    "id": "r4932",
+    "q": "Which mountain range is the oldest in India?",
+    "a": "Aravalli"
+  },
+  {
+    "id": "r4933",
+    "q": "What is the national motto of India?",
+    "a": "Satyameva Jayate"
+  },
+  {
+    "id": "r4934",
+    "q": "What is the official language of Nagaland?",
+    "a": "English"
+  },
+  {
+    "id": "r4935",
+    "q": "What is the official language of Kerala?",
+    "a": "Malayalam"
+  },
+  {
+    "id": "r4936",
+    "q": "What is the official language of Karnataka?",
+    "a": "Kannada"
+  },
+  {
+    "id": "r4937",
+    "q": "What is the official language of Tamil Nadu?",
+    "a": "Tamil"
+  },
+  {
+    "id": "r4938",
+    "q": "What is the official language of Andhra Pradesh?",
+    "a": "Telugu"
+  },
+  {
+    "id": "r4939",
+    "q": "What is the official language of Odisha?",
+    "a": "Odia"
+  },
+  {
+    "id": "r4940",
+    "q": "What is the official language of West Bengal?",
+    "a": "Bengali"
+  },
+  {
+    "id": "r4941",
+    "q": "What is the official language of Assam?",
+    "a": "Assamese"
+  },
+  {
+    "id": "r4942",
+    "q": "What is the official language of Punjab?",
+    "a": "Punjabi"
+  },
+  {
+    "id": "r4943",
+    "q": "How many classical languages are there in India?",
+    "a": "6 (Tamil, Sanskrit, Kannada, Telugu, Malayalam, Odia)"
+  },
+  {
+    "id": "r4944",
+    "q": "First classical language of India?",
+    "a": "Tamil (2004)"
+  },
+  {
+    "id": "r4945",
+    "q": "Second classical language of India?",
+    "a": "Sanskrit (2005)"
+  },
+  {
+    "id": "r4946",
+    "q": "Which classical language was added most recently?",
+    "a": "Odia (2014)"
+  },
+  {
+    "id": "r4947",
+    "q": "Which state is known as the 'Fruit Bowl of India'?",
+    "a": "Himachal Pradesh"
+  },
+  {
+    "id": "r4948",
+    "q": "Which state is known as the 'Rice Bowl of India'?",
+    "a": "Andhra Pradesh / Chhattisgarh"
+  },
+  {
+    "id": "r4949",
+    "q": "Which state is known as the 'Sugar Bowl of India'?",
+    "a": "Uttar Pradesh"
+  },
+  {
+    "id": "r4950",
+    "q": "Which state is known as the 'Spice Garden of India'?",
+    "a": "Kerala"
+  },
+  {
+    "id": "r4951",
+    "q": "Which state is known as 'God's Own Country'?",
+    "a": "Kerala"
+  },
+  {
+    "id": "r4952",
+    "q": "Which city is known as the 'Space City of India'?",
+    "a": "Bengaluru"
+  },
+  {
+    "id": "r4953",
+    "q": "Which city is known as the 'Blue City'?",
+    "a": "Jodhpur"
+  },
+  {
+    "id": "r4954",
+    "q": "Which city is known as the 'City of Nawab'?",
+    "a": "Lucknow"
+  },
+  {
+    "id": "r4955",
+    "q": "Which city is known as the 'Manchester of North India'?",
+    "a": "Kanpur"
+  },
+  {
+    "id": "r4956",
+    "q": "Which city is known as 'Boston of India'?",
+    "a": "Ahmedabad"
+  },
+  {
+    "id": "r4957",
+    "q": "Which city is known as 'Oxford of the East'?",
+    "a": "Pune"
+  },
+  {
+    "id": "r4958",
+    "q": "Which city is known as 'Queen of the Deccan'?",
+    "a": "Pune"
+  },
+  {
+    "id": "r4959",
+    "q": "Which city is known as 'Gateway of India'?",
+    "a": "Mumbai"
+  },
+  {
+    "id": "r4960",
+    "q": "Which city is known as 'Diamond City of India'?",
+    "a": "Surat"
+  },
+  {
+    "id": "r4961",
+    "q": "Which city is known as 'Grape City of India'?",
+    "a": "Nashik"
+  },
+  {
+    "id": "r4962",
+    "q": "Which city is known as 'Orange City of India'?",
+    "a": "Nagpur"
+  },
+  {
+    "id": "r4963",
+    "q": "Which city is known as 'Sandwich City'?",
+    "a": "not a standard name"
+  },
+  {
+    "id": "r4964",
+    "q": "Which city is known as 'Sofa City'?",
+    "a": "not a standard name"
+  },
+  {
+    "id": "r4965",
+    "q": "Which city is known as 'Tea City of India'?",
+    "a": "Dibrugarh"
+  },
+  {
+    "id": "r4966",
+    "q": "Which city is known as 'Land of Midnight Sun'?",
+    "a": "Norway"
+  },
+  {
+    "id": "r4967",
+    "q": "Which city is known as 'Land of Rising Sun'?",
+    "a": "Japan"
+  },
+  {
+    "id": "r4968",
+    "q": "Which city is known as 'Land of Thunder Dragon'?",
+    "a": "Bhutan"
+  },
+  {
+    "id": "r4969",
+    "q": "Which city is known as 'Land of White Elephants'?",
+    "a": "Thailand"
+  },
+  {
+    "id": "r4970",
+    "q": "Which city is known as 'Land of Morning Calm'?",
+    "a": "South Korea"
+  },
+  {
+    "id": "r4971",
+    "q": "Which city is known as 'Land of Thousand Lakes'?",
+    "a": "Finland"
+  },
+  {
+    "id": "r4972",
+    "q": "Which country is known as 'Sugar Bowl of the World'?",
+    "a": "Cuba"
+  },
+  {
+    "id": "r4973",
+    "q": "Which country is known as 'Playground of Europe'?",
+    "a": "Switzerland"
+  },
+  {
+    "id": "r4974",
+    "q": "Which country is known as 'Cockpit of Europe'?",
+    "a": "Belgium"
+  },
+  {
+    "id": "r4975",
+    "q": "Which country is known as 'Sick Man of Europe'?",
+    "a": "Turkey (historically)"
+  },
+  {
+    "id": "r4976",
+    "q": "Which country is known as 'Island of Pearls'?",
+    "a": "Bahrain"
+  },
+  {
+    "id": "r4977",
+    "q": "Which country is known as 'Empire City'?",
+    "a": "New York"
+  },
+  {
+    "id": "r4978",
+    "q": "Which city is known as 'City of Golden Gate'?",
+    "a": "San Francisco"
+  },
+  {
+    "id": "r4979",
+    "q": "Which city is known as 'City of Seven Hills'?",
+    "a": "Rome"
+  },
+  {
+    "id": "r4980",
+    "q": "Which is the smallest endocrine gland?",
+    "a": "Pineal"
+  },
+  {
+    "id": "r4981",
+    "q": "Which is the largest part of the brain?",
+    "a": "Cerebrum"
+  },
+  {
+    "id": "r4982",
+    "q": "Which is the smallest part of the brain?",
+    "a": "Midbrain"
+  },
+  {
+    "id": "r4983",
+    "q": "How many bones are there in the human skull?",
+    "a": "22"
+  },
+  {
+    "id": "r4984",
+    "q": "How many bones are there in the human face?",
+    "a": "14"
+  },
+  {
+    "id": "r4985",
+    "q": "How many bones are there in the human ear?",
+    "a": "6 (3 in each ear)"
+  },
+  {
+    "id": "r4986",
+    "q": "What is the name of the bone in the lower jaw?",
+    "a": "Mandible"
+  },
+  {
+    "id": "r4987",
+    "q": "What is the name of the bone in the upper jaw?",
+    "a": "Maxilla"
+  },
+  {
+    "id": "r4988",
+    "q": "What is the name of the tailbone?",
+    "a": "Coccyx"
+  },
+  {
+    "id": "r4989",
+    "q": "What is the name of the breastbone?",
+    "a": "Sternum"
+  },
+  {
+    "id": "r4990",
+    "q": "What is the name of the shin bone?",
+    "a": "Tibia"
+  },
+  {
+    "id": "r4991",
+    "q": "What is the name of the larger bone of the lower leg?",
+    "a": "Tibia"
+  },
+  {
+    "id": "r4992",
+    "q": "What is the name of the smaller bone of the lower leg?",
+    "a": "Fibula"
+  },
+  {
+    "id": "r4993",
+    "q": "What is the name of the largest nerve in the human body?",
+    "a": "Sciatic nerve"
+  },
+  {
+    "id": "r4994",
+    "q": "What is the name of the longest nerve?",
+    "a": "Sciatic nerve"
+  },
+  {
+    "id": "r4995",
+    "q": "What is the name of the largest artery?",
+    "a": "Aorta"
+  },
+  {
+    "id": "r4996",
+    "q": "What is the name of the largest vein?",
+    "a": "Vena Cava"
+  },
+  {
+    "id": "r4997",
+    "q": "Who discovered the insulin?",
+    "a": "Frederick Banting"
+  },
+  {
+    "id": "r4998",
+    "q": "Who discovered the penicillin?",
+    "a": "Alexander Fleming"
+  },
+  {
+    "id": "r4999",
+    "q": "Who discovered the smallpox vaccine?",
+    "a": "Edward Jenner"
+  },
+  {
+    "id": "r5000",
+    "q": "Who discovered the rabies vaccine?",
+    "a": "Louis Pasteur"
+  },
+  {
+    "id": "r5001",
+    "q": "Who discovered the cholera vaccine?",
+    "a": "Louis Pasteur"
+  },
+  {
+    "id": "r5002",
+    "q": "Who discovered the blood groups?",
+    "a": "Karl Landsteiner"
+  },
+  {
+    "id": "r5003",
+    "q": "Who discovered the Rh factor?",
+    "a": "Landsteiner and Weiner"
+  },
+  {
+    "id": "r5004",
+    "q": "Who discovered the DNA structure?",
+    "a": "Watson and Crick"
+  },
+  {
+    "id": "r5005",
+    "q": "Who discovered the double helix of DNA?",
+    "a": "Watson and Crick"
+  },
+  {
+    "id": "r5006",
+    "q": "Who is known as the father of modern chemistry?",
+    "a": "Antoine Lavoisier"
+  },
+  {
+    "id": "r5007",
+    "q": "Who is known as the father of modern physics?",
+    "a": "Galileo Galilei / Albert Einstein"
+  },
+  {
+    "id": "r5008",
+    "q": "Who is known as the father of the atom bomb?",
+    "a": "Robert Oppenheimer"
+  },
+  {
+    "id": "r5009",
+    "q": "Who is known as the father of the hydrogen bomb?",
+    "a": "Edward Teller"
+  },
+  {
+    "id": "r5010",
+    "q": "Who is known as the father of the telephone?",
+    "a": "Alexander Graham Bell"
+  },
+  {
+    "id": "r5011",
+    "q": "Who is known as the father of the electric bulb?",
+    "a": "Thomas Edison"
+  },
+  {
+    "id": "r5012",
+    "q": "Who is known as the father of the radio?",
+    "a": "Marconi"
+  },
+  {
+    "id": "r5013",
+    "q": "Who is known as the father of the computer?",
+    "a": "Charles Babbage"
+  },
+  {
+    "id": "r5014",
+    "q": "Who is known as the father of the modern computer?",
+    "a": "Alan Turing"
+  },
+  {
+    "id": "r5015",
+    "q": "Who is known as the father of the web?",
+    "a": "Tim Berners-Lee"
+  },
+  {
+    "id": "r5016",
+    "q": "Who is known as the father of the internet?",
+    "a": "Vint Cerf"
+  },
+  {
+    "id": "r5017",
+    "q": "Who is known as the father of the email?",
+    "a": "Ray Tomlinson"
+  },
+  {
+    "id": "r5018",
+    "q": "Who is known as the father of the mobile phone?",
+    "a": "Martin Cooper"
+  },
+  {
+    "id": "r5019",
+    "q": "Who is known as the father of the artificial intelligence?",
+    "a": "John McCarthy"
+  },
+  {
+    "id": "r5020",
+    "q": "Who is known as the father of the video games?",
+    "a": "Ralph Baer"
+  },
+  {
+    "id": "r5021",
+    "q": "Who is known as the father of the animation?",
+    "a": "Walt Disney / Émile Cohl"
   }
 ]
