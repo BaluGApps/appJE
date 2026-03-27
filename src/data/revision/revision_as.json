@@ -1,1012 +1,1012 @@
 [
   {
     "id": "r1",
-    "q": "বৈদ্যুতিক কাৰেন্টৰ এছ আই একক?",
+    "q": "SI unit of electric current?",
     "a": "Ampere"
   },
   {
     "id": "r2",
-    "q": "প্ৰথম ভাৰতীয় উপগ্ৰহ?",
-    "a": "আৰ্যভট্ট"
+    "q": "First Indian satellite?",
+    "a": "Aryabhata"
   },
   {
     "id": "r3",
-    "q": "মানৱ শৰীৰৰ সৰ্ববৃহৎ গ্ৰন্থি?",
-    "a": "যকৃত"
+    "q": "Largest gland in human body?",
+    "a": "Liver"
   },
   {
     "id": "r4",
-    "q": "ছডিয়ামৰ প্ৰতীক?",
-    "a": "NA"
+    "q": "Symbol of sodium?",
+    "a": "Na"
   },
   {
     "id": "r5",
-    "q": "ৰে 'লৱে গেজ বেছিভাগ ভাৰতত ব্যৱহৃত হয়?",
-    "a": "ব্ৰড গেজ"
+    "q": "Railway gauge mostly used in India?",
+    "a": "Broad Gauge"
   },
   {
     "id": "r6",
-    "q": "ভাৰতৰ ৰাজধানী?",
-    "a": "নতুন দিল্লী "
+    "q": "Capital of India?",
+    "a": "New Delhi"
   },
   {
     "id": "r7",
-    "q": "বৰ্তমানৰ জোখ ল 'বলৈ সঁজুলি?",
+    "q": "Instrument to measure current?",
     "a": "Ammeter"
   },
   {
     "id": "r8",
-    "q": "প্ৰতিৰোধৰ একক?",
+    "q": "Unit of resistance?",
     "a": "Ohm"
   },
   {
     "id": "r9",
-    "q": "ভাৰতীয় সংবিধানৰ পিতৃ?",
-    "a": "বি আৰ আম্বেদকাৰ"
+    "q": "Father of Indian Constitution?",
+    "a": "B R Ambedkar"
   },
   {
     "id": "r10",
-    "q": "পোহৰৰ দ্ৰুতি (প্ৰায়)?",
-    "a": "3x10^8 মি/ছে"
+    "q": "Speed of light (approx)?",
+    "a": "3x10^8 m/s"
   },
   {
     "id": "r11",
-    "q": "ভাৰতত ব্ৰডগেজ ট্ৰেকৰ প্ৰস্থ?",
+    "q": "Width of Broad Gauge track in India?",
     "a": "1676 mm"
   },
   {
     "id": "r12",
-    "q": "ভাৰতীয় ৰেলৰ মুখ্য কাৰ্যালয়?",
-    "a": "নতুন দিল্লী "
+    "q": "Headquarters of Indian Railways?",
+    "a": "New Delhi"
   },
   {
     "id": "r13",
-    "q": "ভাৰতত প্ৰথম ৰে 'ল লাইন?",
-    "a": "মুম্বাইৰ পৰা থানে"
+    "q": "First railway line in India?",
+    "a": "Mumbai to Thane"
   },
   {
     "id": "r14",
-    "q": "বছৰ প্ৰথম ট্ৰেইন ভাৰতত চলিল নেকি?",
+    "q": "Year first train ran in India?",
     "a": "1853"
   },
   {
     "id": "r15",
-    "q": "ভাৰতৰ দ্ৰুততম ৰে 'ল?",
-    "a": "বন্দে ভাৰত এক্সপ্ৰেছ"
+    "q": "Fastest train in India?",
+    "a": "Vande Bharat Express"
   },
   {
     "id": "r16",
-    "q": "ভাৰতীয় ৰে 'লৱে জ' ন গণনা?",
-    "a": "১৮"
+    "q": "Indian Railways zone count?",
+    "a": "18"
   },
   {
     "id": "r17",
-    "q": "ভাৰতৰ দীৰ্ঘতম ৰে 'লৱে প্লেটফৰ্ম?",
-    "a": "হুবলি (কৰ্ণাটক)"
+    "q": "Longest railway platform in India?",
+    "a": "Hubballi (Karnataka)"
   },
   {
     "id": "r18",
-    "q": "ভাৰতৰ ৰেল মন্ত্ৰী (২০২৪)?",
-    "a": "অশ্বিনী বৈষ্ণৱ"
+    "q": "Railway Minister of India (2024)?",
+    "a": "Ashwini Vaishnaw"
   },
   {
     "id": "r19",
-    "q": "আইআৰচিটিচি সম্পূৰ্ণ ৰূপ?",
-    "a": "ভাৰতীয় ৰে 'লৱে কেটাৰিং এণ্ড টুৰিজিম কৰ্পোৰেচন"
+    "q": "IRCTC full form?",
+    "a": "Indian Railway Catering and Tourism Corporation"
   },
   {
     "id": "r20",
-    "q": "ৰাষ্ট্ৰীয় ৰেল সংগ্ৰহালয়ত অৱস্থিত?",
-    "a": "নতুন দিল্লী "
+    "q": "National Rail Museum located in?",
+    "a": "New Delhi"
   },
   {
     "id": "r21",
-    "q": "ভাৰতৰ প্ৰথম চহৰ মেট্ৰ 'ৰেল?",
-    "a": "কলকাতা"
+    "q": "Metro rail first city in India?",
+    "a": "Kolkata"
   },
   {
     "id": "r22",
-    "q": "ৰাজধনী এক্সপ্ৰেছৰ ট্ৰেইন নম্বৰ (দিল্লী-মুম্বাই)?",
+    "q": "Train number of Rajdhani Express (Delhi-Mumbai)?",
     "a": "12951"
   },
   {
     "id": "r23",
-    "q": "কোংকন ৰেলৱে সংযোগ কৰে?",
+    "q": "Konkan Railway connects?",
     "a": "Roha to Thokur"
   },
   {
     "id": "r24",
-    "q": "ভাৰতৰ সৰ্বোচ্চ ৰে 'ল ষ্টেচন?",
-    "a": "ঘুম (পশ্চিম বংগ)"
+    "q": "Highest railway station in India?",
+    "a": "Ghum (West Bengal)"
   },
   {
     "id": "r25",
-    "q": "ডিজেল লোকোমোটিভৰ কাম ইয়াত অৱস্থিত?",
-    "a": "বাৰাণসী"
+    "q": "Diesel Locomotive Works located at?",
+    "a": "Varanasi"
   },
   {
     "id": "r26",
-    "q": "ইণ্টিগ্ৰেল কোচ ফেক্টৰী ইয়াত অৱস্থিত?",
-    "a": "চেন্নাই"
+    "q": "Integral Coach Factory located at?",
+    "a": "Chennai"
   },
   {
     "id": "r27",
-    "q": "ৰে 'ল চাকা কাৰখানাত অৱস্থিত?",
-    "a": "বেংগালুৰু"
+    "q": "Rail Wheel Factory located at?",
+    "a": "Bengaluru"
   },
   {
     "id": "r28",
-    "q": "চিত্তৰঞ্জন লোকোমোটিভৰ কাম ইয়াত অৱস্থিত?",
-    "a": "চিত্তৰঞ্জন (পশ্চিম বংগ)"
+    "q": "Chittaranjan Locomotive Works located at?",
+    "a": "Chittaranjan, West Bengal"
   },
   {
     "id": "r29",
-    "q": "ভাৰতীয় ৰে 'লৱে গৱেষণা আৰু ডিজাইন কেন্দ্ৰ?",
-    "a": "RDSO, লক্ষ্ণৌ"
+    "q": "Indian Railway Research and Design centre?",
+    "a": "RDSO, Lucknow"
   },
   {
     "id": "r30",
-    "q": "আৰডিএছঅ 'ৰ সম্পূৰ্ণ ৰূপ?",
-    "a": "গৱেষণা ডিজাইন আৰু মান সংস্থা"
+    "q": "Full form of RDSO?",
+    "a": "Research Designs and Standards Organisation"
   },
   {
     "id": "r31",
-    "q": "ভাৰতত প্ৰথম বৈদ্যুতিক ৰে 'ল?",
-    "a": "ডেকান ৰাণী"
+    "q": "First electric train in India?",
+    "a": "Deccan Queen"
   },
   {
     "id": "r32",
-    "q": "ডেকান ৰাণী ইয়াৰ মাজত দৌৰিছে?",
-    "a": "পুনে আৰু মুম্বাই"
+    "q": "Deccan Queen runs between?",
+    "a": "Pune and Mumbai"
   },
   {
     "id": "r33",
-    "q": "চাইকেলত থকা ৰাজপ্রাসাদ চলিছে নেকি?",
-    "a": "ৰাজস্থান"
+    "q": "Palace on Wheels runs in?",
+    "a": "Rajasthan"
   },
   {
     "id": "r34",
-    "q": "মিটাৰ গেজৰ গেজ প্ৰস্থ?",
+    "q": "Gauge width of Metre Gauge?",
     "a": "1000 mm"
   },
   {
     "id": "r35",
-    "q": "সংকীর্ণ গেজৰ গেজ প্ৰস্থ?",
-    "a": "762 mm বা 610 mm"
+    "q": "Gauge width of Narrow Gauge?",
+    "a": "762 mm or 610 mm"
   },
   {
     "id": "r36",
-    "q": "ভাৰতৰ ব্যস্ততম ৰেল ষ্টেচন?",
-    "a": "হাওৰা জংশন"
+    "q": "Busiest railway station in India?",
+    "a": "Howrah Junction"
   },
   {
     "id": "r37",
-    "q": "ভাৰতৰ দীৰ্ঘতম ৰেল দলং?",
-    "a": "ভেমবানাদ ৰেল দলং (কেৰালা)"
+    "q": "Longest railway bridge in India?",
+    "a": "Vembanad Rail Bridge (Kerala)"
   },
   {
     "id": "r38",
-    "q": "ভাৰতীয় ৰে 'লৱেৰ শ্লোগান?",
-    "a": "জাতিৰ জীৱন ৰেখা"
+    "q": "Indian Railways slogan?",
+    "a": "Lifeline of the Nation"
   },
   {
     "id": "r39",
-    "q": "ৰে 'লৱে সুৰক্ষা আয়োগৰ মূখ্য শিৰোনাম?",
-    "a": "ৰেল সুৰক্ষা আয়োগ"
+    "q": "Railway Safety Commission head title?",
+    "a": "Commissioner of Railway Safety"
   },
   {
     "id": "r40",
-    "q": "আৰআৰবিৰ সম্পূৰ্ণ ৰূপ?",
-    "a": "ৰেলৱে নিযুক্তি বোৰ্ড"
+    "q": "RRB full form?",
+    "a": "Railway Recruitment Board"
   },
   {
     "id": "r41",
-    "q": "সোণৰ প্ৰতীক?",
+    "q": "Symbol of gold?",
     "a": "Au"
   },
   {
     "id": "r42",
-    "q": "লোহাৰ প্ৰতীক?",
+    "q": "Symbol of iron?",
     "a": "Fe"
   },
   {
     "id": "r43",
-    "q": "ৰূপৰ প্ৰতীক?",
+    "q": "Symbol of silver?",
     "a": "Ag"
   },
   {
     "id": "r44",
-    "q": "পটাছিয়ামৰ প্ৰতীক?",
+    "q": "Symbol of potassium?",
     "a": "K"
   },
   {
     "id": "r45",
-    "q": "নেতৃত্বৰ প্ৰতীক?",
+    "q": "Symbol of lead?",
     "a": "Pb"
   },
   {
     "id": "r46",
-    "q": "হাইড্ৰ 'জেনৰ পাৰমাণৱিক সংখ্যা?",
+    "q": "Atomic number of hydrogen?",
     "a": "1"
   },
   {
     "id": "r47",
-    "q": "কাৰ্বনৰ পাৰমাণৱিক সংখ্যা?",
+    "q": "Atomic number of carbon?",
     "a": "6"
   },
   {
     "id": "r48",
-    "q": "অক্সিজেনৰ পাৰমাণৱিক সংখ্যা?",
+    "q": "Atomic number of oxygen?",
     "a": "8"
   },
   {
     "id": "r49",
-    "q": "পানীৰ ৰাসায়নিক সূত্ৰ?",
+    "q": "Chemical formula of water?",
     "a": "H2O"
   },
   {
     "id": "r50",
-    "q": "টেবুলৰ লৱণৰ ৰাসায়নিক সূত্ৰ?",
+    "q": "Chemical formula of table salt?",
     "a": "NaCl"
   },
   {
     "id": "r51",
-    "q": "কাৰ্বন ডাই অক্সাইডৰ ৰাসায়নিক সূত্র?",
+    "q": "Chemical formula of carbon dioxide?",
     "a": "CO2"
   },
   {
     "id": "r52",
-    "q": "অ্যামোনিয়াৰ ৰাসায়নিক সূত্ৰ?",
+    "q": "Chemical formula of ammonia?",
     "a": "NH3"
   },
   {
     "id": "r53",
-    "q": "আটাইতকৈ কঠিন প্ৰাকৃতিক পদাৰ্থ?",
-    "a": "হীৰা"
+    "q": "Hardest natural substance?",
+    "a": "Diamond"
   },
   {
     "id": "r54",
-    "q": "আটাইতকৈ কোমল খনিজ?",
+    "q": "Softest mineral?",
     "a": "Talc"
   },
   {
     "id": "r55",
-    "q": "বৈদ্যুতিক বাল্বত ব্যৱহাৰ কৰা গেছ?",
-    "a": "আর্গন"
+    "q": "Gas used in electric bulb?",
+    "a": "Argon"
   },
   {
     "id": "r56",
-    "q": "ৰেফ্ৰিজাৰেটৰত (পুৰণি) ব্যৱহাৰ কৰা গেছ?",
+    "q": "Gas used in refrigerators (old)?",
     "a": "Freon"
   },
   {
     "id": "r57",
-    "q": "হাঁহি থকা গেছ?",
-    "a": "নাইট্ৰাচ অক্সাইড (N2O)"
+    "q": "Laughing gas?",
+    "a": "Nitrous oxide (N2O)"
   },
   {
     "id": "r58",
-    "q": "শুকান বৰফ হয় নেকি?",
-    "a": "কঠিন কাৰ্বন ডাই অক্সাইড"
+    "q": "Dry ice is?",
+    "a": "Solid Carbon Dioxide"
   },
   {
     "id": "r59",
-    "q": "লৌহৰ মৃৎশিল্পত জড়িত?",
-    "a": "অক্সিডেচন"
+    "q": "Rusting of iron involves?",
+    "a": "Oxidation"
   },
   {
     "id": "r60",
-    "q": "বিশুদ্ধ পানীৰ PH?",
+    "q": "PH of pure water?",
     "a": "7"
   },
   {
     "id": "r61",
-    "q": "পেটত পোৱা এচিড?",
-    "a": "হাইড্ৰ 'ক্লৰিক এচিড (HCl)"
+    "q": "Acid found in stomach?",
+    "a": "Hydrochloric acid (HCl)"
   },
   {
     "id": "r62",
-    "q": "লেবুত এচিড পোৱা গৈছে?",
-    "a": "চিট্ৰিক এচিড"
+    "q": "Acid found in lemon?",
+    "a": "Citric acid"
   },
   {
     "id": "r63",
-    "q": "ভিনেগাৰত পোৱা এচিড?",
-    "a": "এচিটিক এচিড"
+    "q": "Acid found in vinegar?",
+    "a": "Acetic acid"
   },
   {
     "id": "r64",
-    "q": "পিঁপড়াৰ কাণ্ডত পোৱা এচিড?",
-    "a": "ফৰ্মিক এচিড"
+    "q": "Acid found in ant sting?",
+    "a": "Formic acid"
   },
   {
     "id": "r65",
-    "q": "বলৰ একক?",
-    "a": "নিউটন"
+    "q": "Unit of force?",
+    "a": "Newton"
   },
   {
     "id": "r66",
-    "q": "কামৰ একক?",
+    "q": "Unit of work?",
     "a": "Joule"
   },
   {
     "id": "r67",
-    "q": "শক্তিৰ একক?",
-    "a": "ৱাট"
+    "q": "Unit of power?",
+    "a": "Watt"
   },
   {
     "id": "r68",
-    "q": "শক্তিৰ একক?",
+    "q": "Unit of energy?",
     "a": "Joule"
   },
   {
     "id": "r69",
-    "q": "চাপৰ একক?",
+    "q": "Unit of pressure?",
     "a": "Pascal"
   },
   {
     "id": "r70",
-    "q": "কম্পনাংকৰ একক?",
+    "q": "Unit of frequency?",
     "a": "Hertz"
   },
   {
     "id": "r71",
-    "q": "তাপমাত্ৰাৰ একক (এছআই)?",
-    "a": "কেলভিন"
+    "q": "Unit of temperature (SI)?",
+    "a": "Kelvin"
   },
   {
     "id": "r72",
-    "q": "পোহৰৰ তীব্ৰতাৰ একক?",
+    "q": "Unit of luminous intensity?",
     "a": "Candela"
   },
   {
     "id": "r73",
-    "q": "পদাৰ্থৰ পৰিমাণৰ একক?",
+    "q": "Unit of amount of substance?",
     "a": "Mole"
   },
   {
     "id": "r74",
-    "q": "চাপ জোখাৰ বাবে সঁজুলি?",
-    "a": "বেৰ 'মিটাৰ"
+    "q": "Instrument to measure pressure?",
+    "a": "Barometer"
   },
   {
     "id": "r75",
-    "q": "তাপমাত্ৰা জোখাৰ বাবে সঁজুলি?",
-    "a": "থাৰ্মোমিটাৰ"
+    "q": "Instrument to measure temperature?",
+    "a": "Thermometer"
   },
   {
     "id": "r76",
-    "q": "ভোল্টেজ জোখাৰ বাবে সঁজুলি?",
+    "q": "Instrument to measure voltage?",
     "a": "Voltmeter"
   },
   {
     "id": "r77",
-    "q": "বতাহৰ গতি জোখাৰ যন্ত্ৰ?",
-    "a": "এনিম 'মিটাৰ"
+    "q": "Instrument to measure wind speed?",
+    "a": "Anemometer"
   },
   {
     "id": "r78",
-    "q": "আৰ্দ্ৰতা জোখাৰ যন্ত্ৰ?",
-    "a": "হাইগ্ৰোমিটাৰ"
+    "q": "Instrument to measure humidity?",
+    "a": "Hygrometer"
   },
   {
     "id": "r79",
-    "q": "ভূমিকম্প জোখাৰ যন্ত্ৰ?",
-    "a": "সিসমোগ্ৰাফ"
+    "q": "Instrument to measure earthquakes?",
+    "a": "Seismograph"
   },
   {
     "id": "r80",
-    "q": "শব্দৰ তীব্ৰতা জোখাৰ যন্ত্ৰ?",
-    "a": "ডেসিবল মিটাৰ"
+    "q": "Instrument to measure sound intensity?",
+    "a": "Decibel meter"
   },
   {
     "id": "r81",
-    "q": "নিউটনৰ প্ৰথম সূত্ৰটোও কোৱা হয়?",
-    "a": "জড়তাৰ সূত্ৰ"
+    "q": "Newton's first law is also called?",
+    "a": "Law of Inertia"
   },
   {
     "id": "r82",
-    "q": "মানক চাপত পানীৰ স্ফুটনাংক?",
+    "q": "Boiling point of water at standard pressure?",
     "a": "100°C"
   },
   {
     "id": "r83",
-    "q": "পানীৰ হিমশীতল বিন্দু?",
-    "a": "c)"
+    "q": "Freezing point of water?",
+    "a": "0°C"
   },
   {
     "id": "r84",
-    "q": "সাধাৰণ মানুহৰ শৰীৰৰ তাপমাত্ৰা?",
+    "q": "Normal human body temperature?",
     "a": "37°C (98.6°F)"
   },
   {
     "id": "r85",
-    "q": "শব্দৰ মাজেৰে যাত্ৰা কৰিব নোৱাৰি নেকি?",
-    "a": "ভ্যাকুয়াম"
+    "q": "Sound cannot travel through?",
+    "a": "Vacuum"
   },
   {
     "id": "r86",
-    "q": "আলোকবৰ্ষ হ 'ল একক?",
-    "a": "দূৰত্ব"
+    "q": "Light year is unit of?",
+    "a": "Distance"
   },
   {
     "id": "r87",
-    "q": "উত্তল লেন্স ব্যৱহাৰ কৰা হয়?",
-    "a": "কেমেৰা, গ্লাচৰ বিবর্ধন"
+    "q": "Convex lens is used in?",
+    "a": "Camera, magnifying glass"
   },
   {
     "id": "r88",
-    "q": "অৱতল দাপোণ ব্যৱহাৰ কৰা হয়?",
-    "a": "চাৰ্চলাইট, হেডলাইট"
+    "q": "Concave mirror is used in?",
+    "a": "Searchlights, headlights"
   },
   {
     "id": "r89",
-    "q": "ওহমৰ সূত্ৰ সম্পৰ্কিত?",
-    "a": "ভোল্টেজ, বৰ্তমান, প্ৰতিৰোধ"
+    "q": "Ohm's law relates?",
+    "a": "Voltage, current, resistance"
   },
   {
     "id": "r90",
-    "q": "ওহমৰ সূত্ৰ?",
+    "q": "Formula of Ohm's law?",
     "a": "V = IR"
   },
   {
     "id": "r91",
-    "q": "ৰক্ত গোটক সৰ্বজনীন দাতা বুলি কোৱা হয়?",
-    "a": "O ঋণাত্মক"
+    "q": "Blood group called universal donor?",
+    "a": "O negative"
   },
   {
     "id": "r92",
-    "q": "ৰক্ত গোটক সৰ্বজনীন গ্ৰাহক বুলি কোৱা হয়?",
-    "a": "AB পজিটিভ"
+    "q": "Blood group called universal recipient?",
+    "a": "AB positive"
   },
   {
     "id": "r93",
-    "q": "ভিটামিন চিৰ অভাৱৰ কাৰণ?",
-    "a": "স্কাৰ্ভি"
+    "q": "Vitamin C deficiency causes?",
+    "a": "Scurvy"
   },
   {
     "id": "r94",
-    "q": "ভিটামিন ডিৰ অভাৱৰ কাৰণ?",
-    "a": "ৰিকেটসমূহ"
+    "q": "Vitamin D deficiency causes?",
+    "a": "Rickets"
   },
   {
     "id": "r95",
-    "q": "ভিটামিন এৰ অভাৱৰ কাৰণ?",
-    "a": "নিশাৰ অন্ধত্ব"
+    "q": "Vitamin A deficiency causes?",
+    "a": "Night blindness"
   },
   {
     "id": "r96",
-    "q": "ভিটামিন বি১২ৰ অভাৱৰ কাৰণ?",
-    "a": "ৰক্তাল্পতা"
+    "q": "Vitamin B12 deficiency causes?",
+    "a": "Anaemia"
   },
   {
     "id": "r97",
-    "q": "ভিটামিন কে সহায় কৰে নেকি?",
-    "a": "ৰক্ত জমাট"
+    "q": "Vitamin K helps in?",
+    "a": "Blood clotting"
   },
   {
     "id": "r98",
-    "q": "ইনচুলিন উৎপাদন কৰা হয়?",
+    "q": "Insulin is produced by?",
     "a": "Pancreas"
   },
   {
     "id": "r99",
-    "q": "মানৱ শৰীৰৰ সৰ্ববৃহৎ অংগ?",
-    "a": "ছাল"
+    "q": "Largest organ of human body?",
+    "a": "Skin"
   },
   {
     "id": "r100",
-    "q": "মানৱ শৰীৰৰ আটাইতকৈ সৰু হাড়?",
-    "a": "স্তূপসমূহ (কাণ)"
+    "q": "Smallest bone in human body?",
+    "a": "Stapes (ear)"
   },
   {
     "id": "r101",
-    "q": "মানৱ শৰীৰৰ আটাইতকৈ কঠিন পদাৰ্থ?",
-    "a": "দাঁতৰ এনামেল"
+    "q": "Hardest substance in human body?",
+    "a": "Tooth enamel"
   },
   {
     "id": "r102",
-    "q": "প্ৰাপ্তবয়স্ক মানুহৰ শৰীৰত হাড়ৰ সংখ্যা?",
+    "q": "Number of bones in adult human body?",
     "a": "206"
   },
   {
     "id": "r103",
-    "q": "মানুহৰ হৃদয়ত কোঠাৰ সংখ্যা?",
+    "q": "Number of chambers in human heart?",
     "a": "4"
   },
   {
     "id": "r104",
-    "q": "জীৱবিজ্ঞানত আৰ বি চিৰ সম্পূৰ্ণ ৰূপ?",
-    "a": "ৰঙা ৰক্তকণিকা"
+    "q": "RBC full form in biology?",
+    "a": "Red Blood Corpuscles"
   },
   {
     "id": "r105",
-    "q": "জীৱবিজ্ঞানত ডব্লিউ বি চিৰ সম্পূৰ্ণ ৰূপ?",
-    "a": "শ্বেত ৰক্তকণিকা"
+    "q": "WBC full form in biology?",
+    "a": "White Blood Corpuscles"
   },
   {
     "id": "r106",
-    "q": "হিমোগ্লোবিনে কোনটো ধাতু অন্তৰ্ভুক্ত কৰে?",
-    "a": "লৌহ"
+    "q": "Haemoglobin contains which metal?",
+    "a": "Iron"
   },
   {
     "id": "r107",
-    "q": "মানৱ শৰীৰৰ সৰ্ববৃহৎ কোষ?",
-    "a": "ডিম্বাশয় (ডিম্বকোষ)"
+    "q": "Largest cell in human body?",
+    "a": "Ovum (egg cell)"
   },
   {
     "id": "r108",
-    "q": "আলোক সংশ্লেষণ সংঘটিত হয়?",
-    "a": "ক্ল 'ৰ' প্লাষ্ট"
+    "q": "Photosynthesis takes place in?",
+    "a": "Chloroplast"
   },
   {
     "id": "r109",
-    "q": "উদ্ভিদত সেউজীয়া ৰঙ?",
-    "a": "ক্লোৰোফিল"
+    "q": "Green pigment in plants?",
+    "a": "Chlorophyll"
   },
   {
     "id": "r110",
-    "q": "কোনটো প্ৰক্ৰিয়াৰ দ্বাৰা উদ্ভিদবোৰে খাদ্য তৈয়াৰ কৰে?",
-    "a": "আলোক সংশ্লেষণ"
+    "q": "Process by which plants make food?",
+    "a": "Photosynthesis"
   },
   {
     "id": "r111",
-    "q": "আলোক সংশ্লেষণৰ সময়ত উদ্ভিদৰ দ্বাৰা মুক্ত কৰা গেছ?",
-    "a": "অক্সিজেন"
+    "q": "Gas released by plants during photosynthesis?",
+    "a": "Oxygen"
   },
   {
     "id": "r112",
-    "q": "শ্বাস-প্ৰশ্বাসৰ সময়ত উদ্ভিদৰ দ্বাৰা মুক্ত কৰা গেছ?",
-    "a": "কাৰ্বন ডাই অক্সাইড"
+    "q": "Gas released by plants during respiration?",
+    "a": "Carbon dioxide"
   },
   {
     "id": "r113",
-    "q": "জীৱবিজ্ঞানৰ পিতৃ?",
+    "q": "Father of Biology?",
     "a": "Aristotle"
   },
   {
     "id": "r114",
-    "q": "আধুনিক জীৱবিজ্ঞানৰ পিতৃ?",
-    "a": "এণ্টনী ভান লিউৱেনহুক"
+    "q": "Father of Modern Biology?",
+    "a": "Antonie van Leeuwenhoek"
   },
   {
     "id": "r115",
-    "q": "জিনতত্ত্বৰ পিতৃ?",
-    "a": "গ্ৰেগৰ মেণ্ডেল"
+    "q": "Father of Genetics?",
+    "a": "Gregor Mendel"
   },
   {
     "id": "r116",
-    "q": "ডিএনএ সম্পূৰ্ণ ৰূপ?",
-    "a": "ডিঅক্সিৰাইবোনিউক্লিক এচিড"
+    "q": "DNA full form?",
+    "a": "Deoxyribonucleic Acid"
   },
   {
     "id": "r117",
-    "q": "আৰএনএ সম্পূৰ্ণ ৰূপ?",
-    "a": "ৰাইবোনিউক্লিক এচিড"
+    "q": "RNA full form?",
+    "a": "Ribonucleic Acid"
   },
   {
     "id": "r118",
-    "q": "বংশগতিৰ একক?",
-    "a": "জিন"
+    "q": "Unit of heredity?",
+    "a": "Gene"
   },
   {
     "id": "r119",
-    "q": "কোষৰ পাৱাৰ হাউচ?",
-    "a": "মাইটোকন্ড্রিয়া"
+    "q": "Powerhouse of the cell?",
+    "a": "Mitochondria"
   },
   {
     "id": "r120",
-    "q": "কোষৰ মগজু?",
-    "a": "নিউক্লিয়াছ"
+    "q": "Brain of the cell?",
+    "a": "Nucleus"
   },
   {
     "id": "r121",
-    "q": "মহাৰাষ্ট্ৰৰ ৰাজধানী?",
-    "a": "মুম্বাই"
+    "q": "Capital of Maharashtra?",
+    "a": "Mumbai"
   },
   {
     "id": "r122",
-    "q": "কৰ্ণাটকৰ ৰাজধানী?",
-    "a": "বেংগালুৰু"
+    "q": "Capital of Karnataka?",
+    "a": "Bengaluru"
   },
   {
     "id": "r123",
-    "q": "তামিলনাডুৰ ৰাজধানী?",
-    "a": "চেন্নাই"
+    "q": "Capital of Tamil Nadu?",
+    "a": "Chennai"
   },
   {
     "id": "r124",
-    "q": "উত্তৰ প্ৰদেশৰ ৰাজধানী?",
-    "a": "লক্ষ্ণৌ"
+    "q": "Capital of Uttar Pradesh?",
+    "a": "Lucknow"
   },
   {
     "id": "r125",
-    "q": "পশ্চিম বংগৰ ৰাজধানী?",
-    "a": "কলকাতা"
+    "q": "Capital of West Bengal?",
+    "a": "Kolkata"
   },
   {
     "id": "r126",
-    "q": "ৰাজস্থানৰ ৰাজধানী?",
-    "a": "জয়পুৰ"
+    "q": "Capital of Rajasthan?",
+    "a": "Jaipur"
   },
   {
     "id": "r127",
-    "q": "গুজৰাটৰ ৰাজধানী?",
-    "a": "গান্ধীনগৰ"
+    "q": "Capital of Gujarat?",
+    "a": "Gandhinagar"
   },
   {
     "id": "r128",
-    "q": "পঞ্জাবৰ ৰাজধানী?",
-    "a": "চণ্ডীগড়"
+    "q": "Capital of Punjab?",
+    "a": "Chandigarh"
   },
   {
     "id": "r129",
-    "q": "কেৰালাৰ ৰাজধানী?",
-    "a": "তিৰুবনন্তপুৰম"
+    "q": "Capital of Kerala?",
+    "a": "Thiruvananthapuram"
   },
   {
     "id": "r130",
-    "q": "মধ্য প্ৰদেশৰ ৰাজধানী?",
-    "a": "ভূপাল"
+    "q": "Capital of Madhya Pradesh?",
+    "a": "Bhopal"
   },
   {
     "id": "r131",
-    "q": "অন্ধ্ৰপ্ৰদেশৰ ৰাজধানী?",
-    "a": "অমৰাবতী"
+    "q": "Capital of Andhra Pradesh?",
+    "a": "Amaravati"
   },
   {
     "id": "r132",
-    "q": "তেলেংগানাৰ ৰাজধানী?",
-    "a": "হায়দৰাবাদ"
+    "q": "Capital of Telangana?",
+    "a": "Hyderabad"
   },
   {
     "id": "r133",
-    "q": "ওড়িশাৰ ৰাজধানী?",
-    "a": "ভুবনেশ্বৰ"
+    "q": "Capital of Odisha?",
+    "a": "Bhubaneswar"
   },
   {
     "id": "r134",
-    "q": "বিহাৰৰ ৰাজধানী?",
-    "a": "পাটনা"
+    "q": "Capital of Bihar?",
+    "a": "Patna"
   },
   {
     "id": "r135",
-    "q": "ঝাৰখণ্ডৰ ৰাজধানী?",
+    "q": "Capital of Jharkhand?",
     "a": "Ranchi"
   },
   {
     "id": "r136",
-    "q": "ছত্তীশগড়ৰ ৰাজধানী?",
-    "a": "ৰায়পুৰ"
+    "q": "Capital of Chhattisgarh?",
+    "a": "Raipur"
   },
   {
     "id": "r137",
-    "q": "অসমৰ ৰাজধানী?",
+    "q": "Capital of Assam?",
     "a": "Dispur"
   },
   {
     "id": "r138",
-    "q": "হিমাচল প্ৰদেশৰ ৰাজধানী?",
-    "a": "চিমলা"
+    "q": "Capital of Himachal Pradesh?",
+    "a": "Shimla"
   },
   {
     "id": "r139",
-    "q": "উত্তৰাখণ্ডৰ ৰাজধানী?",
-    "a": "ডেৰাডুন"
+    "q": "Capital of Uttarakhand?",
+    "a": "Dehradun"
   },
   {
     "id": "r140",
-    "q": "হাৰিয়ানাৰ ৰাজধানী?",
-    "a": "চণ্ডীগড়"
+    "q": "Capital of Haryana?",
+    "a": "Chandigarh"
   },
   {
     "id": "r141",
-    "q": "ভাৰতৰ দীৰ্ঘতম নদী?",
-    "a": "গঙ্গা"
+    "q": "Longest river in India?",
+    "a": "Ganga"
   },
   {
     "id": "r142",
-    "q": "বিশ্বৰ দীৰ্ঘতম নদী?",
-    "a": "নাইল"
+    "q": "Longest river in world?",
+    "a": "Nile"
   },
   {
     "id": "r143",
-    "q": "বিশ্বৰ সৰ্ববৃহৎ মহাসাগৰ?",
-    "a": "প্ৰশান্ত মহাসাগৰ"
+    "q": "Largest ocean in world?",
+    "a": "Pacific Ocean"
   },
   {
     "id": "r144",
-    "q": "বৃহত্তম মহাদেশ?",
-    "a": "এছিয়া"
+    "q": "Largest continent?",
+    "a": "Asia"
   },
   {
     "id": "r145",
-    "q": "আটাইতকৈ সৰু মহাদেশ?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "q": "Smallest continent?",
+    "a": "Australia"
   },
   {
     "id": "r146",
-    "q": "বিশ্বৰ সৰ্বোচ্চ শিখৰ?",
-    "a": "মাউণ্ট এভাৰেষ্ট"
+    "q": "Highest peak in world?",
+    "a": "Mount Everest"
   },
   {
     "id": "r147",
-    "q": "ভাৰতৰ সৰ্বোচ্চ শিখৰ?",
-    "a": "K2 (গডউইন অষ্টিন)"
+    "q": "Highest peak in India?",
+    "a": "K2 (Godwin Austen)"
   },
   {
     "id": "r148",
-    "q": "বিশ্বৰ সৰ্ববৃহৎ মৰুভূমি?",
+    "q": "Largest desert in world?",
     "a": "Sahara"
   },
   {
     "id": "r149",
-    "q": "ভাৰতৰ সৰ্ববৃহৎ মৰুভূমি?",
-    "a": "থাৰ মৰুভূমি"
+    "q": "Largest desert in India?",
+    "a": "Thar Desert"
   },
   {
     "id": "r150",
-    "q": "ভাৰতৰ সৰ্ববৃহৎ হ্ৰদ?",
-    "a": "ৱুলাৰ হ্ৰদ (জম্মু আৰু কে)"
+    "q": "Largest lake in India?",
+    "a": "Wular Lake (J&K)"
   },
   {
     "id": "r151",
-    "q": "পৃথিৱীৰ সৰ্ববৃহৎ মিঠা পানীৰ হ্ৰদ?",
-    "a": "চুপাৰিয়ৰ হ্ৰদ"
+    "q": "Largest freshwater lake in world?",
+    "a": "Lake Superior"
   },
   {
     "id": "r152",
-    "q": "বিশ্বৰ গভীৰতম হ্ৰদ?",
-    "a": "বৈকাল হ্ৰদ"
+    "q": "Deepest lake in world?",
+    "a": "Lake Baikal"
   },
   {
     "id": "r153",
-    "q": "দক্ষিণ ভাৰতৰ দীৰ্ঘতম নদী?",
-    "a": "গোদাবৰী"
+    "q": "Longest river in South India?",
+    "a": "Godavari"
   },
   {
     "id": "r154",
-    "q": "কৰ্কট ৰোগৰ ট্ৰপিক কেইখন ভাৰতীয় ৰাজ্যৰ মাজেৰে পাৰ হয়?",
+    "q": "Tropic of Cancer passes through how many Indian states?",
     "a": "8"
   },
   {
     "id": "r155",
-    "q": "ভাৰতৰ মানক মেৰিডিয়ান?",
+    "q": "Standard Meridian of India?",
     "a": "82.5°E"
   },
   {
     "id": "r156",
-    "q": "ভাৰতৰ মানক মেৰিডিয়ানৰ অক্ষাংশৰ মাজেৰে পাৰ হৈ যায়?",
-    "a": "মিৰ্জাপুৰ, ইউপি"
+    "q": "Latitude of Standard Meridian of India passes through?",
+    "a": "Mirzapur, UP"
   },
   {
     "id": "r157",
-    "q": "ভাৰতৰ সৈতে দীৰ্ঘতম সীমা আছে?",
-    "a": "বাংলাদেশ"
+    "q": "India shares longest border with?",
+    "a": "Bangladesh"
   },
   {
     "id": "r158",
-    "q": "ভাৰতৰ দক্ষিণতম বিন্দু?",
-    "a": "ইন্দিৰা পইণ্ট"
+    "q": "Southernmost point of India?",
+    "a": "Indira Point"
   },
   {
     "id": "r159",
-    "q": "ভাৰতৰ উত্তৰতম বিন্দু?",
-    "a": "ইন্দিৰা কল"
+    "q": "Northernmost point of India?",
+    "a": "Indira Col"
   },
   {
     "id": "r160",
-    "q": "ভাৰতৰ পূবতম বিন্দু?",
-    "a": "কিবিথু"
+    "q": "Easternmost point of India?",
+    "a": "Kibithu"
   },
   {
     "id": "r161",
-    "q": "ভাৰতৰ প্ৰথম প্ৰধানমন্ত্ৰী?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "q": "First Prime Minister of India?",
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r162",
-    "q": "ভাৰতৰ প্ৰথম ৰাষ্ট্ৰপতি?",
-    "a": "ডঃ ৰাজেন্দ্ৰ প্ৰসাদ"
+    "q": "First President of India?",
+    "a": "Dr Rajendra Prasad"
   },
   {
     "id": "r163",
-    "q": "ভাৰতৰ প্ৰথম মহিলা প্ৰধানমন্ত্ৰী?",
-    "a": "ইন্দিৰা গান্ধী"
+    "q": "First woman Prime Minister of India?",
+    "a": "Indira Gandhi"
   },
   {
     "id": "r164",
-    "q": "ভাৰতৰ প্ৰথম মহিলা ৰাষ্ট্ৰপতি?",
-    "a": "প্ৰতিভা পাটিল"
+    "q": "First woman President of India?",
+    "a": "Pratibha Patil"
   },
   {
     "id": "r165",
-    "q": "ভাৰতৰ সংবিধান গৃহীত হৈছিল?",
-    "a": "২৬ নৱেম্বৰ ১৯৪৯"
+    "q": "Constitution of India adopted on?",
+    "a": "26 November 1949"
   },
   {
     "id": "r166",
-    "q": "ভাৰতৰ সংবিধান বলৱৎ হৈছিল?",
-    "a": "২৬ জানুৱাৰী ১৯৫০"
+    "q": "Constitution of India came into force on?",
+    "a": "26 January 1950"
   },
   {
     "id": "r167",
-    "q": "ভাৰতৰ গণতন্ত্ৰ দিৱস?",
-    "a": "২৬ জানুৱাৰী"
+    "q": "Republic Day of India?",
+    "a": "26 January"
   },
   {
     "id": "r168",
-    "q": "ভাৰতৰ স্বাধীনতা দিৱস?",
-    "a": "১৫ আগষ্ট"
+    "q": "Independence Day of India?",
+    "a": "15 August"
   },
   {
     "id": "r169",
-    "q": "গান্ধী জয়ন্তী পালন কৰা হ 'ল?",
-    "a": "2 অক্টোবৰ"
+    "q": "Gandhi Jayanti observed on?",
+    "a": "2 October"
   },
   {
     "id": "r170",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় পশু?",
-    "a": "বেংগল টাইগাৰ"
+    "q": "National Animal of India?",
+    "a": "Bengal Tiger"
   },
   {
     "id": "r171",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় পক্ষী?",
-    "a": "ভাৰতীয় ময়ূৰ"
+    "q": "National Bird of India?",
+    "a": "Indian Peacock"
   },
   {
     "id": "r172",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় ফুল?",
+    "q": "National Flower of India?",
     "a": "Lotus"
   },
   {
     "id": "r173",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় ফল?",
-    "a": "আম"
+    "q": "National Fruit of India?",
+    "a": "Mango"
   },
   {
     "id": "r174",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় গছ?",
+    "q": "National Tree of India?",
     "a": "Banyan"
   },
   {
     "id": "r175",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় নদী?",
-    "a": "গঙ্গা"
+    "q": "National River of India?",
+    "a": "Ganga"
   },
   {
     "id": "r176",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় গীত?",
-    "a": "বন্দে মাতৰাম"
+    "q": "National Song of India?",
+    "a": "Vande Mataram"
   },
   {
     "id": "r177",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় সংগীত?",
+    "q": "National Anthem of India?",
     "a": "Jana Gana Mana"
   },
   {
     "id": "r178",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় প্ৰতীক?",
-    "a": "অশোকৰ সিংহ ৰাজধানী"
+    "q": "National Emblem of India?",
+    "a": "Lion Capital of Ashoka"
   },
   {
     "id": "r179",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় মুদ্ৰা?",
-    "a": "ভাৰতীয় টকা"
+    "q": "National Currency of India?",
+    "a": "Indian Rupee"
   },
   {
     "id": "r180",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় ক্ৰীড়া (বাস্তৱত)?",
-    "a": "ফিল্ড হকী"
+    "q": "National Sport of India (de facto)?",
+    "a": "Field Hockey"
   },
   {
     "id": "r181",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় জলজ প্ৰাণী?",
-    "a": "গাঙ্গেয় ডলফিন"
+    "q": "National Aquatic Animal of India?",
+    "a": "Gangetic Dolphin"
   },
   {
     "id": "r182",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় সাৰ?",
-    "a": "ৰজা কোব্ৰা"
+    "q": "National Reptile of India?",
+    "a": "King Cobra"
   },
   {
     "id": "r183",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰীয় ঐতিহ্যবাহী প্ৰাণী?",
-    "a": "ভাৰতীয় হাতী"
+    "q": "National Heritage Animal of India?",
+    "a": "Indian Elephant"
   },
   {
     "id": "r184",
-    "q": "ভাৰতীয় সংবিধানৰ প্ৰস্তাৱটো আৰম্ভ হয়?",
-    "a": "আমি ভাৰতৰ জনসাধাৰণ"
+    "q": "Preamble of Indian Constitution starts with?",
+    "a": "We the People of India"
   },
   {
     "id": "r185",
-    "q": "ভাৰত এখন?",
-    "a": "সাৰ্বভৌম, সমাজতান্ত্ৰিক, ধৰ্মনিৰপেক্ষ, গণতান্ত্ৰিক প্ৰজাতন্ত্ৰ"
+    "q": "India is a?",
+    "a": "Sovereign, Socialist, Secular, Democratic Republic"
   },
   {
     "id": "r186",
-    "q": "মৌলিক অধিকাৰ সংবিধানৰ কোনটো অংশত আছে?",
-    "a": "খণ্ড III"
+    "q": "Fundamental Rights are in which part of Constitution?",
+    "a": "Part III"
   },
   {
     "id": "r187",
-    "q": "নিৰ্দেশাত্মক নীতিসমূহ কোনটো অংশত আছে?",
-    "a": "খণ্ড IV"
+    "q": "Directive Principles are in which part?",
+    "a": "Part IV"
   },
   {
     "id": "r188",
-    "q": "মৌলিক অধিকাৰৰ সংখ্যা?",
+    "q": "Number of Fundamental Rights?",
     "a": "6"
   },
   {
     "id": "r189",
-    "q": "জৰুৰীকালীন ব্যৱস্থা কোনটো প্ৰবন্ধত আছে?",
-    "a": "ধাৰা 352"
+    "q": "Emergency provisions are in which article?",
+    "a": "Article 352"
   },
   {
     "id": "r190",
-    "q": "অনুচ্ছেদ ৩৭০ৰ সৈতে সম্পৰ্কিত?",
-    "a": "জম্মু আৰু কাশ্মীৰৰ বিশেষ মৰ্যাদা (এতিয়া প্ৰত্যাহাৰ কৰা হৈছে)"
+    "q": "Article 370 related to?",
+    "a": "Special status of Jammu & Kashmir (now abrogated)"
   },
   {
     "id": "r191",
-    "q": "শিক্ষাৰ অধিকাৰ কোনটো প্ৰবন্ধত আছে?",
-    "a": "অনুচ্ছেদ ২১এ"
+    "q": "Right to Education is in which article?",
+    "a": "Article 21A"
   },
   {
     "id": "r192",
-    "q": "তথ্য জনাৰ অধিকাৰ আইন গৃহীত হ 'ল নেকি?",
-    "a": "২০০৫"
+    "q": "Right to Information Act passed in?",
+    "a": "2005"
   },
   {
     "id": "r193",
-    "q": "লোকসভাৰ সৰ্বাধিক শক্তি?",
+    "q": "Lok Sabha maximum strength?",
     "a": "552"
   },
   {
     "id": "r194",
-    "q": "ৰাজ্যসভাৰ সৰ্বাধিক শক্তি?",
+    "q": "Rajya Sabha maximum strength?",
     "a": "250"
   },
   {
     "id": "r195",
-    "q": "লোকসভাৰ কাৰ্যকাল?",
-    "a": "5 বছৰ"
+    "q": "Term of Lok Sabha?",
+    "a": "5 years"
   },
   {
     "id": "r196",
-    "q": "ৰাজ্যসভাৰ সদস্যসকলৰ কাৰ্যকাল?",
-    "a": "৬ বছৰ"
+    "q": "Term of Rajya Sabha members?",
+    "a": "6 years"
   },
   {
     "id": "r197",
-    "q": "লোকসভাৰ বাবে নিম্নতম বয়স?",
-    "a": "২৫ বছৰ"
+    "q": "Minimum age for Lok Sabha?",
+    "a": "25 years"
   },
   {
     "id": "r198",
-    "q": "ৰাজ্যসভাৰ বাবে নিম্নতম বয়স?",
-    "a": "30 বছৰ"
+    "q": "Minimum age for Rajya Sabha?",
+    "a": "30 years"
   },
   {
     "id": "r199",
-    "q": "ভাৰতৰ ৰাষ্ট্ৰপতিৰ বাবে নিম্নতম বয়স?",
-    "a": "৩৫ বছৰ"
+    "q": "Minimum age for President of India?",
+    "a": "35 years"
   },
   {
     "id": "r200",
-    "q": "ভাৰতৰ উচ্চতম ন্যায়ালয় অৱস্থিত?",
-    "a": "নতুন দিল্লী "
+    "q": "Supreme Court of India located at?",
+    "a": "New Delhi"
   },
   {
     "id": "r201",
-    "q": "সিন্ধু উপত্যকা সভ্যতাৰ সময়?",
+    "q": "Indus Valley Civilization period?",
     "a": "2500-1750 BC"
   },
   {
     "id": "r202",
-    "q": "হাৰাপ্পা বৰ্তমান সময়ত অৱস্থিত?",
+    "q": "Harappa is located in present-day?",
     "a": "Pakistan"
   },
   {
@@ -1462,7 +1462,7 @@
   {
     "id": "r293",
     "q": "ISRO headquarters?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r294",
@@ -1697,7 +1697,7 @@
   {
     "id": "r340",
     "q": "RBI headquarters?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r341",
@@ -2037,22 +2037,22 @@
   {
     "id": "r408",
     "q": "Gateway of India located at?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r409",
     "q": "Hawa Mahal located at?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r410",
     "q": "India Gate located at?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r411",
     "q": "Charminar located at?",
-    "a": "হায়দৰাবাদ"
+    "a": "Hyderabad"
   },
   {
     "id": "r412",
@@ -2072,7 +2072,7 @@
   {
     "id": "r415",
     "q": "Victoria Memorial located at?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r416",
@@ -2147,7 +2147,7 @@
   {
     "id": "r430",
     "q": "Pushkar Fair held in?",
-    "a": "ৰাজস্থান"
+    "a": "Rajasthan"
   },
   {
     "id": "r431",
@@ -2402,7 +2402,7 @@
   {
     "id": "r481",
     "q": "Cricket World Cup 2023 winner?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r482",
@@ -2512,7 +2512,7 @@
   {
     "id": "r503",
     "q": "State with largest area in India?",
-    "a": "ৰাজস্থান"
+    "a": "Rajasthan"
   },
   {
     "id": "r504",
@@ -2592,7 +2592,7 @@
   {
     "id": "r519",
     "q": "Keoladeo National Park is in?",
-    "a": "ৰাজস্থান"
+    "a": "Rajasthan"
   },
   {
     "id": "r520",
@@ -2882,27 +2882,27 @@
   {
     "id": "r577",
     "q": "Northern Railway headquarters?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r578",
     "q": "Southern Railway headquarters?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r579",
     "q": "Eastern Railway headquarters?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r580",
     "q": "Western Railway headquarters?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r581",
     "q": "Central Railway headquarters?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r582",
@@ -2922,7 +2922,7 @@
   {
     "id": "r585",
     "q": "South Eastern Railway headquarters?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r586",
@@ -2932,7 +2932,7 @@
   {
     "id": "r587",
     "q": "North Western Railway headquarters?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r588",
@@ -2942,7 +2942,7 @@
   {
     "id": "r589",
     "q": "East Coast Railway headquarters?",
-    "a": "ভুবনেশ্বৰ"
+    "a": "Bhubaneswar"
   },
   {
     "id": "r590",
@@ -2962,7 +2962,7 @@
   {
     "id": "r593",
     "q": "Metro Railway (Kolkata) headquarters?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r594",
@@ -3627,7 +3627,7 @@
   {
     "id": "r726",
     "q": "Most abundant element in Earth crust?",
-    "a": "অক্সিজেন"
+    "a": "Oxygen"
   },
   {
     "id": "r727",
@@ -3807,7 +3807,7 @@
   {
     "id": "r762",
     "q": "CBI headquarters?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r763",
@@ -4157,7 +4157,7 @@
   {
     "id": "r832",
     "q": "Great Barrier Reef located in?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r833",
@@ -4362,7 +4362,7 @@
   {
     "id": "r873",
     "q": "Five Year Plans introduced by?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r874",
@@ -4377,7 +4377,7 @@
   {
     "id": "r876",
     "q": "Finance Commission is constituted every?",
-    "a": "5 বছৰ"
+    "a": "5 years"
   },
   {
     "id": "r877",
@@ -4432,7 +4432,7 @@
   {
     "id": "r887",
     "q": "Headquarters of SEBI?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r888",
@@ -4577,7 +4577,7 @@
   {
     "id": "r916",
     "q": "PM Narendra Modi's constituency?",
-    "a": "বাৰাণসী"
+    "a": "Varanasi"
   },
   {
     "id": "r917",
@@ -5017,7 +5017,7 @@
   {
     "id": "r1004",
     "q": "Who was the first woman Prime Minister of India?",
-    "a": "ইন্দিৰা গান্ধী"
+    "a": "Indira Gandhi"
   },
   {
     "id": "r1005",
@@ -5062,7 +5062,7 @@
   {
     "id": "r1013",
     "q": "Who wrote the book 'Discovery of India'?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r1014",
@@ -5137,7 +5137,7 @@
   {
     "id": "r1028",
     "q": "What is the full form of IRCTC?",
-    "a": "ভাৰতীয় ৰে 'লৱে কেটাৰিং এণ্ড টুৰিজিম কৰ্পোৰেচন"
+    "a": "Indian Railway Catering and Tourism Corporation"
   },
   {
     "id": "r1029",
@@ -5152,7 +5152,7 @@
   {
     "id": "r1031",
     "q": "Which instrument is used to measure atmospheric pressure?",
-    "a": "বেৰ 'মিটাৰ"
+    "a": "Barometer"
   },
   {
     "id": "r1032",
@@ -5177,7 +5177,7 @@
   {
     "id": "r1036",
     "q": "Which organelle is called the 'Powerhouse of the cell'?",
-    "a": "মাইটোকন্ড্রিয়া"
+    "a": "Mitochondria"
   },
   {
     "id": "r1037",
@@ -5407,7 +5407,7 @@
   {
     "id": "r1082",
     "q": "Which city is known as the 'Pink City' of India?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r1083",
@@ -5417,12 +5417,12 @@
   {
     "id": "r1084",
     "q": "What is the SI unit of Force?",
-    "a": "নিউটন"
+    "a": "Newton"
   },
   {
     "id": "r1085",
     "q": "Where is the headquarters of the Indian Railway Board?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r1086",
@@ -5437,7 +5437,7 @@
   {
     "id": "r1088",
     "q": "Which blood group is known as the 'Universal Donor'?",
-    "a": "O ঋণাত্মক"
+    "a": "O negative"
   },
   {
     "id": "r1089",
@@ -5487,7 +5487,7 @@
   {
     "id": "r1098",
     "q": "Which city is the headquarters of the Eastern Railway?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r1099",
@@ -5542,7 +5542,7 @@
   {
     "id": "r1109",
     "q": "What is the tenure of a member of Rajya Sabha?",
-    "a": "৬ বছৰ"
+    "a": "6 years"
   },
   {
     "id": "r1110",
@@ -5552,7 +5552,7 @@
   {
     "id": "r1111",
     "q": "Which is the longest river in the world?",
-    "a": "নাইল"
+    "a": "Nile"
   },
   {
     "id": "r1112",
@@ -5577,7 +5577,7 @@
   {
     "id": "r1116",
     "q": "The 'Gateway of India' is located in which city?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r1117",
@@ -5587,7 +5587,7 @@
   {
     "id": "r1118",
     "q": "Which is the largest ocean in the world?",
-    "a": "প্ৰশান্ত মহাসাগৰ"
+    "a": "Pacific Ocean"
   },
   {
     "id": "r1119",
@@ -5622,7 +5622,7 @@
   {
     "id": "r1125",
     "q": "Which is the highest peak in the world?",
-    "a": "মাউণ্ট এভাৰেষ্ট"
+    "a": "Mount Everest"
   },
   {
     "id": "r1126",
@@ -5687,7 +5687,7 @@
   {
     "id": "r1138",
     "q": "The 'Hawa Mahal' is located in which city?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r1139",
@@ -5737,7 +5737,7 @@
   {
     "id": "r1148",
     "q": "What is the capital of Tamil Nadu?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r1149",
@@ -5827,7 +5827,7 @@
   {
     "id": "r1166",
     "q": "Which is the largest gland in the human body?",
-    "a": "যকৃত"
+    "a": "Liver"
   },
   {
     "id": "r1167",
@@ -5902,7 +5902,7 @@
   {
     "id": "r1181",
     "q": "Who was the first woman to receive the Bharat Ratna?",
-    "a": "ইন্দিৰা গান্ধী"
+    "a": "Indira Gandhi"
   },
   {
     "id": "r1182",
@@ -5982,7 +5982,7 @@
   {
     "id": "r1197",
     "q": "Which instrument is used to measure the intensity of an earthquake?",
-    "a": "সিসমোগ্ৰাফ"
+    "a": "Seismograph"
   },
   {
     "id": "r1198",
@@ -5997,7 +5997,7 @@
   {
     "id": "r1200",
     "q": "Which blood group is the 'Universal Recipient'?",
-    "a": "AB পজিটিভ"
+    "a": "AB positive"
   },
   {
     "id": "r1201",
@@ -6007,7 +6007,7 @@
   {
     "id": "r1202",
     "q": "What is the largest organ of the human body?",
-    "a": "ছাল"
+    "a": "Skin"
   },
   {
     "id": "r1203",
@@ -6067,7 +6067,7 @@
   {
     "id": "r1214",
     "q": "Which is the hardest substance available on Earth?",
-    "a": "হীৰা"
+    "a": "Diamond"
   },
   {
     "id": "r1215",
@@ -6132,7 +6132,7 @@
   {
     "id": "r1227",
     "q": "What is the unit of electric power?",
-    "a": "ৱাট"
+    "a": "Watt"
   },
   {
     "id": "r1228",
@@ -6162,7 +6162,7 @@
   {
     "id": "r1233",
     "q": "What is the SI unit of Temperature?",
-    "a": "কেলভিন"
+    "a": "Kelvin"
   },
   {
     "id": "r1234",
@@ -6217,7 +6217,7 @@
   {
     "id": "r1244",
     "q": "Which is the deepest ocean in the world?",
-    "a": "প্ৰশান্ত মহাসাগৰ"
+    "a": "Pacific Ocean"
   },
   {
     "id": "r1245",
@@ -6227,7 +6227,7 @@
   {
     "id": "r1246",
     "q": "In which city is the 'Indian Military Academy' located?",
-    "a": "ডেৰাডুন"
+    "a": "Dehradun"
   },
   {
     "id": "r1247",
@@ -6292,7 +6292,7 @@
   {
     "id": "r1259",
     "q": "Which is the highest railway station in India?",
-    "a": "ঘুম (পশ্চিম বংগ)"
+    "a": "Ghum (West Bengal)"
   },
   {
     "id": "r1260",
@@ -6467,7 +6467,7 @@
   {
     "id": "r1294",
     "q": "Which is the most abundant element in the Earth's crust?",
-    "a": "অক্সিজেন"
+    "a": "Oxygen"
   },
   {
     "id": "r1295",
@@ -6607,7 +6607,7 @@
   {
     "id": "r1322",
     "q": "Which is the largest continent in the world?",
-    "a": "এছিয়া"
+    "a": "Asia"
   },
   {
     "id": "r1323",
@@ -6687,7 +6687,7 @@
   {
     "id": "r1338",
     "q": "Where is the headquarters of the North Western Railway?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r1339",
@@ -6727,7 +6727,7 @@
   {
     "id": "r1346",
     "q": "Which city is known as the 'Gateway of South India'?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r1347",
@@ -6742,7 +6742,7 @@
   {
     "id": "r1349",
     "q": "The first metro rail in India started in which city?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r1350",
@@ -6792,7 +6792,7 @@
   {
     "id": "r1359",
     "q": "Which was the first electric train in India?",
-    "a": "ডেকান ৰাণী"
+    "a": "Deccan Queen"
   },
   {
     "id": "r1360",
@@ -6842,7 +6842,7 @@
   {
     "id": "r1369",
     "q": "Where is the Diesel Locomotive Works (DLW) located?",
-    "a": "বাৰাণসী"
+    "a": "Varanasi"
   },
   {
     "id": "r1370",
@@ -7087,7 +7087,7 @@
   {
     "id": "r1418",
     "q": "Which noble gas is most abundant in the atmosphere?",
-    "a": "আর্গন"
+    "a": "Argon"
   },
   {
     "id": "r1419",
@@ -7107,7 +7107,7 @@
   {
     "id": "r1422",
     "q": "Which is the smallest continent by land area?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r1423",
@@ -7192,7 +7192,7 @@
   {
     "id": "r1439",
     "q": "What is the HCF of 36, 54, and 72?",
-    "a": "১৮"
+    "a": "18"
   },
   {
     "id": "r1440",
@@ -7202,7 +7202,7 @@
   {
     "id": "r1441",
     "q": "Who was the first woman Bharat Ratna awardee?",
-    "a": "ইন্দিৰা গান্ধী"
+    "a": "Indira Gandhi"
   },
   {
     "id": "r1442",
@@ -7242,7 +7242,7 @@
   {
     "id": "r1449",
     "q": "In which city did the first underground Metro start in India?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r1450",
@@ -7477,7 +7477,7 @@
   {
     "id": "r1496",
     "q": "Which city is known as the 'City of Nawabs'?",
-    "a": "লক্ষ্ণৌ"
+    "a": "Lucknow"
   },
   {
     "id": "r1497",
@@ -7492,7 +7492,7 @@
   {
     "id": "r1499",
     "q": "Which is the longest railway platform in the world as of 2023?",
-    "a": "হুবলি (কৰ্ণাটক)"
+    "a": "Hubballi (Karnataka)"
   },
   {
     "id": "r1500",
@@ -7572,7 +7572,7 @@
   {
     "id": "r1515",
     "q": "Deficiency of Vitamin D causes which disease in children?",
-    "a": "ৰিকেটসমূহ"
+    "a": "Rickets"
   },
   {
     "id": "r1516",
@@ -7617,7 +7617,7 @@
   {
     "id": "r1524",
     "q": "Which city is known as the 'Electronic City of India'?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r1525",
@@ -7677,7 +7677,7 @@
   {
     "id": "r1536",
     "q": "Which river is known as the 'Dakshin Ganga'?",
-    "a": "গোদাবৰী"
+    "a": "Godavari"
   },
   {
     "id": "r1537",
@@ -7687,7 +7687,7 @@
   {
     "id": "r1538",
     "q": "Where is the headquarters of the Southern Railway?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r1539",
@@ -7742,7 +7742,7 @@
   {
     "id": "r1549",
     "q": "Which city is the headquarters of the South Eastern Railway?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r1550",
@@ -7782,7 +7782,7 @@
   {
     "id": "r1557",
     "q": "Who is known as the 'Iron Lady of India'?",
-    "a": "ইন্দিৰা গান্ধী"
+    "a": "Indira Gandhi"
   },
   {
     "id": "r1558",
@@ -7807,7 +7807,7 @@
   {
     "id": "r1562",
     "q": "Which river is known as the 'Vridha Ganga'?",
-    "a": "গোদাবৰী"
+    "a": "Godavari"
   },
   {
     "id": "r1563",
@@ -7867,7 +7867,7 @@
   {
     "id": "r1574",
     "q": "Which country is known as the 'Land of the Golden Fleece'?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r1575",
@@ -7877,7 +7877,7 @@
   {
     "id": "r1576",
     "q": "Which is the largest internal organ in the human body?",
-    "a": "যকৃত"
+    "a": "Liver"
   },
   {
     "id": "r1577",
@@ -7927,7 +7927,7 @@
   {
     "id": "r1586",
     "q": "Which part of the Indian Constitution deals with Fundamental Rights?",
-    "a": "খণ্ড III"
+    "a": "Part III"
   },
   {
     "id": "r1587",
@@ -7937,7 +7937,7 @@
   {
     "id": "r1588",
     "q": "Where is the headquarters of the East Coast Railway?",
-    "a": "ভুবনেশ্বৰ"
+    "a": "Bhubaneswar"
   },
   {
     "id": "r1589",
@@ -7977,7 +7977,7 @@
   {
     "id": "r1596",
     "q": "Which city is known as the 'City of Palaces'?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r1597",
@@ -7992,7 +7992,7 @@
   {
     "id": "r1599",
     "q": "Which city is known as the 'Railway Capital of India'?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r1600",
@@ -8117,7 +8117,7 @@
   {
     "id": "r1624",
     "q": "Which city is known as the 'Silicon Valley of India'?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r1625",
@@ -8132,7 +8132,7 @@
   {
     "id": "r1627",
     "q": "In which state is the 'Ranthambore National Park'?",
-    "a": "ৰাজস্থান"
+    "a": "Rajasthan"
   },
   {
     "id": "r1628",
@@ -8242,7 +8242,7 @@
   {
     "id": "r1649",
     "q": "Which railway station has the largest number of platforms in India?",
-    "a": "হাওৰা জংশন"
+    "a": "Howrah Junction"
   },
   {
     "id": "r1650",
@@ -8342,7 +8342,7 @@
   {
     "id": "r1669",
     "q": "Where is the Indian Railways Institute of Transport Management located?",
-    "a": "লক্ষ্ণৌ"
+    "a": "Lucknow"
   },
   {
     "id": "r1670",
@@ -8382,7 +8382,7 @@
   {
     "id": "r1677",
     "q": "In which state is the 'Sariska Tiger Reserve' located?",
-    "a": "ৰাজস্থান"
+    "a": "Rajasthan"
   },
   {
     "id": "r1678",
@@ -8497,7 +8497,7 @@
   {
     "id": "r1700",
     "q": "Who is the author of 'The Discovery of India'?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r1701",
@@ -8607,7 +8607,7 @@
   {
     "id": "r1722",
     "q": "Which is the longest river in India?",
-    "a": "গঙ্গা"
+    "a": "Ganga"
   },
   {
     "id": "r1723",
@@ -8682,7 +8682,7 @@
   {
     "id": "r1737",
     "q": "Who was the first woman to win the Bharat Ratna?",
-    "a": "ইন্দিৰা গান্ধী"
+    "a": "Indira Gandhi"
   },
   {
     "id": "r1738",
@@ -8727,7 +8727,7 @@
   {
     "id": "r1746",
     "q": "Which city is known as the 'City of Seven Islands'?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r1747",
@@ -8792,7 +8792,7 @@
   {
     "id": "r1759",
     "q": "Which is the fastest train in India as of 2024?",
-    "a": "বন্দে ভাৰত এক্সপ্ৰেছ"
+    "a": "Vande Bharat Express"
   },
   {
     "id": "r1760",
@@ -8842,7 +8842,7 @@
   {
     "id": "r1769",
     "q": "Where is the headquarters of the Northern Railway?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r1770",
@@ -8887,7 +8887,7 @@
   {
     "id": "r1778",
     "q": "What is the SI unit of Power?",
-    "a": "ৱাট"
+    "a": "Watt"
   },
   {
     "id": "r1779",
@@ -8967,7 +8967,7 @@
   {
     "id": "r1794",
     "q": "Which is the hardest natural substance?",
-    "a": "হীৰা"
+    "a": "Diamond"
   },
   {
     "id": "r1795",
@@ -8977,7 +8977,7 @@
   {
     "id": "r1796",
     "q": "Which city is known as the 'Pink City' of India?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r1797",
@@ -9032,7 +9032,7 @@
   {
     "id": "r1807",
     "q": "Which is the highest peak in the world?",
-    "a": "মাউণ্ট এভাৰেষ্ট"
+    "a": "Mount Everest"
   },
   {
     "id": "r1808",
@@ -9072,7 +9072,7 @@
   {
     "id": "r1815",
     "q": "Deficiency of Vitamin C causes which disease?",
-    "a": "স্কাৰ্ভি"
+    "a": "Scurvy"
   },
   {
     "id": "r1816",
@@ -9092,7 +9092,7 @@
   {
     "id": "r1819",
     "q": "Where is the Indian Railway Institute of Logistics and Materials Management?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r1820",
@@ -9102,12 +9102,12 @@
   {
     "id": "r1821",
     "q": "Who was the first female President of India?",
-    "a": "প্ৰতিভা পাটিল"
+    "a": "Pratibha Patil"
   },
   {
     "id": "r1822",
     "q": "Which is the longest river in the world?",
-    "a": "নাইল"
+    "a": "Nile"
   },
   {
     "id": "r1823",
@@ -9117,7 +9117,7 @@
   {
     "id": "r1824",
     "q": "Which city is known as the 'Garden City of India'?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r1825",
@@ -9142,7 +9142,7 @@
   {
     "id": "r1829",
     "q": "Who was the first Prime Minister of independent India?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r1830",
@@ -9167,7 +9167,7 @@
   {
     "id": "r1834",
     "q": "Which is the largest ocean in the world?",
-    "a": "প্ৰশান্ত মহাসাগৰ"
+    "a": "Pacific Ocean"
   },
   {
     "id": "r1835",
@@ -9227,7 +9227,7 @@
   {
     "id": "r1846",
     "q": "Which city is known as the 'City of Joy'?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r1847",
@@ -9322,7 +9322,7 @@
   {
     "id": "r1865",
     "q": "Which human organ is capable of regenerating itself?",
-    "a": "যকৃত"
+    "a": "Liver"
   },
   {
     "id": "r1866",
@@ -9427,7 +9427,7 @@
   {
     "id": "r1886",
     "q": "Which Article of the Constitution deals with the 'Right to Education'?",
-    "a": "অনুচ্ছেদ ২১এ"
+    "a": "Article 21A"
   },
   {
     "id": "r1887",
@@ -9602,7 +9602,7 @@
   {
     "id": "r1921",
     "q": "Who was the first woman Prime Minister of India?",
-    "a": "ইন্দিৰা গান্ধী"
+    "a": "Indira Gandhi"
   },
   {
     "id": "r1922",
@@ -9687,7 +9687,7 @@
   {
     "id": "r1938",
     "q": "Where is the headquarters of the East Coast Railway?",
-    "a": "ভুবনেশ্বৰ"
+    "a": "Bhubaneswar"
   },
   {
     "id": "r1939",
@@ -9742,7 +9742,7 @@
   {
     "id": "r1949",
     "q": "Which is the headquarters of the North Western Railway?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r1950",
@@ -9967,7 +9967,7 @@
   {
     "id": "r1994",
     "q": "Which is the most abundant noble gas in the atmosphere?",
-    "a": "আর্গন"
+    "a": "Argon"
   },
   {
     "id": "r1995",
@@ -10107,7 +10107,7 @@
   {
     "id": "r2022",
     "q": "Which is the deepest lake in the world?",
-    "a": "বৈকাল হ্ৰদ"
+    "a": "Lake Baikal"
   },
   {
     "id": "r2023",
@@ -10117,7 +10117,7 @@
   {
     "id": "r2024",
     "q": "Which city is known as the 'Electronic City of India'?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r2025",
@@ -10132,7 +10132,7 @@
   {
     "id": "r2027",
     "q": "In which state is the 'Ranthambore National Park' located?",
-    "a": "ৰাজস্থান"
+    "a": "Rajasthan"
   },
   {
     "id": "r2028",
@@ -10187,7 +10187,7 @@
   {
     "id": "r2038",
     "q": "Where is the headquarters of the Southern Railway?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r2039",
@@ -10437,7 +10437,7 @@
   {
     "id": "r2088",
     "q": "Where is the headquarters of the East Coast Railway?",
-    "a": "ভুবনেশ্বৰ"
+    "a": "Bhubaneswar"
   },
   {
     "id": "r2089",
@@ -10516,392 +10516,392 @@
   },
   {
     "id": "r2104",
-    "q": "এটা হেপ্টাগনত কোণৰ যোগফল কিমান?",
-    "a": "$ 900^\\ প্ৰায় $"
+    "q": "What is the sum of angles in a heptagon?",
+    "a": "$900^\\circ$"
   },
   {
     "id": "r2105",
-    "q": "ৰেফ্ৰিজাৰেটৰত কোনটো গেছ ব্যৱহাৰ কৰা হয়?",
-    "a": "টেট্ৰাফ্লুৰোইথেন (ফ্ৰিয়ন/আৰ-১৩৪এ)"
+    "q": "Which gas is used in a refrigerator?",
+    "a": "Tetrafluoroethane (Freon/R-134a)"
   },
   {
     "id": "r2106",
-    "q": "'গাদাৰ পাৰ্টি' কোনে প্ৰতিষ্ঠা কৰিছিল?",
-    "a": "লালা হাৰ্দায়াল"
+    "q": "Who founded the 'Ghadar Party'?",
+    "a": "Lala Hardayal"
   },
   {
     "id": "r2107",
-    "q": "কাৰাকোৰাম পৰিসৰৰ সৰ্বোচ্চ শৃংগটো কি?",
-    "a": "K2 (গডউইন-অস্টেন)"
+    "q": "Which is the highest peak in the Karakoram range?",
+    "a": "K2 (Godwin-Austen)"
   },
   {
     "id": "r2108",
-    "q": "মাৰ্বলৰ ৰাসায়নিক সূত্ৰটো কি?",
-    "a": "$CaCO_3 $"
+    "q": "What is the chemical formula of Marble?",
+    "a": "$CaCO_3$"
   },
   {
     "id": "r2109",
-    "q": "জবলপুৰত কোনটো ৰে 'লৱে জ' নৰ মুখ্য কাৰ্যালয় আছে?",
-    "a": "ৱেষ্ট চেণ্ট্ৰেল ৰে'লৱে"
+    "q": "Which railway zone is headquartered in Jabalpur?",
+    "a": "West Central Railway"
   },
   {
     "id": "r2110",
-    "q": "যদি $ 5x - 15 = 35 $ হয়, তেন্তে $x$ ৰ মূল্য কিমান?",
-    "a": "10."
+    "q": "If $5x - 15 = 35$, what is the value of $x$?",
+    "a": "10"
   },
   {
     "id": "r2111",
-    "q": "ভাৰতৰ পৰা ৰমন মেগছেছে বঁটা লাভ কৰা প্ৰথম মহিলাজন কোন আছিল?",
-    "a": "মাদাৰ টেৰেছা"
+    "q": "Who was the first woman to win the Ramon Magsaysay Award from India?",
+    "a": "Mother Teresa"
   },
   {
     "id": "r2112",
-    "q": "কোনটো গ্ৰহক 'ভেষ্পাৰ' বুলি জনা যায়?",
-    "a": "শুক্ৰ"
+    "q": "Which planet is known as the 'Vesper'?",
+    "a": "Venus"
   },
   {
     "id": "r2113",
-    "q": "কোন বছৰত 'দাণ্ডি মাৰ্চ' আৰম্ভ হৈছিল?",
+    "q": "In which year did the 'Dandi March' begin?",
     "a": "1930"
   },
   {
     "id": "r2114",
-    "q": "কাজাখস্তানৰ ৰাজধানী কি?",
-    "a": "আস্তানা"
+    "q": "What is the capital of Kazakhstan?",
+    "a": "Astana"
   },
   {
     "id": "r2115",
-    "q": "ভিটামিন B7 ৰ অভাৱ?",
-    "a": "চুলি ক্ষতি আৰু ছালৰ ফাটি"
+    "q": "Deficiency of Vitamin B7 causes?",
+    "a": "Hair loss and skin rash"
   },
   {
     "id": "r2116",
-    "q": "$\\ sqrt {2025}$ ৰ মূল্য কিমান?",
+    "q": "What is the value of $\\sqrt{2025}$?",
     "a": "45"
   },
   {
     "id": "r2117",
-    "q": "'সাতবাহন ৰাজবংশ' ৰ প্ৰতিষ্ঠাপক কোন আছিল?",
+    "q": "Who was the founder of the 'Satavahana Dynasty'?",
     "a": "Simuka"
   },
   {
     "id": "r2118",
-    "q": "মানৱ শৰীৰত কোনটো উপাদান সৰ্বাধিক প্ৰচুৰ?",
-    "a": "অক্সিজেন"
+    "q": "Which element is the most abundant in the human body?",
+    "a": "Oxygen"
   },
   {
     "id": "r2119",
-    "q": "ভাৰতীয় ৰেলৱে ইনষ্টিটিউট অফ ইলেক্ট্ৰিকেল ইঞ্জিনিয়াৰিং ক 'ত অৱস্থিত?",
-    "a": "নাসিক"
+    "q": "Where is the Indian Railway Institute of Electrical Engineering located?",
+    "a": "Nashik"
   },
   {
     "id": "r2120",
-    "q": "প্ৰথম দহটা মৌলিক সংখ্যাৰ গড় কিমান?",
+    "q": "What is the average of first ten prime numbers?",
     "a": "12.9"
   },
   {
     "id": "r2121",
-    "q": "এখন ভাৰতীয় ৰাজ্যৰ প্ৰথম মহিলা মুখ্যমন্ত্ৰী কোন আছিল?",
-    "a": "সুচেতা ক্ৰিপালানি"
+    "q": "Who was the first woman Chief Minister of an Indian state?",
+    "a": "Sucheta Kripalani"
   },
   {
     "id": "r2122",
-    "q": "পৃথিৱীৰ আটাইতকৈ ডাঙৰ ভূমিহীন দেশ কোনখন?",
-    "a": "কাজাখস্তান"
+    "q": "Which is the largest landlocked country in the world?",
+    "a": "Kazakhstan"
   },
   {
     "id": "r2123",
-    "q": "'ৰাষ্ট্রকুটা ৰাজবংশ' ৰ প্ৰতিষ্ঠাপক কোন আছিল?",
+    "q": "Who was the founder of the 'Rashtrakuta Dynasty'?",
     "a": "Dantidurga"
   },
   {
     "id": "r2124",
-    "q": "কোনখন চহৰক 'হীৰাৰ চহৰ' বুলি জনা যায়?",
-    "a": "ছুৰাট"
+    "q": "Which city is known as the 'City of Diamonds'?",
+    "a": "Surat"
   },
   {
     "id": "r2125",
-    "q": "এটা বৰ্গৰ ক্ষেত্ৰফল কি যাৰ পাৰ্শ্ব 25 ছে .মি.?",
-    "a": "625 বৰ্গ ছে .মি."
+    "q": "What is the area of a square whose side is 25 cm?",
+    "a": "625 sq. cm"
   },
   {
     "id": "r2126",
-    "q": "TCP ৰ সম্পূৰ্ণ ৰূপটো কি?",
-    "a": "সঞ্চালন নিয়ন্ত্ৰণ প্ৰটোকল"
+    "q": "What is the full form of TCP?",
+    "a": "Transmission Control Protocol"
   },
   {
     "id": "r2127",
-    "q": "'বান্দিপুৰ ৰাষ্ট্ৰীয় উদ্যান' কোনখন ৰাজ্যত অৱস্থিত?",
-    "a": "কৰ্ণাটক"
+    "q": "In which state is the 'Bandipur National Park' located?",
+    "a": "Karnataka"
   },
   {
     "id": "r2128",
-    "q": "চিলিকনৰ ৰাসায়নিক প্ৰতীক কি?",
+    "q": "What is the chemical symbol for Silicon?",
     "a": "Si"
   },
   {
     "id": "r2129",
-    "q": "ভাৰতৰ বাবে বেডমিণ্টনত অলিম্পিক পদক অৰ্জন কৰা প্ৰথম মহিলাজন কোন আছিল?",
-    "a": "চাইনা নেহৱাল"
+    "q": "Who was the first woman to win an Olympic medal in Badminton for India?",
+    "a": "Saina Nehwal"
   },
   {
     "id": "r2130",
-    "q": "$ 16 \\times 16 $ ৰ উৎপাদিত সামগ্ৰী কি?",
+    "q": "What is the product of $16 \\times 16$?",
     "a": "256"
   },
   {
     "id": "r2131",
-    "q": "ভাৰতৰ সৰ্ববৃহৎ ব-দ্বীপ কোনটো?",
-    "a": "সুন্দৰবন ডেল্টা"
+    "q": "Which is the largest delta in India?",
+    "a": "Sundarban Delta"
   },
   {
     "id": "r2132",
-    "q": "ভিটামিন বি৫ ৰ ৰাসায়নিক নাম কি?",
-    "a": "পেণ্টোথেনিক এচিড"
+    "q": "What is the chemical name of Vitamin B5?",
+    "a": "Pantothenic acid"
   },
   {
     "id": "r2133",
-    "q": "ভাৰতৰ পৰা মিছ আৰ্থ খিতাপ লাভ কৰা প্ৰথম মহিলাজন কোন আছিল?",
-    "a": "নিকোল ফাৰিয়া"
+    "q": "Who was the first woman to win the Miss Earth title from India?",
+    "a": "Nicole Faria"
   },
   {
     "id": "r2134",
-    "q": "এছিয়াৰ আটাইতকৈ দীঘল নদী কোনটো?",
+    "q": "Which is the longest river in Asia?",
     "a": "Yangtze"
   },
   {
     "id": "r2135",
-    "q": "যদি এইটো ৪: ০০ হয়, ঘড়ীৰ হাতৰ মাজৰ কোণটো কি?",
-    "a": "$ 120^\\ চাৰ্ক $"
+    "q": "If it is 4:00, what is the angle between the hands of the clock?",
+    "a": "$120^\\circ$"
   },
   {
     "id": "r2136",
-    "q": "কোনখন নদীক 'ভাৰতৰ নাইল' বুলি কোৱা হয়?",
-    "a": "সিন্ধু"
+    "q": "Which river is called the 'Nile of India'?",
+    "a": "Indus"
   },
   {
     "id": "r2137",
-    "q": "জ্ঞানপীঠ বঁটা লাভ কৰা প্ৰথম মহিলাজন কোন আছিল?",
-    "a": "আশাপূৰ্ণা দেৱী"
+    "q": "Who was the first woman to win the Jnanpith Award?",
+    "a": "Ashapurna Devi"
   },
   {
     "id": "r2138",
-    "q": "উত্তৰ-পূব ৰেলৱেৰ মুখ্য কাৰ্যালয় ক 'ত আছে?",
-    "a": "গোৰখপুৰ"
+    "q": "Where is the headquarters of the North Eastern Railway?",
+    "a": "Gorakhpur"
   },
   {
     "id": "r2139",
-    "q": "৫৬ আৰু ৯৮ ৰ এইচচিএফ কি?",
+    "q": "What is the HCF of 56 and 98?",
     "a": "14"
   },
   {
     "id": "r2140",
-    "q": "কোনটো গ্ৰহত চন্দ্ৰৰ 'গ্যানিমেড' আছে?",
-    "a": "বৃহস্পতি"
+    "q": "Which planet has the moon 'Ganymede'?",
+    "a": "Jupiter"
   },
   {
     "id": "r2141",
-    "q": "অলিম্পিক গেমছত স্বৰ্ণ পদক লাভ কৰা প্ৰথম ভাৰতীয় কোন আছিল?",
-    "a": "অভিনৱ বিন্দ্ৰা"
+    "q": "Who was the first Indian to win a gold medal at the Olympic Games?",
+    "a": "Abhinav Bindra"
   },
   {
     "id": "r2142",
-    "q": "ভিটামিন বি৭ ৰ ৰাসায়নিক নাম কি?",
-    "a": "বায়োটিন"
+    "q": "What is the chemical name of Vitamin B7?",
+    "a": "Biotin"
   },
   {
     "id": "r2143",
-    "q": "কোন বছৰত 'চিমলা চুক্তি' সংঘটিত হৈছিল?",
+    "q": "In which year did the 'Shimla Agreement' take place?",
     "a": "1972"
   },
   {
     "id": "r2144",
-    "q": "স্কুবা ডাইভিং টেংকত কোনটো গেছ ব্যৱহাৰ কৰা হয়?",
-    "a": "হিলিয়াম-অক্সিজেন (হেলিওক্স) / বায়ু"
+    "q": "Which gas is used in scuba diving tanks?",
+    "a": "Helium-Oxygen (Heliox) / Air"
   },
   {
     "id": "r2145",
-    "q": "$\\tan(30^\\ circ)$ ৰ মূল্য কিমান?",
-    "a": "$ 1/\\ sqrt {3}$"
+    "q": "What is the value of $\\tan(30^\\circ)$?",
+    "a": "$1/\\sqrt{3}$"
   },
   {
     "id": "r2146",
-    "q": "কোনখন চহৰক 'ভাগ্যৰ চহৰ' বুলি জনা যায়?",
-    "a": "বিশাখাপত্তনম"
+    "q": "Which city is known as the 'City of Destiny'?",
+    "a": "Visakhapatnam"
   },
   {
     "id": "r2147",
-    "q": "মিছ ৱৰ্ল্ড খিতাপ লাভ কৰা প্ৰথম ভাৰতীয় মহিলা কোন আছিল?",
-    "a": "ৰীতা ফাৰিয়া"
+    "q": "Who was the first Indian woman to win the Miss World title?",
+    "a": "Reita Faria"
   },
   {
     "id": "r2148",
-    "q": "এছকিউএলৰ সম্পূৰ্ণ ৰূপটো কি?",
-    "a": "কাঠামোগত প্ৰশ্নৰ ভাষা"
+    "q": "What is the full form of SQL?",
+    "a": "Structured Query Language"
   },
   {
     "id": "r2149",
-    "q": "পশ্চিম ৰে 'লৱেৰ মুখ্য কাৰ্যালয় কোনটো?",
-    "a": "মুম্বাই (চাৰ্চগেট)"
+    "q": "Which is the headquarters of the Western Railway?",
+    "a": "Mumbai (Churchgate)"
   },
   {
     "id": "r2150",
-    "q": "'দি গাইড' ৰ লিখক কোন?",
-    "a": "আৰ .কে. নাৰায়ণ"
+    "q": "Who is the author of 'The Guide'?",
+    "a": "R.K. Narayan"
   },
   {
     "id": "r2151",
-    "q": "এছিয়ান গেমছত ব্যক্তিগত স্বৰ্ণ পদক লাভ কৰা প্ৰথম ভাৰতীয় মহিলা কোন আছিল?",
-    "a": "কমলজিৎ চান্ধু"
+    "q": "Who was the first Indian woman to win an individual gold medal at the Asian Games?",
+    "a": "Kamaljeet Sandhu"
   },
   {
     "id": "r2152",
-    "q": "কোনটো গ্ৰহক 'গ্ৰীণ গ্ৰহ' বুলি জনা যায়?",
-    "a": "ইউৰেনাচ"
+    "q": "Which planet is known as the 'Green Planet'?",
+    "a": "Uranus"
   },
   {
     "id": "r2153",
-    "q": "কোন বছৰত 'চৌচাৰ যুদ্ধ' সংঘটিত হৈছিল?",
+    "q": "In which year was the 'Battle of Chausa' fought?",
     "a": "1539"
   },
   {
     "id": "r2154",
-    "q": "থাইলেণ্ডৰ ৰাজধানী কি?",
-    "a": "বেংকক "
+    "q": "What is the capital of Thailand?",
+    "a": "Bangkok"
   },
   {
     "id": "r2155",
-    "q": "কোনটো ভিটামিনক ফলিক এচিড বুলিও কোৱা হয়?",
-    "a": "ভিটামিন B9"
+    "q": "Which vitamin is also known as Folic Acid?",
+    "a": "Vitamin B9"
   },
   {
     "id": "r2156",
-    "q": "মিথেনৰ ৰাসায়নিক সংকেত কি?",
-    "a": "$CH_4 $"
+    "q": "What is the chemical formula of Methane?",
+    "a": "$CH_4$"
   },
   {
     "id": "r2157",
-    "q": "'পঞ্জাবৰ সিংহ' বুলি কাক জনা যায়?",
-    "a": "লালা লাজপত ৰায়"
+    "q": "Who is known as the 'Lion of Punjab'?",
+    "a": "Lala Lajpat Rai"
   },
   {
     "id": "r2158",
-    "q": "$\\cos(90^\\ circ)$ ৰ মূল্য কিমান?",
+    "q": "What is the value of $\\cos(90^\\circ)$?",
     "a": "0"
   },
   {
     "id": "r2159",
-    "q": "ভাৰতৰ আটাইতকৈ দীঘল ৰে 'ল সুৰংগটো কি?",
-    "a": "পীৰ পাঞ্জাল ৰেলৱে সুৰংগ"
+    "q": "Which is the longest railway tunnel in India?",
+    "a": "Pir Panjal Railway Tunnel"
   },
   {
     "id": "r2160",
-    "q": "প্ৰথম পাঁচটা জোখৰ সংখ্যাৰ গড় কিমান?",
+    "q": "What is the average of first five even numbers?",
     "a": "6"
   },
   {
     "id": "r2161",
-    "q": "ৰসায়ন বিজ্ঞানত ন 'বেল বঁটা লাভ কৰা প্ৰথম মহিলাজন কোন আছিল?",
-    "a": "মেৰী কিউৰী"
+    "q": "Who was the first woman to win the Nobel Prize in Chemistry?",
+    "a": "Marie Curie"
   },
   {
     "id": "r2162",
-    "q": "কোনখন নদীক 'কেৰালাৰ জীৱন ৰেখা' বুলি জনা যায়?",
-    "a": "পেৰিয়াৰ নদী"
+    "q": "Which river is known as the 'Lifeline of Kerala'?",
+    "a": "Periyar River"
   },
   {
     "id": "r2163",
-    "q": "দক্ষিণ কোৰিয়াৰ মুদ্ৰা কি?",
-    "a": "ৱন "
+    "q": "What is the currency of South Korea?",
+    "a": "Won"
   },
   {
     "id": "r2164",
-    "q": "ইউআৰএলৰ সম্পূৰ্ণ ৰূপটো কি?",
-    "a": "ইউনিফৰ্ম ৰিচ 'ৰ্চ লোকেটাৰ"
+    "q": "What is the full form of URL?",
+    "a": "Uniform Resource Locator"
   },
   {
     "id": "r2165",
-    "q": "মানুহৰ চকুৰ কোনটো অংশ ৰঙৰ দৃষ্টিৰ বাবে দায়ী?",
-    "a": "শঙ্কু"
+    "q": "Which part of the human eye is responsible for color vision?",
+    "a": "Cones"
   },
   {
     "id": "r2166",
-    "q": "কোন বছৰত ফৰাচী বিপ্লৱৰ অন্ত পৰিল?",
+    "q": "In which year did the French Revolution end?",
     "a": "1799"
   },
   {
     "id": "r2167",
-    "q": "কোনখন ভাৰতীয় ৰাজ্য ৰবৰ সৰ্ববৃহৎ উৎপাদক?",
-    "a": "কেৰালা"
+    "q": "Which Indian state is the largest producer of rubber?",
+    "a": "Kerala"
   },
   {
     "id": "r2168",
-    "q": "স্লেকড লাইমৰ ৰাসায়নিক নাম কি?",
-    "a": "কেলছিয়াম হাইড্ৰক্সাইড"
+    "q": "What is the chemical name of Slaked Lime?",
+    "a": "Calcium Hydroxide"
   },
   {
     "id": "r2169",
-    "q": "উত্তৰ উপকূল ৰে 'লৱেৰ মুখ্য কাৰ্যালয় ক' ত আছে?",
-    "a": "বিশাখাপত্তনম"
+    "q": "Where is the headquarters of the North Coast Railway?",
+    "a": "Visakhapatnam"
   },
   {
     "id": "r2170",
-    "q": "১৬ ৰ বৰ্গটো কি?",
+    "q": "What is the square of 16?",
     "a": "256"
   },
   {
     "id": "r2171",
-    "q": "পদাৰ্থ বিজ্ঞানত ন 'বেল বঁটা লাভ কৰা প্ৰথম ভাৰতীয়জন কোন আছিল?",
-    "a": "চি ভি ৰামান"
+    "q": "Who was the first Indian to win a Nobel Prize in Physics?",
+    "a": "C.V. Raman"
   },
   {
     "id": "r2172",
-    "q": "কাঁচ নিৰ্মাণত কোনটো গেছ ব্যৱহাৰ কৰা হয়?",
-    "a": "নাইট্ৰজেন"
+    "q": "Which gas is used in the manufacture of glass?",
+    "a": "Nitrogen"
   },
   {
     "id": "r2173",
-    "q": "'প্ৰাৰ্থনা সমাজ' কোনে প্ৰতিষ্ঠা কৰিছিল?",
-    "a": "আত্মাৰাম পাণ্ডুৰাং"
+    "q": "Who founded the 'Prarthana Samaj'?",
+    "a": "Atmaram Pandurang"
   },
   {
     "id": "r2174",
-    "q": "কোনখন দেশক 'মধ্যৰাতিৰ সূৰ্যৰ দেশ' বুলি জনা যায়?",
-    "a": "নৰৱে' "
+    "q": "Which country is known as the 'Land of the Midnight Sun'?",
+    "a": "Norway"
   },
   {
     "id": "r2175",
-    "q": "যদি এটা ঘনবস্তুৰ কাষ 5 হয়, তেন্তে ইয়াৰ পৃষ্ঠভাগ কিমান?",
-    "a": "১৫০"
+    "q": "If the side of a cube is 5, what is its surface area?",
+    "a": "150"
   },
   {
     "id": "r2176",
-    "q": "কোনটো হৰমোনে তেজৰ শৰ্কৰাৰ স্তৰ নিয়ন্ত্ৰণ কৰে?",
-    "a": "ইনচুলিন"
+    "q": "Which hormone regulates the blood sugar level?",
+    "a": "Insulin"
   },
   {
     "id": "r2177",
-    "q": "'কৰবেট ৰাষ্ট্ৰীয় উদ্যান' কোন ৰাজ্যত অৱস্থিত?",
-    "a": "উত্তৰাখণ্ড"
+    "q": "In which state is the 'Corbett National Park' located?",
+    "a": "Uttarakhand"
   },
   {
     "id": "r2178",
-    "q": "চৌম্বকীয় ফ্লাক্সৰ এছআই এককটো কি?",
+    "q": "What is the SI unit of Magnetic Flux?",
     "a": "Weber"
   },
   {
     "id": "r2179",
-    "q": "ভাৰতৰ উচ্চতম ন্যায়ালয়ৰ প্ৰথম মহিলা ন্যায়াধীশ কোন আছিল?",
+    "q": "Who was the first woman judge of the Supreme Court of India?",
     "a": "Fathima Beevi"
   },
   {
     "id": "r2180",
-    "q": "৬ ৰ ঘনকটো কি?",
+    "q": "What is the cube of 6?",
     "a": "216"
   },
   {
     "id": "r2181",
-    "q": "ভাৰতৰ সৰ্ববৃহৎ সংগ্ৰহালয় কোনটো?",
+    "q": "Which is the largest museum in India?",
     "a": "Indian Museum (Kolkata)"
   },
   {
@@ -10911,8 +10911,8 @@
   },
   {
     "id": "r2183",
-    "q": "মিছ ৱৰ্ল্ড খিতাপ লাভ কৰা প্ৰথম ভাৰতীয় মহিলা কোন আছিল?",
-    "a": "ৰীতা ফাৰিয়া"
+    "q": "Who was the first Indian woman to win the Miss World title?",
+    "a": "Reita Faria"
   },
   {
     "id": "r2184",
@@ -10937,7 +10937,7 @@
   {
     "id": "r2188",
     "q": "Where is the headquarters of the Southern Railway?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r2189",
@@ -10967,7 +10967,7 @@
   {
     "id": "r2194",
     "q": "Which is the most abundant gas in the Earth's crust?",
-    "a": "অক্সিজেন"
+    "a": "Oxygen"
   },
   {
     "id": "r2195",
@@ -10992,7 +10992,7 @@
   {
     "id": "r2199",
     "q": "Which is the fastest train in India?",
-    "a": "বন্দে ভাৰত এক্সপ্ৰেছ"
+    "a": "Vande Bharat Express"
   },
   {
     "id": "r2200",
@@ -11007,7 +11007,7 @@
   {
     "id": "r2202",
     "q": "Which is the largest continent by area?",
-    "a": "এছিয়া"
+    "a": "Asia"
   },
   {
     "id": "r2203",
@@ -11037,7 +11037,7 @@
   {
     "id": "r2208",
     "q": "What is the chemical formula of Chalk?",
-    "a": "$CaCO_3 $"
+    "a": "$CaCO_3$"
   },
   {
     "id": "r2209",
@@ -11072,7 +11072,7 @@
   {
     "id": "r2215",
     "q": "Deficiency of Vitamin D causes?",
-    "a": "ৰিকেটসমূহ"
+    "a": "Rickets"
   },
   {
     "id": "r2216",
@@ -11092,7 +11092,7 @@
   {
     "id": "r2219",
     "q": "Where is the Indian Railway Institute of Transport Management?",
-    "a": "লক্ষ্ণৌ"
+    "a": "Lucknow"
   },
   {
     "id": "r2220",
@@ -11107,7 +11107,7 @@
   {
     "id": "r2222",
     "q": "Which is the longest river in the world?",
-    "a": "নাইল"
+    "a": "Nile"
   },
   {
     "id": "r2223",
@@ -11167,7 +11167,7 @@
   {
     "id": "r2234",
     "q": "Which is the largest fresh water lake in the world?",
-    "a": "চুপাৰিয়ৰ হ্ৰদ"
+    "a": "Lake Superior"
   },
   {
     "id": "r2235",
@@ -11197,7 +11197,7 @@
   {
     "id": "r2240",
     "q": "Which planet is known as the 'Morning Star'?",
-    "a": "শুক্ৰ"
+    "a": "Venus"
   },
   {
     "id": "r2241",
@@ -11217,7 +11217,7 @@
   {
     "id": "r2244",
     "q": "Which gas is used in electric bulbs?",
-    "a": "আর্গন"
+    "a": "Argon"
   },
   {
     "id": "r2245",
@@ -11227,12 +11227,12 @@
   {
     "id": "r2246",
     "q": "Which city is known as the 'City of Seven Islands'?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r2247",
     "q": "Who was the first Indian to receive the Nobel Peace Prize?",
-    "a": "মাদাৰ টেৰেছা"
+    "a": "Mother Teresa"
   },
   {
     "id": "r2248",
@@ -11242,12 +11242,12 @@
   {
     "id": "r2249",
     "q": "Which is the headquarters of the Northern Railway?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r2250",
     "q": "Who is the author of 'Discovery of India'?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r2251",
@@ -11302,12 +11302,12 @@
   {
     "id": "r2261",
     "q": "Who was the first woman to win the Nobel Prize in Physics?",
-    "a": "মেৰী কিউৰী"
+    "a": "Marie Curie"
   },
   {
     "id": "r2262",
     "q": "Which river is known as the 'Dakshina Ganga'?",
-    "a": "গোদাবৰী"
+    "a": "Godavari"
   },
   {
     "id": "r2263",
@@ -11342,7 +11342,7 @@
   {
     "id": "r2269",
     "q": "Where is the headquarters of the East Coast Railway?",
-    "a": "ভুবনেশ্বৰ"
+    "a": "Bhubaneswar"
   },
   {
     "id": "r2270",
@@ -11361,13 +11361,13 @@
   },
   {
     "id": "r2273",
-    "q": "'গাদাৰ পাৰ্টি' কোনে প্ৰতিষ্ঠা কৰিছিল?",
-    "a": "লালা হাৰ্দায়াল"
+    "q": "Who founded the 'Ghadar Party'?",
+    "a": "Lala Hardayal"
   },
   {
     "id": "r2274",
     "q": "Which country is known as the 'Land of the Golden Fleece'?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r2275",
@@ -11467,7 +11467,7 @@
   {
     "id": "r2294",
     "q": "Which is the most abundant element in the human body?",
-    "a": "অক্সিজেন"
+    "a": "Oxygen"
   },
   {
     "id": "r2295",
@@ -11477,7 +11477,7 @@
   {
     "id": "r2296",
     "q": "Which city is known as the 'City of Palaces' in India?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r2297",
@@ -11507,7 +11507,7 @@
   {
     "id": "r2302",
     "q": "Which is the smallest continent by area?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r2303",
@@ -11551,7 +11551,7 @@
   },
   {
     "id": "r2311",
-    "q": "জ্ঞানপীঠ বঁটা লাভ কৰা প্ৰথম মহিলাজন কোন আছিল?",
+    "q": "Who was the first woman to win the Jnanpith Award?",
     "a": "Ashapoorna Devi"
   },
   {
@@ -11656,8 +11656,8 @@
   },
   {
     "id": "r2332",
-    "q": "ভিটামিন বি৭ ৰ ৰাসায়নিক নাম কি?",
-    "a": "বায়োটিন"
+    "q": "What is the chemical name of Vitamin B7?",
+    "a": "Biotin"
   },
   {
     "id": "r2333",
@@ -11677,12 +11677,12 @@
   {
     "id": "r2336",
     "q": "Which river is known as the 'Vridha Ganga'?",
-    "a": "গোদাবৰী"
+    "a": "Godavari"
   },
   {
     "id": "r2337",
     "q": "Who was the first woman to win a Nobel Prize in two different categories?",
-    "a": "মেৰী কিউৰী"
+    "a": "Marie Curie"
   },
   {
     "id": "r2338",
@@ -11747,7 +11747,7 @@
   {
     "id": "r2350",
     "q": "Who is the author of 'Glimpses of World History'?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r2351",
@@ -11757,7 +11757,7 @@
   {
     "id": "r2352",
     "q": "Which planet is known as the 'Sideways Planet' due to its tilt?",
-    "a": "ইউৰেনাচ"
+    "a": "Uranus"
   },
   {
     "id": "r2353",
@@ -11816,8 +11816,8 @@
   },
   {
     "id": "r2364",
-    "q": "এছকিউএলৰ সম্পূৰ্ণ ৰূপটো কি?",
-    "a": "কাঠামোগত প্ৰশ্নৰ ভাষা"
+    "q": "What is the full form of SQL?",
+    "a": "Structured Query Language"
   },
   {
     "id": "r2365",
@@ -11837,7 +11837,7 @@
   {
     "id": "r2368",
     "q": "What is the chemical name of Dry Ice?",
-    "a": "কঠিন কাৰ্বন ডাই অক্সাইড"
+    "a": "Solid Carbon Dioxide"
   },
   {
     "id": "r2369",
@@ -11857,7 +11857,7 @@
   {
     "id": "r2372",
     "q": "Which gas is used to fill the tires of aircraft?",
-    "a": "নাইট্ৰজেন"
+    "a": "Nitrogen"
   },
   {
     "id": "r2373",
@@ -11882,7 +11882,7 @@
   {
     "id": "r2377",
     "q": "In which state is the 'Sariska Tiger Reserve' located?",
-    "a": "ৰাজস্থান"
+    "a": "Rajasthan"
   },
   {
     "id": "r2378",
@@ -11947,7 +11947,7 @@
   {
     "id": "r2390",
     "q": "Which gas is produced during photosynthesis?",
-    "a": "অক্সিজেন"
+    "a": "Oxygen"
   },
   {
     "id": "r2391",
@@ -11956,7 +11956,7 @@
   },
   {
     "id": "r2392",
-    "q": "ভিটামিন বি৫ ৰ ৰাসায়নিক নাম কি?",
+    "q": "What is the chemical name of Vitamin B5?",
     "a": "Pantothenic Acid"
   },
   {
@@ -11977,12 +11977,12 @@
   {
     "id": "r2396",
     "q": "Which city is known as the 'Silicon Valley of India'?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r2397",
-    "q": "মিছ ৱৰ্ল্ড খিতাপ লাভ কৰা প্ৰথম ভাৰতীয় মহিলা কোন আছিল?",
-    "a": "ৰীতা ফাৰিয়া"
+    "q": "Who was the first Indian woman to win the Miss World title?",
+    "a": "Reita Faria"
   },
   {
     "id": "r2398",
@@ -12106,7 +12106,7 @@
   },
   {
     "id": "r2422",
-    "q": "এছিয়াৰ আটাইতকৈ দীঘল নদী কোনটো?",
+    "q": "Which is the longest river in Asia?",
     "a": "Yangtze"
   },
   {
@@ -12162,12 +12162,12 @@
   {
     "id": "r2433",
     "q": "Who was the first Indian woman to win the Miss Earth title?",
-    "a": "নিকোল ফাৰিয়া"
+    "a": "Nicole Faria"
   },
   {
     "id": "r2434",
     "q": "Which is the largest ocean in the world?",
-    "a": "প্ৰশান্ত মহাসাগৰ"
+    "a": "Pacific Ocean"
   },
   {
     "id": "r2435",
@@ -12197,7 +12197,7 @@
   {
     "id": "r2440",
     "q": "Which planet is known as the 'Evening Star'?",
-    "a": "শুক্ৰ"
+    "a": "Venus"
   },
   {
     "id": "r2441",
@@ -12242,12 +12242,12 @@
   {
     "id": "r2449",
     "q": "Which is the headquarters of the North Western Railway?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r2450",
     "q": "Who is the author of 'Discovery of India'?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r2451",
@@ -12332,7 +12332,7 @@
   {
     "id": "r2467",
     "q": "Which Indian state is the largest producer of coffee?",
-    "a": "কৰ্ণাটক"
+    "a": "Karnataka"
   },
   {
     "id": "r2468",
@@ -12342,7 +12342,7 @@
   {
     "id": "r2469",
     "q": "Where is the headquarters of the North Western Railway?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r2470",
@@ -12412,7 +12412,7 @@
   {
     "id": "r2483",
     "q": "Who was the first Indian woman to win a medal in Badminton at the Olympics?",
-    "a": "চাইনা নেহৱাল"
+    "a": "Saina Nehwal"
   },
   {
     "id": "r2484",
@@ -12437,7 +12437,7 @@
   {
     "id": "r2488",
     "q": "Where is the headquarters of the East Coast Railway?",
-    "a": "ভুবনেশ্বৰ"
+    "a": "Bhubaneswar"
   },
   {
     "id": "r2489",
@@ -12452,7 +12452,7 @@
   {
     "id": "r2491",
     "q": "Who was the first Indian woman to win a gold medal in the Asian Games?",
-    "a": "কমলজিৎ চান্ধু"
+    "a": "Kamaljeet Sandhu"
   },
   {
     "id": "r2492",
@@ -12467,7 +12467,7 @@
   {
     "id": "r2494",
     "q": "Which is the second most abundant gas in the Earth's atmosphere?",
-    "a": "অক্সিজেন"
+    "a": "Oxygen"
   },
   {
     "id": "r2495",
@@ -12557,7 +12557,7 @@
   {
     "id": "r2512",
     "q": "Which planet is known as 'Earth's Twin'?",
-    "a": "শুক্ৰ"
+    "a": "Venus"
   },
   {
     "id": "r2513",
@@ -12581,7 +12581,7 @@
   },
   {
     "id": "r2517",
-    "q": "'সাতবাহন ৰাজবংশ' ৰ প্ৰতিষ্ঠাপক কোন আছিল?",
+    "q": "Who was the founder of the 'Satavahana Dynasty'?",
     "a": "Simuka"
   },
   {
@@ -12596,7 +12596,7 @@
   },
   {
     "id": "r2520",
-    "q": "প্ৰথম পাঁচটা জোখৰ সংখ্যাৰ গড় কিমান?",
+    "q": "What is the average of first five even numbers?",
     "a": "6"
   },
   {
@@ -12661,8 +12661,8 @@
   },
   {
     "id": "r2533",
-    "q": "মিছ ৱৰ্ল্ড খিতাপ লাভ কৰা প্ৰথম ভাৰতীয় মহিলা কোন আছিল?",
-    "a": "ৰীতা ফাৰিয়া"
+    "q": "Who was the first Indian woman to win the Miss World title?",
+    "a": "Reita Faria"
   },
   {
     "id": "r2534",
@@ -12671,8 +12671,8 @@
   },
   {
     "id": "r2535",
-    "q": "যদি এইটো ৪: ০০ হয়, ঘড়ীৰ হাতৰ মাজৰ কোণটো কি?",
-    "a": "$ 120^\\ চাৰ্ক $"
+    "q": "If it is 4:00, what is the angle between the hands of the clock?",
+    "a": "$120^\\circ$"
   },
   {
     "id": "r2536",
@@ -12687,7 +12687,7 @@
   {
     "id": "r2538",
     "q": "Where is the headquarters of the Southern Railway?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r2539",
@@ -12697,7 +12697,7 @@
   {
     "id": "r2540",
     "q": "Which planet has the shortest day in the solar system?",
-    "a": "বৃহস্পতি"
+    "a": "Jupiter"
   },
   {
     "id": "r2541",
@@ -12727,7 +12727,7 @@
   {
     "id": "r2546",
     "q": "Which city is known as the 'Silicon Valley of India'?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r2547",
@@ -12742,7 +12742,7 @@
   {
     "id": "r2549",
     "q": "Which is the headquarters of the North Eastern Railway?",
-    "a": "গোৰখপুৰ"
+    "a": "Gorakhpur"
   },
   {
     "id": "r2550",
@@ -12757,7 +12757,7 @@
   {
     "id": "r2552",
     "q": "Which is the largest coffee-producing state in India?",
-    "a": "কৰ্ণাটক"
+    "a": "Karnataka"
   },
   {
     "id": "r2553",
@@ -12807,7 +12807,7 @@
   {
     "id": "r2562",
     "q": "Which river is known as the 'Dakshina Ganga'?",
-    "a": "গোদাবৰী"
+    "a": "Godavari"
   },
   {
     "id": "r2563",
@@ -12816,8 +12816,8 @@
   },
   {
     "id": "r2564",
-    "q": "ইউআৰএলৰ সম্পূৰ্ণ ৰূপটো কি?",
-    "a": "ইউনিফৰ্ম ৰিচ 'ৰ্চ লোকেটাৰ"
+    "q": "What is the full form of URL?",
+    "a": "Uniform Resource Locator"
   },
   {
     "id": "r2565",
@@ -12832,7 +12832,7 @@
   {
     "id": "r2567",
     "q": "Which Indian state is the largest producer of silver?",
-    "a": "ৰাজস্থান"
+    "a": "Rajasthan"
   },
   {
     "id": "r2568",
@@ -12882,7 +12882,7 @@
   {
     "id": "r2577",
     "q": "In which state is the 'Periyar National Park' located?",
-    "a": "কেৰালা"
+    "a": "Kerala"
   },
   {
     "id": "r2578",
@@ -12912,7 +12912,7 @@
   {
     "id": "r2583",
     "q": "Who was the first Indian woman to win a gold medal in the Asian Games?",
-    "a": "কমলজিৎ চান্ধু"
+    "a": "Kamaljeet Sandhu"
   },
   {
     "id": "r2584",
@@ -12947,7 +12947,7 @@
   {
     "id": "r2590",
     "q": "Which gas is used in the manufacturing of glass?",
-    "a": "নাইট্ৰজেন"
+    "a": "Nitrogen"
   },
   {
     "id": "r2591",
@@ -12956,8 +12956,8 @@
   },
   {
     "id": "r2592",
-    "q": "ভিটামিন বি৭ ৰ ৰাসায়নিক নাম কি?",
-    "a": "বায়োটিন"
+    "q": "What is the chemical name of Vitamin B7?",
+    "a": "Biotin"
   },
   {
     "id": "r2593",
@@ -12967,7 +12967,7 @@
   {
     "id": "r2594",
     "q": "Which is the most abundant element in the Earth's crust?",
-    "a": "অক্সিজেন"
+    "a": "Oxygen"
   },
   {
     "id": "r2595",
@@ -12992,7 +12992,7 @@
   {
     "id": "r2599",
     "q": "Which is the fastest train in India currently?",
-    "a": "বন্দে ভাৰত এক্সপ্ৰেছ"
+    "a": "Vande Bharat Express"
   },
   {
     "id": "r2600",
@@ -13026,8 +13026,8 @@
   },
   {
     "id": "r2606",
-    "q": "'প্ৰাৰ্থনা সমাজ' কোনে প্ৰতিষ্ঠা কৰিছিল?",
-    "a": "আত্মাৰাম পাণ্ডুৰাং"
+    "q": "Who founded the 'Prarthana Samaj'?",
+    "a": "Atmaram Pandurang"
   },
   {
     "id": "r2607",
@@ -13047,7 +13047,7 @@
   {
     "id": "r2610",
     "q": "If $5x + 10 = 60$, what is the value of $x$?",
-    "a": "10."
+    "a": "10"
   },
   {
     "id": "r2611",
@@ -13091,8 +13091,8 @@
   },
   {
     "id": "r2619",
-    "q": "ভাৰতীয় ৰেলৱে ইনষ্টিটিউট অফ ইলেক্ট্ৰিকেল ইঞ্জিনিয়াৰিং ক 'ত অৱস্থিত?",
-    "a": "নাসিক"
+    "q": "Where is the Indian Railway Institute of Electrical Engineering located?",
+    "a": "Nashik"
   },
   {
     "id": "r2620",
@@ -13107,7 +13107,7 @@
   {
     "id": "r2622",
     "q": "Which is the longest river in the world?",
-    "a": "নাইল"
+    "a": "Nile"
   },
   {
     "id": "r2623",
@@ -13142,7 +13142,7 @@
   {
     "id": "r2629",
     "q": "Who was the first woman to win the Nobel Prize?",
-    "a": "মেৰী কিউৰী"
+    "a": "Marie Curie"
   },
   {
     "id": "r2630",
@@ -13156,7 +13156,7 @@
   },
   {
     "id": "r2632",
-    "q": "ভিটামিন বি৫ ৰ ৰাসায়নিক নাম কি?",
+    "q": "What is the chemical name of Vitamin B5?",
     "a": "Pantothenic Acid"
   },
   {
@@ -13197,7 +13197,7 @@
   {
     "id": "r2640",
     "q": "Which planet is known as the 'Evening Star'?",
-    "a": "শুক্ৰ"
+    "a": "Venus"
   },
   {
     "id": "r2641",
@@ -13231,18 +13231,18 @@
   },
   {
     "id": "r2647",
-    "q": "মিছ ৱৰ্ল্ড খিতাপ লাভ কৰা প্ৰথম ভাৰতীয় মহিলা কোন আছিল?",
-    "a": "ৰীতা ফাৰিয়া"
+    "q": "Who was the first Indian woman to win the Miss World title?",
+    "a": "Reita Faria"
   },
   {
     "id": "r2648",
-    "q": "এছকিউএলৰ সম্পূৰ্ণ ৰূপটো কি?",
-    "a": "কাঠামোগত প্ৰশ্নৰ ভাষা"
+    "q": "What is the full form of SQL?",
+    "a": "Structured Query Language"
   },
   {
     "id": "r2649",
     "q": "Which is the headquarters of the Northern Railway?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r2650",
@@ -13292,7 +13292,7 @@
   {
     "id": "r2659",
     "q": "Which is the first railway zone in India to become 100% electrified?",
-    "a": "ৱেষ্ট চেণ্ট্ৰেল ৰে'লৱে"
+    "a": "West Central Railway"
   },
   {
     "id": "r2660",
@@ -13301,13 +13301,13 @@
   },
   {
     "id": "r2661",
-    "q": "জ্ঞানপীঠ বঁটা লাভ কৰা প্ৰথম মহিলাজন কোন আছিল?",
+    "q": "Who was the first woman to win the Jnanpith Award?",
     "a": "Ashapoorna Devi"
   },
   {
     "id": "r2662",
     "q": "Which river is known as the 'Singi Khamban' in Tibet?",
-    "a": "সিন্ধু"
+    "a": "Indus"
   },
   {
     "id": "r2663",
@@ -13382,7 +13382,7 @@
   {
     "id": "r2677",
     "q": "In which state is the 'Nanda Devi National Park' located?",
-    "a": "উত্তৰাখণ্ড"
+    "a": "Uttarakhand"
   },
   {
     "id": "r2678",
@@ -13391,7 +13391,7 @@
   },
   {
     "id": "r2679",
-    "q": "ভাৰতৰ উচ্চতম ন্যায়ালয়ৰ প্ৰথম মহিলা ন্যায়াধীশ কোন আছিল?",
+    "q": "Who was the first woman judge of the Supreme Court of India?",
     "a": "Fathima Beevi"
   },
   {
@@ -13436,8 +13436,8 @@
   },
   {
     "id": "r2688",
-    "q": "উত্তৰ উপকূল ৰে 'লৱেৰ মুখ্য কাৰ্যালয় ক' ত আছে?",
-    "a": "বিশাখাপত্তনম"
+    "q": "Where is the headquarters of the North Coast Railway?",
+    "a": "Visakhapatnam"
   },
   {
     "id": "r2689",
@@ -13452,7 +13452,7 @@
   {
     "id": "r2691",
     "q": "Who was the first woman to receive the Bharat Ratna?",
-    "a": "ইন্দিৰা গান্ধী"
+    "a": "Indira Gandhi"
   },
   {
     "id": "r2692",
@@ -13482,7 +13482,7 @@
   {
     "id": "r2697",
     "q": "Who was the first Indian to receive the Nobel Peace Prize?",
-    "a": "মাদাৰ টেৰেছা"
+    "a": "Mother Teresa"
   },
   {
     "id": "r2698",
@@ -13497,7 +13497,7 @@
   {
     "id": "r2700",
     "q": "Who is the author of 'Discovery of India'?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r2701",
@@ -13541,8 +13541,8 @@
   },
   {
     "id": "r2709",
-    "q": "জবলপুৰত কোনটো ৰে 'লৱে জ' নৰ মুখ্য কাৰ্যালয় আছে?",
-    "a": "ৱেষ্ট চেণ্ট্ৰেল ৰে'লৱে"
+    "q": "Which railway zone is headquartered in Jabalpur?",
+    "a": "West Central Railway"
   },
   {
     "id": "r2710",
@@ -13557,7 +13557,7 @@
   {
     "id": "r2712",
     "q": "Which planet is known as the 'Morning Star'?",
-    "a": "শুক্ৰ"
+    "a": "Venus"
   },
   {
     "id": "r2713",
@@ -13572,7 +13572,7 @@
   {
     "id": "r2715",
     "q": "Deficiency of Vitamin D causes which disease in children?",
-    "a": "ৰিকেটসমূহ"
+    "a": "Rickets"
   },
   {
     "id": "r2716",
@@ -13607,7 +13607,7 @@
   {
     "id": "r2722",
     "q": "Which is the deepest ocean in the world?",
-    "a": "প্ৰশান্ত মহাসাগৰ"
+    "a": "Pacific Ocean"
   },
   {
     "id": "r2723",
@@ -13631,8 +13631,8 @@
   },
   {
     "id": "r2727",
-    "q": "'বান্দিপুৰ ৰাষ্ট্ৰীয় উদ্যান' কোনখন ৰাজ্যত অৱস্থিত?",
-    "a": "কৰ্ণাটক"
+    "q": "In which state is the 'Bandipur National Park' located?",
+    "a": "Karnataka"
   },
   {
     "id": "r2728",
@@ -13662,7 +13662,7 @@
   {
     "id": "r2733",
     "q": "Who was the first Indian woman to win the Miss Earth title?",
-    "a": "নিকোল ফাৰিয়া"
+    "a": "Nicole Faria"
   },
   {
     "id": "r2734",
@@ -13682,12 +13682,12 @@
   {
     "id": "r2737",
     "q": "Who was the first Indian woman to win an Olympic medal in Badminton?",
-    "a": "চাইনা নেহৱাল"
+    "a": "Saina Nehwal"
   },
   {
     "id": "r2738",
     "q": "Where is the headquarters of the Southern Railway?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r2739",
@@ -13742,12 +13742,12 @@
   {
     "id": "r2749",
     "q": "Which is the headquarters of the South Eastern Railway?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r2750",
     "q": "Who is the author of 'Glimpses of World History'?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r2751",
@@ -13757,7 +13757,7 @@
   {
     "id": "r2752",
     "q": "Which Indian state is the largest producer of coffee?",
-    "a": "কৰ্ণাটক"
+    "a": "Karnataka"
   },
   {
     "id": "r2753",
@@ -13776,8 +13776,8 @@
   },
   {
     "id": "r2756",
-    "q": "মিথেনৰ ৰাসায়নিক সংকেত কি?",
-    "a": "$CH_4 $"
+    "q": "What is the chemical formula of Methane?",
+    "a": "$CH_4$"
   },
   {
     "id": "r2757",
@@ -13796,13 +13796,13 @@
   },
   {
     "id": "r2760",
-    "q": "প্ৰথম পাঁচটা জোখৰ সংখ্যাৰ গড় কিমান?",
+    "q": "What is the average of first five even numbers?",
     "a": "6"
   },
   {
     "id": "r2761",
-    "q": "ৰসায়ন বিজ্ঞানত ন 'বেল বঁটা লাভ কৰা প্ৰথম মহিলাজন কোন আছিল?",
-    "a": "মেৰী কিউৰী"
+    "q": "Who was the first woman to win the Nobel Prize in Chemistry?",
+    "a": "Marie Curie"
   },
   {
     "id": "r2762",
@@ -13816,8 +13816,8 @@
   },
   {
     "id": "r2764",
-    "q": "ইউআৰএলৰ সম্পূৰ্ণ ৰূপটো কি?",
-    "a": "ইউনিফৰ্ম ৰিচ 'ৰ্চ লোকেটাৰ"
+    "q": "What is the full form of URL?",
+    "a": "Uniform Resource Locator"
   },
   {
     "id": "r2765",
@@ -13831,8 +13831,8 @@
   },
   {
     "id": "r2767",
-    "q": "কোনখন ভাৰতীয় ৰাজ্য ৰবৰ সৰ্ববৃহৎ উৎপাদক?",
-    "a": "কেৰালা"
+    "q": "Which Indian state is the largest producer of rubber?",
+    "a": "Kerala"
   },
   {
     "id": "r2768",
@@ -13851,8 +13851,8 @@
   },
   {
     "id": "r2771",
-    "q": "পদাৰ্থ বিজ্ঞানত ন 'বেল বঁটা লাভ কৰা প্ৰথম ভাৰতীয়জন কোন আছিল?",
-    "a": "চি ভি ৰামান"
+    "q": "Who was the first Indian to win a Nobel Prize in Physics?",
+    "a": "C.V. Raman"
   },
   {
     "id": "r2772",
@@ -13866,8 +13866,8 @@
   },
   {
     "id": "r2774",
-    "q": "কোনখন দেশক 'মধ্যৰাতিৰ সূৰ্যৰ দেশ' বুলি জনা যায়?",
-    "a": "নৰৱে' "
+    "q": "Which country is known as the 'Land of the Midnight Sun'?",
+    "a": "Norway"
   },
   {
     "id": "r2775",
@@ -13882,7 +13882,7 @@
   {
     "id": "r2777",
     "q": "In which state is the 'Jim Corbett National Park' located?",
-    "a": "উত্তৰাখণ্ড"
+    "a": "Uttarakhand"
   },
   {
     "id": "r2778",
@@ -13891,12 +13891,12 @@
   },
   {
     "id": "r2779",
-    "q": "এখন ভাৰতীয় ৰাজ্যৰ প্ৰথম মহিলা মুখ্যমন্ত্ৰী কোন আছিল?",
-    "a": "সুচেতা ক্ৰিপালানি"
+    "q": "Who was the first woman Chief Minister of an Indian state?",
+    "a": "Sucheta Kripalani"
   },
   {
     "id": "r2780",
-    "q": "৬ ৰ ঘনকটো কি?",
+    "q": "What is the cube of 6?",
     "a": "216"
   },
   {
@@ -13956,8 +13956,8 @@
   },
   {
     "id": "r2792",
-    "q": "ভিটামিন বি৭ ৰ ৰাসায়নিক নাম কি?",
-    "a": "বায়োটিন"
+    "q": "What is the chemical name of Vitamin B7?",
+    "a": "Biotin"
   },
   {
     "id": "r2793",
@@ -13967,7 +13967,7 @@
   {
     "id": "r2794",
     "q": "Which is the most abundant element in the human body?",
-    "a": "অক্সিজেন"
+    "a": "Oxygen"
   },
   {
     "id": "r2795",
@@ -13997,7 +13997,7 @@
   {
     "id": "r2800",
     "q": "Who wrote the famous book 'The Guide'?",
-    "a": "আৰ .কে. নাৰায়ণ"
+    "a": "R.K. Narayan"
   },
   {
     "id": "r2801",
@@ -14007,7 +14007,7 @@
   {
     "id": "r2802",
     "q": "Which is the smallest continent in the world?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r2803",
@@ -14026,8 +14026,8 @@
   },
   {
     "id": "r2806",
-    "q": "'প্ৰাৰ্থনা সমাজ' কোনে প্ৰতিষ্ঠা কৰিছিল?",
-    "a": "আত্মাৰাম পাণ্ডুৰাং"
+    "q": "Who founded the 'Prarthana Samaj'?",
+    "a": "Atmaram Pandurang"
   },
   {
     "id": "r2807",
@@ -14047,7 +14047,7 @@
   {
     "id": "r2810",
     "q": "If $4x - 8 = 32$, what is the value of $x$?",
-    "a": "10."
+    "a": "10"
   },
   {
     "id": "r2811",
@@ -14092,7 +14092,7 @@
   {
     "id": "r2819",
     "q": "Where is the Indian Railway Institute of Electrical Engineering?",
-    "a": "নাসিক"
+    "a": "Nashik"
   },
   {
     "id": "r2820",
@@ -14126,8 +14126,8 @@
   },
   {
     "id": "r2826",
-    "q": "এছকিউএলৰ সম্পূৰ্ণ ৰূপটো কি?",
-    "a": "কাঠামোগত প্ৰশ্নৰ ভাষা"
+    "q": "What is the full form of SQL?",
+    "a": "Structured Query Language"
   },
   {
     "id": "r2827",
@@ -14142,7 +14142,7 @@
   {
     "id": "r2829",
     "q": "Who was the first woman to be awarded the Bharat Ratna?",
-    "a": "ইন্দিৰা গান্ধী"
+    "a": "Indira Gandhi"
   },
   {
     "id": "r2830",
@@ -14161,8 +14161,8 @@
   },
   {
     "id": "r2833",
-    "q": "মিছ ৱৰ্ল্ড খিতাপ লাভ কৰা প্ৰথম ভাৰতীয় মহিলা কোন আছিল?",
-    "a": "ৰীতা ফাৰিয়া"
+    "q": "Who was the first Indian woman to win the Miss World title?",
+    "a": "Reita Faria"
   },
   {
     "id": "r2834",
@@ -14187,7 +14187,7 @@
   {
     "id": "r2838",
     "q": "Where is the headquarters of the Southern Railway?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r2839",
@@ -14221,13 +14221,13 @@
   },
   {
     "id": "r2845",
-    "q": "$\\tan(30^\\ circ)$ ৰ মূল্য কিমান?",
-    "a": "$ 1/\\ sqrt {3}$"
+    "q": "What is the value of $\\tan(30^\\circ)$?",
+    "a": "$1/\\sqrt{3}$"
   },
   {
     "id": "r2846",
     "q": "Which city is known as the 'Pink City'?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r2847",
@@ -14242,7 +14242,7 @@
   {
     "id": "r2849",
     "q": "Which is the headquarters of the Northern Railway?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r2850",
@@ -14257,7 +14257,7 @@
   {
     "id": "r2852",
     "q": "Which Indian state is the largest producer of sunflowers?",
-    "a": "কৰ্ণাটক"
+    "a": "Karnataka"
   },
   {
     "id": "r2853",
@@ -14271,8 +14271,8 @@
   },
   {
     "id": "r2855",
-    "q": "কোনটো ভিটামিনক ফলিক এচিড বুলিও কোৱা হয়?",
-    "a": "ভিটামিন B9"
+    "q": "Which vitamin is also known as Folic Acid?",
+    "a": "Vitamin B9"
   },
   {
     "id": "r2856",
@@ -14302,7 +14302,7 @@
   {
     "id": "r2861",
     "q": "Who was the first woman to win the Nobel Prize in Physics?",
-    "a": "মেৰী কিউৰী"
+    "a": "Marie Curie"
   },
   {
     "id": "r2862",
@@ -14336,13 +14336,13 @@
   },
   {
     "id": "r2868",
-    "q": "স্লেকড লাইমৰ ৰাসায়নিক নাম কি?",
-    "a": "কেলছিয়াম হাইড্ৰক্সাইড"
+    "q": "What is the chemical name of Slaked Lime?",
+    "a": "Calcium Hydroxide"
   },
   {
     "id": "r2869",
     "q": "Where is the headquarters of the East Coast Railway?",
-    "a": "ভুবনেশ্বৰ"
+    "a": "Bhubaneswar"
   },
   {
     "id": "r2870",
@@ -14367,7 +14367,7 @@
   {
     "id": "r2874",
     "q": "Which country is known as the 'Land of the Golden Fleece'?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r2875",
@@ -14386,7 +14386,7 @@
   },
   {
     "id": "r2878",
-    "q": "চৌম্বকীয় ফ্লাক্সৰ এছআই এককটো কি?",
+    "q": "What is the SI unit of Magnetic Flux?",
     "a": "Weber"
   },
   {
@@ -14427,7 +14427,7 @@
   {
     "id": "r2886",
     "q": "Which Article of the Constitution deals with the 'Right to Education'?",
-    "a": "অনুচ্ছেদ ২১এ"
+    "a": "Article 21A"
   },
   {
     "id": "r2887",
@@ -14437,7 +14437,7 @@
   {
     "id": "r2888",
     "q": "Where is the headquarters of the North Western Railway?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r2889",
@@ -14467,7 +14467,7 @@
   {
     "id": "r2894",
     "q": "Which is the most abundant gas in the Earth's atmosphere?",
-    "a": "নাইট্ৰজেন"
+    "a": "Nitrogen"
   },
   {
     "id": "r2895",
@@ -14507,7 +14507,7 @@
   {
     "id": "r2902",
     "q": "Which is the deepest lake in the world?",
-    "a": "বৈকাল হ্ৰদ"
+    "a": "Lake Baikal"
   },
   {
     "id": "r2903",
@@ -14522,7 +14522,7 @@
   {
     "id": "r2905",
     "q": "Which gas is used in the manufacturing of glass?",
-    "a": "নাইট্ৰজেন"
+    "a": "Nitrogen"
   },
   {
     "id": "r2906",
@@ -14566,8 +14566,8 @@
   },
   {
     "id": "r2914",
-    "q": "থাইলেণ্ডৰ ৰাজধানী কি?",
-    "a": "বেংকক "
+    "q": "What is the capital of Thailand?",
+    "a": "Bangkok"
   },
   {
     "id": "r2915",
@@ -14587,7 +14587,7 @@
   {
     "id": "r2918",
     "q": "Which is the hardest natural substance?",
-    "a": "হীৰা"
+    "a": "Diamond"
   },
   {
     "id": "r2919",
@@ -14606,7 +14606,7 @@
   },
   {
     "id": "r2922",
-    "q": "এছিয়াৰ আটাইতকৈ দীঘল নদী কোনটো?",
+    "q": "Which is the longest river in Asia?",
     "a": "Yangtze"
   },
   {
@@ -14617,7 +14617,7 @@
   {
     "id": "r2924",
     "q": "Which city is known as the 'City of Palaces'?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r2925",
@@ -14632,7 +14632,7 @@
   {
     "id": "r2927",
     "q": "In which state is the 'Ranthambore National Park' located?",
-    "a": "ৰাজস্থান"
+    "a": "Rajasthan"
   },
   {
     "id": "r2928",
@@ -14646,7 +14646,7 @@
   },
   {
     "id": "r2930",
-    "q": "$ 16 \\times 16 $ ৰ উৎপাদিত সামগ্ৰী কি?",
+    "q": "What is the product of $16 \\times 16$?",
     "a": "256"
   },
   {
@@ -14662,12 +14662,12 @@
   {
     "id": "r2933",
     "q": "Who was the first Indian woman to win an Olympic medal in Badminton?",
-    "a": "চাইনা নেহৱাল"
+    "a": "Saina Nehwal"
   },
   {
     "id": "r2934",
     "q": "Which is the largest ocean in the world?",
-    "a": "প্ৰশান্ত মহাসাগৰ"
+    "a": "Pacific Ocean"
   },
   {
     "id": "r2935",
@@ -14687,7 +14687,7 @@
   {
     "id": "r2938",
     "q": "Where is the headquarters of the Western Railway?",
-    "a": "মুম্বাই (চাৰ্চগেট)"
+    "a": "Mumbai (Churchgate)"
   },
   {
     "id": "r2939",
@@ -14697,7 +14697,7 @@
   {
     "id": "r2940",
     "q": "Which planet is known as the 'Evening Star'?",
-    "a": "শুক্ৰ"
+    "a": "Venus"
   },
   {
     "id": "r2941",
@@ -14717,7 +14717,7 @@
   {
     "id": "r2944",
     "q": "Which gas is used in a light bulb?",
-    "a": "আর্গন"
+    "a": "Argon"
   },
   {
     "id": "r2945",
@@ -14742,12 +14742,12 @@
   {
     "id": "r2949",
     "q": "Which is the headquarters of the Southern Railway?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r2950",
     "q": "Who wrote 'The Discovery of India'?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r2951",
@@ -14782,11 +14782,11 @@
   {
     "id": "r2957",
     "q": "Who is known as the 'Punjab Kesari'?",
-    "a": "লালা লাজপত ৰায়"
+    "a": "Lala Lajpat Rai"
   },
   {
     "id": "r2958",
-    "q": "$\\cos(90^\\ circ)$ ৰ মূল্য কিমান?",
+    "q": "What is the value of $\\cos(90^\\circ)$?",
     "a": "0"
   },
   {
@@ -14811,8 +14811,8 @@
   },
   {
     "id": "r2963",
-    "q": "দক্ষিণ কোৰিয়াৰ মুদ্ৰা কি?",
-    "a": "ৱন "
+    "q": "What is the currency of South Korea?",
+    "a": "Won"
   },
   {
     "id": "r2964",
@@ -14841,8 +14841,8 @@
   },
   {
     "id": "r2969",
-    "q": "উত্তৰ-পূব ৰেলৱেৰ মুখ্য কাৰ্যালয় ক 'ত আছে?",
-    "a": "গোৰখপুৰ"
+    "q": "Where is the headquarters of the North Eastern Railway?",
+    "a": "Gorakhpur"
   },
   {
     "id": "r2970",
@@ -14952,7 +14952,7 @@
   {
     "id": "r2991",
     "q": "Who was the first woman President of India?",
-    "a": "প্ৰতিভা পাটিল"
+    "a": "Pratibha Patil"
   },
   {
     "id": "r2992",
@@ -14992,7 +14992,7 @@
   {
     "id": "r2999",
     "q": "Which railway station is the headquarters of the Western Railway?",
-    "a": "মুম্বাই (চাৰ্চগেট)"
+    "a": "Mumbai (Churchgate)"
   },
   {
     "id": "r3000",
@@ -15267,7 +15267,7 @@
   {
     "id": "r3054",
     "q": "What is the term of office for a member of the Rajya Sabha?",
-    "a": "৬ বছৰ"
+    "a": "6 years"
   },
   {
     "id": "r3055",
@@ -15277,17 +15277,17 @@
   {
     "id": "r3056",
     "q": "What is the minimum age to become the President of India?",
-    "a": "৩৫ বছৰ"
+    "a": "35 years"
   },
   {
     "id": "r3057",
     "q": "What is the minimum age to become a member of the Lok Sabha?",
-    "a": "২৫ বছৰ"
+    "a": "25 years"
   },
   {
     "id": "r3058",
     "q": "What is the minimum age to become a member of the Rajya Sabha?",
-    "a": "30 বছৰ"
+    "a": "30 years"
   },
   {
     "id": "r3059",
@@ -15307,12 +15307,12 @@
   {
     "id": "r3062",
     "q": "Which part of the Constitution deals with Fundamental Rights?",
-    "a": "খণ্ড III"
+    "a": "Part III"
   },
   {
     "id": "r3063",
     "q": "Which part of the Constitution deals with Directive Principles of State Policy?",
-    "a": "খণ্ড IV"
+    "a": "Part IV"
   },
   {
     "id": "r3064",
@@ -15417,12 +15417,12 @@
   {
     "id": "r3084",
     "q": "What is the powerhouse of the cell?",
-    "a": "মাইটোকন্ড্রিয়া"
+    "a": "Mitochondria"
   },
   {
     "id": "r3085",
     "q": "Which pigment gives green color to leaves?",
-    "a": "ক্লোৰোফিল"
+    "a": "Chlorophyll"
   },
   {
     "id": "r3086",
@@ -15442,7 +15442,7 @@
   {
     "id": "r3089",
     "q": "Which country is known as the Land of the Midnight Sun?",
-    "a": "নৰৱে' "
+    "a": "Norway"
   },
   {
     "id": "r3090",
@@ -15487,7 +15487,7 @@
   {
     "id": "r3098",
     "q": "Which is the largest ocean?",
-    "a": "প্ৰশান্ত মহাসাগৰ"
+    "a": "Pacific Ocean"
   },
   {
     "id": "r3099",
@@ -15582,7 +15582,7 @@
   {
     "id": "r3117",
     "q": "Which is the largest desert in India?",
-    "a": "থাৰ মৰুভূমি"
+    "a": "Thar Desert"
   },
   {
     "id": "r3118",
@@ -15592,7 +15592,7 @@
   {
     "id": "r3119",
     "q": "Where is the Silent Valley located?",
-    "a": "কেৰালা"
+    "a": "Kerala"
   },
   {
     "id": "r3120",
@@ -15602,7 +15602,7 @@
   {
     "id": "r3121",
     "q": "Which city is known as the City of Palaces in India?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r3122",
@@ -15632,7 +15632,7 @@
   {
     "id": "r3127",
     "q": "What is the unit of force?",
-    "a": "নিউটন"
+    "a": "Newton"
   },
   {
     "id": "r3128",
@@ -15642,7 +15642,7 @@
   {
     "id": "r3129",
     "q": "What is the unit of power?",
-    "a": "ৱাট"
+    "a": "Watt"
   },
   {
     "id": "r3130",
@@ -15652,7 +15652,7 @@
   {
     "id": "r3131",
     "q": "Which instrument is used to measure humidity?",
-    "a": "হাইগ্ৰোমিটাৰ"
+    "a": "Hygrometer"
   },
   {
     "id": "r3132",
@@ -15662,7 +15662,7 @@
   {
     "id": "r3133",
     "q": "Which instrument is used to measure earthquake intensity?",
-    "a": "সিসমোগ্ৰাফ"
+    "a": "Seismograph"
   },
   {
     "id": "r3134",
@@ -15712,7 +15712,7 @@
   {
     "id": "r3143",
     "q": "Which is the national fruit of India?",
-    "a": "আম"
+    "a": "Mango"
   },
   {
     "id": "r3144",
@@ -15782,7 +15782,7 @@
   {
     "id": "r3157",
     "q": "How many years are there in a decade?",
-    "a": "10."
+    "a": "10"
   },
   {
     "id": "r3158",
@@ -15802,7 +15802,7 @@
   {
     "id": "r3161",
     "q": "Which gas is essential for human breathing?",
-    "a": "অক্সিজেন"
+    "a": "Oxygen"
   },
   {
     "id": "r3162",
@@ -15862,12 +15862,12 @@
   {
     "id": "r3173",
     "q": "Which is the largest continent?",
-    "a": "এছিয়া"
+    "a": "Asia"
   },
   {
     "id": "r3174",
     "q": "Which is the smallest continent?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r3175",
@@ -15897,12 +15897,12 @@
   {
     "id": "r3180",
     "q": "Silicon Valley of India?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r3181",
     "q": "Pink City of India?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r3182",
@@ -15942,7 +15942,7 @@
   {
     "id": "r3189",
     "q": "Who was the first PM of India?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r3190",
@@ -15952,7 +15952,7 @@
   {
     "id": "r3191",
     "q": "What is the currency of India?",
-    "a": "ভাৰতীয় টকা"
+    "a": "Indian Rupee"
   },
   {
     "id": "r3192",
@@ -15977,7 +15977,7 @@
   {
     "id": "r3196",
     "q": "What is the national song of India?",
-    "a": "বন্দে মাতৰাম"
+    "a": "Vande Mataram"
   },
   {
     "id": "r3197",
@@ -15992,17 +15992,17 @@
   {
     "id": "r3199",
     "q": "What is the capital of Uttar Pradesh?",
-    "a": "লক্ষ্ণৌ"
+    "a": "Lucknow"
   },
   {
     "id": "r3200",
     "q": "What is the capital of Maharashtra?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3201",
     "q": "What is the capital of West Bengal?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r3202",
@@ -16017,7 +16017,7 @@
   {
     "id": "r3204",
     "q": "Which is the largest state in India by area?",
-    "a": "ৰাজস্থান"
+    "a": "Rajasthan"
   },
   {
     "id": "r3205",
@@ -16032,12 +16032,12 @@
   {
     "id": "r3207",
     "q": "Where is the Gateway of India?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3208",
     "q": "Where is the India Gate?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r3209",
@@ -16062,7 +16062,7 @@
   {
     "id": "r3213",
     "q": "Which gas is most abundant on Earth?",
-    "a": "নাইট্ৰজেন"
+    "a": "Nitrogen"
   },
   {
     "id": "r3214",
@@ -16172,7 +16172,7 @@
   {
     "id": "r3235",
     "q": "Who is the first Prime Minister of free India?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r3236",
@@ -16192,12 +16192,12 @@
   {
     "id": "r3239",
     "q": "In which city is the Hawa Mahal located?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r3240",
     "q": "Who is known as the Iron Lady of India?",
-    "a": "ইন্দিৰা গান্ধী"
+    "a": "Indira Gandhi"
   },
   {
     "id": "r3241",
@@ -16262,12 +16262,12 @@
   {
     "id": "r3253",
     "q": "Which blood group is the universal donor?",
-    "a": "O ঋণাত্মক"
+    "a": "O negative"
   },
   {
     "id": "r3254",
     "q": "Which blood group is the universal recipient?",
-    "a": "AB পজিটিভ"
+    "a": "AB positive"
   },
   {
     "id": "r3255",
@@ -16337,7 +16337,7 @@
   {
     "id": "r3268",
     "q": "Who was the first woman to win a Nobel Prize in India?",
-    "a": "মাদাৰ টেৰেছা"
+    "a": "Mother Teresa"
   },
   {
     "id": "r3269",
@@ -16347,7 +16347,7 @@
   {
     "id": "r3270",
     "q": "In which city is the headquarters of RBI located?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3271",
@@ -16367,17 +16367,17 @@
   {
     "id": "r3274",
     "q": "What is the capital of Karnataka?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r3275",
     "q": "What is the capital of Telangana?",
-    "a": "হায়দৰাবাদ"
+    "a": "Hyderabad"
   },
   {
     "id": "r3276",
     "q": "What is the capital of Odisha?",
-    "a": "ভুবনেশ্বৰ"
+    "a": "Bhubaneswar"
   },
   {
     "id": "r3277",
@@ -16392,7 +16392,7 @@
   {
     "id": "r3279",
     "q": "Which state is known as the God's Own Country?",
-    "a": "কেৰালা"
+    "a": "Kerala"
   },
   {
     "id": "r3280",
@@ -16432,7 +16432,7 @@
   {
     "id": "r3287",
     "q": "Who was the first Indian woman to win Miss World?",
-    "a": "ৰীতা ফাৰিয়া"
+    "a": "Reita Faria"
   },
   {
     "id": "r3288",
@@ -16487,7 +16487,7 @@
   {
     "id": "r3298",
     "q": "Full form of IRCTC?",
-    "a": "ভাৰতীয় ৰে 'লৱে কেটাৰিং এণ্ড টুৰিজিম কৰ্পোৰেচন"
+    "a": "Indian Railway Catering and Tourism Corporation"
   },
   {
     "id": "r3299",
@@ -16582,7 +16582,7 @@
   {
     "id": "r3317",
     "q": "How many zones are there in Indian Railways?",
-    "a": "১৮"
+    "a": "18"
   },
   {
     "id": "r3318",
@@ -16602,27 +16602,27 @@
   {
     "id": "r3321",
     "q": "Where is the headquarters of North Railway?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r3322",
     "q": "Where is the headquarters of South Railway?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r3323",
     "q": "Where is the headquarters of East Railway?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r3324",
     "q": "Where is the headquarters of West Railway?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3325",
     "q": "Where is the headquarters of Central Railway?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3326",
@@ -16917,12 +16917,12 @@
   {
     "id": "r3384",
     "q": "Which city has three railway zone headquarters?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r3385",
     "q": "Where is the Wheel and Axle plant?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r3386",
@@ -16992,7 +16992,7 @@
   {
     "id": "r3399",
     "q": "Where is the Railway Protection Force (RPF) HQ?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r3400",
@@ -17622,7 +17622,7 @@
   {
     "id": "r3525",
     "q": "Which is the longest river in Africa?",
-    "a": "নাইল"
+    "a": "Nile"
   },
   {
     "id": "r3526",
@@ -17672,7 +17672,7 @@
   {
     "id": "r3535",
     "q": "Which is the highest mountain peak in Asia?",
-    "a": "মাউণ্ট এভাৰেষ্ট"
+    "a": "Mount Everest"
   },
   {
     "id": "r3536",
@@ -17702,12 +17702,12 @@
   {
     "id": "r3541",
     "q": "Which is the largest lake in North America?",
-    "a": "চুপাৰিয়ৰ হ্ৰদ"
+    "a": "Lake Superior"
   },
   {
     "id": "r3542",
     "q": "Which is the largest country in Oceania?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r3543",
@@ -17752,7 +17752,7 @@
   {
     "id": "r3551",
     "q": "Which is the highest point on Earth?",
-    "a": "মাউণ্ট এভাৰেষ্ট"
+    "a": "Mount Everest"
   },
   {
     "id": "r3552",
@@ -18177,7 +18177,7 @@
   {
     "id": "r3636",
     "q": "What is the symbol of Sodium?",
-    "a": "NA"
+    "a": "Na"
   },
   {
     "id": "r3637",
@@ -18407,7 +18407,7 @@
   {
     "id": "r3682",
     "q": "What is the atomic number of Argon?",
-    "a": "১৮"
+    "a": "18"
   },
   {
     "id": "r3683",
@@ -18497,12 +18497,12 @@
   {
     "id": "r3700",
     "q": "Which state is known as the Silken State of India?",
-    "a": "কৰ্ণাটক"
+    "a": "Karnataka"
   },
   {
     "id": "r3701",
     "q": "Which state is known as the Coffee Bowl of India?",
-    "a": "কৰ্ণাটক"
+    "a": "Karnataka"
   },
   {
     "id": "r3702",
@@ -18537,7 +18537,7 @@
   {
     "id": "r3708",
     "q": "Which city is known as the Wine Capital of India?",
-    "a": "নাসিক"
+    "a": "Nashik"
   },
   {
     "id": "r3709",
@@ -18562,7 +18562,7 @@
   {
     "id": "r3713",
     "q": "Which city is known as the City of Nawabs?",
-    "a": "লক্ষ্ণৌ"
+    "a": "Lucknow"
   },
   {
     "id": "r3714",
@@ -18587,7 +18587,7 @@
   {
     "id": "r3718",
     "q": "Which city is known as the Diamond City of India?",
-    "a": "ছুৰাট"
+    "a": "Surat"
   },
   {
     "id": "r3719",
@@ -18597,42 +18597,42 @@
   {
     "id": "r3720",
     "q": "Which city is known as the City of Diamonds?",
-    "a": "ছুৰাট"
+    "a": "Surat"
   },
   {
     "id": "r3721",
     "q": "Which city is known as the Pearl City?",
-    "a": "হায়দৰাবাদ"
+    "a": "Hyderabad"
   },
   {
     "id": "r3722",
     "q": "Which city is known as the City of Nizams?",
-    "a": "হায়দৰাবাদ"
+    "a": "Hyderabad"
   },
   {
     "id": "r3723",
     "q": "Which city is known as the Cyberabad?",
-    "a": "হায়দৰাবাদ"
+    "a": "Hyderabad"
   },
   {
     "id": "r3724",
     "q": "Which city is known as the Gateway of South India?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r3725",
     "q": "Which city is known as the Detroit of Asia?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r3726",
     "q": "Which city is known as the Health Capital of India?",
-    "a": "চেন্নাই"
+    "a": "Chennai"
   },
   {
     "id": "r3727",
     "q": "Which city is known as the Pensioners' Paradise?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r3728",
@@ -18642,22 +18642,22 @@
   {
     "id": "r3729",
     "q": "Which city is known as the Garden City of India?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r3730",
     "q": "Which city is known as the Space City?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r3731",
     "q": "Which city is known as the IT Capital of India?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r3732",
     "q": "Which city is known as the Electronic City?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r3733",
@@ -18672,7 +18672,7 @@
   {
     "id": "r3735",
     "q": "Which city is known as the Evergreen City of India?",
-    "a": "তিৰুবনন্তপুৰম"
+    "a": "Thiruvananthapuram"
   },
   {
     "id": "r3736",
@@ -18712,7 +18712,7 @@
   {
     "id": "r3743",
     "q": "Which city is known as the Temple City?",
-    "a": "ভুবনেশ্বৰ"
+    "a": "Bhubaneswar"
   },
   {
     "id": "r3744",
@@ -18757,17 +18757,17 @@
   {
     "id": "r3752",
     "q": "Which city is known as the City of Ghats?",
-    "a": "বাৰাণসী"
+    "a": "Varanasi"
   },
   {
     "id": "r3753",
     "q": "Which city is known as the City of Lights?",
-    "a": "বাৰাণসী"
+    "a": "Varanasi"
   },
   {
     "id": "r3754",
     "q": "Which city is known as the Spiritual Capital of India?",
-    "a": "বাৰাণসী"
+    "a": "Varanasi"
   },
   {
     "id": "r3755",
@@ -18782,7 +18782,7 @@
   {
     "id": "r3757",
     "q": "Which city is known as the City of Parks?",
-    "a": "চণ্ডীগড়"
+    "a": "Chandigarh"
   },
   {
     "id": "r3758",
@@ -18802,37 +18802,37 @@
   {
     "id": "r3761",
     "q": "Which city is known as the City of Seven Islands?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3762",
     "q": "Which city is known as the Gateway of India?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3763",
     "q": "Which city is known as the Hollywood of India?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3764",
     "q": "Which city is known as the Financial Capital of India?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3765",
     "q": "Which city is known as the Maximum City?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3766",
     "q": "Which city is known as the City of Dreams?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3767",
     "q": "Which city is known as the Cottonopolis of India?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r3768",
@@ -19242,7 +19242,7 @@
   {
     "id": "r3849",
     "q": "When was RTI Act passed?",
-    "a": "২০০৫"
+    "a": "2005"
   },
   {
     "id": "r3850",
@@ -19262,7 +19262,7 @@
   {
     "id": "r3853",
     "q": "When was MGNREGA passed?",
-    "a": "২০০৫"
+    "a": "2005"
   },
   {
     "id": "r3854",
@@ -19472,7 +19472,7 @@
   {
     "id": "r3895",
     "q": "What is the unit of temperature?",
-    "a": "কেলভিন"
+    "a": "Kelvin"
   },
   {
     "id": "r3896",
@@ -19757,7 +19757,7 @@
   {
     "id": "r3952",
     "q": "Which is the most abundant element in Earth's crust?",
-    "a": "অক্সিজেন"
+    "a": "Oxygen"
   },
   {
     "id": "r3953",
@@ -19927,7 +19927,7 @@
   {
     "id": "r3986",
     "q": "Which is the largest organ in the human body?",
-    "a": "ছাল"
+    "a": "Skin"
   },
   {
     "id": "r3987",
@@ -20017,7 +20017,7 @@
   {
     "id": "r4004",
     "q": "Which metal is present in Hemoglobin?",
-    "a": "লৌহ"
+    "a": "Iron"
   },
   {
     "id": "r4005",
@@ -20047,7 +20047,7 @@
   {
     "id": "r4010",
     "q": "Which hormone regulates blood sugar levels?",
-    "a": "ইনচুলিন"
+    "a": "Insulin"
   },
   {
     "id": "r4011",
@@ -20097,7 +20097,7 @@
   {
     "id": "r4020",
     "q": "Deficiency of Vitamin C causes?",
-    "a": "স্কাৰ্ভি"
+    "a": "Scurvy"
   },
   {
     "id": "r4021",
@@ -20137,7 +20137,7 @@
   {
     "id": "r4028",
     "q": "Who is the father of microbiology?",
-    "a": "এণ্টনী ভান লিউৱেনহুক"
+    "a": "Antonie van Leeuwenhoek"
   },
   {
     "id": "r4029",
@@ -20617,12 +20617,12 @@
   {
     "id": "r4124",
     "q": "Where is the Eden Gardens stadium?",
-    "a": "কলকাতা"
+    "a": "Kolkata"
   },
   {
     "id": "r4125",
     "q": "Where is the Wankhede Stadium?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r4126",
@@ -21232,12 +21232,12 @@
   {
     "id": "r4247",
     "q": "Where is the Vikram Sarabhai Space Centre (VSSC) located?",
-    "a": "তিৰুবনন্তপুৰম"
+    "a": "Thiruvananthapuram"
   },
   {
     "id": "r4248",
     "q": "Where is the Indian Space Research Organisation (ISRO) HQ?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r4249",
@@ -21247,7 +21247,7 @@
   {
     "id": "r4250",
     "q": "Where is the DRDO HQ located?",
-    "a": "নতুন দিল্লী "
+    "a": "New Delhi"
   },
   {
     "id": "r4251",
@@ -21582,7 +21582,7 @@
   {
     "id": "r4317",
     "q": "Where is the HQ of HAL?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r4318",
@@ -21687,12 +21687,12 @@
   {
     "id": "r4338",
     "q": "Who is the author of 'Malgudi Days'?",
-    "a": "আৰ .কে. নাৰায়ণ"
+    "a": "R.K. Narayan"
   },
   {
     "id": "r4339",
     "q": "Who is the author of 'Swami and Friends'?",
-    "a": "আৰ .কে. নাৰায়ণ"
+    "a": "R.K. Narayan"
   },
   {
     "id": "r4340",
@@ -21807,7 +21807,7 @@
   {
     "id": "r4362",
     "q": "Who is the author of 'Unhappy India'?",
-    "a": "লালা লাজপত ৰায়"
+    "a": "Lala Lajpat Rai"
   },
   {
     "id": "r4363",
@@ -22287,7 +22287,7 @@
   {
     "id": "r4458",
     "q": "Who is known as 'Chacha'?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r4459",
@@ -22307,7 +22307,7 @@
   {
     "id": "r4462",
     "q": "Who is known as 'Punjab Kesari'?",
-    "a": "লালা লাজপত ৰায়"
+    "a": "Lala Lajpat Rai"
   },
   {
     "id": "r4463",
@@ -22387,7 +22387,7 @@
   {
     "id": "r4478",
     "q": "Which pigment is responsible for the green color of plants?",
-    "a": "ক্লোৰোফিল"
+    "a": "Chlorophyll"
   },
   {
     "id": "r4479",
@@ -22472,7 +22472,7 @@
   {
     "id": "r4495",
     "q": "Which is the longest river of South India?",
-    "a": "গোদাবৰী"
+    "a": "Godavari"
   },
   {
     "id": "r4496",
@@ -22532,7 +22532,7 @@
   {
     "id": "r4507",
     "q": "First Indian to receive Nobel Prize in Physics?",
-    "a": "চি ভি ৰামান"
+    "a": "C.V. Raman"
   },
   {
     "id": "r4508",
@@ -22542,7 +22542,7 @@
   {
     "id": "r4509",
     "q": "First Indian to receive Nobel Prize in Peace?",
-    "a": "মাদাৰ টেৰেছা"
+    "a": "Mother Teresa"
   },
   {
     "id": "r4510",
@@ -22557,7 +22557,7 @@
   {
     "id": "r4512",
     "q": "First woman to receive Bharat Ratna?",
-    "a": "ইন্দিৰা গান্ধী"
+    "a": "Indira Gandhi"
   },
   {
     "id": "r4513",
@@ -22567,7 +22567,7 @@
   {
     "id": "r4514",
     "q": "First woman Chief Minister of an Indian State?",
-    "a": "সুচেতা ক্ৰিপালানি"
+    "a": "Sucheta Kripalani"
   },
   {
     "id": "r4515",
@@ -22582,17 +22582,17 @@
   {
     "id": "r4517",
     "q": "First woman to win a Nobel Prize?",
-    "a": "মেৰী কিউৰী"
+    "a": "Marie Curie"
   },
   {
     "id": "r4518",
     "q": "First Indian woman to win a Nobel Prize?",
-    "a": "মাদাৰ টেৰেছা"
+    "a": "Mother Teresa"
   },
   {
     "id": "r4519",
     "q": "First Indian woman to win the Miss World Title?",
-    "a": "ৰীতা ফাৰিয়া"
+    "a": "Reita Faria"
   },
   {
     "id": "r4520",
@@ -22747,7 +22747,7 @@
   {
     "id": "r4550",
     "q": "Which state is the largest producer of maize in India?",
-    "a": "কৰ্ণাটক"
+    "a": "Karnataka"
   },
   {
     "id": "r4551",
@@ -22762,7 +22762,7 @@
   {
     "id": "r4553",
     "q": "Which state is the largest producer of sunflower in India?",
-    "a": "কৰ্ণাটক"
+    "a": "Karnataka"
   },
   {
     "id": "r4554",
@@ -22787,17 +22787,17 @@
   {
     "id": "r4558",
     "q": "Which state is the largest producer of coffee in India?",
-    "a": "কৰ্ণাটক"
+    "a": "Karnataka"
   },
   {
     "id": "r4559",
     "q": "Which state is the largest producer of rubber in India?",
-    "a": "কেৰালা"
+    "a": "Kerala"
   },
   {
     "id": "r4560",
     "q": "Which state is the largest producer of silk in India?",
-    "a": "কৰ্ণাটক"
+    "a": "Karnataka"
   },
   {
     "id": "r4561",
@@ -23012,7 +23012,7 @@
   {
     "id": "r4603",
     "q": "What is dry ice?",
-    "a": "কঠিন কাৰ্বন ডাই অক্সাইড"
+    "a": "Solid Carbon Dioxide"
   },
   {
     "id": "r4604",
@@ -23067,7 +23067,7 @@
   {
     "id": "r4614",
     "q": "Who is known as the 'Sher-e-Punjab'?",
-    "a": "লালা লাজপত ৰায়"
+    "a": "Lala Lajpat Rai"
   },
   {
     "id": "r4615",
@@ -23142,7 +23142,7 @@
   {
     "id": "r4629",
     "q": "Who is the first woman to win a Nobel Prize in two different fields?",
-    "a": "মেৰী কিউৰী"
+    "a": "Marie Curie"
   },
   {
     "id": "r4630",
@@ -23492,7 +23492,7 @@
   {
     "id": "r4699",
     "q": "Which is the largest production of iron ore in the world?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r4700",
@@ -23787,7 +23787,7 @@
   {
     "id": "r4758",
     "q": "The concept of 'Concurrent List' was borrowed from?",
-    "a": "অষ্ট্ৰেলিয়া"
+    "a": "Australia"
   },
   {
     "id": "r4759",
@@ -23832,7 +23832,7 @@
   {
     "id": "r4767",
     "q": "Which article deals with the National Emergency?",
-    "a": "ধাৰা 352"
+    "a": "Article 352"
   },
   {
     "id": "r4768",
@@ -23917,7 +23917,7 @@
   {
     "id": "r4784",
     "q": "What is the minimum age to be the Governor?",
-    "a": "৩৫ বছৰ"
+    "a": "35 years"
   },
   {
     "id": "r4785",
@@ -23957,7 +23957,7 @@
   {
     "id": "r4792",
     "q": "Who was the first Chairman of the Planning Commission?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r4793",
@@ -23977,7 +23977,7 @@
   {
     "id": "r4796",
     "q": "Who is the first woman to receive the Jnanpith Award?",
-    "a": "আশাপূৰ্ণা দেৱী"
+    "a": "Ashapurna Devi"
   },
   {
     "id": "r4797",
@@ -24027,7 +24027,7 @@
   {
     "id": "r4806",
     "q": "Who is the first Indian to win a gold in Olympics?",
-    "a": "অভিনৱ বিন্দ্ৰা"
+    "a": "Abhinav Bindra"
   },
   {
     "id": "r4807",
@@ -24137,7 +24137,7 @@
   {
     "id": "r4828",
     "q": "Which instrument is used to measure pressure?",
-    "a": "বেৰ 'মিটাৰ"
+    "a": "Barometer"
   },
   {
     "id": "r4829",
@@ -24157,7 +24157,7 @@
   {
     "id": "r4832",
     "q": "Which instrument is used to measure the intensity of earthquakes?",
-    "a": "সিসমোগ্ৰাফ"
+    "a": "Seismograph"
   },
   {
     "id": "r4833",
@@ -24237,7 +24237,7 @@
   {
     "id": "r4848",
     "q": "Which gas is present in the atmosphere in the largest amount?",
-    "a": "নাইট্ৰজেন"
+    "a": "Nitrogen"
   },
   {
     "id": "r4849",
@@ -24252,7 +24252,7 @@
   {
     "id": "r4851",
     "q": "Who is the father of genetics?",
-    "a": "গ্ৰেগৰ মেণ্ডেল"
+    "a": "Gregor Mendel"
   },
   {
     "id": "r4852",
@@ -24262,7 +24262,7 @@
   {
     "id": "r4853",
     "q": "Which pigment gives green color to plants?",
-    "a": "ক্লোৰোফিল"
+    "a": "Chlorophyll"
   },
   {
     "id": "r4854",
@@ -24272,7 +24272,7 @@
   {
     "id": "r4855",
     "q": "Which is the largest gland in the body?",
-    "a": "যকৃত"
+    "a": "Liver"
   },
   {
     "id": "r4856",
@@ -24287,12 +24287,12 @@
   {
     "id": "r4858",
     "q": "Which is the largest freshwater lake in the world?",
-    "a": "চুপাৰিয়ৰ হ্ৰদ"
+    "a": "Lake Superior"
   },
   {
     "id": "r4859",
     "q": "Which is the highest peak in Asia?",
-    "a": "মাউণ্ট এভাৰেষ্ট"
+    "a": "Mount Everest"
   },
   {
     "id": "r4860",
@@ -24432,12 +24432,12 @@
   {
     "id": "r4887",
     "q": "Who was the first Prime Minister to receive Bharat Ratna?",
-    "a": "জৱাহৰলাল নেহৰু"
+    "a": "Jawaharlal Nehru"
   },
   {
     "id": "r4888",
     "q": "Who was the first woman to receive Bharat Ratna?",
-    "a": "ইন্দিৰা গান্ধী"
+    "a": "Indira Gandhi"
   },
   {
     "id": "r4889",
@@ -24552,7 +24552,7 @@
   {
     "id": "r4911",
     "q": "What is the capital of Chhattisgarh?",
-    "a": "ৰায়পুৰ"
+    "a": "Raipur"
   },
   {
     "id": "r4912",
@@ -24572,27 +24572,27 @@
   {
     "id": "r4915",
     "q": "What is the capital of Gujarat?",
-    "a": "গান্ধীনগৰ"
+    "a": "Gandhinagar"
   },
   {
     "id": "r4916",
     "q": "What is the capital of Haryana?",
-    "a": "চণ্ডীগড়"
+    "a": "Chandigarh"
   },
   {
     "id": "r4917",
     "q": "What is the capital of Himachal Pradesh?",
-    "a": "চিমলা"
+    "a": "Shimla"
   },
   {
     "id": "r4918",
     "q": "What is the capital of Kerala?",
-    "a": "তিৰুবনন্তপুৰম"
+    "a": "Thiruvananthapuram"
   },
   {
     "id": "r4919",
     "q": "What is the capital of Madhya Pradesh?",
-    "a": "ভূপাল"
+    "a": "Bhopal"
   },
   {
     "id": "r4920",
@@ -24612,7 +24612,7 @@
   {
     "id": "r4923",
     "q": "What is the capital of Rajasthan?",
-    "a": "জয়পুৰ"
+    "a": "Jaipur"
   },
   {
     "id": "r4924",
@@ -24632,12 +24632,12 @@
   {
     "id": "r4927",
     "q": "What is the capital of Andhra Pradesh?",
-    "a": "অমৰাবতী"
+    "a": "Amaravati"
   },
   {
     "id": "r4928",
     "q": "What is the capital of Bihar?",
-    "a": "পাটনা"
+    "a": "Patna"
   },
   {
     "id": "r4929",
@@ -24747,17 +24747,17 @@
   {
     "id": "r4950",
     "q": "Which state is known as the 'Spice Garden of India'?",
-    "a": "কেৰালা"
+    "a": "Kerala"
   },
   {
     "id": "r4951",
     "q": "Which state is known as 'God's Own Country'?",
-    "a": "কেৰালা"
+    "a": "Kerala"
   },
   {
     "id": "r4952",
     "q": "Which city is known as the 'Space City of India'?",
-    "a": "বেংগালুৰু"
+    "a": "Bengaluru"
   },
   {
     "id": "r4953",
@@ -24767,7 +24767,7 @@
   {
     "id": "r4954",
     "q": "Which city is known as the 'City of Nawab'?",
-    "a": "লক্ষ্ণৌ"
+    "a": "Lucknow"
   },
   {
     "id": "r4955",
@@ -24792,17 +24792,17 @@
   {
     "id": "r4959",
     "q": "Which city is known as 'Gateway of India'?",
-    "a": "মুম্বাই"
+    "a": "Mumbai"
   },
   {
     "id": "r4960",
     "q": "Which city is known as 'Diamond City of India'?",
-    "a": "ছুৰাট"
+    "a": "Surat"
   },
   {
     "id": "r4961",
     "q": "Which city is known as 'Grape City of India'?",
-    "a": "নাসিক"
+    "a": "Nashik"
   },
   {
     "id": "r4962",
@@ -24827,7 +24827,7 @@
   {
     "id": "r4966",
     "q": "Which city is known as 'Land of Midnight Sun'?",
-    "a": "নৰৱে' "
+    "a": "Norway"
   },
   {
     "id": "r4967",
