@@ -1,4 +1,4 @@
-package com.rrbje
+package com.rrbje;
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
