@@ -4619,6 +4619,34 @@
       "ans": 2,
       "hint": "Written in Ahmednagar Fort prison.",
       "solution": "Jawaharlal Nehru wrote 'The Discovery of India' during his imprisonment in Ahmednagar Fort (1944–46)."
+    },
+    {
+      "id": 331,
+      "level": 2,
+      "q": "Which article of the Indian Constitution deals with the Right to Constitutional Remedies?",
+      "options": [
+        "Article 14",
+        "Article 19",
+        "Article 32",
+        "Article 44"
+      ],
+      "ans": 3,
+      "hint": "Called the heart and soul by Dr. Ambedkar.",
+      "solution": "Article 32 gives citizens the Right to Constitutional Remedies and allows them to approach the Supreme Court for enforcement of fundamental rights."
+    },
+    {
+      "id": 332,
+      "level": 2,
+      "q": "The headquarters of the South Western Railway zone is located at:",
+      "options": [
+        "Mysuru",
+        "Hubballi",
+        "Bengaluru",
+        "Secunderabad"
+      ],
+      "ans": 2,
+      "hint": "Important railway city of Karnataka.",
+      "solution": "The headquarters of South Western Railway is at Hubballi in Karnataka."
     }
   ],
   "ALP": [
@@ -9031,6 +9059,34 @@
       "ans": 2,
       "hint": "Nobel Prize 1977 (P.W. Anderson).",
       "solution": "Anderson localisation: in sufficiently disordered materials, electron wave functions become localised due to quantum interference of scattered waves, leading to insulating behaviour."
+    },
+    {
+      "id": 316,
+      "level": 2,
+      "q": "In an electric locomotive, the pantograph is used to:",
+      "options": [
+        "Cool the traction motor",
+        "Collect electric power from the overhead wire",
+        "Apply brakes automatically",
+        "Change wheel gauge"
+      ],
+      "ans": 2,
+      "hint": "Mounted on top of the locomotive.",
+      "solution": "The pantograph is mounted on the roof of an electric locomotive to collect current from the overhead catenary wire."
+    },
+    {
+      "id": 317,
+      "level": 2,
+      "q": "The primary purpose of a fuse in an electrical circuit is to:",
+      "options": [
+        "Increase voltage",
+        "Store charge",
+        "Protect the circuit from overcurrent",
+        "Reduce resistance permanently"
+      ],
+      "ans": 3,
+      "hint": "It melts when current exceeds a safe value.",
+      "solution": "A fuse protects the circuit by melting and breaking the connection when current exceeds the safe limit."
     }
   ],
   "JE": [
@@ -13163,6 +13219,34 @@
       "ans": 2,
       "hint": "Fluid coupling device.",
       "solution": "Torque converter uses hydraulic fluid coupling to transmit torque with slip (torque multiplication at low speeds) and a lock-up clutch at higher speeds for efficiency."
+    },
+    {
+      "id": 296,
+      "level": 2,
+      "q": "The unit of thermal conductivity is:",
+      "options": [
+        "W/mK",
+        "J/kgK",
+        "N/m2",
+        "Pa.s"
+      ],
+      "ans": 1,
+      "hint": "Heat flow through a material.",
+      "solution": "Thermal conductivity is measured in watt per metre-kelvin (W/mK)."
+    },
+    {
+      "id": 297,
+      "level": 2,
+      "q": "In surveying, a benchmark is used as:",
+      "options": [
+        "A temporary wooden peg",
+        "A fixed reference point of known elevation",
+        "An angle measuring scale",
+        "A device for measuring rainfall"
+      ],
+      "ans": 2,
+      "hint": "It is the reference for reduced levels.",
+      "solution": "A benchmark is a permanent reference point whose elevation is known and used in levelling work."
     }
   ],
   "GroupD": [
@@ -17575,6 +17659,34 @@
       "ans": 2,
       "hint": "Meiosis is unequal in females.",
       "solution": "In oogenesis, meiosis is unequal — the cytoplasm is distributed asymmetrically, producing one large functional ovum and three small non-functional polar bodies from each primary oocyte."
+    },
+    {
+      "id": 316,
+      "level": 1,
+      "q": "Which gas is most abundant in Earth's atmosphere?",
+      "options": [
+        "Oxygen",
+        "Carbon dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "ans": 3,
+      "hint": "About 78% of air.",
+      "solution": "Nitrogen is the most abundant gas in Earth's atmosphere, making up about 78% by volume."
+    },
+    {
+      "id": 317,
+      "level": 1,
+      "q": "Who is known as the Father of the Indian Constitution?",
+      "options": [
+        "Jawaharlal Nehru",
+        "Dr. B.R. Ambedkar",
+        "Rajendra Prasad",
+        "Sardar Patel"
+      ],
+      "ans": 2,
+      "hint": "Chairman of the Drafting Committee.",
+      "solution": "Dr. B.R. Ambedkar is known as the Father of the Indian Constitution because he chaired the Drafting Committee."
     }
   ]
 }

@@ -4,8 +4,6 @@ import Splash from '../screens/splash';
 import LanguageSelectionScreen from '../screens/LanguageSelectionScreen';
 import TabNavigator from './TabNavigator';
 import MockTestScreen from '../screens/MockTestScreen';
-import PdfViewerScreen from '../screens/PdfViewerScreen';
-
 import PracticeQuizScreen from '../screens/PracticeQuizScreen';
 
 const Stack = createStackNavigator();
@@ -31,7 +29,6 @@ const MainNavigator = () => {
       <Stack.Screen name="MainTabs" component={TabNavigator} />
       <Stack.Screen name="MockTestScreen" component={MockTestScreen} />
       <Stack.Screen name="PracticeQuizScreen" component={PracticeQuizScreen} />
-      <Stack.Screen name="PdfViewerScreen" component={PdfViewerScreen} />
     </Stack.Navigator>
   );
 };

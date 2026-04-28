@@ -1,55 +1,71 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
   ActivityIndicator,
   FlatList,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useTranslation } from 'react-i18next';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {useTranslation} from 'react-i18next';
 import firestore from '@react-native-firebase/firestore';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import {useAppTheme} from '../util/theme';
 import auth from '@react-native-firebase/auth';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {BannerAd, BannerAdSize, TestIds} from 'react-native-google-mobile-ads';
+import {useAppTheme} from '../util/theme';
+import mockTestsData from '../data/mockTestsData';
 
-const MOCK_TESTS = [
-  { id: 'ntpc_1', tKey: 'ntpc_mock_1', category: 'NTPC', totalMarks: 100 },
-  { id: 'alp_1', tKey: 'alp_mock_1', category: 'ALP', totalMarks: 75 },
-  { id: 'je_1', tKey: 'je_mock_1', category: 'JE', totalMarks: 150 },
-];
-
-const PYQ_PDF_LINKS = {
-  NTPC: [
-    {id: 'ntpc-2023', year: '2023', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
-    {id: 'ntpc-2022', year: '2022', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
-  ],
-  ALP: [
-    {id: 'alp-2023', year: '2023', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
-    {id: 'alp-2022', year: '2022', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
-  ],
-  JE: [
-    {id: 'je-2023', year: '2023', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
-    {id: 'je-2022', year: '2022', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
-  ],
-  GroupD: [
-    {id: 'groupd-2023', year: '2023', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
-    {id: 'groupd-2022', year: '2022', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'},
-  ],
+const COPY = {
+  en: {
+    testsIntro: 'Full-length mock packs built from your practice bank.',
+    questions: 'questions',
+    minutes: 'min',
+    credits: 'Your Credits',
+    ready: 'Ready for score improvement',
+  },
+  hi: {
+    testsIntro: 'आपके प्रैक्टिस बैंक से बनाए गए फुल-लेंथ मॉक पैक।',
+    questions: 'प्रश्न',
+    minutes: 'मिनट',
+    credits: 'आपके क्रेडिट्स',
+    ready: 'स्कोर सुधारने के लिए तैयार',
+  },
+  kn: {
+    testsIntro: 'ನಿಮ್ಮ ಅಭ್ಯಾಸ ಬ್ಯಾಂಕ್‌ನಿಂದ ನಿರ್ಮಿಸಿದ ಫುಲ್-ಲೆಂಗ್ತ್ ಮಾಕ್ ಪ್ಯಾಕ್‌ಗಳು.',
+    questions: 'ಪ್ರಶ್ನೆಗಳು',
+    minutes: 'ನಿಮಿಷ',
+    credits: 'ನಿಮ್ಮ ಕ್ರೆಡಿಟ್‌ಗಳು',
+    ready: 'ಸ್ಕೋರ್ ಹೆಚ್ಚಿಸಲು ಸಿದ್ಧ',
+  },
 };
 
-const TestsScreen = ({route, navigation}) => {
-  const { t, i18n } = useTranslation();
-  const {colors, isDark} = useAppTheme();
+const CATEGORY_ORDER = ['NTPC', 'ALP', 'JE', 'GroupD'];
+
+const TestsScreen = ({navigation}) => {
+  const {t, i18n} = useTranslation();
+  const {colors} = useAppTheme();
   const currentUserId = auth().currentUser?.uid;
-  const [activeTab, setActiveTab] = useState(route?.params?.pyq ? 'pyq' : 'tests'); // 'tests' | 'leaderboard' | 'pyq'
+  const [activeTab, setActiveTab] = useState('tests');
   const [leaderboard, setLeaderboard] = useState([]);
   const [loading, setLoading] = useState(false);
   const [myCredits, setMyCredits] = useState(0);
+
+  const copy = COPY[i18n.language] || COPY.en;
+  const mockCatalog = useMemo(
+    () => mockTestsData.buildMockCatalog(i18n.language),
+    [i18n.language],
+  );
+
+  const groupedMocks = useMemo(
+    () =>
+      CATEGORY_ORDER.map(category => ({
+        category,
+        tests: mockCatalog.filter(item => item.category === category),
+      })).filter(section => section.tests.length > 0),
+    [mockCatalog],
+  );
 
   useEffect(() => {
     if (activeTab === 'leaderboard') {
@@ -61,13 +77,17 @@ const TestsScreen = ({route, navigation}) => {
   const fetchMyCredits = async () => {
     try {
       const uid = auth().currentUser?.uid;
-      if (!uid) return;
+      if (!uid) {
+        setMyCredits(0);
+        return;
+      }
+
       const snap = await firestore().collection('users').doc(uid).get();
       if (snap.exists) {
         setMyCredits(snap.data()?.totalCredits || 0);
       }
-    } catch (e) {
-      // no-op
+    } catch (_error) {
+      setMyCredits(0);
     }
   };
 
@@ -81,28 +101,24 @@ const TestsScreen = ({route, navigation}) => {
         .get();
 
       const attempts = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-
-      // Keep only the best attempt per user for fair ranking.
       const bestByUser = new Map();
+
       for (const row of attempts) {
-        if (!row.userId || row.userId === 'system') continue;
-        const prev = bestByUser.get(row.userId);
-        if (!prev) {
-          bestByUser.set(row.userId, row);
+        if (!row.userId || row.userId === 'system') {
           continue;
         }
-        const prevPoints = Number(prev.points || 0);
-        const nextPoints = Number(row.points || 0);
-        if (nextPoints > prevPoints) {
+
+        const previous = bestByUser.get(row.userId);
+        if (!previous || Number(row.points || 0) > Number(previous.points || 0)) {
           bestByUser.set(row.userId, row);
         }
       }
 
-      const ranking = Array.from(bestByUser.values())
-        .sort((a, b) => Number(b.points || 0) - Number(a.points || 0))
-        .slice(0, 10);
-
-      setLeaderboard(ranking);
+      setLeaderboard(
+        Array.from(bestByUser.values())
+          .sort((a, b) => Number(b.points || 0) - Number(a.points || 0))
+          .slice(0, 10),
+      );
     } catch (error) {
       console.error('Error fetching leaderboard:', error);
     } finally {
@@ -110,44 +126,37 @@ const TestsScreen = ({route, navigation}) => {
     }
   };
 
-  const openPdfLink = (url, category, year) => {
-    navigation.navigate('PdfViewerScreen', {
-      url,
-      title: `RRB ${category} ${year} PDF`,
-    });
-  };
-
-  const simulateTestSubmit = test => {
-    navigation.navigate('MockTestScreen', {category: test.category});
-  };
-
   const renderTests = () => (
     <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-      <Text style={[styles.sectionTitle, {color: colors.text}]}>{t('availableExams')}</Text>
-      {MOCK_TESTS.map((test) => (
-        <View key={test.id} style={[styles.card, {backgroundColor: colors.card}]}>
-          <View style={styles.cardInfo}>
-             <View style={styles.iconCircle}>
-                <Icon name="medal" size={24} color="#0074E4" />
-             </View>
-             <View style={styles.textContainer}>
-                <Text style={[styles.testTitle, {color: colors.text}]}>{t(test.tKey)}</Text>
-                <View style={styles.metaRow}>
-                   <View style={styles.labelBadge}>
-                      <Text style={styles.labelText}>{test.category}</Text>
-                   </View>
-                   <Text style={[styles.marksText, {color: colors.subtext}]}>{test.totalMarks} {t('marks')}</Text>
-                </View>
-             </View>
+      <View style={[styles.heroCard, {backgroundColor: colors.card}]}>
+        <Text style={[styles.heroTitle, {color: colors.text}]}>{t('mockTests')}</Text>
+        <Text style={[styles.heroSubtitle, {color: colors.subtext}]}>{copy.testsIntro}</Text>
+      </View>
+
+      {groupedMocks.map(section => (
+        <View key={section.category} style={styles.sectionWrap}>
+          <View style={styles.sectionHeader}>
+            <Text style={[styles.sectionTitle, {color: colors.text}]}>RRB {section.category}</Text>
+            <Text style={[styles.sectionMeta, {color: colors.subtext}]}>
+              {section.tests.length} tests
+            </Text>
           </View>
-          <TouchableOpacity 
-            style={styles.startButton} 
-            onPress={() => simulateTestSubmit(test)}
-            disabled={loading}
-          >
-            <Text style={styles.startButtonText}>{t('startTest')}</Text>
-            <Icon name="play" size={16} color="#FFF" />
-          </TouchableOpacity>
+
+          {section.tests.map(test => (
+            <TouchableOpacity
+              key={test.id}
+              style={[styles.mockCard, {backgroundColor: colors.card, borderColor: colors.border}]}
+              onPress={() => navigation.navigate('MockTestScreen', {testId: test.id})}>
+              <View style={[styles.mockAccent, {backgroundColor: test.accent}]} />
+              <View style={styles.mockBody}>
+                <Text style={[styles.mockTitle, {color: colors.text}]}>{test.title}</Text>
+                <Text style={[styles.mockMeta, {color: colors.subtext}]}>
+                  {test.questionCount} {copy.questions} • {Math.round(test.durationSeconds / 60)} {copy.minutes}
+                </Text>
+              </View>
+              <Icon name="play-circle" size={28} color={colors.primary} />
+            </TouchableOpacity>
+          ))}
         </View>
       ))}
     </ScrollView>
@@ -156,68 +165,50 @@ const TestsScreen = ({route, navigation}) => {
   const renderLeaderboard = () => (
     <View style={styles.leaderboardContainer}>
       <View style={[styles.creditsCard, {backgroundColor: colors.card}]}>
-        <Text style={[styles.creditsLabel, {color: colors.subtext}]}>Your Credits</Text>
+        <Text style={[styles.creditsLabel, {color: colors.subtext}]}>{copy.credits}</Text>
         <Text style={[styles.creditsValue, {color: colors.primary}]}>{myCredits}</Text>
+        <Text style={[styles.creditsHint, {color: colors.subtext}]}>{copy.ready}</Text>
       </View>
+
       <View style={styles.leaderboardHeader}>
-        <Text style={styles.rankTitle}>{t('rank')}</Text>
-        <Text style={styles.nameTitle}>{t('aspirant')}</Text>
-        <Text style={styles.scoreTitle}>{t('score')}</Text>
+        <Text style={[styles.rankTitle, {color: colors.subtext}]}>{t('rank')}</Text>
+        <Text style={[styles.nameTitle, {color: colors.subtext}]}>{t('aspirant')}</Text>
+        <Text style={[styles.scoreTitle, {color: colors.subtext}]}>{t('score')}</Text>
       </View>
+
       {loading ? (
-        <ActivityIndicator size="large" color="#0074E4" style={{ marginTop: 40 }} />
+        <ActivityIndicator size="large" color={colors.primary} style={styles.loader} />
       ) : leaderboard.length === 0 ? (
         <View style={styles.noDataContainer}>
-          <Icon name="podium-outline" size={60} color="#ccc" />
-          <Text style={styles.noDataText}>{t('noScoresYet')}</Text>
+          <Icon name="podium-outline" size={60} color={colors.subtext} />
+          <Text style={[styles.noDataText, {color: colors.subtext}]}>{t('noScoresYet')}</Text>
         </View>
       ) : (
         <FlatList
           data={leaderboard}
-          keyExtractor={(item) => item.userId || item.id}
-          renderItem={({ item, index }) => (
+          keyExtractor={item => item.userId || item.id}
+          renderItem={({item, index}) => (
             <View
               style={[
                 styles.leaderboardRow,
-                index === 0 && styles.topRank,
-                item.userId === currentUserId && styles.myRow,
+                {backgroundColor: colors.card, borderColor: colors.border},
+                item.userId === currentUserId && {borderColor: colors.primary},
               ]}>
-              <Text style={styles.rankText}>{index + 1}</Text>
+              <Text style={[styles.rankText, {color: colors.text}]}>{index + 1}</Text>
               <View style={styles.aspirantInfo}>
-                <Text style={styles.aspirantName} numberOfLines={1}>{item.userName}</Text>
-                <Text style={styles.testTag} numberOfLines={1}>
+                <Text style={[styles.aspirantName, {color: colors.text}]} numberOfLines={1}>
+                  {item.userName}
+                </Text>
+                <Text style={[styles.testTag, {color: colors.subtext}]} numberOfLines={1}>
                   {item.testTitle} • {item.points || 0} pts
                 </Text>
               </View>
-              <Text style={styles.scoreText}>{item.score}</Text>
+              <Text style={[styles.scoreText, {color: colors.primary}]}>{item.score}</Text>
             </View>
           )}
         />
       )}
     </View>
-  );
-
-  const renderPyq = () => (
-    <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-      <Text style={[styles.sectionTitle, {color: colors.text}]}>Previous Year Papers (PDF)</Text>
-      {Object.keys(PYQ_PDF_LINKS).map(category => (
-        <View key={category} style={[styles.card, {backgroundColor: colors.card}]}>
-          <Text style={[styles.testTitle, {color: colors.text}]}>RRB {category}</Text>
-          {PYQ_PDF_LINKS[category].map(paper => (
-            <TouchableOpacity
-              key={paper.id}
-              style={[styles.pyqItem, {borderColor: colors.border}]}
-              onPress={() => openPdfLink(paper.url, category, paper.year)}>
-              <View style={styles.pyqLeft}>
-                <Icon name="document-text-outline" size={20} color={colors.primary} />
-                <Text style={[styles.pyqLabel, {color: colors.text}]}>{paper.year} Paper PDF</Text>
-              </View>
-              <Icon name="open-outline" size={18} color={colors.subtext} />
-            </TouchableOpacity>
-          ))}
-        </View>
-      ))}
-    </ScrollView>
   );
 
   return (
@@ -226,27 +217,31 @@ const TestsScreen = ({route, navigation}) => {
         <Text style={styles.headerTitle}>{t('tests')}</Text>
       </View>
 
-      <View style={[styles.tabContainer, {backgroundColor: colors.card}]}>
-        <TouchableOpacity 
-          style={[styles.tab, activeTab === 'tests' && styles.activeTab]} 
-          onPress={() => setActiveTab('tests')}
-        >
-          <Text style={[styles.tabText, {color: colors.subtext}, activeTab === 'tests' && styles.activeTabText]}>{t('mockTests')}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity 
-          style={[styles.tab, activeTab === 'leaderboard' && styles.activeTab]} 
-          onPress={() => setActiveTab('leaderboard')}
-        >
-          <Text style={[styles.tabText, {color: colors.subtext}, activeTab === 'leaderboard' && styles.activeTabText]}>{t('leaderboard')}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[styles.tab, activeTab === 'pyq' && styles.activeTab]}
-          onPress={() => setActiveTab('pyq')}>
-          <Text style={[styles.tabText, {color: colors.subtext}, activeTab === 'pyq' && styles.activeTabText]}>PYQ PDFs</Text>
-        </TouchableOpacity>
+      <View style={[styles.tabContainer, {backgroundColor: colors.card, borderColor: colors.border}]}>
+        {[
+          {id: 'tests', label: t('mockTests')},
+          {id: 'leaderboard', label: t('leaderboard')},
+        ].map(tab => (
+          <TouchableOpacity
+            key={tab.id}
+            style={[
+              styles.tab,
+              activeTab === tab.id && {backgroundColor: `${colors.primary}18`},
+            ]}
+            onPress={() => setActiveTab(tab.id)}>
+            <Text
+              style={[
+                styles.tabText,
+                {color: activeTab === tab.id ? colors.primary : colors.subtext},
+              ]}>
+              {tab.label}
+            </Text>
+          </TouchableOpacity>
+        ))}
       </View>
 
-      {activeTab === 'tests' ? renderTests() : activeTab === 'leaderboard' ? renderLeaderboard() : renderPyq()}
+      {activeTab === 'tests' ? renderTests() : renderLeaderboard()}
+
       <BannerAd
         unitId={__DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-2627956667785383/2550120291'}
         size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
@@ -256,230 +251,183 @@ const TestsScreen = ({route, navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5F7FA',
-  },
+  container: {flex: 1},
   header: {
-    backgroundColor: '#0074E4',
-    padding: 20,
-    paddingBottom: 25,
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 16,
     borderBottomLeftRadius: 24,
     borderBottomRightRadius: 24,
   },
   headerTitle: {
-    fontSize: wp('7%'),
-    fontWeight: 'bold',
     color: '#FFF',
+    fontSize: 28,
+    fontWeight: '900',
   },
   tabContainer: {
+    marginHorizontal: 16,
+    marginTop: 16,
+    marginBottom: 8,
+    borderRadius: 18,
+    padding: 6,
     flexDirection: 'row',
-    backgroundColor: '#FFF',
-    margin: 20,
-    borderRadius: 16,
-    padding: 4,
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    borderWidth: 1,
   },
   tab: {
-    flex: 1 / 3,
-    paddingVertical: 12,
-    alignItems: 'center',
+    flex: 1,
     borderRadius: 12,
-  },
-  activeTab: {
-    backgroundColor: '#E3F2FD',
+    paddingVertical: 10,
+    alignItems: 'center',
   },
   tabText: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#666',
-  },
-  activeTabText: {
-    color: '#0074E4',
+    fontWeight: '700',
+    fontSize: 13,
   },
   scrollContent: {
-    padding: 20,
-    paddingTop: 0,
+    paddingHorizontal: 16,
+    paddingTop: 8,
+    paddingBottom: 100,
+  },
+  heroCard: {
+    borderRadius: 24,
+    padding: 18,
+    marginBottom: 16,
+  },
+  heroTitle: {
+    fontSize: 21,
+    fontWeight: '900',
+    marginBottom: 6,
+  },
+  heroSubtitle: {
+    fontSize: 14,
+    lineHeight: 21,
+  },
+  sectionWrap: {
+    marginBottom: 20,
+  },
+  sectionHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
   },
   sectionTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 16,
+    fontWeight: '800',
   },
-  card: {
-    backgroundColor: '#FFF',
-    borderRadius: 20,
-    padding: 16,
-    marginBottom: 16,
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.05,
-    shadowRadius: 10,
+  sectionMeta: {
+    fontSize: 13,
+    fontWeight: '700',
   },
-  cardInfo: {
+  mockCard: {
+    borderWidth: 1,
+    borderRadius: 18,
+    padding: 14,
+    marginBottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 16,
   },
-  iconCircle: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: '#E3F2FD',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 16,
+  mockAccent: {
+    width: 6,
+    alignSelf: 'stretch',
+    borderRadius: 999,
+    marginRight: 12,
   },
-  textContainer: {
+  mockBody: {
     flex: 1,
   },
-  testTitle: {
+  mockTitle: {
     fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 6,
+    fontWeight: '800',
+    marginBottom: 4,
   },
-  metaRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-  },
-  labelBadge: {
-    backgroundColor: '#F0F2F5',
-    paddingHorizontal: 8,
-    paddingVertical: 2,
-    borderRadius: 6,
-  },
-  labelText: {
-    fontSize: 10,
-    fontWeight: 'bold',
-    color: '#666',
-  },
-  marksText: {
-    fontSize: 12,
-    color: '#888',
-  },
-  startButton: {
-    backgroundColor: '#0074E4',
-    paddingVertical: 12,
-    borderRadius: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
-  },
-  startButtonText: {
-    color: '#FFF',
-    fontWeight: 'bold',
-    fontSize: 14,
+  mockMeta: {
+    fontSize: 13,
+    fontWeight: '600',
   },
   leaderboardContainer: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
+    paddingTop: 12,
+    paddingBottom: 100,
+  },
+  creditsCard: {
+    borderRadius: 22,
+    padding: 18,
+    marginBottom: 16,
+  },
+  creditsLabel: {
+    fontSize: 13,
+    fontWeight: '700',
+  },
+  creditsValue: {
+    fontSize: 30,
+    fontWeight: '900',
+    marginVertical: 4,
+  },
+  creditsHint: {
+    fontSize: 13,
   },
   leaderboardHeader: {
     flexDirection: 'row',
-    paddingBottom: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: '#EEE',
-    paddingHorizontal: 12,
+    paddingHorizontal: 8,
+    marginBottom: 8,
   },
-  rankTitle: { flex: 0.5, fontSize: 12, fontWeight: 'bold', color: '#888' },
-  nameTitle: { flex: 2, fontSize: 12, fontWeight: 'bold', color: '#888' },
-  scoreTitle: { flex: 0.5, fontSize: 12, fontWeight: 'bold', color: '#888', textAlign: 'right' },
+  rankTitle: {
+    width: 40,
+    fontWeight: '700',
+  },
+  nameTitle: {
+    flex: 1,
+    fontWeight: '700',
+  },
+  scoreTitle: {
+    width: 50,
+    textAlign: 'right',
+    fontWeight: '700',
+  },
   leaderboardRow: {
+    borderWidth: 1,
+    borderRadius: 16,
+    padding: 14,
+    marginBottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFF',
-    padding: 16,
-    borderRadius: 16,
-    marginTop: 10,
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 5,
-  },
-  myRow: {
-    borderWidth: 1,
-    borderColor: '#3B82F6',
-  },
-  topRank: {
-    backgroundColor: '#FFF9C4',
-    borderWidth: 1,
-    borderColor: '#FBC02D',
   },
   rankText: {
-    flex: 0.5,
-    fontWeight: 'bold',
-    color: '#333',
+    width: 40,
+    fontSize: 18,
+    fontWeight: '900',
   },
   aspirantInfo: {
-    flex: 2,
+    flex: 1,
+    paddingRight: 10,
   },
   aspirantName: {
-    fontWeight: 'bold',
-    color: '#333',
-    fontSize: 14,
+    fontSize: 15,
+    fontWeight: '800',
   },
   testTag: {
-    fontSize: 10,
-    color: '#666',
+    fontSize: 12,
     marginTop: 2,
   },
   scoreText: {
-    flex: 0.5,
-    fontWeight: 'bold',
-    color: '#0074E4',
+    width: 50,
     textAlign: 'right',
+    fontSize: 17,
+    fontWeight: '900',
   },
   noDataContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 60,
+    paddingTop: 60,
   },
   noDataText: {
-    marginTop: 16,
-    color: '#888',
-    fontSize: 16,
+    marginTop: 12,
+    textAlign: 'center',
   },
-  creditsCard: {
-    borderRadius: 14,
-    padding: 14,
-    marginBottom: 12,
-  },
-  creditsLabel: {
-    fontSize: 12,
-    fontWeight: '600',
-  },
-  creditsValue: {
-    fontSize: 24,
-    fontWeight: '900',
-    marginTop: 4,
-  },
-  pyqItem: {
-    borderWidth: 1,
-    borderRadius: 12,
-    padding: 12,
-    marginTop: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  pyqLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10,
-  },
-  pyqLabel: {
-    fontSize: 14,
-    fontWeight: '600',
+  loader: {
+    marginTop: 50,
   },
 });
 

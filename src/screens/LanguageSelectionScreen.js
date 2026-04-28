@@ -1,72 +1,120 @@
-import React, { useState } from 'react';
+import React, {useMemo, useState} from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
+  Dimensions,
   FlatList,
-  TouchableOpacity,
   StatusBar,
-  Dimensions
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useTranslation } from 'react-i18next';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {useTranslation} from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const { width } = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 const COLUMN_COUNT = 3;
 const ITEM_SIZE = (width - 64) / COLUMN_COUNT;
 
 const languages = [
-  { code: 'en', name: 'English', native: 'English', script: 'A' },
-  { code: 'hi', name: 'Hindi', native: 'हिन्दी', script: 'अ' },
-  { code: 'kn', name: 'Kannada', native: 'ಕನ್ನಡ', script: 'ಕ' },
-  { code: 'bn', name: 'Bengali', native: 'বাংলা', script: 'অ' },
-  { code: 'gu', name: 'Gujarati', native: 'ગુજરાતી', script: 'અ' },
-  { code: 'pa', name: 'Punjabi', native: 'ਪੰਜਾਬੀ', script: 'ਅ' },
-  { code: 'ta', name: 'Tamil', native: 'தமிழ்', script: 'அ' },
-  { code: 'te', name: 'Telugu', native: 'తెలుగు', script: 'అ' },
-  { code: 'mr', name: 'Marathi', native: 'मराठी', script: 'म' },
-  { code: 'or', name: 'Odia', native: 'ଓଡ଼ିଆ', script: 'ଅ' },
-  { code: 'as', name: 'Assamese', native: 'অসমীয়া', script: 'অ' },
-  { code: 'mni', name: 'Manipuri', native: 'মৈতৈলোন্', script: 'ম' },
-  { code: 'ml', name: 'Malayalam', native: 'മലയാളം', script: 'അ' },
-  { code: 'gom', name: 'Konkani', native: 'कोंकणी', script: 'क' },
-  { code: 'ur', name: 'Urdu', native: 'اردو', script: 'ا' },
+  {code: 'en', name: 'English', native: 'English', script: 'A', enabled: true},
+  {code: 'hi', name: 'Hindi', native: 'हिन्दी', script: 'अ', enabled: true},
+  {code: 'kn', name: 'Kannada', native: 'ಕನ್ನಡ', script: 'ಕ', enabled: true},
+  {code: 'bn', name: 'Bengali', native: 'বাংলা', script: 'অ', enabled: false},
+  {code: 'gu', name: 'Gujarati', native: 'ગુજરાતી', script: 'અ', enabled: false},
+  {code: 'pa', name: 'Punjabi', native: 'ਪੰਜਾਬੀ', script: 'ਅ', enabled: false},
+  {code: 'ta', name: 'Tamil', native: 'தமிழ்', script: 'அ', enabled: false},
+  {code: 'te', name: 'Telugu', native: 'తెలుగు', script: 'అ', enabled: false},
+  {code: 'mr', name: 'Marathi', native: 'मराठी', script: 'म', enabled: false},
+  {code: 'or', name: 'Odia', native: 'ଓଡ଼ିଆ', script: 'ଅ', enabled: false},
+  {code: 'as', name: 'Assamese', native: 'অসমীয়া', script: 'অ', enabled: false},
+  {code: 'mni', name: 'Manipuri', native: 'মৈতৈলোন্', script: 'ম', enabled: false},
+  {code: 'ml', name: 'Malayalam', native: 'മലയാളം', script: 'അ', enabled: false},
+  {code: 'gom', name: 'Konkani', native: 'कोंकणी', script: 'क', enabled: false},
+  {code: 'ur', name: 'Urdu', native: 'اردو', script: 'ا', enabled: false},
 ];
 
-const LanguageSelectionScreen = ({ navigation }) => {
-  const { t, i18n } = useTranslation();
-  const [selected, setSelected] = useState(i18n.language);
+const COPY = {
+  en: {
+    focusTitle: 'Live languages',
+    focusSubtitle: 'English, Hindi and Kannada are fully supported right now.',
+    comingSoon: 'Coming soon',
+  },
+  hi: {
+    focusTitle: 'लाइव भाषाएं',
+    focusSubtitle: 'अभी English, Hindi और Kannada पूरी तरह समर्थित हैं।',
+    comingSoon: 'जल्द आ रहा है',
+  },
+  kn: {
+    focusTitle: 'ಲೈವ್ ಭಾಷೆಗಳು',
+    focusSubtitle: 'ಈಗ English, Hindi ಮತ್ತು Kannada ಮಾತ್ರ ಸಂಪೂರ್ಣವಾಗಿ ಲಭ್ಯವಿವೆ.',
+    comingSoon: 'ಶೀಘ್ರದಲ್ಲೇ',
+  },
+};
 
-  const handleLanguageSelect = async (langCode) => {
-    setSelected(langCode);
-    await AsyncStorage.setItem('settings.lang', langCode);
-    i18n.changeLanguage(langCode);
-    // Short delay for visual feedback
+const LanguageSelectionScreen = ({navigation}) => {
+  const {t, i18n} = useTranslation();
+  const copy = COPY[i18n.language] || COPY.en;
+  const defaultLanguage = useMemo(
+    () => (languages.find(language => language.code === i18n.language && language.enabled) ? i18n.language : 'en'),
+    [i18n.language],
+  );
+  const [selected, setSelected] = useState(defaultLanguage);
+
+  const handleLanguageSelect = async language => {
+    if (!language.enabled) {
+      return;
+    }
+
+    setSelected(language.code);
+    await AsyncStorage.setItem('settings.lang', language.code);
+    await i18n.changeLanguage(language.code);
+
     setTimeout(() => {
       navigation.replace('MainTabs');
-    }, 300);
+    }, 250);
   };
 
-  const renderItem = ({ item }) => {
+  const renderItem = ({item}) => {
     const isSelected = selected === item.code;
+    const isEnabled = item.enabled;
+
     return (
       <TouchableOpacity
-        style={[styles.gridItem, isSelected && styles.selectedItem]}
-        onPress={() => handleLanguageSelect(item.code)}
-        activeOpacity={0.8}
-      >
+        style={[
+          styles.gridItem,
+          isSelected && styles.selectedItem,
+          !isEnabled && styles.disabledItem,
+        ]}
+        onPress={() => handleLanguageSelect(item)}
+        disabled={!isEnabled}
+        activeOpacity={0.85}>
         <LinearGradient
-          colors={isSelected ? ['#4facfe', '#00f2fe'] : ['#FFFFFF', '#F8FAFC']}
-          style={styles.cardGradient}
-        >
+          colors={
+            isSelected
+              ? ['#0EA5E9', '#2563EB']
+              : isEnabled
+                ? ['#FFFFFF', '#F8FAFC']
+                : ['#F8FAFC', '#EEF2F7']
+          }
+          style={styles.cardGradient}>
+          {!isEnabled ? (
+            <View style={styles.comingSoonBadge}>
+              <Text style={styles.comingSoonText}>{copy.comingSoon}</Text>
+            </View>
+          ) : null}
+
           <View style={[styles.scriptCircle, isSelected && styles.selectedScriptCircle]}>
             <Text style={[styles.scriptText, isSelected && styles.selectedScriptText]}>{item.script}</Text>
           </View>
-          <Text style={[styles.nativeText, isSelected && styles.selectedNativeText]}>{item.native}</Text>
-          <Text style={[styles.englishText, isSelected && styles.selectedEnglishText]}>{item.name}</Text>
+          <Text style={[styles.nativeText, isSelected && styles.selectedNativeText, !isEnabled && styles.disabledText]}>
+            {item.native}
+          </Text>
+          <Text style={[styles.englishText, isSelected && styles.selectedEnglishText]}>
+            {item.name}
+          </Text>
         </LinearGradient>
       </TouchableOpacity>
     );
@@ -83,9 +131,14 @@ const LanguageSelectionScreen = ({ navigation }) => {
         <Text style={styles.subtitle}>{t('selectPreferredLang')}</Text>
       </View>
 
+      <View style={styles.liveBanner}>
+        <Text style={styles.liveBannerTitle}>{copy.focusTitle}</Text>
+        <Text style={styles.liveBannerSubtitle}>{copy.focusSubtitle}</Text>
+      </View>
+
       <FlatList
         data={languages}
-        keyExtractor={(item) => item.code}
+        keyExtractor={item => item.code}
         renderItem={renderItem}
         numColumns={COLUMN_COUNT}
         contentContainerStyle={styles.listContainer}
@@ -118,7 +171,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     elevation: 4,
     shadowColor: '#0074E4',
-    shadowOffset: { width: 0, height: 4 },
+    shadowOffset: {width: 0, height: 4},
     shadowOpacity: 0.1,
     shadowRadius: 10,
   },
@@ -134,6 +187,23 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 22,
   },
+  liveBanner: {
+    marginHorizontal: 20,
+    marginBottom: 12,
+    borderRadius: 20,
+    padding: 16,
+    backgroundColor: '#DBEAFE',
+  },
+  liveBannerTitle: {
+    color: '#1D4ED8',
+    fontSize: 16,
+    fontWeight: '800',
+    marginBottom: 4,
+  },
+  liveBannerSubtitle: {
+    color: '#334155',
+    lineHeight: 20,
+  },
   listContainer: {
     paddingHorizontal: 20,
     paddingBottom: 40,
@@ -146,14 +216,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     elevation: 4,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
+    shadowOffset: {width: 0, height: 4},
     shadowOpacity: 0.05,
     shadowRadius: 10,
   },
   selectedItem: {
     elevation: 12,
     shadowOpacity: 0.3,
-    shadowColor: '#4facfe',
+    shadowColor: '#2563EB',
+  },
+  disabledItem: {
+    opacity: 0.85,
   },
   cardGradient: {
     flex: 1,
@@ -161,6 +234,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 10,
+    position: 'relative',
+  },
+  comingSoonBadge: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    backgroundColor: '#E2E8F0',
+    borderRadius: 999,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+  },
+  comingSoonText: {
+    fontSize: 10,
+    fontWeight: '800',
+    color: '#475569',
   },
   scriptCircle: {
     width: 50,
@@ -172,7 +260,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   selectedScriptCircle: {
-    backgroundColor: 'rgba(255,255,255,0.3)',
+    backgroundColor: 'rgba(255,255,255,0.25)',
   },
   scriptText: {
     fontSize: 24,
@@ -191,6 +279,9 @@ const styles = StyleSheet.create({
   selectedNativeText: {
     color: '#FFF',
   },
+  disabledText: {
+    color: '#64748B',
+  },
   englishText: {
     fontSize: 12,
     color: '#94A3B8',
@@ -198,7 +289,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   selectedEnglishText: {
-    color: 'rgba(255,255,255,0.8)',
+    color: 'rgba(255,255,255,0.85)',
   },
   footer: {
     padding: 20,
@@ -208,7 +299,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#94A3B8',
     fontWeight: '500',
-  }
+  },
 });
 
 export default LanguageSelectionScreen;
